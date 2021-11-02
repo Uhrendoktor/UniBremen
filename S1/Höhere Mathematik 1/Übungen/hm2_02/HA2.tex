@@ -2,12 +2,12 @@
 \usepackage{fullpage}
 \usepackage{fancyhdr}
 \usepackage{amsfonts}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
 \usepackage{mathtools}
 
 % Edit these as appropriate
 \newcommand\course{HM 1}
-\newcommand\hwnumber{1}                  % <-- homework number
+\newcommand\hwnumber{2}                  % <-- homework number
 \newcommand\NetIDa{6113829}           % <-- NetID of person #1
 \newcommand\NetIDb{6111554}           % <-- Matrikelnummer of person #2 (Comment this line out for problem sets)
 
@@ -43,24 +43,59 @@
 \begin{enumerate}
 \item [2.5] Bestimme die reelen Lösungen der Gleichungen
 \begin{enumerate}
-\item $\sqrt{x+1}-\sqrt{9-x}=\sqrt{2x-12}$
+\item $\sqrt{x+1}-\sqrt{9-x}=\sqrt{2x-12}$\\
 \begin{align*}
 \eqnfi{\sqrt{x+1}-\sqrt{9-x}}{\sqrt{2x-12}}{^2}
 \eqn{(\sqrt{x+1}-\sqrt{9-x})^2}{2x-12}
 \eqn{(x+1)-2\sqrt{x+1}\sqrt{9-x}+(9-x)}{2x-12}
-\eqn{x+1-x+9-2\sqrt{(x+1)*(9-x)}}{2x-12}
-\eqni{10-2\sqrt{(x+1)*(9-x)}}{2x-12}{/-2}
-\eqni{-5+sqrt{(x+1)*(9-x)}}{-x+6}{+5}
-\eqni{sqrt{(x+1)*(9-x)}}{-x+11}{^2}
-\eqn{(x+1)*(9-x)}{(-x+11)^2}
+\eqn{x+1-x+9-2\sqrt{(x+1)(9-x)}}{2x-12}
+\eqni{10-2\sqrt{(x+1)(9-x)}}{2x-12}{/-2}
+\eqni{-5+\sqrt{(x+1)(9-x)}}{-x+6}{+5}
+\eqni{\sqrt{(x+1)(9-x)}}{-x+11}{^2}
+\eqn{(x+1)(9-x)}{(-x+11)^2}
 \eqni{-x^2+8x+9}{11^2-22x+x^2}{-x^2; +22x; -11^2}
 \eqni{-2x^2+30x-112}{0}{/(-2)}
 \eqn{x^2-15x+56}{0}
-\Rightarrow x_{1/2} &= -\frac{-15}{2}\pm\sqrt{(\frac{-15}{2})^2+56}\\
-&= 7.5\pm 0.5\\
+\\
+\Rightarrow x_{1/2} = -\frac{-15}{2}\pm\sqrt{(\frac{-15}{2})^2+56}
+= 7.5\pm 0.5\\
 \Rightarrow x_1=7 \land x_2=8
 \end{align*}
-\item $|x-3|+|x+2|-|x-4|=3$
+\item $|x-3|+|x+2|-|x-4|=3$\\
+Wenn man $|x-3|$, $|x+2|$ und $|x-4|$ als drei separate Abbildungen $f,g,h:\mathbb{R}\to\mathbb{R}$ begreift, so ergibt sich für:\\
+$f(x) = \begin{cases}
+x-3 &x\geq 3\\
+-x-3 &x<3\\
+\end{cases}$\\
+$g(x) = \begin{cases}
+x+2 &x\geq -2\\
+-x-2 &x<-2
+\end{cases}$\\
+$h(x) = \begin{cases}
+x-4 &x\geq 4\\
+-x+4 &x<4\\
+\end{cases}$\\
+Wenn man $gh:\mathbb{R}\to\mathbb{R}, gh(x)\coloneqq g(x)-h(x)$ definiert, folgt:\\
+$gh(x) = \begin{cases}
+1 &x\geq 4\\
+2x-7 &3<x<4\\
+-1 &x\leq3\\
+\end{cases}$\\
+\newpage
+Definiert man weiter $fgh:\mathbb{R}\to\mathbb{R}, fgh(x)\coloneqq gh(x)+f(x)$, folgt:\\
+$fgh(x) = \begin{cases}
+x+3 &x\geq 4\\
+3x-5 &3<x<4\\
+x+1 &-2\leq x\leq 3\\
+-x-3 &x<-2\\
+\end{cases}$\\
+\begin{align*}
+\Rightarrow x+3&=3 \Leftrightarrow x=0, &0\ngeq 4|\times \\
+3x-5&=3 \Leftrightarrow x=\frac{8}{3}, &\frac{8}{3}\ngeq 4|\times \\
+x+1&=3 \Leftrightarrow x=2, &-2\leq 2\leq 3|\surd\\
+-x-3&=3 \Leftrightarrow x=-6, &-6<-2|\surd\\
+\end{align*}
+$\Rightarrow x_1 = 2 \land x_2 = -6$
 \end{enumerate}
 \item [2.6] bestimme sämtliche reelen Lösungen der Ungleichungen
 \begin{enumerate}

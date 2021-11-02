@@ -47,7 +47,29 @@
 \end{enumerate}
 \item [2.6] bestimme sämtliche reelen Lösungen der Ungleichungen
 \begin{enumerate}
-\item $\frac{2}{x+1}<\frac{1}{x-3}$
+\item $\frac{2}{x+1}<\frac{1}{x-3}$\\
+Da $\frac{2}{x+1} > 0$ mit $x\in\mathbb{R};x>-1$\\
+Und $\frac{1}{x-3} < 0$ mit $x\in\mathbb{R};x<3$\\
+Gibt gibt es keine reelen Lösungen in $x\in\mathbb{R};-1<x<3$\\
+\\
+Nullpunkt bestimmen:\\
+\begin{align*}
+	\geqnf{\frac{2}{x+1}}{<}{\frac{1}{x-3}}
+	\geqni{\frac{2x-6}{x+1}}{<}{1}{*(x-3)}	
+\end{align*}
+\begin{align*}
+	\text{Polynom division: }\\
+	(2x&-6)\div(x+1)=2-\frac{8}{x+1}\\
+	-2x&-2\\
+	&-8
+\end{align*}
+\begin{align*}
+	\geqnf{2-\frac{8}{x+1}}{<}{1}
+	\geqni{1}{<}{\frac{8}{x+1}}{-1+\frac{8}{x+1}}
+	\geqni{x+1}{<}{8}{x+1}
+	\geqni{x}{<}{7}{-1}	
+\end{align*}
+Somit gilt $\forall x\in\mathbb{R};(x<7;x\notin\{-1\leq x\leq3\}):\frac{2}{x+1}<\frac{1}{x-3}$
 \item $\left(x+2\right)\left(4-x\right)\left(x-2\right)^2>0$\\
 da $x^2$ für $x\in\mathbb{R}$ immer $\geq 0$, kann der Term nur negativ werden, wenn $(x+2)$ oder $(4-x)$ negativ sind.\\
 Die Bedingung erfüllen alle Elemente von $M \lbrace x\in\mathbb{R}; x\neq 2, (x+2)(4-x)>0 \rbrace$\\

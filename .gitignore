@@ -3,3 +3,8 @@
 *.synctex.gz
 *.pdf
 *.bak
+**/.pdf
+**/.log
+**/.bak
+**/.aux
+**/.synctex.gz

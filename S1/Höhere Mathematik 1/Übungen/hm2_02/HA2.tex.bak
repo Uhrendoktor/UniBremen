@@ -22,6 +22,7 @@
 \newcommand{\eqnf}[2]{\Eqn{#1}{=}{#2}\\}
 \newcommand{\eqn}[2]{\LLeftrightarrow\Eqn{#1}{=}{#2}\\}
 \newcommand{\eqni}[3]{\LLeftrightarrow\Eqn{#1}{=}{#2}\eqinfo{#3}\\}
+\newcommand{\eqnfi}[3]{\Eqn{#1}{=}{#2}\eqinfo{#3}\\}
 \newcommand{\geqnf}[3]{\Eqn{#1}{#2}{#3}\\}
 \newcommand{\geqn}[3]{\LLeftrightarrow\Eqn{#1}{#2}{#3}\\}
 \newcommand{\geqni}[4]{\LLeftrightarrow\Eqn{#1}{#2}{#3}\eqinfo{#4}\\}
@@ -43,6 +44,17 @@
 \item [2.5] Bestimme die reelen Lösungen der Gleichungen
 \begin{enumerate}
 \item $\sqrt{x+1}-\sqrt{9-x}=\sqrt{2x-12}$
+\begin{align*}
+\eqnfi{\sqrt{x+1}-\sqrt{9-x}}{\sqrt{2x-12}}{^2}
+\eqn{(\sqrt{x+1}-\sqrt{9-x})^2}{2x-12}
+\eqn{(x+1)-2\sqrt{x+1}\sqrt{9-x}+(9-x)}{2x-12}
+\eqn{x+1-x+9-2\sqrt{(x+1)*(9-x)}}{2x-12}
+\eqni{10-2\sqrt{(x+1)*(9-x)}}{2x-12}{/-2}
+\eqni{-5+sqrt{(x+1)*(9-x)}}{-x+6}{+5}
+\eqni{sqrt{(x+1)*(9-x)}}{-x+11}{^2}
+\eqn{(x+1)*(9-x)}{(-x+11)^2}
+\eqni{-x^2+8x+9}{11^2-22x+x^2}{
+\end{align*}
 \item $|x-3|+|x+2|-|x-4|=3$
 \end{enumerate}
 \item [2.6] bestimme sämtliche reelen Lösungen der Ungleichungen

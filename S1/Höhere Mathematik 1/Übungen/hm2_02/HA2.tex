@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amsmath, amssymb}
 \usepackage{mathtools}
+\usepackage{polynom}
 
 % Edit these as appropriate
 \newcommand\course{HM 1}
@@ -109,12 +110,8 @@ Nullpunkt bestimmen:\\
 	\geqnf{\frac{2}{x+1}}{<}{\frac{1}{x-3}}
 	\geqni{\frac{2x-6}{x+1}}{<}{1}{*(x-3)}	
 \end{align*}
-\begin{align*}
-	\text{Polynom division: }\\
-	(2x&-6)\div(x+1)=2-\frac{8}{x+1}\\
-	-2x&-2\\
-	&-8
-\end{align*}
+Polynom Division:\\
+\polylongdiv[style=C]{2x-6}{x+1}
 \begin{align*}
 	\geqnf{2-\frac{8}{x+1}}{<}{1}
 	\geqni{1}{<}{\frac{8}{x+1}}{-1+\frac{8}{x+1}}
@@ -134,6 +131,16 @@ $f: \mathbb{R}\to\mathbb{R}, f(x)\coloneqq x^2-2x-8$ stellt eine nach oben geöf
 Die Nullstellen lassen sich direkt aus der Parameterform oben ablesen.\\
 $\Rightarrow x_1=(-2) \land x_2=4$\\
 Somit gilt $\forall x\in\mathbb{R};(-2<x<4, x\neq 2):(\left(x+2\right)\left(4-x\right)\left(x-2\right)^2>0)$
+\end{enumerate}
+\item [2.8]
+\begin{enumerate}
+\item Berechne $|5+12i|$\\
+$$|5+12i| = \sqrt(5^2+12^2) = \sqrt{25+144} = \sqrt{169} = 13$$
+\item Berechne $\sum\limits_{k=2}^{4}(2i)^k$
+$$\sum_{k=2}^{4}(2i)^k = (2i)^2+(2i)^3+(2i)^4 = -4-6i+16 = 12-6i$$
+\item Bestimme Real und Imaginärteil von $\cfrac{1+i\sqrt{2}}{1-i\sqrt{2}}+\cfrac{1-i\sqrt{2}}{1+i\sqrt{2}}$.\\
+$z = 1+i\sqrt{2}, $
+
 \end{enumerate}
 \end{enumerate}
 \end{document}

@@ -1,0 +1,109 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+
+%custom math commands
+\newcommand{\alignleft}[1]{\tag*{\llap{\makebox[\linewidth][l]{$#1$}}}}
+
+\newcommand{\LLeftrightarrow}{ \alignleft{\Leftrightarrow}}
+
+\newcommand{\eqinfo}[1]{&\makebox[2cm][l]{$\vert #1$}}
+
+\newcommand{\Eqn}[2]{#1 &= #2}
+\newcommand{\eqnf}[2]{\Eqn{#1}{#2}\\}
+\newcommand{\eqn}[2]{\LLeftrightarrow\Eqn{#1}{#2}\\}
+\newcommand{\eqni}[3]{\LLeftrightarrow\Eqn{#1}{#2}\eqinfo{#3}\\}
+
+% Edit these as appropriate
+\newcommand\course{HM 1}
+\newcommand\hwnumber{1}                  % <-- homework number
+\newcommand\NetIDa{6113829 Systems Eng. Bc.}           % <-- NetID of person #1
+\newcommand\NetIDb{6111554 Systems Eng. Bc.}           % <-- Matrikelnummer of person #2 (Comment this line out for problem sets)
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\NetIDa}\lhead{\NetIDa\\\NetIDb}                 % <-- Comment this line out for problem sets (make sure you are person #1)
+\chead{\textbf{\Large Übung \hwnumber}}
+\rhead{\course \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+\begin{enumerate}
+\item [1.5] Gib die folgenden Mengen jeweils durch Aufzählung aller Elemente an.
+\begin{enumerate}
+\item $\lbrace x\in\mathbb{R}; 2x^2-9x+10=0\rbrace = \lbrace\frac{9}{4}\pm\sqrt{\left(-\frac{9}{4}\right)^2-5}\rbrace=\lbrace2,2.5\rbrace$
+\item $\lbrace(x,y)\in\mathbb{R};x^2+y^2=25\land 7y-x=25\rbrace = {(-4,3),(3,4)}$
+\\
+\begin{align*}
+7y-x=25\Leftrightarrow x=7y-25\\
+\text{in } x^2+y^2=25 \text{ einsetzen:}\\
+\end{align*}
+\begin{align*}
+\eqnf{(7y-25)^2+y^2}{25}
+\eqn{49y^2-350y+25^2+y^2}{25}
+\eqni{50y^2-350y+625}{25}{-25}
+\eqni{50y^2-350y+600}{0}{\div 50}
+\eqn{y^2-7y+12}{0}
+\end{align*}
+\begin{align*}
+\Rightarrow p&=(-7), q=12\\
+y_{1/2} &= -\frac{-7}{2}\pm\sqrt{\left(\frac{-7}{2}\right)^2-12}\\
+&=3.5\pm 0.5\\
+\Rightarrow y_{1}&=3 \land y_{2}=4
+\end{align*}
+\begin{align*}
+\text{in } 7y-25 \text{ einsetzen:}\\
+&\Rightarrow x_1=7*3-25=-4\land x_2=7*4-25=3\\
+&\Rightarrow (x_{1/2},y_{1/2})=(-4,3),(3,4)
+\end{align*}
+
+\end{enumerate}
+\item [1.6] Gib die folgenden Mengen explizit an:
+\begin{enumerate}
+	\item $\{1,2,3\} \cup \{1,5\} = \{1,2,3,5\}$
+	\item $\{1,2,3\} \cap \{1,5\} = \{1\}$
+	\item $\{1,2,3\} \backslash \{1,5\} = \{2,3\}$
+	\item $\{1,2,3\} x \{1,5\} = \{(1,1),(1,5),(2,1),(2,5),(3,1),(3,5)\}$
+	\item $\mathcal{P}\{1,2,3\} = \{\varnothing,\{1\},\{2\},\{3\},\{1,2\},\{1,3\},\{2,3\},\{1,2,3\}\}$
+	\item $\{1,2,3\} \cup \{1,\{2,3\}\} = \{1,2,3,\{2,3\}\}$
+	\item $\{1,2,3\} \backslash \{1,\{2,3\}\} = \{2,3\}$
+	\item $\{\{1\},\{2\},\{1,2,3\}\} \backslash \{\{1\},\{2,3\}\} = \{\{2\},\{1,2,3\}\}$
+\end{enumerate}
+\item [1.7] Welche der folgenden Abbildungen ist injektiv / surjektiv / bijektiv ?
+\begin{enumerate}
+ \item $f\colon\mathbb{R}\to\mathbb{R}, f(x)\coloneqq x^2\Rightarrow$ weder injektiv noch surjektiv, da negative y-Werte nicht erreicht werden können und positive doppelt abgebildet werden.
+ \item $g\colon\mathbb{R}\to\{x\in\mathbb{R};x\geq 0\}, g(x)\coloneqq x^2\Rightarrow$ surjektiv, da jeder x-Wert jeden y-Wert der Zielmenge genau 2mal annehmen kann.
+ \item $h:\{x\in\mathbb{R};x\geq 0\}\to\mathbb{R}, h(x)\coloneqq x^2\Rightarrow$ injektiv, da $x^2$ nur positive y-Werte annehmen kann. Da die Zielmenge jedoch auch negative Werte enthält, ist die Abbildung injektiv.
+ \item $p:\{x\in\mathbb{R};x\geq 0\}\to\{x\in\mathbb{R}\;x\geq 0\}, p(x)\coloneqq x^2\Rightarrow$ bijektiv, da\\
+$\forall x\in\mathbb{R}\{x\geq 0\}\exists!y\in\mathbb{R}\{y\geq 0\}:(y=p(x)) \land \\
+\forall y\in\mathbb{R}\{y\geq 0\}\exists!x\in\mathbb{R}\{x\geq 0\}:(x=p^{-1}(y))$\\
+Jedem x-Wert ist genau ein y-Wert zuzuordnen und umgekehrt.
+\end{enumerate}
+\item [1.8] In einer Klasse mit 16 Schülern werden die drei Wahlpflichtfächer Geschichte, Literatur und Theater angeboten. Jedes der Fächer wird von 10 Schülern gewählt. Für nur Geschichte hat sich ein Schüler entschieden, für nur Literatur zwei Schüler, und für nur Theater haben sich drei Schüler entschieden. Wie viele Schüler belegen alle drei Fächer?
+Hinweis: Man überlege sich zuerst, wie viele Schüler mindestens zwei der Fächer belegen.\\
+
+6 Schüler belegen jeweils nur ein Fach. Daraus folgt die übrigen 10 Schüler belegen zusammen 24 Fächer.\\
+Daraus folgt $3x + 2y = 24$ und $x+y=10$ (x:Anzahl der Schüler, die drei Fächer belegen; y:Anzahl der Schüler, die zwei Fächer belegen).
+
+\begin{align*}
+	 \eqnf{(x+y)}{10}
+	 \eqn{x}{10-y}
+	 \text{in } 3x + 2y = 24 \text{ einsetzen}\\
+	 \\
+	 \eqni{30-3y+2y}{24}{-30}
+	 \eqni{-y}{-6}{*(-1)}
+	 \eqn{y}{6}
+	 \\
+	 \text{in } x+y=10 \text{ einsetzen}\\
+	 \Rightarrow x&=4
+\end{align*}
+
+\textbf{Antwort:} Vier Schüler belegen jeweils drei Fächer.
+
+\end{enumerate}
+\end{document}

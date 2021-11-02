@@ -1,0 +1,106 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{amssymb, amsmath}
+\usepackage{mathtools}
+\usepackage{polynom}
+
+% Edit these as appropriate
+\newcommand\course{HM 1}
+\newcommand\hwnumber{1}                  % <-- homework number
+\newcommand\NetIDa{6113829}           % <-- NetID of person #1
+%\newcommand\NetIDb{Bearbeiter2}           % <-- Matrikelnummer of person #2 (Comment this line out for problem sets)
+
+%custom math commands
+\newcommand{\alignleft}[1]{\tag*{\llap{\makebox[\linewidth][l]{$#1$}}}}
+
+\newcommand{\LLeftrightarrow}{ \alignleft{\Leftrightarrow}}
+
+\newcommand{\eqinfo}[1]{&\makebox[2cm][l]{$\vert #1$}}
+
+\newcommand{\Eqn}[2]{#1 &= #2}
+\newcommand{\eqnf}[2]{\Eqn{#1}{#2}\\}
+\newcommand{\eqn}[2]{\LLeftrightarrow\Eqn{#1}{#2}\\}
+\newcommand{\eqni}[3]{\LLeftrightarrow\Eqn{#1}{#2}\eqinfo{#3}\\}
+%end custom math commands
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\NetIDa}
+%\lhead{\NetIDa\\\NetIDb}                 % <-- Comment this line out for problem sets (make sure you are person #1)
+\chead{\textbf{\Large Präsenzübung \hwnumber}}
+\rhead{\course \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+\begin{enumerate}
+	\item [1.1] Gib die folgenden Mengen jeweils durch Aufzählung aller Elemente an.
+	\begin{enumerate}
+	\item $
+\lbrace x\in\mathbb{R}; 4x^2+x-5=0\rbrace=
+\lbrace-\frac{1}{4}\pm\sqrt{(\frac{1}{4})^2+\frac{5}{4}}\rbrace=
+\lbrace-1.3956, 0.8956\rbrace$
+	\item $
+\lbrace(x,y)\in\mathbb{R}\times\mathbb{R};
+\left(x^2-1\right)\left(y^2-1\right)=0
+\land x+y=4\rbrace=
+\lbrace(-1,5),(1,3),(5,-1),(3,1)\rbrace$
+	\end{enumerate}
+	\item [1.2]
+	\begin{enumerate}
+	\item Die Abbildungen $f,g\colon\mathbb{R}\to\mathbb{R}$ seien definiert durch $f(x)=2x-5$ und $g(x)=x^3$. Bestimme die komponierten Abbildungen $f\circ g$ und $g\circ f$.
+	\\
+	$f\circ g\colon\mathbb{R}\to\mathbb{R}, x\mapsto (f\circ g)(x)\coloneqq f(g(x)) = 2x^3-5$
+	\\
+	$g\circ f\colon\mathbb{R}\to\mathbb{R}, x\mapsto (g\circ f)(x)\coloneqq g(f(x))= (2x-5)^3$
+	\item Sei $f\colon\mathbb{R}\setminus\lbrace 2\rbrace\to\mathbb{R}\setminus\lbrace 1\rbrace, f(x)=\frac{x-5}{x-2}$. Zeige, dass $f$ bijektiv ist, und berechne die
+ Umkehrfunktion $f^{-1}$.
+\\
+$$f(x)=\frac{x-5}{x-2} = (x-5)/(x-2) \rightarrow\polylongdiv{x^2-5}{x-2} \rightarrow 1-\frac{3}{x-2}$$\\
+Aus $f(x) = \frac{3}{x-2}$ folgt, dass $f(x)$ bijektiv ist, da es für jeden x-Wert nur einen y-Wert ergibt.
+\begin{align*}
+\eqnf{y}{\frac{x-5}{x-2}}
+\eqn{xy-2y}{x-5}
+\eqn{-2y}{x-5-xy}
+\eqn{-2y}{-5-x(y-1)}
+\eqn{-2y+5}{-x(y-1)}
+\eqn{2y-5}{x(y-1)}
+\eqn{\frac{2y-5}{y-1}}{x}
+\rightarrow f^{-1}(x)&=\frac{2y-5}{y-1}
+\end{align*}
+	\end{enumerate}
+	\item [1.3] Welche der folgenden Aussagen über Element- und Teilmengenbeziehungen sind wahr?
+	\begin{enumerate}
+	\item $2\in\{1,2,3,4\} \surd$
+	\item $\{2,1\}\in\{1,2,3,4\} \times$
+	\item $\{2,1\}\subseteq\{1,2,3,4\} \surd$
+	\item $\{2,1\}\in\{\{1,2\},\{3,4\}\} \surd$
+	\item $\{2,1\}\in\{\{1,2,3\},\{4\}\} \times$
+	\end{enumerate}
+	\item [1.4] Ein Fußballtrainer hat in seiner Mannschaft 18 Personen. Davon kann eine Person nur als Torhüter eingesetzt werden, acht sind als Verteidiger geeignet und sechs als Mittelfeldspieler. Drei Personen können sowohl als Verteidiger, Mittelfeldspieler oder Stürmer spielen, fünf können im Mittelfeld und im Sturm spielen, und vier können im Mittelfeld und in der Verteidigung eingesetzt werden. Im Sturm und in der Verteidigung können drei Personen spielen.
+	\begin{enumerate}
+	\item Wie viele reine Stürmer gibt es?\\
+	\begin{align*}
+	&18 \leftarrow \text{Spieler}\\
+	&18-1 \leftarrow \text{Torwart}\\
+	=&17-8 \leftarrow \text{Verteidiger}\\
+	=&11-6 \leftarrow \text{Mittelfeld}\\
+	=&5 \rightarrow \text{Stürmer}
+	\end{align*}
+	\item Wie viele Spieler können nur in der Verteidigung eingesetzt werden?
+	\begin{align*}
+	8 \leftarrow &\text{ als verteidiger geeignet}\\
+	8-3 \leftarrow &\text{ geeignet als Stürmer, Mittelfeld und Verteidigung}\\
+	5-3 \leftarrow &\text{ geeignet als Stürmer und Verteidigung}\\
+	2-(4-3) \leftarrow
+	&4*\text{ "können im Sturm und in der Verteidigung eingesetzt werden"}\\
+	-&3*\text{ "geeignet als Stürmer, Mittelfeld und Verteidigung"}\\
+	=&1*\text{ "geeignet als Stürmer oder Verteidigung"}\\
+	=1 \rightarrow &\text{Verteidigung}
+	\end{align*}
+	\end{enumerate}
+\end{enumerate}
+\end{document}

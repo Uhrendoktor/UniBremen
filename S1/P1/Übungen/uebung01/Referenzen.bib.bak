@@ -1,0 +1,13 @@
+@incollection{mohring-oellrich-08,
+  author    = {Rolf H. M{\"{o}}hring and Martin Oellrich},
+  title     = {{Das Sieb des Eratosthenes: Wie schnell kann man eine Primzahlentabelle
+               berechnen?}},
+  booktitle = {Taschenbuch der Algorithmen},
+  pages     = {127--138},
+  year      = {2008},
+  url       = {https://doi.org/10.1007/978-3-540-76394-9_13},
+  doi       = {10.1007/978-3-540-76394-9_13},
+  timestamp = {Tue, 16 May 2017 01:00:00 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/reference/algo/MohringO08},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}

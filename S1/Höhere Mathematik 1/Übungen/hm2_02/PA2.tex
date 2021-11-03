@@ -1,0 +1,87 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{fullpage}
+\usepackage{fancyhdr}
+\usepackage{amsfonts}
+\usepackage{amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{polynom}
+
+% Edit these as appropriate
+\newcommand\course{HM 1}
+\newcommand\hwnumber{1}                  % <-- homework number
+\newcommand\NetIDa{6113829}           % <-- NetID of person #1
+\newcommand\NetIDb{6111554}           % <-- Matrikelnummer of person #2 (Comment this line out for problem sets)
+
+%custom math commands
+\newcommand{\alignleft}[1]{\tag*{\llap{\makebox[\linewidth][l]{$#1$}}}}
+
+\newcommand{\LLeftrightarrow}{ \alignleft{\Leftrightarrow}}
+
+\newcommand{\eqinfo}[1]{&\makebox[2cm][l]{$\vert #1$}}
+
+\newcommand{\Eqn}[3]{#1 &#2 #3}
+\newcommand{\eqnf}[2]{\Eqn{#1}{=}{#2}\\}
+\newcommand{\eqn}[2]{\LLeftrightarrow\Eqn{#1}{=}{#2}\\}
+\newcommand{\eqni}[3]{\LLeftrightarrow\Eqn{#1}{=}{#2}\eqinfo{#3}\\}
+\newcommand{\eqnfi}[3]{\Eqn{#1}{=}{#2}\eqinfo{#3}\\}
+\newcommand{\geqnf}[3]{\Eqn{#1}{#2}{#3}\\}
+\newcommand{\geqn}[3]{\LLeftrightarrow\Eqn{#1}{#2}{#3}\\}
+\newcommand{\geqni}[4]{\LLeftrightarrow\Eqn{#1}{#2}{#3}\eqinfo{#4}\\}
+\newcommand{\geqnfi}[4]{\Eqn{#1}{#2}{#3}\eqinfo{#4}\\}
+%end custom math commands
+
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\NetIDa}
+\lhead{\NetIDa\\\NetIDb}                 % <-- Comment this line out for problem sets (make sure you are person #1)
+\chead{\textbf{\Large Praxisübung \hwnumber}}
+\rhead{\course \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+\begin{document}
+\begin{enumerate}
+\item [2.1] Bestimme die reellen Lösungen der Gleichung $|x^2+3x-4|=2x+2$\\
+$|x^2+3x-4| = \begin{cases}
+x^2+3x-4 &x^2+3x-4\geq 0\\
+-x^2-3x+4 &x^2+3x-4<0\\
+\end{cases}$\\
+\begin{align*}
+\eqnfi{x^2+3x-4}{2x+2}{-2x-2}
+\eqn{x^2-x-6}{0}
+\end{align*}
+$\Rightarrow x_{1/2} = 0.5\pm\sqrt{0.25+6}\\
+x_1=(-2)\ngeq 0 \times\\ \land x_2=3 \geq 0 \surd$
+\begin{align*}
+\eqnfi{-x^2-3x+4}{2x+2}{-2x-2}
+\eqn{x^2+5x-2}{0}
+\end{align*}
+$\Rightarrow x_{1/2} = 2.5\pm\sqrt{6.25+2}\\
+x_1=(-0.3723)< 0 \surd\\ \land x_2=5.3723 \nless 0 \times$
+$\Rightarrow x_1=3 \land x_2=-0.3723$
+\item [2.2] Bestimme sämtliche reellen Lösungen der Ungleichungen\\
+\begin{enumerate}
+\item $\sqrt{x-1}>2x-5$\\
+\begin{align*}
+\geqnfi{\sqrt{x-1}}{>}{2x-5}{^2}
+\geqni{x-1}{>}{4x^2-20x+25}{-x+1}
+\geqni{4x^2-21x+26}{<}{0}{4}
+\geqn{x^2-5.25x+6.5}{<}{0}
+\end{align*}
+$\Rightarrow x_{x/2}= \frac{5.25}{2}\pm\sqrt{(\frac{5.25}{2})^2-6.5}$\\
+$x_1=2 \land x_2=3.25$\\
+$\Rightarrow x^2-5.25x+6.5<0$ für $2<x<3.25$\\
+\item $\dfrac{x+4}{x-2}<\dfrac{2}{x+1}$.\\
+\begin{align*}
+\geqnfi{\frac{x+4}{x-2}}{<}{\frac{2}{x+1}}{*(x-2)*(x+1)}
+\geqn{\frac{(x+4)(x-2)(x+1)}{x-2}}{<}{\frac{2(x-2)(x+1)}{x+1}}
+\geqn{(x+4)(x+1)}{<}{2(x-2)}
+\geqni{x^2+5x+4}{<}{2x-4}{-2x+4}
+\geqn{x^2+3x+8}{<}{0}
+\end{align*}
+$\Rightarrow x_{1/2} = -1.5\pm\sqrt{1.5^2-8}$
+\end{enumerate}
+\end{enumerate}
+\end{document}

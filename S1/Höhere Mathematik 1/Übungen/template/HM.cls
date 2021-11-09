@@ -1,13 +1,8 @@
-%\documentclass[12pt,letterpaper]{article}
-
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{HM}[2021/10/01 HM1 class]
 
 \LoadClass[12pt,letterpaper]{article}
 \RequirePackage{fullpage, fancyhdr, amsfonts, amsmath, amssymb, mathtools, polynom}
-
-%\usepackage{fullpage}
-%\usepackage{fancyhdr}
 
 % Edit these as appropriate
 \newcommand\course{HM 1}
@@ -48,7 +43,3 @@
 \cfoot{}
 \rfoot{\small\thepage}
 \headsep 1.5em
-
-\begin{document}
-
-\end{document}

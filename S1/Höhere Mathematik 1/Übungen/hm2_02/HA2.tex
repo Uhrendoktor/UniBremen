@@ -27,6 +27,8 @@
 \newcommand{\geqnf}[3]{\Eqn{#1}{#2}{#3}\\}
 \newcommand{\geqn}[3]{\LLeftrightarrow\Eqn{#1}{#2}{#3}\\}
 \newcommand{\geqni}[4]{\LLeftrightarrow\Eqn{#1}{#2}{#3}\eqinfo{#4}\\}
+
+\newcommand{\comment}[1]{}
 %end custom math commands
 
 \pagestyle{fancyplain}
@@ -119,6 +121,7 @@ Innerhalb des restlichen Intervalls $(-1,3)$ nimmt $f:\mathbb{R}\to\mathbb{R}, f
 Somit gilt: $\forall x\in\mathbb{R}_{-1<x<3}:(f(x)\nless h(x))$.\\\\
 Insgesamt gilt: $\forall x\in\mathbb{R}_{x<7}\setminus\{-1\leq x\leq3\}:(\frac{2}{x+1}<\frac{1}{x-3})$
 
+\comment{
 \item [(a)] ORIGINAL - MORITZ\\
 Da $\frac{2}{x+1} > 0$ mit $x\in\mathbb{R};x>-1$\\
 Und $\frac{1}{x-3} < 0$ mit $x\in\mathbb{R};x<3$\\
@@ -138,6 +141,8 @@ Polynom Division:\\
 	\geqni{x}{<}{7}{-1}	
 \end{align*}
 Somit gilt $\forall x\in\mathbb{R};(x<7;x\notin\{-1\leq x\leq3\}):\frac{2}{x+1}<\frac{1}{x-3}$
+}
+
 \item $\left(x+2\right)\left(4-x\right)\left(x-2\right)^2>0$\\
 da $x^2$ für $x\in\mathbb{R}$ immer $\geq 0$, kann der Term nur negativ werden, wenn $(x+2)$ oder $(4-x)$ negativ sind.\\
 Die Bedingung erfüllen alle Elemente von $M \lbrace x\in\mathbb{R}; x\neq 2, (x+2)(4-x)>0 \rbrace$\\

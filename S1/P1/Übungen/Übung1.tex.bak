@@ -1,8 +1,0 @@
-\documentclass{pi1}
-\usepackage{bibgerm}
-\usepackage{gerplain}
-
-\begin{document}
-\maketitle{01}{Leander Staack}{Julius Walczynski}
-\section{Primzahlen berechnen}
-\end{document}

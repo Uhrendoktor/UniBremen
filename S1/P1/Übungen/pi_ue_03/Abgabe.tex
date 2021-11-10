@@ -1,0 +1,52 @@
+\documentclass{pi1}
+\usepackage{listings, amsmath}
+
+\begin{document}
+\maketitle{3}{Leander Staack}{Julius Walczynski [6113829]}
+\section{Einmal mit Klasse}
+Die Klasse "NPC" deklariert zum Anfang die drei in der Aufgabe verlangten Attribute.
+\lstinputlisting[firstnumber=6, firstline=6, lastline=9]{code/NPC.java}
+\begin{tabular}{ll}
+\textit{gameObject} &bietet die Referenz zum visuell sichtbaren \textit{GameObject} im \textit{JPanel}.\\
+\textit{walkDistance} &gibt die Länge des vom \textit{NPC} zu laufenden Weg an.\\
+\textit{progress} &beschreibt wie viele Schritte der \textit{NPC} vom letzten Endpunkt seiner Route \\&zurückgelegt hat.
+\end{tabular}\\\\
+Wenn man davon ausgeht, dass \textit{walkDistance} und das \textit{GameObject} des \textit{NPC}s im laufenden Prozess nicht verändert werden, können diese als \textit{final} bzw. konstant markiert werden. 
+
+\section{Konstruktivismus}
+\lstinputlisting[firstnumber=11, firstline=11, lastline=15]{code/NPC.java}
+Der Konstruktor initialisiert die drei Attribute aus Aufgabe 1.\\
+Hierzu nimmt er 5 Parameter entgegen:\\\\
+\begin{tabular}{ll}
+\textit{\textunderscore x}, \textit{\textunderscore y}, \textit{\textunderscore fileName} &werden an den Konstruktor des \textit{gameObject}s weitergegeben,\\& um dieses zu initialisieren.\\
+\textit{\textunderscore walkDistance}, \textit{\textunderscore progress}& definieren die dazugehörigen Attribute des \textit{NPC}-Objekts.\\
+\end{tabular}\\\\
+Bevor der Wert des Parameters \textit{\textunderscore progress} in \textit{progress} geschrieben wird, wird sichergestellt, dass der Parameter im sinnvollen Rahmen der Anwendung liegt. D.h. sollte \textit{\textunderscore progress}$<1$ oder \textit{\textunderscore progress}>\textit{walkDistance} sein, wird er vorsichtshalber auf $1$ zurückgesetzt.
+(Hierbei besitzen die Start/Endfelder der Route einen \textit{progress}-Wert von $1$ bzw. \textit{walkDistance})
+\newpage
+
+\section{Schritt für Schritt}
+\lstinputlisting[firstnumber=17, firstline=17, lastline=25]{code/NPC.java}
+Beim Ausführen der Funktion \textit{act} wird zuerst \textit{progress} um $1$ erhöht. 
+Sollte \textit{progress}$\geq$\textit{walkDistance} sein, ist der \textit{NPC} an einem Start/Endpunkt seiner Route angekommen. 
+Folgend wird \textit{progress} auf $1$ zurückgesetzt und die boolean Variable \textit{returning} negiert (geflipt). 
+Anschließend wird anhand von \textit{returning} die Richtung des \textit{NPC}s bestimmt und dieser durch die Funktion \textit{Move} um $1$ Feld in die angegebene Richtung bewegt und rotiert.
+\lstinputlisting[firstnumber=27, firstline=27, lastline=46]{code/NPC.java}
+Der Parameter \textit{\textunderscore direction} beihaltet die Richtung, in die sich der \textit{NPC} bewegen soll. 
+Die Richtungskodierung ist der \textit{GameObject}-Klasse in Bezug auf die Rotation des \textit{GameObjects} entnommen. 
+Über ein switch-Statement wird die kodierte Richtung zu einer Bewegung auf der X-Achse und Y-Achse umgewandelt. Bevor die Location des \textit{GameObject}s überschrieben wird, werden die Werte durch die Funktion \textit{MinMax} auf die Dimensionen des Spielbretts begrenzt. D.h 
+$x<0\to 0,
+x>\text{FIELD\textunderscore X}-1\to \text{FIELD\textunderscore X}-1,
+y<0\to 0,
+y>\text{FIELD\textunderscore Y}-1\to \text{FIELD\textunderscore Y}-1$.\\
+
+\section{Und Action!}
+\lstinputlisting[firstnumber=74, firstline=74, lastline=76]{code/RPGGame.java}
+In der \textit{RPGGame}-Klasse werden zu Beginn des Spiels 2 neue \textit{NPC}s erstellt, deren \textit{act} Methode nach jedem Zug des Spielers aufgerufen werden:
+\lstinputlisting[firstnumber=114, firstline=114, lastline=115]{code/RPGGame.java}
+\newpage
+
+\section{Bonusaufgabe}
+\lstinputlisting[firstnumber=114, firstline=114, lastline=120]{code/RPGGame.java}
+Nach jedem Zug des Spielers, werden die \textit{NPC}s bewegt. Sollte die neue Position einer der \textit{NPC}s mit der des Spielers übereinstimmen, wird die Spielerfigur unsichtbar gemacht und der GameLoop verlassen.
+\end{document}

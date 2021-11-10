@@ -11,17 +11,17 @@ class NPC {
     public NPC(final int _x, final int _y, final String _fileName, int _walkDistance, int _progress){
         gameObject = new GameObject(_x, _y, 0, _fileName);
         walkDistance = _walkDistance;
-        progress = (_progress>walkDistance||_progress<0)?0:_progress;
+        progress = (_progress>walkDistance||_progress<1)?1:_progress;
     }
     
     public void act(){
-        if(progress>=walkDistance-1){
+        progress++;
+        if(progress>=walkDistance){
             returning = !returning;
-            progress = 0;
+            progress = 1;
         }
         int _direction = returning?2:0;
         Move(_direction);
-        progress++;
     }
     
     private void Move(int _direction){

@@ -15,7 +15,8 @@ abstract class RPGGame extends Game
     public static final int FIELD_Y = 4;
     
     private static GameObject player;
-    private static NPC[] NPCs = new NPC[1];
+    private static NPC[] NPCs = new NPC[2];
+    private static GameObject goal;
     private static GameObject[][] background = new GameObject[FIELD_Y][FIELD_X];
     private static String[][] definedBackground = new String[][]{
         {"pe0", "pi0", "pl1", "we1", "g"},
@@ -68,8 +69,10 @@ abstract class RPGGame extends Game
                 background[y][x] = new GameObject(x,y,0, _img);
             }
         }
-        player = new GameObject(0,0, 0,"laila");
+        goal = new GameObject(4,2,0,"goal");
+        player = new GameObject(0,3, 0,"laila");
         NPCs[0] = new NPC(1,0, "claudius", 3, 1);
+        NPCs[1] = new NPC(4,1, "child", 5, 4);
         
         int _keyCode = 0;
         int _x;
@@ -96,9 +99,18 @@ abstract class RPGGame extends Game
                     player.setRotation(3);
                     _y--;
                     break;
+                default:
+                    Game.playSound("error");
+                    continue;
             }
-            player.setLocation(MinMax(0, FIELD_X-1, _x), MinMax(0, FIELD_Y-1, _y));
-            Game.sleep(100);
+            _x = MinMax(0, FIELD_X-1, _x);
+            _y = MinMax(0, FIELD_Y-1, _y);
+            
+            if(definedBackground[_y][_x].startsWith("w") || (_x==player.getX() && _y==player.getY())) continue;
+                
+            player.setLocation(_x, _y);
+            Game.playSound("step");
+
             for(NPC _npc: NPCs){
                 _npc.act();
                 if(checkCollision(player.getX(), player.getY(), _npc.getX(), _npc.getY())){

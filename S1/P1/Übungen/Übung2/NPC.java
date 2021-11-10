@@ -4,8 +4,8 @@
  * @author Julius Walczynski
  */
 class NPC {
-    private GameObject gameObject;
-    private int walkDistance;
+    private final GameObject gameObject;
+    private final int walkDistance;
     private int progress;
     private boolean returning = false;
     public NPC(final int _x, final int _y, final String _fileName, int _walkDistance, int _progress){

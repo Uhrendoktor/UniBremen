@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=NPC
+comment0.text=\n\ Diese\ Klasse\ definiert\ <Zusammenfassung\ erg\u00E4nzen>\n\n\ @author\ Julius\ Walczynski\n
+comment1.params=_x\ _y\ _fileName\ _walkDistance\ _progress
+comment1.target=NPC(int,\ int,\ java.lang.String,\ int,\ int)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=_direction
+comment3.target=void\ Move(int)
+comment4.params=_min\ _max\ _value
+comment4.target=int\ MinMax(int,\ int,\ int)
+comment5.params=
+comment5.target=int\ getX()
+comment6.params=
+comment6.target=int\ getY()
+numComments=7

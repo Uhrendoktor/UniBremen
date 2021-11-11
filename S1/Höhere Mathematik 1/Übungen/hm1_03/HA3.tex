@@ -34,5 +34,28 @@ $$\begin{matrix}
 0 & 1
 \end{matrix}^n$$
 für n = 1,2,3,4, stelle eine Vermutung für eine Formel für allgemeines $n\in\N$ und beweise diese Formel durch Induktion.
+\item [3.6] Die \textit{Pauli-Matrizen} sind definiert durch
+$$\sigma_1 \coloneqq \begin{matrix}
+0 & 1\\
+1 & 0
+\end{matrix},
+\sigma_2 \coloneqq \begin{matrix}
+0 & -i\\
+i & 0
+\end{matrix},
+\sigma_1 \coloneqq \begin{matrix}
+1 & 0\\
+0 & -1
+\end{matrix}
+$$
+mit der imaginären Einheit $i$. zeige für alle $j,k = 1,2,3:$\\
+$$\sigma_j\sigma_k = \delta_{jk}E_2+i\sum_{l=1}^{3}\epsilon_{jkl}\sigma_l,$$
+wobei $\delta_{jk}$ das Kronecker-Delta ist und
+$$\epsilon_{jkl}\begin{cases}
+0 &\text{falls mindestens 2 der Inizes }j,k,l \text{denselben Wert haben,}\\
+1 &\text{falls} (j,k,l)\in\lbrace(1,2,3),(2,3,1),(3,1,2)\rbrace,\\
+-1 &\text{falls} (j,k,l)\in\lbrace(3,2,1),(2,1,3),(1,3,2)\rbrace,
+\end{cases}$$
+das \textit{Levi-Civita-Symbol}.
 \end{enumerate}
 \end{document}

@@ -5,23 +5,35 @@
 \item [3.3]
 \begin{enumerate}
 \item Bestimme die Polardarstellungen von $\frac{i\sqrt{3} - 1}{2}$ und von $\left(\frac{1-i\sqrt{3}}{1+i}\right)^5$.
-
-\begin{align*}
-	&\frac{i\sqrt{3}-1}{2}\\
-	=&\frac{(i\sqrt{3}-1)i\sqrt{3}}{2i\sqrt{3}}\\
-	=&\frac{-3-i\sqrt{3}}{2i\sqrt{3}}\\
-	=&\frac{-3}{2i\sqrt{3}}-\frac{i\sqrt{3}}{2i\sqrt{3}}\\
-	=&-\frac{1}{2}-\frac{1.5}{i\sqrt{3}}\\
-	\\
-	|z|&=\sqrt{a^2+b^2}\\ \\
-	\eqnf{|z|}{\sqrt{(-\frac{1.5}{\sqrt{3}})^2 + (-\frac{1}{2})^2}}
-	\eqn{|z|}{\sqrt{\frac{3}{4}+\frac{1}{2}}}
-	\eqn{|z|}{1}\\
-	\\
-	\alpha&=\pi -sin^{-1}\left(\left|\frac{-1.5}{\sqrt{3}}\right|\right) \land \alpha=\pi-cos^{-1}\left(\left|\frac{-1}{2}\right|\right)\land \alpha=\pi-tan^{-1}\left(\frac{\frac{-1.5}{\sqrt{3}}}{-0.5}\right)\\
-	\alpha&=\frac{2}{3}\pi \\
-	z&=cos\left(\frac{2}{3}\pi\right)isin\left(\frac{2}{3}\pi\right)
+\begin{enumerate}
+	\item \begin{align*}
+		&\frac{i\sqrt{3}-1}{2}=-\frac{1}{2}+\frac{i\sqrt{3}}{2}\\
+		\\
+		\eqnf{|z|}{\sqrt{(\frac{\sqrt{3}}{2})^2 + (-\frac{1}{2})^2}}
+		\eqn{|z|}{1}\\
+		\alpha&=\pi -sin^{-1}\left(\left|\frac{\sqrt{3}}{2}\right|\right)=\pi-cos^{-1}\left(\left|\frac{-1}{2}\right|\right)=\pi-tan^{-1}\left(\frac{|\frac{\sqrt{3}}{2}|}{|-0.5|}\right)\\
+		\alpha&=\frac{2}{3}\pi \\
+		z&=cos\left(\frac{2}{3}\pi\right)isin\left(\frac{2}{3}\pi\right)
+	\end{align*}
+	\item \begin{align*}
+		w&=\sqrt[5]{z}\\
+		w&=\frac{1-i\sqrt{3}}{1+i}\\
+		w&=\frac{(1-i\sqrt{3})(1-i)}{(1+i)*(1-i)}\\
+		w&=\frac{1-i(1+\sqrt{3})-\sqrt{3}}{2}\\
+		w&=\frac{1-\sqrt{3}}{2}-i\frac{1+\sqrt{3}}{2}\\
+		\\
+		|w|&=\sqrt{\left(\frac{1-\sqrt{3}}{2}\right)^2+\left(-\frac{1+\sqrt{3}}{2}\right)^2}\\
+		|w|&=\sqrt{2}\\
+		\\
+		\alpha&=\pi+sin^{-1}\left(\frac{\left|-\frac{1+\sqrt{3}}{2}\right|}{\sqrt{2}}\right)=\pi+cos^{-1}\left(\frac{\left|\frac{1-\sqrt{3}}{2}\right|}{\sqrt{2}}\right)\\
+		\alpha&=\frac{17}{12}\pi\\
+		\text{Polardarstellung von w}\\
+		w&=\sqrt{2}\left(cos(\frac{17}{12}\pi)+isin(\frac{17}{12}\pi)\right))\\
+		z&=w^5\\
+		z&=4\sqrt{2}\left(cos(\frac{85}{12}\pi)+isin\left(\frac{85}{12}\pi\right)\right)\\
+		z&=4\sqrt{2}\left(cos(\frac{13}{12}\pi)+isin\left(\frac{13}{12}\pi\right)\right)\\
 \end{align*}
+\end{enumerate}
 
 \item Bestimme alle Lösungen der Gleichung $z^3 = -8$.
 \end{enumerate}

@@ -1,9 +1,7 @@
 *.aux
 *.log
 *.synctex.gz
-*.pdf
 *.bak
-**/.pdf
 **/.log
 **/.bak
 **/.aux

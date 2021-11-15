@@ -1,0 +1,61 @@
+\documentclass{HM}
+
+\newenvironment{LGS}{
+ \begin{tabular}{}
+}{
+ \end{tabular}
+}
+
+\begin{document}
+\begin{enumerate}
+\item [4.3] Berechne den Rang der Matrizen
+$$A=\begin{pmatrix}
+1&1&2&0\\
+7&2&-6&4\\
+2&1&s&t
+\end{pmatrix},
+B=\begin{pmatrix}
+1&8&-1&-1&2\\
+-3&15&-3&0&3\\
+-3&29&-7&2&5
+\end{pmatrix}$$
+Der Rang von $A$ hängt dabei von den Parametern $s,t\in\R$ ab.
+\item [4.4] Bestimme alle Lösungen des linearen Gleichungssystems
+$$\begin{matrix}
+ &     & & 3x_2 &-& 5x_3 &+& x_4  &=& 0\\
+-&x_1  &-& 3x_2 & &      &-& x_4  &=& -5\\
+-&2x_1 &+& x_2  &+& 2x_3 &+& 2x_4 &=& 2\\
+-&3x_1 &+& 4x_2 &+& 2x_3 &-& 2x_4 &=& 8
+\end{matrix}$$
+\item [4.5] Gegeben ist das lineare Gleichungssystem
+$$\begin{matrix}
+ &2x_1&+&x_2&+&x_3&=&0\\
+ &2x_1&+&2x_2&+&tx_3&=&1\\
+-&2tx_1&+&tx_2&+&9x_3&=&6
+\end{matrix}$$
+mit einem Parameter $t\in\R$.
+\begin{enumerate}
+\item Für welche $t\in\R$ ist das System eindeutig lösbar? Wie lautet die Lösung?
+\item Für welche $t\in\R$ gibt es unendlich viele Lösungen? Gib alle lösungen an.
+\item Für welche $t\in\R$ gibt es keine Lösung?
+\end{enumerate}
+\item [4.6] Sei $A=(a_{j,k})\in\R^{m\times n}$
+\begin{enumerate}
+\item In jedem der folgenden fünf Fälle finde Matrizen $x$ und/oder $y$ mit folgenden Eigenschaften: Eines der Produkte $Ax, yA, yAx$ ist
+\begin{enumerate}
+\item die $j$-te zeile von $A$,
+\item die $k$-te Spalte von $A$,
+\item das Element $a_{jk}$,
+\item die Summe der Einträge der $j$-ten zeile von $A$,
+\item die Summe der Einträge der $k$-ten Spalte von $A$.
+\end{enumerate}
+\item Sei $B\in\R^{m\times n}$
+\begin{enumerate}
+\item die $j$-te und die $k$-te Spalte von $A$ vertauscht,
+\item die $j$-te und die $k$-te Zeile von $A$ vertauscht,
+\item das $\lambda$-Fache der $j$-ten Zeile zur $k$-ten zeile von $A$ addiert.
+\end{enumerate}
+In jedem der deri Fälle finde eine matrix $C$, so dass entweder $B=CA$ oder $B=AC$
+\end{enumerate}
+\end{enumerate}
+\end{document}

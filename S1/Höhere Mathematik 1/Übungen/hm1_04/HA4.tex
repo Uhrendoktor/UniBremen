@@ -19,7 +19,51 @@ B=\begin{pmatrix}
 -3&15&-3&0&3\\
 -3&29&-7&2&5
 \end{pmatrix}$$
-Der Rang von $A$ hängt dabei von den Parametern $s,t\in\R$ ab.
+Der Rang von $A$ hängt dabei von den Parametern $s,t\in\R$ ab.\\
+
+\begin{align*}
+	\eqnf{A}{\begin{pmatrix}
+			1&1&2&0\\
+			7&2&-6&4\\
+			2&1&s&t
+		\end{pmatrix}}
+	\eqn{A}{\begin{pmatrix}
+			1&1&2&0\\
+			0&-5&-20&4\\
+			0&-1&s-4&t
+	\end{pmatrix}}
+		\eqn{A}{\begin{pmatrix}
+			1&1&2&0\\
+			0&-5&-20&4\\
+			0&0&s&t-\frac{4}{5}
+	\end{pmatrix}}
+\end{align*}
+für $s\neq 0\land t \neq \frac{4}{5}$ ist der Rang 3\\
+für $s=0\land t=\frac{4}{5}$ ist der Rang 2\\
+\begin{align*}
+	\eqnf{B}{\begin{pmatrix}
+			1&8&-1&-1&2\\
+			-3&15&-3&0&3\\
+			-3&29&-7&2&5\\
+	\end{pmatrix}}
+	\eqn{B}{\begin{pmatrix}
+			1&8&-1&-1&2\\
+			0&39&-6&-3&9\\
+			0&53&-10&-1&11\\
+	\end{pmatrix}}
+	\eqn{B}{\begin{pmatrix}
+			1&8&-1&-1&2\\
+			0&13&-2&-1&3\\
+			0&0&-\frac{24}{13}&\frac{40}{13}&-\frac{16}{13}\\
+	\end{pmatrix}}
+		\eqn{B}{\begin{pmatrix}
+			1&8&-1&-1&2\\
+			0&13&-2&-1&3\\
+			0&0&-24&40&-16\\
+	\end{pmatrix}}
+\end{align*}
+Rang ist 3\\
+
 \item [4.4] Bestimme alle Lösungen des linearen Gleichungssystems
 $$\begin{matrix}
  &     & & 3x_2 &-& 5x_3 &+& x_4  &=& 0\\
@@ -37,7 +81,77 @@ mit einem Parameter $t\in\R$.
 \begin{enumerate}
 \item Für welche $t\in\R$ ist das System eindeutig lösbar? Wie lautet die Lösung?
 \item Für welche $t\in\R$ gibt es unendlich viele Lösungen? Gib alle lösungen an.
-\item Für welche $t\in\R$ gibt es keine Lösung?
+\item Für welche $t\in\R$ gibt es keine Lösung?\\\\
+LGS als matrix $A$:
+\begin{align*}
+	\eqnf{A}{\left(\begin{array}{ccc|c}
+		2&1&1&0\\
+		2&2&t&1\\
+		-2t&t&9&6\\
+	\end{array}\right)}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+		2&1&1&0\\
+		0&1&t-1&1\\
+		-2t&t&9&6\\
+	\end{array}\right)}
+\end{align*}
+
+(a) $A$ mit $t=1$
+\begin{align*}
+	\eqnf{A}{\left(\begin{array}{ccc|c}
+			2&1&1&0\\
+			0&1&0&1\\
+			-2&1&9&6\\
+		\end{array}\right)}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+			2&1&1&0\\
+			0&1&0&1\\
+			0&2&10&6\\
+		\end{array}\right)}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+			2&1&1&0\\
+			0&1&0&1\\
+			0&0&10&4\\
+		\end{array}\right)}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+		2&1&1&0\\
+		0&1&0&1\\
+		0&0&1&\frac{4}{10}\\
+	\end{array}\right)}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+		1&0&0&-0.7\\
+		0&1&0&1\\
+		0&0&1&0.4\\
+	\end{array}\right)}
+\end{align*}
+Das LGS hat eine eindeutige Lösung für $t=1$:
+$$\begin{matrix}
+	x_1=-0.7,\\x_2=0,\\x_3=0.4
+\end{matrix}$$
+\\
+(b)
+\begin{align*}
+	\left(\begin{array}{ccc|c}
+		2&1&1&0\\
+		-2t&t&9&6\\
+		0&1&t-1&1\\
+	\end{array}\right)
+\end{align*}
+\\
+(c)
+\begin{align*}
+	\eqnf{A}{\left(\begin{array}{ccc|c}
+		2&1&1&0\\
+		0&1&t-1&1\\
+		-2t&t&9&6\\
+	\end{array}\right)}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+		2&1&1&0\\
+		0&1&t-1&1\\
+		-2t&t+1&8+t&7\\
+	\end{array}\right)}
+\end{align*}
+Da in der 3ten Zeile von $A$ 
 \end{enumerate}
 \item [4.6] Sei $A=(a_{j,k})\in\R^{m\times n}$
 \begin{enumerate}

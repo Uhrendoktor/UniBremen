@@ -15,6 +15,7 @@
 
 \newcommand{\LLeftrightarrow}{ \alignleft{\Leftrightarrow}}
 
+\newcommand{\eqinfo}[1]{&\makebox[2cm][l]{$\vert #1$}}
 \newcommand{\Eqn}[3]{#1 &#2 #3}
 \newcommand{\eqnf}[2]{\Eqn{#1}{=}{#2}\\}
 \newcommand{\eqn}[2]{\LLeftrightarrow\Eqn{#1}{=}{#2}\\}

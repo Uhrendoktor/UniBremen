@@ -6,7 +6,7 @@
 
 % Edit these as appropriate
 \newcommand\course{HM 1}
-\newcommand\hwnumber{3}                  % <-- homework number
+\newcommand\hwnumber{4}                  % <-- homework number
 \newcommand\NetIDa{6113829}           % <-- NetID of person #1
 \newcommand\NetIDb{6111554}           % <-- Matrikelnummer of person #2 (Comment this line out for problem sets)
 

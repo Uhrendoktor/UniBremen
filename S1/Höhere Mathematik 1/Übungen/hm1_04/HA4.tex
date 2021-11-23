@@ -244,9 +244,45 @@ d&\coloneqq (d_{j,1}); &d_{j,1}&\coloneqq 1
 \end{enumerate}
 \item Sei $B\in\R^{m\times n}$
 \begin{enumerate}
-\item die $j$-te und die $k$-te Spalte von $A$ vertauscht,
-\item die $j$-te und die $k$-te Zeile von $A$ vertauscht,
-\item das $\lambda$-Fache der $j$-ten Zeile zur $k$-ten zeile von $A$ addiert.
+\item die $l$-te und die $p$-te Spalte von $A$ vertauscht,\\
+$$C^{l,p} = (c_{j,k}) \in \R^{m\times n}; c_{j,k} \coloneqq \begin{cases}
+	1: j=k \lnot\land (k=l \lor k=p)\\
+	1: j=n-k \land (k=l \lor k=p) \\
+	0: sonst
+\end{cases}$$\\
+$$C^{2,3} \in\R^{4\times 4} = \begin{pmatrix}
+		1&0&0&0\\
+		0&0&1&0\\
+		0&1&0&0\\
+		0&0&0&1\\
+	\end{pmatrix}$$
+	\\
+\item die $l$-te und die $p$-te Zeile von $A$ vertauscht,
+$$C^{l,p} = (c_{j,k}) \in \R^{m\times n}; c_{j,k} \coloneqq \begin{cases}
+	1: j=k \lnot\land (k=l \lor k=p)\\
+	1: j=n-k \land (k=l \lor k=p) \\
+	0: sonst
+\end{cases}$$\\
+$$C^{2,3} \in\R^{4\times 4} = \begin{pmatrix}
+	1&0&0&0\\
+	0&0&1&0\\
+	0&1&0&0\\
+	0&0&0&1\\
+\end{pmatrix}$$
+\\
+\item das $\lambda$-Fache der $l$-ten Zeile zur $p$-ten zeile von $A$ addiert.\\
+$$C^{l,p,\lambda} = (c_{j,k}) \in \R^{m\times n}; c_{j,k} \coloneqq \begin{cases}
+	1: j=k\\
+	\lambda: l=k \land p=j\\
+	0: sonst
+\end{cases}$$\\
+$$C^{2,3,\lambda} \in\R^{4\times 4} = \begin{pmatrix}
+	1&0&0&0\\
+	0&1&0&0\\
+	0&\lambda&1&0\\
+	0&0&0&1\\
+\end{pmatrix}$$
+\\
 \end{enumerate}
 In jedem der deri Fälle finde eine matrix $C$, so dass entweder $B=CA$ oder $B=AC$
 \end{enumerate}

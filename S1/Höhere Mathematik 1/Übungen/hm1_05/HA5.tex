@@ -1,4 +1,124 @@
 \documentclass{HM}
 \begin{document}
-
+\begin{enumerate}
+\item [5.2] Entscheide (mit Begründung!), ob die folgenden 4 Abbildungen linear sind:
+\begin{enumerate}
+\item $\varphi\colon\R^2\to\R^3, \begin{pmatrix}
+x\\
+y
+\end{pmatrix}\mapsto\begin{pmatrix}
+x+1\\
+2y\\
+x+y
+\end{pmatrix};$
+\item $\varphi\colon\R^n\to\R, \begin{pmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix}\mapsto\sum_{k=1}^n |x_k|;$
+\item $\varphi\colon\R^n\to\R, \begin{pmatrix}
+x_1\\
+\vdots\\
+x_n
+\end{pmatrix}\mapsto\sum_{k=1}^n x_k$
+\item $\varphi\colon V\to\R, f\mapsto f(x_0)$, wobei $V$ der Vektorraum aller Funktionen von $\R$ nach $\R$ ist, und $x_0\in\R$.
+\end{enumerate}
+\item [5.3] Begründe jeweils, warum $V$ kein Vektorraum ist:
+\begin{enumerate}
+\item $V\coloneqq\R^2$ mit $\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix}+\begin{pmatrix}
+y_1\\
+y_2
+\end{pmatrix}\coloneqq\begin{pmatrix}
+x_1+y_1\\
+x_2+y_2
+\end{pmatrix}$ und $\lambda\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix}\coloneqq\begin{pmatrix}
+\lambda x_1\\
+x_2
+\end{pmatrix}$.
+\item $V\coloneqq\R^2$ mit $\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix}+\begin{pmatrix}
+y_1\\
+y_2
+\end{pmatrix}\coloneqq\begin{pmatrix}
+x_1+y_2\\
+x_2+y_1
+\end{pmatrix}$ und $\lambda\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix}\coloneqq\begin{pmatrix}
+\lambda x_1\\
+\lambda x_2
+\end{pmatrix}$.
+\item $V\coloneqq\R^2$ mit $\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix}+\begin{pmatrix}
+y_1\\
+y_2
+\end{pmatrix}\coloneqq\begin{pmatrix}
+x_1+y_1\\
+x_2+y_2
+\end{pmatrix}$ und $\lambda\begin{pmatrix}
+x_1\\
+x_2
+\end{pmatrix}\coloneqq\begin{pmatrix}
+\lambda x_1\\
+0
+\end{pmatrix}$.
+\item $V\coloneqq\lbrace\begin{pmatrix}
+x\\
+y
+\end{pmatrix}\in\R^2; x=y^2 \rbrace$ mit $\begin{pmatrix}
+x_1\\
+y_1
+\end{pmatrix}+\begin{pmatrix}
+x_2\\
+y_2
+\end{pmatrix}\coloneqq\begin{pmatrix}
+x_1+x_2\\
+y_1+y_2
+\end{pmatrix}$ und $\lambda\begin{pmatrix}
+x\\
+y
+\end{pmatrix}\coloneqq\begin{pmatrix}
+\lambda x\\
+\lambda y
+\end{pmatrix}$.
+\end{enumerate}
+\item [5.4] Sei $\varphi\colon\R^2\to\R^3$ eine lineare Abbildung mit
+$$\varphi\begin{pmatrix}
+1\\
+1
+\end{pmatrix}=\begin{pmatrix}
+1\\
+0\\
+-2
+\end{pmatrix},
+\varphi\begin{pmatrix}
+1\\
+2
+\end{pmatrix}=\begin{pmatrix}
+0\\
+1\\
+-1
+\end{pmatrix}$$.
+Durch welche Matrix $A\in\R^{m\times n}$ ist die Abbildung $\varphi$ gegeben? Berechne $\varphi\begin{pmatrix}
+7\\
+12
+\end{pmatrix}$.\\
+\item [5.5] Sei $V$ ein Vektorraum, und $v^1,v^2,v^3,v^4$ seien linear unabhängige Vektoren in $V$. Ermittle in jedem der folgenden 3 Fälle, ob die gegebenen Vektoren linear unabhängig sind:
+\begin{enumerate}
+\item $v^1, v^1+v^2, v^1+v^2+v^3, v^1+v^2+v^3+v^4$,
+\item $v^1-v^2, v^2+v^3, v^3-v^4, v^4+v^1$,
+\item $v^1+v^2, v^2+v^3, v^3+v^4, v^4-v^1$.
+\end{enumerate}
+\end{enumerate}
 \end{document}

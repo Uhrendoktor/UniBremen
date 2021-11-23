@@ -226,6 +226,26 @@ $$\text{für } t\notin\{3,-\frac{3}{2}\}:\mathbb{L}=\begin{pmatrix}
 \item das Element $a_{jk}$,
 \item die Summe der Einträge der $j$-ten zeile von $A$,
 \item die Summe der Einträge der $k$-ten Spalte von $A$.
+Seien $a,b\in\R^{1\times m}$ und $c,d\in\R^{n\times 1}$ mit:
+\begin{align*}
+a^l&\coloneqq (a_{1,k}); &a_{1,k}&\coloneqq\begin{cases}
+0 &k\neq l,\\
+1 &k=l 
+\end{cases},\\
+b&\coloneqq (b_{1,k}); &b_{1,k}&\coloneqq 1\\
+c^l&\coloneqq (c_{j,1}); &c_{j,1}&\coloneqq \begin{cases}
+0 &j\neq l,\\
+1 &j=l
+\end{cases}\\
+d&\coloneqq (d_{j,1}); &d_{j,1}&\coloneqq 1
+\end{align*}
+\begin{enumerate}
+\item $(yA)$  $a^jA$
+\item $(Ax)$  $Ac^k$
+\item $(yAx)$ $a^jAc^k$
+\item $(yAx)$ $a^jAd$
+\item $(yAx)$ $bAc^k$
+\end{enumerate}
 \end{enumerate}
 \item Sei $B\in\R^{m\times n}$
 \begin{enumerate}

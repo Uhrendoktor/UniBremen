@@ -1,5 +1,12 @@
 \documentclass{HM}
 
+\usepackage{stmaryrd}
+\newenvironment{LGS}{
+ \begin{tabular}{}
+}{
+ \end{tabular}
+}
+
 \begin{document}
 \begin{enumerate}
 \item [4.3] Berechne den Rang der Matrizen
@@ -56,7 +63,7 @@ für $s=0\land t=\frac{4}{5}$ ist der Rang 2\\
 			0&0&-24&40&-16\\
 	\end{pmatrix}}
 \end{align*}
-B besitzt den Rang 3.\\
+Rang ist 3\\
 
 \item [4.4] Bestimme alle Lösungen des linearen Gleichungssystems
 $$\begin{matrix}
@@ -132,66 +139,83 @@ LGS als matrix $A$:
 	\eqn{A}{\left(\begin{array}{ccc|c}
 		2&1&1&0\\
 		0&1&t-1&1\\
-		-2t&t&9&6\\
+		0&2t&9+t&6\\
+	\end{array}\right)}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+		2&1&1&0\\
+		0&1&t-1&1\\
+		0&0&9+3t-2t^2&6-2t\\
 	\end{array}\right)}
 \end{align*}
 
-(a) $A$ mit $t=1$
-\begin{align*}
-	\eqnf{A}{\left(\begin{array}{ccc|c}
-			2&1&1&0\\
-			0&1&0&1\\
-			-2&1&9&6\\
-		\end{array}\right)}
-	\eqn{A}{\left(\begin{array}{ccc|c}
-			2&1&1&0\\
-			0&1&0&1\\
-			0&2&10&6\\
-		\end{array}\right)}
-	\eqn{A}{\left(\begin{array}{ccc|c}
-			2&1&1&0\\
-			0&1&0&1\\
-			0&0&10&4\\
-		\end{array}\right)}
-	\eqn{A}{\left(\begin{array}{ccc|c}
-		2&1&1&0\\
-		0&1&0&1\\
-		0&0&1&\frac{4}{10}\\
-	\end{array}\right)}
-	\eqn{A}{\left(\begin{array}{ccc|c}
-		1&0&0&-0.7\\
-		0&1&0&1\\
-		0&0&1&0.4\\
-	\end{array}\right)}
-\end{align*}
-Das LGS hat eine eindeutige Lösung für $t=1$:
-$$\begin{matrix}
-	x_1=-0.7,\\x_2=0,\\x_3=0.4
-\end{matrix}$$
-\\
 (b)
-\begin{align*}
-	\left(\begin{array}{ccc|c}
-		2&1&1&0\\
-		-2t&t&9&6\\
-		0&1&t-1&1\\
-	\end{array}\right)
+Berrechnen für welche $t$ dies $9+3t-2t^2$ 0 ergibt\\
+\begin{align*}	
+	\eqnfi{9+3t-2t^2}{0}{*-\frac{1}{2}}
+	\eqn{-4.5-1.5t+t^2}{0}
+	\text{pq-Formel mit }p=-1.5\text{ und }q=-4.5\\
+	t\in\{3,-\frac{3}{2}\}: 9+3t-2t^2=0
 \end{align*}
+Bei betrachtung von Zeile 3 von $A$ fällt jetzt auf das für $t=3$ die komplette Zeile zu $0$ wird.
+Damit haben wir zu wenig Informationen um eine eindeutige Lösung zu finden damit gibt es unentlich viele Lösungen.\\
+\begin{align*}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+			2&1&1&0\\
+			0&1&t-1&1\\
+			0&0&9+3t-2t^2&6-2t\\
+		\end{array}\right)}
+	\text{mit }t=3\\
+	\eqn{A}{\left(\begin{array}{ccc|c}
+			2&1&1&0\\
+			0&1&2&1\\
+		\end{array}\right)}
+	\eqn{A}{\left(\begin{array}{ccc|c}
+			1&0&-\frac{1}{2}&-\frac{1}{2}\\
+			0&1&2&1\\
+		\end{array}\right)}
+	\eqnf{x_1-\frac{x_3}{2}}{-\frac{1}{2}}
+	\eqn{x_1}{\frac{x_3-1}{2}}\\
+	\eqnf{x_2+2x_3}{1}
+	\eqn{x_2}{1-2x_3}
+\end{align*}
+
+Für $t=3$ hat $A$ unentlich viele Lösungen definiert durch:
+$$x_1=\frac{x_3-1}{2} \text{ und }x_2=1-2x_3$$ 
 \\
 (c)
+Unterste Zeile von $A$ mit $t=-\frac{3}{2}$ aus (b):\\
+$$0x_3=9\lightning$$
+Damit gibt es keine Lösung bei $$t=-\frac{3}{2}$$
+\\\\
+(a)
 \begin{align*}
-	\eqnf{A}{\left(\begin{array}{ccc|c}
-		2&1&1&0\\
-		0&1&t-1&1\\
-		-2t&t&9&6\\
-	\end{array}\right)}
-	\eqn{A}{\left(\begin{array}{ccc|c}
-		2&1&1&0\\
-		0&1&t-1&1\\
-		-2t&t+1&8+t&7\\
-	\end{array}\right)}
+	A&=\left(\begin{array}{ccc|c}
+			2&1&1&0\\
+			0&1&t-1&1\\
+			0&0&9+3t-2t^2&6-2t\\
+		\end{array}\right)\\\\
+	\text{Daraus folgt }
+	\eqnf{x_3}{\frac{6-2t}{9+3t-2t^2}}
+	\eqn{x_3}{\frac{3-t}{-(t^2-1.5t-4.5)}}
+	\eqn{x_3}{\frac{3-t}{-((t-3)(t+1.5))}}
+	\eqn{x_3}{\frac{2}{2t+3}}
+	\\
+	\eqnf{x_2}{1-(\frac{2}{2t+3}(t-1))}
+	\eqn{x_2}{1-(\frac{2t-2}{2t+3})}
+	\text{poly div: }\\
+	\eqn{x_2}{\frac{5}{2t+3}}\\
+	\eqnf{x_1}{-\frac{1}{2}-((-\frac{t}{2}+1)\frac{2}{2t+3})}
+	\eqn{x_1}{-\frac{1}{2}+\frac{t-2}{2t+3}}
+	\text{poly div:}\\
+	\eqn{x_1}{\frac{-3.5}{2t+3}}
 \end{align*}
-Da in der 3ten Zeile von $A$ 
+Aus (b) unc (c) folgen das $t\notin\{3,-\frac{3}{2}\}$ sein muss
+$$\text{für } t\notin\{3,-\frac{3}{2}\}:\mathbb{L}=\begin{pmatrix}
+	x_1\\x_2\\x_3
+\end{pmatrix}=\begin{pmatrix}
+	-3.5\\5\\2
+\end{pmatrix}*\frac{1}{2t+3}$$
+
 \end{enumerate}
 \item [4.6] Sei $A=(a_{j,k})\in\R^{m\times n}$
 \begin{enumerate}
@@ -202,24 +226,6 @@ Da in der 3ten Zeile von $A$
 \item das Element $a_{jk}$,
 \item die Summe der Einträge der $j$-ten zeile von $A$,
 \item die Summe der Einträge der $k$-ten Spalte von $A$.
-\end{enumerate}
-Seien $a,b\in\R^{1\times m}$ und $c,d\in\R^{n\times 1}$ mit:
-\begin{center}
-$a^l\coloneqq e^l=\begin{pmatrix}
-0,\ldots,1,\ldots,0
-\end{pmatrix}$,\\
-$b\coloneqq (b_{jk}=1)$\\
-$c^l\coloneqq e^l = \begin{pmatrix}
-0\\\vdots\\1\\\vdots\\0
-\end{pmatrix}$\\
-$d\coloneqq (d_{jk}=1)$
-\end{center}
-\begin{enumerate}
-\item $(yA)$  $a^jA$
-\item $(Ax)$  $Ac^k$
-\item $(yAx)$ $a^jAc^k$
-\item $(yAx)$ $a^jAd$
-\item $(yAx)$ $bAc^k$
 \end{enumerate}
 \item Sei $B\in\R^{m\times n}$
 \begin{enumerate}

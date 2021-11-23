@@ -1,22 +1,27 @@
 /**
  * Diese Klasse definiert <Zusammenfassung ergänzen>
  *
- * @author Julius Walczynski
+ * @author Moritz Salger
  */
 class NPC {
-    private final GameObject gameObject;
-    private final int walkDistance;
+    private final GameObject avatar;
+    private final int patrolDistance;
     private int progress;
     private boolean returning = false;
-    public NPC(final int _x, final int _y, final String _fileName, int _walkDistance, int _progress){
-        gameObject = new GameObject(_x, _y, 0, _fileName);
-        walkDistance = _walkDistance;
-        progress = (_progress>walkDistance||_progress<1)?1:_progress;
+
+    public NPC(GameObject avatar, int patrolDistance, int progress){
+        this.avatar = avatar;
+        this.patrolDistance = patrolDistance;
+        this.progress = progress;
+
+        if (progress>patrolDistance || progress < 1) {
+            this.progress = 1;
+        }
     }
     
     public void act(){
         progress++;
-        if(progress>=walkDistance){
+        if(progress>=patrolDistance){
             returning = !returning;
             progress = 1;
         }
@@ -24,11 +29,11 @@ class NPC {
         Move(_direction);
     }
     
-    private void Move(int _direction){
-        gameObject.setRotation(_direction);
-        int _x = gameObject.getX();
-        int _y = gameObject.getY();
-        switch(_direction){
+    private void Move(int direction){
+        avatar.setRotation(direction);
+        int _x = avatar.getX();
+        int _y = avatar.getY();
+        switch(direction){
             case 0:
                 _x++;
                 break;
@@ -42,7 +47,7 @@ class NPC {
                 _y--;
                 break;
         }
-        gameObject.setLocation(MinMax(0, RPGGame.FIELD_X-1, _x), MinMax(0, RPGGame.FIELD_Y-1, _y));
+        avatar.setLocation(MinMax(0, RPGGame.FIELD_X-1, _x), MinMax(0, RPGGame.FIELD_Y-1, _y));
     }
     
     private static int MinMax(int _min, int _max, int _value){
@@ -50,10 +55,10 @@ class NPC {
     }
     
     public int getX(){
-        return gameObject.getX();
+        return avatar.getX();
     }
     
     public int getY(){
-        return gameObject.getY();
+        return avatar.getY();
     }
 }

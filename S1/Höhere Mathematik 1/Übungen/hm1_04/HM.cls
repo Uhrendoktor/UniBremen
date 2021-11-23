@@ -14,6 +14,7 @@
 \newcommand{\alignleft}[1]{\tag*{\llap{\makebox[\linewidth][l]{$#1$}}}}
 \newcommand{\eqinfo}[1]{&\makebox[2cm][l]{$\vert #1$}}
 \newcommand{\LLeftrightarrow}{ \alignleft{\Leftrightarrow}}
+\newcommand{\eqinfo}[1]{&\makebox[2cm][l]{$\vert #1$}}
 
 \newcommand{\Eqn}[3]{#1 &#2 #3}
 \newcommand{\eqnf}[2]{\Eqn{#1}{=}{#2}\\}

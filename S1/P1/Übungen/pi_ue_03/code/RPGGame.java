@@ -7,7 +7,7 @@ import java.util.HashMap;
  * Dies ist die Hauptklasse eines Spiels. Sie enthält die Hauptmethode, die zum
  * Starten des Spiels aufgerufen werden muss.
  *
- * @author Julius Walczynski
+ * @author Moritz Salger
  */
 abstract class RPGGame extends Game
 {
@@ -71,51 +71,50 @@ abstract class RPGGame extends Game
         }
         goal = new GameObject(4,2,0,"goal");
         player = new GameObject(0,3, 0,"laila");
-        NPCs[0] = new NPC(1,0, "claudius", 3, 1);
-        NPCs[1] = new NPC(4,1, "child", 5, 4);
+        NPCs[0] = new NPC(new GameObject(1, 0, "claudius"), 3, 1);
+        NPCs[1] = new NPC(new GameObject(4, 1, "claudius"), 5, 4);
         
-        int _keyCode = 0;
-        int _x;
-        int _y;
-        gameloop:
+        int key = 0;
+        int x;
+        int y;
         while(true){
-            _x = player.getX();
-            _y = player.getY();
-            _keyCode = Game.getNextKey();
-            switch(_keyCode){
+            x = player.getX();
+            y = player.getY();
+            key = Game.getNextKey();
+            switch(key){
                 case VK_RIGHT:
                     player.setRotation(0);
-                    _x++;
+                    x++;
                     break;
                 case VK_LEFT:
                     player.setRotation(2);
-                    _x--;
+                    x--;
                     break;
                 case VK_DOWN:
                     player.setRotation(1);
-                    _y++;
+                    y++;
                     break;
                 case VK_UP:
                     player.setRotation(3);
-                    _y--;
+                    y--;
                     break;
                 default:
                     Game.playSound("error");
                     continue;
             }
-            _x = MinMax(0, FIELD_X-1, _x);
-            _y = MinMax(0, FIELD_Y-1, _y);
+            x = MinMax(0, FIELD_X-1, x);
+            y = MinMax(0, FIELD_Y-1, y);
             
-            if(definedBackground[_y][_x].startsWith("w") || (_x==player.getX() && _y==player.getY())) continue;
+            if(definedBackground[y][x].startsWith("w") || (x==player.getX() && y==player.getY())) continue;
                 
-            player.setLocation(_x, _y);
+            player.setLocation(x, y);
             Game.playSound("step");
 
-            for(NPC _npc: NPCs){
-                _npc.act();
-                if(checkCollision(player.getX(), player.getY(), _npc.getX(), _npc.getY())){
+            for(NPC npc: NPCs){
+                npc.act();
+                if(checkCollision(player.getX(), player.getY(), npc.getX(), npc.getY())){
                     player.setVisible(false);
-                    break gameloop;
+                    System.exit(0);
                 }
             }
         }

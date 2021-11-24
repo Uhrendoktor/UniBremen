@@ -190,6 +190,13 @@ x_2
 \lambda x_1\\
 x_2
 \end{pmatrix}$.
+Es wiederspricht der Grunddefinition von Vektor multiplikation $\lambda\begin{pmatrix}
+	x_1\\x_2
+\end{pmatrix}=
+\begin{pmatrix}
+	\lambda x_1\\\lambda x_2
+\end{pmatrix}$
+\\\\
 \item $V\coloneqq\R^2$ mit $\begin{pmatrix}
 x_1\\
 x_2
@@ -205,7 +212,17 @@ x_2
 \end{pmatrix}\coloneqq\begin{pmatrix}
 \lambda x_1\\
 \lambda x_2
-\end{pmatrix}$.
+\end{pmatrix}$.\\
+
+Nach kommutativ Gesetz sollte $$\begin{pmatrix}x_1\\x_2\end{pmatrix}+
+\begin{pmatrix}y_1\\y_2\end{pmatrix}=
+\begin{pmatrix}x_1+y_2\\x_2+y_1\end{pmatrix}$$
+Auch gleich
+$$\begin{pmatrix}x_1\\x_2\end{pmatrix}+
+\begin{pmatrix}y_1\\y_2\end{pmatrix}=
+\begin{pmatrix}y_1+x_2\\y_2+x_1\end{pmatrix}$$
+Sein.\\
+Da dies nicht der Fall ist, bricht es das kommutativ Gesetz\\
 \item $V\coloneqq\R^2$ mit $\begin{pmatrix}
 x_1\\
 x_2
@@ -221,7 +238,12 @@ x_2
 \end{pmatrix}\coloneqq\begin{pmatrix}
 \lambda x_1\\
 0
-\end{pmatrix}$.
+\end{pmatrix}$.\\\\
+Hiermit ergibt
+$$1\begin{pmatrix}x_1\\x_2\end{pmatrix}=
+\begin{pmatrix}x_1\\0\end{pmatrix}$$
+Dass bricht die Definition des neutralen multiplikations Elements
+\\
 \item $V\coloneqq\lbrace\begin{pmatrix}
 x\\
 y
@@ -240,7 +262,21 @@ y
 \end{pmatrix}\coloneqq\begin{pmatrix}
 \lambda x\\
 \lambda y
-\end{pmatrix}$.
+\end{pmatrix}$.\\\\
+Mit $f(x)=y^2$ sollte
+$$f\left(\lambda\begin{pmatrix}x\\y\end{pmatrix}\right)=
+f\left(\begin{pmatrix}\lambda x\\\lambda y\end{pmatrix}\right)=
+\begin{pmatrix}
+	\lambda^2y^2\\\lambda y
+\end{pmatrix}$$
+aber auch
+$$
+f\left(\lambda\begin{pmatrix}x\\y\end{pmatrix}\right)=
+\lambda f\left(\begin{pmatrix}x\\y\end{pmatrix}\right)=
+\lambda\begin{pmatrix}y^2\\y\end{pmatrix}=
+\begin{pmatrix}\lambda y^2\\\lambda y\end{pmatrix}$$\\
+Die Tatsache das die beiden Rechnungen nicht die gleiche Lösung ergeben zeigt das das kommutativ Gesetz gebrochen wird
+\\
 \end{enumerate}
 \item [5.4] Sei $\varphi\colon\R^2\to\R^3$ eine lineare Abbildung mit
 $$\varphi\begin{pmatrix}

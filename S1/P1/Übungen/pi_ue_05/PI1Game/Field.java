@@ -32,13 +32,46 @@ class Field
         "path-x"
     };
     
+    private String[] map;
+    private GameObject[] tiles;
+    
+    public Field(String[] _map){
+        this.map=_map;
+        for(int y = 0; y < this.map.length; y+=2){
+            for(int x = 0; x < this.map[y].length(); x+=2){
+                int signature = getNeighboorhood(x,y);
+                new GameObject(x/2, y/2, 0, NEIGHBORHOOD_TO_FILENAME[signature]);
+            }
+        }
+    }
+    
+    public int getNeighboorhood(int x, int y){
+        return isCellWhitespace(x+1,y)<<0
+              |isCellWhitespace(x,y+1)<<1
+              |isCellWhitespace(x-1,y)<<2
+              |isCellWhitespace(x,y-1)<<3;
+    }
+    
+    private int isCellWhitespace(int x, int y){
+        return getCell(x,y)==' '?0:1;
+    }
+    
+    public char getCell(int x, int y){
+        if(y<0||x<0||y>=this.map.length||x>=this.map[y].length()){
+            return ' ';
+        }
+        return this.map[y].charAt(x);
+    }
+    
+    
+    
     /** Ein Testfall, der alle Nachbarschaften enthält. */
     static void test()
     {
         new GameObject.Canvas(5, 5, 96, 96);
 
         // Einkommentieren, sobald Konstruktor vorhanden
-        /*new Field(new String[] {
+        new Field(new String[] {
             "O-O-O-O  ",
             "|   |    ",
             "O O-O-O O",
@@ -48,6 +81,6 @@ class Field
             "O O-O-O O",
             "    |   |",
             "O-O-O-O-O"
-        });*/
+        });
     }
 }

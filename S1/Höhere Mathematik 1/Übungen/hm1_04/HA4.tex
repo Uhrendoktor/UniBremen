@@ -35,7 +35,7 @@ Der Rang von $A$ hängt dabei von den Parametern $s,t\in\R$ ab.\\
 	\end{pmatrix}}
 \end{align*}
 für $s\neq 0\land t \neq \frac{4}{5}$ ist der Rang 3\\
-für $s=0\land t=\frac{4}{5}$ ist der Rang 2\\
+für $s=0\lor t=\frac{4}{5}$ ist der Rang 2\\
 \begin{align*}
 	\eqnf{B}{\begin{pmatrix}
 			1&8&-1&-1&2\\
@@ -144,14 +144,14 @@ LGS als matrix $A$:
 \end{align*}
 
 (b)
-Berrechnen für welche $t$ dies $9+3t-2t^2$ 0 ergibt\\
+Für welche $t$ $9+3t-2t^2=0$\\
 \begin{align*}	
 	\eqnfi{9+3t-2t^2}{0}{*-\frac{1}{2}}
 	\eqn{-4.5-1.5t+t^2}{0}
 	\text{pq-Formel mit }p=-1.5\text{ und }q=-4.5\\
 	t\in\{3,-\frac{3}{2}\}: 9+3t-2t^2=0
 \end{align*}
-Bei betrachtung von Zeile 3 von $A$ fällt jetzt auf das für $t=3$ die komplette Zeile zu $0$ wird.
+Bei betrachtung von Zeile 3 von $A$ fällt jetzt auf das für $t=3$ die Zeile zu $0$ wird.
 Damit haben wir zu wenig Informationen um eine eindeutige Lösung zu finden damit gibt es unentlich viele Lösungen.\\
 \begin{align*}
 	\eqn{A}{\left(\begin{array}{ccc|c}
@@ -234,6 +234,7 @@ c^l&\coloneqq (c_{j,1}); &c_{j,1}&\coloneqq \begin{cases}
 \end{cases}\\
 d&\coloneqq (d_{j,1}); &d_{j,1}&\coloneqq 1
 \end{align*}
+\end{enumerate}
 \begin{enumerate}
 \item $(yA)$  $a^jA$
 \item $(Ax)$  $Ac^k$
@@ -241,13 +242,13 @@ d&\coloneqq (d_{j,1}); &d_{j,1}&\coloneqq 1
 \item $(yAx)$ $a^jAd$
 \item $(yAx)$ $bAc^k$
 \end{enumerate}
-\end{enumerate}
 \item Sei $B\in\R^{m\times n}$
 \begin{enumerate}
 \item die $l$-te und die $p$-te Spalte von $A$ vertauscht,\\
 $$C^{l,p} = (c_{j,k}) \in \R^{m\times n}; c_{j,k} \coloneqq \begin{cases}
 	1: j=k \lnot\land (k=l \lor k=p)\\
-	1: j=n-k \land (k=l \lor k=p) \\
+	1: j=l \land k=p\\
+	1: j=p \land k=l\\
 	0: sonst
 \end{cases}$$\\
 $$C^{2,3} \in\R^{4\times 4} = \begin{pmatrix}
@@ -256,11 +257,13 @@ $$C^{2,3} \in\R^{4\times 4} = \begin{pmatrix}
 		0&1&0&0\\
 		0&0&0&1\\
 	\end{pmatrix}$$
-	\\
+B = AC
+\\
 \item die $l$-te und die $p$-te Zeile von $A$ vertauscht,
 $$C^{l,p} = (c_{j,k}) \in \R^{m\times n}; c_{j,k} \coloneqq \begin{cases}
 	1: j=k \lnot\land (k=l \lor k=p)\\
-	1: j=n-k \land (k=l \lor k=p) \\
+	1: j=l \land k=p\\
+	1: j=p \land k=l\\
 	0: sonst
 \end{cases}$$\\
 $$C^{2,3} \in\R^{4\times 4} = \begin{pmatrix}
@@ -269,6 +272,7 @@ $$C^{2,3} \in\R^{4\times 4} = \begin{pmatrix}
 	0&1&0&0\\
 	0&0&0&1\\
 \end{pmatrix}$$
+B = CA
 \\
 \item das $\lambda$-Fache der $l$-ten Zeile zur $p$-ten zeile von $A$ addiert.\\
 $$C^{l,p,\lambda} = (c_{j,k}) \in \R^{m\times n}; c_{j,k} \coloneqq \begin{cases}
@@ -282,6 +286,7 @@ $$C^{2,3,\lambda} \in\R^{4\times 4} = \begin{pmatrix}
 	0&\lambda&1&0\\
 	0&0&0&1\\
 \end{pmatrix}$$
+B = CA
 \\
 \end{enumerate}
 In jedem der deri Fälle finde eine matrix $C$, so dass entweder $B=CA$ oder $B=AC$

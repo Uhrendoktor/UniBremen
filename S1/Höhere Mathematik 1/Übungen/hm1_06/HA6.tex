@@ -1,4 +1,50 @@
 \documentclass{HM}
 \begin{document}
-	test
+\begin{enumerate}
+	\item[6.3] Zeige mit der Definition des Grenzwertes (ohne Verwendung von "Rechenregeln"), dass $\lim\limits_{n\to\infty}\frac{n^3+3n}{4n^3-5}=\frac{1}{4}$ ist.\\
+	Für $n\to\infty$ ist das Ergebnis des Bruchs ausschließlich von $\frac{n^3}{4n^3}$ abhängig. Daraus folgt:\\
+	$$\lim\limits_{n\to\infty}\frac{n^3+3n}{4n^3-5}=\lim\limits_{n\to\infty}\frac{n^3}{4n^3}=\lim\limits_{n\to\infty}\frac{1}{4}=\frac{1}{4}$$
+	\item[6.4] Untersuche, ob die Folgen konvergent sind, und bestimme gegebenenfalls den Grenzwert.
+	\begin{enumerate}
+		\item $\left(\frac{4n^2+1}{9n^2-n+3}\right)$\\
+		Für $n\to\infty$ ist das Ergebnis des Bruchs ausschließlich von $\frac{4n^2}{9n^2}$ abhängig. Daraus folgt:\\
+		$$\lim\limits_{n\to\infty}\frac{4n^2+1}{9n^2-n+3}
+		=\lim\limits_{n\to\infty}\frac{4n^2}{9n^2}
+		=\lim\limits_{n\to\infty}\frac{4}{9}
+		=\frac{4}{9}$$
+		Die Folge konvergiert für $n\to\infty$ gegen $\frac{4}{9}$.
+		
+		\item $\left(\sqrt{n^2+n}-n\right)$\\
+		Es gelten $b,c\in\R;b<c \Rightarrow\sqrt{b}<\sqrt{c}$ und $\sqrt{n^2}=n$. \\
+		Somit gilt auch für $n^2<n^2+n \Rightarrow \sqrt{n^2}<\sqrt{n^2+n}$.\\
+		Mit $a\in\R; a>0$ folgt $\sqrt{n^2+n}=n+an$.\\
+		Somit ergibt sich:
+		$$\lim\limits_{n\to\infty}\sqrt{n^2+n}-n
+		=\lim\limits_{n\to\infty}n+an-n
+		=\lim\limits_{n\to\infty}an$$
+		$\Rightarrow \sqrt{n^2+n}-n=an\xrightarrow{n\to\infty}\infty$
+		
+		\item $\left(\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right)\right)$\\
+		Aus $\frac{1}{k^2}\xrightarrow{k\to\infty}0$ folgt $1-\frac{1}{k^2}\xrightarrow{k\to\infty}1$.\\
+		Da $q^n$ für $-1<q<1$ mit $n\to\infty$ gegen 0 läuft und alle Faktoren des Produkts $1-\frac{1}{k^2} \in\left[\frac{2}{3}, 1\right)$ sind, folgt $0\leq \lim\limits_{n\to\infty}\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right) \leq \lim\limits_{n\to\infty}a^n$ mit $a\in\R\coloneqq$ "größter reeller Faktor des Produkts".\\
+		Aus $\lim\limits_{n\to\infty}a^n=\lim\limits_{n\to\infty}q^n=0$, folgt $\lim\limits_{n\to\infty}\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right) = 0$.
+		
+		\item $\sqrt[n]{n!}$\\
+		
+	\end{enumerate}
+	\item[6.5] Seien $(a_n), (b_n)$ Folgen in $\R$. Beweise oder widerlege:
+	\begin{enumerate}
+		\item $a_n\to a, b_n\neq 0$ für alle $n\in\N, \frac{a_n}{b_n}\to 0 \Rightarrow (b_n)$ keine Nullfolge.
+		\item $(b_n)$ Nullfolge, $b_n\neq 0$ für alle $n\in\N\Rightarrow (\frac{1}{b_n})$ nicht konvergent.
+		\item $a_n\to a, a_n\cdot b_n \to c \Rightarrow (b_n)$ konvergent.
+		\item $a_n\to 0, (b_n)$ beschränkt $\Rightarrow a_n\cdot b_n \to 0$.
+	\end{enumerate}
+	\item[6.6] Ermittle (ohne Beweis, aber mit kurzer Begründung) das Supremum, Infimum und, falls existent, Maximum und Minimum folgender Mengen:
+	\begin{enumerate}
+		\item $A=\lbrace 1-\frac{(-1)^n}{n}; n\in\N\rbrace$;
+		\item $B=\lbrace \frac{1}{n}+\frac{1}{m}; m,n\in\N\rbrace$;
+		\item $C=\lbrace x\in\R; x^2-10x\leq 24\rbrace$;
+		\item $D=\lbrace \frac{x}{x+1}; x\geq 0\rbrace$.
+	\end{enumerate}
+\end{enumerate}
 \end{document}

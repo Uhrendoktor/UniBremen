@@ -1,4 +1,6 @@
 \documentclass{HM}
+\usepackage{stmaryrd}
+
 \begin{document}
 \begin{enumerate}
 \item [5.2] Entscheide (mit Begründung!), ob die folgenden 4 Abbildungen linear sind:
@@ -15,39 +17,39 @@ Bedingung 1:
 \begin{align*}
 \eqnf{\varphi(a+b)}{\varphi(a)+\varphi(b)}
 \eqn{\varphi\left(\begin{pmatrix}
-x\\
-y
-\end{pmatrix}+\begin{pmatrix}
-x\\
-y
-\end{pmatrix}\right)}{\varphi\left(\begin{pmatrix}
-x\\
-y
-\end{pmatrix}\right)+\varphi\left(\begin{pmatrix}
-x\\
-y
-\end{pmatrix}\right)}
+	x\\
+	y
+	\end{pmatrix}+\begin{pmatrix}
+	x\\
+	y
+	\end{pmatrix}\right)}{\varphi\left(\begin{pmatrix}
+	x\\
+	y
+	\end{pmatrix}\right)+\varphi\left(\begin{pmatrix}
+	x\\
+	y
+	\end{pmatrix}\right)}
+\eqn{\varphi\left(\begin{pmatrix}
+	2x\\
+	2y
+	\end{pmatrix}\right)}{\begin{pmatrix}
+	x+1\\
+	2y\\
+	x+y
+	\end{pmatrix}+\begin{pmatrix}
+	x+1\\
+	2y\\
+	x+y
+	\end{pmatrix}}
 \eqn{\begin{pmatrix}
-2x\\
-2y
-\end{pmatrix}}{\begin{pmatrix}
-x+1\\
-2y\\
-x+y
-\end{pmatrix}+\begin{pmatrix}
-x+1\\
-2y\\
-x+y
-\end{pmatrix}}
-\eqni{\begin{pmatrix}
-2x+1\\
-4y\\
-2x+2y
-\end{pmatrix}}{\begin{pmatrix}
-2x+2\\
-4y\\
-2x+2y
-\end{pmatrix}}{\times}
+	2x+1\\
+	4y\\
+	2x+2y
+	\end{pmatrix}}{\begin{pmatrix}
+	2x+2\\
+	4y\\
+	2x+2y
+	\end{pmatrix}\hspace{10pt}\lightning}
 \end{align*}\\
 $\Rightarrow 2x+1\neq 2x+2 \Rightarrow\varphi$ ist keine lineare Abbildung, da eine der Bedingungen für lineare Abbildungen nicht erfüllt werden kann.\\
 \item $\varphi\colon\R^n\to\R, \begin{pmatrix}
@@ -81,7 +83,7 @@ x_n
 2x_n
 \end{pmatrix}\right)}{\sum_{k=1}^n|x_k|+\sum_{k=1}^n|x_k|}
 \eqn{\sum_{k=1}^n|2x_k|}{\sum_{k=1}^n2|x_k|}
-\eqni{\sum_{k=1}^n|2x_k|}{\sum_{k=1}^n|2x_k|}{\surd}
+\eqn{\sum_{k=1}^n|2x_k|}{\sum_{k=1}^n|2x_k|\hspace{10pt}\surd}
 \end{align*}
 Bedingung 2:
 \begin{align*}
@@ -100,9 +102,9 @@ x_n
 \vdots\\
 \lambda x_n
 \end{pmatrix}\right)}{\lambda\sum_{k=1}^n |x_k|}
-\eqni{\sum_{k=1}^n |\lambda x_k|}{\sum_{k=1}^n \lambda|x_k|}{\times}
+\eqn{\sum_{k=1}^n |\lambda x_k|}{\sum_{k=1}^n \lambda|x_k|\hspace{10pt}\lightning}
 \end{align*}
-Da $\lambda|x_k|$ für $\lambda\in\R$ positive und negative Werte annehmen kann, $|\lambda x_k|$ jedoch stets positiv ist, folgt $|\lambda x_k|\neq \lambda|x_k|$. Somit erfüllt $\varphi$ die 2. Bedingung, also die Kriterien für lineare Abbildungen nicht. $\Rightarrow\varphi$ ist keine lineare Abbildung.\\
+Da $\lambda|x_k|$ für $\lambda\in\R$ positive und negative Werte annehmen kann, $|\lambda x_k|$ jedoch stets positiv ist, folgt $|\lambda x_k|\neq \lambda|x_k|$. Somit erfüllt $\varphi$ die 2. Bedingung, der Kriterien für lineare Abbildungen, nicht. $\Rightarrow\varphi$ ist keine lineare Abbildung.\\
 \item $\varphi\colon\R^n\to\R, \begin{pmatrix}
 x_1\\
 \vdots\\
@@ -133,7 +135,7 @@ x_n
 \vdots\\
 2x_n
 \end{pmatrix}\right)}{\sum_{k=1}^n x_k + \sum_{k=1}^n x_k}
-\eqni{\sum_{k=1}^n 2x_k}{\sum_{k=1}^n 2x_k}{\surd}
+\eqn{\sum_{k=1}^n 2x_k}{\sum_{k=1}^n 2x_k\hspace{10pt}\surd}
 \end{align*}
 Bedingung 2:
 \begin{align*}
@@ -152,7 +154,7 @@ x_n
 \vdots\\
 \lambda x_n
 \end{pmatrix}\right)}{\lambda\sum_{k=1}^n x_k}
-\eqni{\sum_{k=1}^n \lambda x_k}{\sum_{k=1}^n \lambda x_k}{\surd}
+\eqn{\sum_{k=1}^n \lambda x_k}{\sum_{k=1}^n \lambda x_k\hspace{10pt}\surd}
 \end{align*}
 Da beide Bedingungen erfüllt sind, ist $\varphi$ eine lineare Abbildung.\\
 \item $\varphi\colon V\to\R, f\mapsto f(x_0)$, wobei $V$ der Vektorraum aller Funktionen von $\R$ nach $\R$ ist, und $x_0\in\R$.\\
@@ -161,14 +163,14 @@ Bedingung 1:
 \eqnf{\varphi(a+b)}{\varphi(a)+\varphi(b)}
 \eqn{\varphi(f+f)}{\varphi(f)+\varphi(f)}
 \eqn{(2f)(x_0)}{f(x_0)+f(x_0)}
-\eqni{2f(x_0)}{2f(x_0)}{\surd}
+\eqn{2f(x_0)}{2f(x_0)\hspace{10pt}\surd}
 \end{align*}
 Bedingung 2:
 \begin{align*}
 \eqnf{\varphi(\lambda a)}{\lambda\varphi(a)}
 \eqn{\varphi(\lambda f)}{\lambda\varphi(f)}
 \eqn{(\lambda f)(x_0)}{\lambda f(x_0)}
-\eqni{\lambda f(x_0))}{\lambda f(x_0)}{\surd}
+\eqn{\lambda f(x_0))}{\lambda f(x_0)\hspace{10pt}\surd}
 \end{align*}
 Da beide Bedingungen erfüllt sind, ist $\varphi$ eine lineare Abbildung.\\
 \end{enumerate}
@@ -323,9 +325,9 @@ $$\varphi(x)=Ax
 \end{pmatrix}$$\\
 \begin{align*}
 &x_1+y_1=&1\\
-&x_1+2y_1=&0\\
+&x_1+2y_1=&0\\\\
 &x_2+y_2=&0\\
-&x_2+2y_2=&1\\
+&x_2+2y_2=&1\\\\
 &x_3+y_3=&-2\\
 &x_3+2y_3=&-1\\
 \end{align*}

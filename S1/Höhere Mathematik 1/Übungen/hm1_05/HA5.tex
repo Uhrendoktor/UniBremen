@@ -349,8 +349,39 @@ $$\varphi(A)=\begin{pmatrix}
 \item [5.5] Sei $V$ ein Vektorraum, und $v^1,v^2,v^3,v^4$ seien linear unabhängige Vektoren in $V$. Ermittle in jedem der folgenden 3 Fälle, ob die gegebenen Vektoren linear unabhängig sind:
 \begin{enumerate}
 \item $v^1, v^1+v^2, v^1+v^2+v^3, v^1+v^2+v^3+v^4$,
+\begin{align*}
+	\eqnf{\lambda_1v^1+\lambda_2(v^1+v^2)+\lambda_3(v^1+v^2+v^3)+\lambda_4(v^1+v^2+v^3+v^4)}{0}
+	\eqn{v^1(\lambda_1+\lambda_2+\lambda_3+\lambda_4)+v^2(\lambda_2+\lambda_3+\lambda_4)+v^3(\lambda_3+\lambda_4)+v^4\lambda_4}{0}
+	\Rightarrow\lambda_1+\lambda_2+\lambda_3+\lambda_4=\lambda_2+\lambda_3+\lambda_4=\lambda_3+\lambda_4+\lambda_4&=0\\
+	\Rightarrow\lambda_1=\lambda_2=\lambda_3=\lambda_4&=0\\
+	\Rightarrow\text{linear unabhängig}
+\end{align*}
+
 \item $v^1-v^2, v^2+v^3, v^3-v^4, v^4+v^1$,
+\begin{align*}
+	\eqnf{\lambda_1(v^1-v^2)+\lambda_2(v^2+v^3)+\lambda_3(v^3-v^4)+\lambda_4(v^4+v^1)}{0}
+	\eqn{v^1(\lambda_1+\lambda_4)+v^2(-\lambda_1+\lambda_2)+v^3(\lambda_2+\lambda_3)+v^4(-\lambda_3+\lambda_4)}{0}
+	\Rightarrow\lambda_1+\lambda_4=\lambda_2-\lambda_1=\lambda_2+\lambda_3=\lambda_4-\lambda_3&=0\\
+	\\
+	\Rightarrow\lambda_1=\lambda_2,\lambda_3=\lambda_4,\lambda_1&=-\lambda_4\\
+	\Rightarrow\text{nicht linear unabhänig } \lambda_1=-\lambda_4\text{ hat unendlich viele Lösungen}
+\end{align*}
 \item $v^1+v^2, v^2+v^3, v^3+v^4, v^4-v^1$.
+\begin{align*}
+	\eqnf{\lambda_1(v^1+v^2)+\lambda_2(v^2+v^3)+\lambda_3(v^3+v^4)+\lambda_4(v^4-v^1)}{0}
+	\eqn{v^1(\lambda_1-\lambda_4)+v^2(\lambda_1+\lambda_2)+v^3(\lambda_2+\lambda_3)+v^4(\lambda_3+\lambda_4)}{0}\\
+	\Rightarrow\lambda_1-\lambda_4=\lambda_1+\lambda_2=\lambda_2+\lambda_3=\lambda_3+\lambda_4&=0
+\end{align*}
+\begin{align*}
+		\lambda_1-\lambda_4=0 &\Leftrightarrow \lambda_4=\lambda_1\\
+	\lambda_2+\lambda_3=0\land\lambda_4+\lambda_3=0&\Leftrightarrow\lambda_2=\lambda_4=\lambda_1\\
+	\lambda_4=\lambda_1\land\lambda_3+\lambda_4=0&\Rightarrow\lambda_1+\lambda_3=0\\
+	\lambda_1+\lambda_3=0\land\lambda_1+\lambda_2=0&\Rightarrow\lambda_2=\lambda_3\\\\
+\end{align*}
+\begin{align*}
+	&\Rightarrow \lambda_1=\lambda_2=\lambda_3=\lambda_4=0\\
+	&\Rightarrow \text{linear unabhängig}
+\end{align*}
 \end{enumerate}
 \end{enumerate}
 \end{document}

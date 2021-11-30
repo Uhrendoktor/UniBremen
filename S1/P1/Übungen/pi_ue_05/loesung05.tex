@@ -1,0 +1,17 @@
+\documentclass{pi1}
+\usepackage{listings, amsmath}
+
+\begin{document}
+\maketitle{5}{Leander Staack}{Julius Walczynski [6113829]}
+\section{Zugriffssicherheit}
+\lstinputlisting[firstnumber=38, firstline=38, lastline=39]{PI1Game/Field.java}
+Der Konstruktor der Klasse \textit{Field} nimmt die Beschreibung der Karte als \textit{String[ ] \_map} entgegen und speichert sie lokal im Attribut \textit{map} ab.
+\lstinputlisting[firstnumber=59, firstline=59, lastline=64]{PI1Game/Field.java}
+Die Methode \textit{getCell(int x, int y)} nimmt eine x- und y-Koordinate entgegen und gibt den dazugehörigen \textit{char} aus \textit{map} zurück. Dabei werden zuerst die x- und y-Werte überprüft. Sollten diese außerhalb des Definitionsbereichs von \textit{map} liegen ($x<0 \lor y<0 \lor y\geq$ Anzahl der Elemente von \textit{map} $\lor x\geq$ Anzahl der chars im String \textit{map[y]}), wird ein Leerzeichen (' ') als Defaultwert zurückgegeben.
+\section{Nachbarschaftshilfe}
+\lstinputlisting[firstnumber=48, firstline=48, lastline=53]{PI1Game/Field.java}
+Die Methode \textit{getNeighborhood(int x, int y)} nimmt eine x- und y-Koordinate entgegen und gibt die ausgerechnete Nachbarschafts-Signatur zurück. Die Signatur wird berechnet, indem die niedrigsten 4 Bits einer \textit{int} in der Reihenfolge unten, links, oben, rechts auf 1 gesetzt werden, falls die Nachbarzelle in dieser Richtung \textbf{kein} Leerzeichen (' ') und auf 0, falls die Nachbarzelle in dieser Richtung \textbf{ein} Leerzeichen (' ') ist. Die resultierende 4 Bit Signatur (0b0000 - 0b1111) entspricht dem Index (0-15) des Dateinamens der korrespondierenden Grafik in \textit{NEIGHBORHOOD\_TO\_FILENAME}.
+\section{Feldkonstruktion}
+\lstinputlisting[firstnumber=38, firstline=38, lastline=46]{PI1Game/Field.java}
+Der Konstruktor konstruiert aus der Spielfeldbeschreibung (\textit{map}) ein Gitter aus \textit{GameObject}s mit den passenden Grafiken. Hierfür tasten 2 \textit{for}-Schleifen die \textit{String}s in \textit{map} und deren \textit{char}s ab. Da die Mitte der Felder nur auf jeder 2. x- bzw. y-Koordinate liegt, werden x und y in jedem Durchlauf der dazugehörigen Schleife um 2 erhöht. Für jedes Feld an den Koordinaten (x,y) wird mit Hilfe der \textit{getNeighborhood} Methode die passende Nachbarschafts-Signatur berechnet, darüber der Dateiname der Grafik aus \textit{NEIGHBORHOOD\_TO\_FILENAME} entnommen und zusammen mit x,y als Parameter in den Konstruktor neuer \textit{GameObject}s übergeben. Da die beiden Schleifen \textit{x} und \textit{y} pro Durchlauf um 2 erhöhen, müssen \textit{x} und \textit{y} durch 2 geteilt werden, um sinnvolle Koordinaten für die \textit{GameObject}s darzustellen.
+\end{document}

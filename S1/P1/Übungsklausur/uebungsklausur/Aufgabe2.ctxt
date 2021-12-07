@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Aufgabe2
+comment0.text=\r\n\ Aufgabe\ 2\:\ Schatzsuche\ nach\ Karte\ (25\ Punkte)\r\n\r\n\ Vervollst\u00E4ndigt\ den\ Konstruktor\ und\ die\ Methode\ "bewege"\ entsprechend\r\n\ ihrer\ Beschreibungen.\r\n\r\n\ Die\ Methode\ "main"\ soll\ zum\ Testen\ benutzt\ werden.\r\n\r\n\ Die\ Startposition\ der\ Figur\ und\ die\ Position\ des\ Schatzes\ werden\ bei\r\n\ der\ Bewertung\ andere\ sein.\ \u00C4nderungen\ an\ der\ Methode\ "main"\ gehen\ nicht\r\n\ in\ die\ Bewertung\ ein.\ Quelltexte,\ die\ nicht\ kompilieren,\ werden\ nicht\r\n\ gewertet.\r\n
+comment1.params=karte
+comment1.target=Aufgabe2(java.lang.String[])
+comment1.text=\r\n\ Konstruktor\ einer\ Schatzsucher\:in.\r\n\ @param\ karte\ Die\ Karte\ enth\u00E4lt\ an\ einer\ Stelle\ ein\ 'X'.\ Dessen\r\n\ \ \ \ \ \ \ \ \ Koordinaten\ (x\ ist\ horizontal,\ y\ ist\ vertikal)\ markieren\r\n\ \ \ \ \ \ \ \ \ die\ Position\ des\ Schatzes.\r\n
+comment2.params=
+comment2.target=boolean\ bewege()
+comment2.text=\r\n\ Die\ Methode\ soll\ die\ Figur\ bei\ jedem\ Aufruf\ so\ drehen,\ dass\ sie\ in\r\n\ Richtung\ des\ Schatzes\ guckt.\ Solange\ die\ Methode\ true\ zur\u00FCckliefert,\r\n\ wird\ die\ Figur\ danach\ automatisch\ einen\ Schritt\ vorw\u00E4rts,\ also\ in\r\n\ Blickrichtung,\ bewegt,\ wodurch\ sie\ dem\ Schatz\ n\u00E4her\ kommen\ sollte.\r\n\r\n\ Ben\u00F6tigte\ Methoden\ der\ Figur\:\ getX,\ getY,\ setRotation\r\n\r\n\ x-Koordinaten\ wachsen\ nach\ rechts,\ y-Koordinaten\ nach\ unten.\ Die\r\n\ Rotation\ ist\ 0\ in\ Richtung\ +x,\ 1\ in\ Richtung\ +y,\ 2\ in\ Richtung\ -x\r\n\ und\ 3\ in\ Richtung\ -y.\r\n\r\n\ @return\ true,\ wenn\ die\ Figur\ einen\ Schritt\ vorw\u00E4rts\ machen\ soll.\r\n\ \ \ \ \ \ \ \ \ false,\ wenn\ der\ Schatz\ erreicht\ wurde.\r\n
+comment3.params=
+comment3.target=void\ main()
+comment3.text=\r\n\ Die\ Testmethode.\ Bei\ richtiger\ Implementierung\ n\u00E4hert\ sich\ die\ Figur\r\n\ dem\ Ziel\ st\u00E4ndig\ und\ bleibt\ stehen,\ wenn\ es\ erreicht\ wurde\ (F\u00FC\u00DFe\ auf\r\n\ dem\ Kreuz).\r\n\ Insbesondere\ sollte\ dann\ auch\ das\ Programm\ anhalten.\r\n
+numComments=4

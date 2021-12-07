@@ -15,8 +15,9 @@
 		Die Folge konvergiert für $n\to\infty$ gegen $\frac{4}{9}$.
 		
 		\item $\left(\sqrt{n^2+n}-n\right)$\\
-		Es gelten $b,c\in\R;b<c \Rightarrow\sqrt{b}<\sqrt{c}$ und $\sqrt{n^2}=n$. \\
-		Somit gilt auch für $n^2<n^2+n \Rightarrow \sqrt{n^2}<\sqrt{n^2+n}$.\\
+		Für $$b,c\in\R;b<c \Rightarrow\sqrt{b}<\sqrt{c},$$
+		$$n^2<n^2+n$$
+		$$\Rightarrow\sqrt{n^2}<\sqrt{n^2+n}$$
 		Mit $a\in\R; a>0$ folgt $\sqrt{n^2+n}=n+an$.\\
 		Somit ergibt sich:
 		$$\lim\limits_{n\to\infty}\sqrt{n^2+n}-n
@@ -39,17 +40,65 @@
 	\end{enumerate}
 	\item[6.5] Seien $(a_n), (b_n)$ Folgen in $\R$. Beweise oder widerlege:
 	\begin{enumerate}
-		\item $a_n\to a, b_n\neq 0$ für alle $n\in\N, \frac{a_n}{b_n}\to 0 \Rightarrow (b_n)$ keine Nullfolge.
-		\item $(b_n)$ Nullfolge, $b_n\neq 0$ für alle $n\in\N\Rightarrow (\frac{1}{b_n})$ nicht konvergent.
-		\item $a_n\to a, a_n\cdot b_n \to c \Rightarrow (b_n)$ konvergent.
-		\item $a_n\to 0, (b_n)$ beschränkt $\Rightarrow a_n\cdot b_n \to 0$.
+		\item $a_n\to a, b_n\neq 0$ für alle $n\in\N, \frac{a_n}{b_n}\to 0 \Rightarrow (b_n)$ keine Nullfolge.\\
+		Nein, Widerspruch für $a_n \to 0$ alle $\frac{1_n}{b_n}\to 0$ da $\frac{0}{x}=0$ 
+		\item $(b_n)$ Nullfolge, $b_n\neq 0$ für alle $n\in\N\Rightarrow (\frac{1}{b_n})$ nicht konvergent.\\
+		\begin{align*}
+			b_n \to 0\\
+			\lim_{n\to 0}\left(\frac{1}{n}\right)=\infty\\
+			\Rightarrow \frac{1}{b_n} \to \infty
+		\end{align*}
+		\item $a_n\to a, a_n\cdot b_n \to c \Rightarrow (b_n)$ konvergent.\\
+		Nein, Wiederspruch mit $a_n \to 0$ und $b_n$ beschränkt\\
+		ist $b_n \cdot 0 = 0$\\
+		Also konvergiert c zu $0$ 
+		\item $a_n\to 0, (b_n)$ beschränkt $\Rightarrow a_n\cdot b_n \to 0$.\\
+		Da $b_n$ beschränkt ist $\lim_{n\to \infty} \neq \infty$
+		\begin{align*}
+			a_n \cdot b_n \to c\\
+			\Leftrightarrow 0 \cdot b = c
+		\end{align*}
+		
 	\end{enumerate}
 	\item[6.6] Ermittle (ohne Beweis, aber mit kurzer Begründung) das Supremum, Infimum und, falls existent, Maximum und Minimum folgender Mengen:
 	\begin{enumerate}
 		\item $A=\lbrace 1-\frac{(-1)^n}{n}; n\in\N\rbrace$;
+		\begin{align*}
+			n\bmod=0:1-\frac{1}{n}\\
+			n\bmod\neq0:1+\frac{1}{n}\\
+			\lim_{n\to 0} \frac{1}{n} = \infty\\\\
+			\Rightarrow \sup A = 2,\inf A = 0
+		\end{align*}
 		\item $B=\lbrace \frac{1}{n}+\frac{1}{m}; m,n\in\N\rbrace$;
+		\begin{align*}
+			b_{n,m} = \frac{1}{n}+ \frac{1}{m}&;m,n\in \N\\
+\\
+			p\in \N:\lim_{p\to \infty}\frac{1}{p} &= 0\\
+			p\in \N:\lim_{p\to 0}\frac{1}{p} &= \infty\\
+			\Rightarrow \lim_{n,m\to \infty} b_{n,m} &= 0\\
+			\lim_{n,m\to 0} b_{n,m} = 
+			\lim_{n\to 0,m\to \infty} b_{n,m} &= 
+			\lim_{n\to \infty,m\to 0} b_{n,m} = \infty\\\\
+			\Rightarrow \sup B = \infty&,\inf B = 0;
+		\end{align*}
 		\item $C=\lbrace x\in\R; x^2-10x\leq 24\rbrace$;
-		\item $D=\lbrace \frac{x}{x+1}; x\geq 0\rbrace$.
+		\begin{align*}
+			\geqnf{x^2-10x}{\leq}{24}
+			\geqn{x^2-10x-24}{\leq}{0}
+			\text{aus p-q formel}\\
+			x_1=-2,x_2=12
+		\end{align*}
+		Da für $x\in\{-2,12\},x^2-10x=24$ und\\ $x^2-10x>24$ für $x>12\lor x<-2$\\
+		sind $-2,12$ das Minimum und Maximum der Menge D
+		$$\sup C = 12 = \max C$$
+		$$\inf C = -2 = \min C$$\\
+		\item $D=\lbrace \frac{x}{x+1}; x\geq 0\rbrace$.\\
+		Ist $x\in \R??$\\
+		\begin{align*}
+			D_n &= \{\frac{1}{2},\frac{2}{3},\frac{3}{4}\dots\frac{n}{n+1}\}\\
+			&\Rightarrow \lim_{n\to 0} D_n = 0,\lim_{n\to \infty} D_n = 1\\
+			&\Rightarrow \sup D = 1, \inf D = 0
+		\end{align*}
 	\end{enumerate}
 \end{enumerate}
 \end{document}

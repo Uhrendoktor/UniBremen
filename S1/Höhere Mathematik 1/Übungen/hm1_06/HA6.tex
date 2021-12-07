@@ -1,5 +1,10 @@
 \documentclass{HM}
+\usepackage{cancel}
+\usepackage{xcolor}
 \begin{document}
+\newcommand\rcancel[1]{\renewcommand\CancelColor{\color{red}}\cancel{#1}}
+\newcommand\gcancel[1]{\renewcommand\CancelColor{\color{green}}\cancel{#1}}
+\newcommand\dcancel[1]{\renewcommand\CancelColor{\color{black}}\cancel{#1}}
 \begin{enumerate}
 	\item[6.3] Zeige mit der Definition des Grenzwertes (ohne Verwendung von "Rechenregeln"), dass $\lim\limits_{n\to\infty}\frac{n^3+3n}{4n^3-5}=\frac{1}{4}$ ist.\\
 	Für $n\to\infty$ ist das Ergebnis des Bruchs ausschließlich von $\frac{n^3}{4n^3}$ abhängig. Daraus folgt:\\
@@ -26,10 +31,28 @@
 		$\Rightarrow \sqrt{n^2+n}-n=an\xrightarrow{n\to\infty}\infty$
 		
 		\item $\left(\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right)\right)$\\
-		Aus $\frac{1}{k^2}\xrightarrow{k\to\infty}0$ folgt $1-\frac{1}{k^2}\xrightarrow{k\to\infty}1$.\\
-		Da $q^n$ für $-1<q<1$ mit $n\to\infty$ gegen 0 läuft und alle Faktoren des Produkts $1-\frac{1}{k^2} \in\left[\frac{2}{3}, 1\right)$ sind, folgt $0\leq \lim\limits_{n\to\infty}\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right) \leq \lim\limits_{n\to\infty}a^n$ mit $a\in\R\coloneqq$ "größter reeller Faktor des Produkts".\\
-		Aus $\lim\limits_{n\to\infty}a^n=\lim\limits_{n\to\infty}q^n=0$, folgt $\lim\limits_{n\to\infty}\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right) = 0$.
 		
+		%Aus $\frac{1}{k^2}\xrightarrow{k\to\infty}0$ folgt $1-\frac{1}{k^2}\xrightarrow{k\to\infty}1$.\\
+		%Da $q^n$ für $-1<q<1$ mit $n\to\infty$ gegen 0 läuft und alle Faktoren des Produkts $1-\frac{1}{k^2} \in\left[\frac{2}{3}, 1\right)$ sind, folgt $0\leq \lim\limits_{n\to\infty}\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right) \leq \lim\limits_{n\to\infty}a^n$ mit $a\in\R\coloneqq$ "größter reeller Faktor des Produkts".\\
+		%Aus $\lim\limits_{n\to\infty}a^n=\lim\limits_{n\to\infty}q^n=0$, folgt $\lim\limits_{n\to\infty}\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right) = 0$.
+		\begin{align*}
+			\eqnf{k^2-1}{(k-1)(k+1)}
+			\eqn{k^2-1}{k^2-k+k-1}
+			\eqn{k^2-1}{k^2-1}
+		\end{align*}\\
+		\begin{align*}
+		&\prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right)
+		=\prod\limits_{k=2}^n\left(\frac{k^2-1}{k^2}\right)\\
+		=&\frac{(k^2-1)\cdot ((k-1)^2-1)\cdot ((k-2)^2-1)\cdot\ldots}{k^2\cdot (k+1)^2\cdot  (k+2)^2\cdot\ldots}\\
+		=&\frac{(k-1)(k+1)\cdot (k+2)(k+0)\cdot (k+3)(k+1)\cdot\ldots}{(k+0)(k+0)\cdot (k+1)(k+1)\cdot (k+2)(k+2)\cdot\ldots}\\
+		=&\frac{\rcancel{(k+1)}(k-1)\cdot \rcancel{(k+2)}\gcancel{(k+0)}\cdot \dcancel{(k+3)}\gcancel{(k+1)}\cdot\ldots}
+		{(k+0)\gcancel{(k+0)}\cdot \rcancel{(k+1)}\gcancel{(k+1)}\cdot \rcancel{(k+2)}\dcancel{(k+2)}\cdot\ldots}\\
+		=&\frac{k-1}{k+0}
+		\end{align*}\\
+		Für $k=2; k\to\infty$ ist $k=2$ (der Startwert) in der obigen Folge.\\
+		$\Rightarrow \frac{k-1}{k+0}=\frac{2-1}{2}=\frac{1}{2}$\\
+		$\Rightarrow \prod\limits_{k=2}^n\left(1-\frac{1}{k^2}\right)\xrightarrow{k\to\infty}\frac{1}{2}$\\\\
+
 		\item $\sqrt[n]{n!}$\\
 		$\sqrt[n]{n!}=n^\frac{1}{n}\cdot (n-1)^\frac{1}{n}\cdot (n-2)^n\cdot ... \cdot 1^\frac{1}{n}$.\\
 		Für alle Grenzwerte der Faktoren $a$ in der Fakultät außer $1^\frac{1}{n}$ gilt für $n\to\infty \Rightarrow a>1$. Für die Ausnahme $b\coloneqq 1^\frac{1}{n}$ gilt $b=1$.\\

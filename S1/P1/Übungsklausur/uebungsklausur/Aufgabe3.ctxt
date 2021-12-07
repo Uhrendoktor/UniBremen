@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Aufgabe3
+comment0.text=\r\n\ Aufgabe\ 3\:\ Schatzsuche\ nach\ Karte\ mit\ R\u00FCckweg\ (25\ Punkte)\r\n\r\n\ Vervollst\u00E4ndigt\ den\ Konstruktor\ und\ die\ Methode\ "bewege"\ entsprechend\r\n\ ihrer\ Beschreibungen.\r\n\r\n\ Die\ Methode\ "main"\ soll\ zum\ Testen\ benutzt\ werden.\r\n\r\n\ Die\ Startposition\ der\ Figur\ und\ die\ Position\ des\ Schatzes\ werden\ bei\r\n\ der\ Bewertung\ andere\ sein.\ \u00C4nderungen\ an\ der\ Methode\ "main"\ gehen\ nicht\r\n\ in\ die\ Wertung\ ein.\ Quelltexte,\ die\ nicht\ kompilieren,\ werden\ nicht\r\n\ gewertet.\r\n
+comment1.params=karte
+comment1.target=Aufgabe3(java.lang.String[])
+comment1.text=\r\n\ Konstruktor\ einer\ Schatzsucher\:in.\r\n\ @param\ karte\ Die\ Karte\ enth\u00E4lt\ an\ einer\ Stelle\ ein\ 'X'.\ Dessen\r\n\ \ \ \ \ \ \ \ \ Koordinaten\ (x\ ist\ horizontal,\ y\ ist\ vertikal)\ markieren\r\n\ \ \ \ \ \ \ \ \ die\ Position\ des\ Schatzes.\r\n
+comment2.params=
+comment2.target=boolean\ bewege()
+comment2.text=\r\n\ Die\ Methode\ soll\ die\ Figur\ anfangs\ bei\ jedem\ Aufruf\ so\ drehen,\ dass\r\n\ sie\ in\ Richtung\ des\ Schatzes\ guckt.\ Solange\ die\ Methode\ true\r\n\ zur\u00FCckliefert,\ wird\ die\ Figur\ danach\ automatisch\ einen\ Schritt\r\n\ vorw\u00E4rts,\ also\ in\ Blickrichtung,\ bewegt,\ wodurch\ sie\ anfangs\ dem\r\n\ Schatz\ n\u00E4her\ kommen\ sollte.\r\n\r\n\ Hat\ sie\ den\ Schatz\ erreicht,\ muss\ sie\ den\ R\u00FCckweg\ zur\ Startposition\r\n\ antreten\ und\ zwar\ auf\ genau\ demselben\ Weg,\ den\ sie\ gekommen\ ist.\r\n\r\n\ Ben\u00F6tigte\ Methoden\ der\ Figur\:\ getX,\ getY,\ setRotation\r\n\r\n\ x-Koordinaten\ wachsen\ nach\ rechts,\ y-Koordinaten\ nach\ unten.\ Die\r\n\ Rotation\ ist\ 0\ in\ Richtung\ +x,\ 1\ in\ Richtung\ +y,\ 2\ in\ Richtung\ -x\r\n\ und\ 3\ in\ Richtung\ -y.\r\n\ \r\n\ @return\ true,\ wenn\ die\ Figur\ einen\ Schritt\ vorw\u00E4rts\ machen\ soll.\r\n\ \ \ \ \ \ \ \ \ false,\ wenn\ zur\ Startposition\ zur\u00FCckgekehrt\ wurde.\r\n
+comment3.params=
+comment3.target=void\ main()
+comment3.text=\r\n\ Die\ Testmethode.\ Bei\ richtiger\ Implementierung\ n\u00E4hert\ sich\ die\ Figur\r\n\ dem\ Ziel\ st\u00E4ndig,\ bis\ es\ erreicht\ ist,\ kehrt\ dann\ auf\ demselben\ Weg\r\n\ wieder\ zum\ Startpunkt\ zur\u00FCck\ und\ bleibt\ stehen,\ wenn\ er\ erreicht\r\n\ wurde.\ Insbesondere\ sollte\ dann\ auch\ das\ Programm\ anhalten.\r\n
+numComments=4

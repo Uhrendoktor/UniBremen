@@ -64,7 +64,7 @@
 	\item[6.5] Seien $(a_n), (b_n)$ Folgen in $\R$. Beweise oder widerlege:
 	\begin{enumerate}
 		\item $a_n\to a, b_n\neq 0$ für alle $n\in\N, \frac{a_n}{b_n}\to 0 \Rightarrow (b_n)$ keine Nullfolge.\\
-		Nein, Widerspruch für $a_n \to 0$ alle $\frac{1_n}{b_n}\to 0$ da $\frac{0}{x}=0$ 
+		Widerspruch: b kann eine Nullfolge sein wenn $a_n = 0$ da alle $\frac{a_n}{b_n}\to 0\Rightarrow\frac{0}{b}=0$ 
 		\item $(b_n)$ Nullfolge, $b_n\neq 0$ für alle $n\in\N\Rightarrow (\frac{1}{b_n})$ nicht konvergent.\\
 		\begin{align*}
 			b_n \to 0\\
@@ -72,9 +72,9 @@
 			\Rightarrow \frac{1}{b_n} \to \infty
 		\end{align*}
 		\item $a_n\to a, a_n\cdot b_n \to c \Rightarrow (b_n)$ konvergent.\\
-		Nein, Wiederspruch mit $a_n \to 0$ und $b_n$ beschränkt\\
+		Wiederspruch: b kann divergent sein wenn $a_n = 0$\\
 		ist $b_n \cdot 0 = 0$\\
-		Also konvergiert c zu $0$ 
+		Also konvergiert $a_n \cdot b_n$ zu $0$ 
 		\item $a_n\to 0, (b_n)$ beschränkt $\Rightarrow a_n\cdot b_n \to 0$.\\
 		Da $b_n$ beschränkt ist $\lim_{n\to \infty} \neq \infty$
 		\begin{align*}
@@ -87,22 +87,20 @@
 	\begin{enumerate}
 		\item $A=\lbrace 1-\frac{(-1)^n}{n}; n\in\N\rbrace$;
 		\begin{align*}
-			n\bmod=0:1-\frac{1}{n}\\
-			n\bmod\neq0:1+\frac{1}{n}\\
-			\lim_{n\to 0} \frac{1}{n} = \infty\\\\
-			\Rightarrow \sup A = 2,\inf A = 0
+			n\bmod 2=0:1-\frac{1}{n}&\Rightarrow\max \frac{1}{n}=\frac{1}{2}\\
+			n\bmod 2\neq0:1+\frac{1}{n}&\Rightarrow\max\frac{1}{n}=1\\\\
+			\Rightarrow \sup A = \max A = 2,\\
+			\inf A = \max A = \frac{1}{2}
 		\end{align*}
 		\item $B=\lbrace \frac{1}{n}+\frac{1}{m}; m,n\in\N\rbrace$;
 		\begin{align*}
 			b_{n,m} = \frac{1}{n}+ \frac{1}{m}&;m,n\in \N\\
 \\
 			p\in \N:\lim_{p\to \infty}\frac{1}{p} &= 0\\
-			p\in \N:\lim_{p\to 0}\frac{1}{p} &= \infty\\
-			\Rightarrow \lim_{n,m\to \infty} b_{n,m} &= 0\\
-			\lim_{n,m\to 0} b_{n,m} = 
-			\lim_{n\to 0,m\to \infty} b_{n,m} &= 
-			\lim_{n\to \infty,m\to 0} b_{n,m} = \infty\\\\
-			\Rightarrow \sup B = \infty&,\inf B = 0;
+			p\in \N:\lim_{p\to 1}\frac{1}{p} &= 1\\
+			\Rightarrow \lim_{n,m\to \infty} b_{n,m} &= 0,\\
+			\lim_{n,m\to 1} b_{n,m} &= 2\\\\
+			\Rightarrow \max B = \sup B = 2&,\\\inf B = 0;
 		\end{align*}
 		\item $C=\lbrace x\in\R; x^2-10x\leq 24\rbrace$;
 		\begin{align*}
@@ -115,12 +113,11 @@
 		sind $-2,12$ das Minimum und Maximum der Menge D
 		$$\sup C = 12 = \max C$$
 		$$\inf C = -2 = \min C$$\\
-		\item $D=\lbrace \frac{x}{x+1}; x\geq 0\rbrace$.\\
-		Ist $x\in \R??$\\
+		\item $D=\lbrace \frac{x}{x+1}; x\geq 0;x\in\R\rbrace$.\\
 		\begin{align*}
-			D_n &= \{\frac{1}{2},\frac{2}{3},\frac{3}{4}\dots\frac{n}{n+1}\}\\
+			D_n &= \{\dots,\frac{1}{2},\dots,\frac{2}{3},\dots,\frac{3}{4},\dots,\frac{n}{n+1}\}\\
 			&\Rightarrow \lim_{n\to 0} D_n = 0,\lim_{n\to \infty} D_n = 1\\
-			&\Rightarrow \sup D = 1, \inf D = 0
+			&\Rightarrow \sup D = 1,\\&min D =\inf D = 0
 		\end{align*}
 	\end{enumerate}
 \end{enumerate}

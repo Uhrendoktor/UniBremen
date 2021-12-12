@@ -3,16 +3,62 @@
 \begin{enumerate}
 \item[7.3] Untersuche  folgende rekursiv definierte Folgen auf Beschränktheit, Monotonie und Konvergenz. berechne gegebenenfalls den Grenzwert.
 \begin{enumerate}
-\item $a_1\coloneqq 1, a_{n+1}\coloneqq \frac{1}{4}a_n - \frac{1}{2}$ für $n\in\N$.
-\item $a_1\coloneqq 2, a_{n+1}\coloneqq \frac{1}{a_n}$ für $n\in\N$.
+\item $a_1\coloneqq 1, a_{n+1}\coloneqq \frac{1}{4}a_n - \frac{1}{2}$ für $n\in\N$.\\
+Durch betrachtung der Folgenglieder:
+$$\{1,-0.25,-0.5625,-0.640625,\dots\}$$
+scheint es als würde diese Folge monoton fallen und bei $\frac{-2}{3}$ unten beschränkt sein.\\\\
+Durch betrachtung der Folgendefinition fällt auf das die Folge bei positiven und leicht negativen $a_n$ immer fällt aber bei größeren negativen $a_n$ steigt, der Wert bei dem sich das verhalten ändert ist ungefär $\frac{-2}{3}$.\\
+
+Damit ist die letze Möglichkeit für diese Folge zu divergieren wenn sie in eine stabile oszilation verfällt.\\
+Aber da $\frac{1}{4}a_{n+1}-\frac{1}{2}=a_n \lightning$\\
+muss a konvergent sein.
+\begin{align*}
+	\Rightarrow a_n \to a, a_{n+1} \to a\\
+	\Rightarrow \eqnfi{\frac{1}{4}a-\frac{1}{2}}{a}{-\frac{1}{4}a}\\
+	\eqni{a(1-\frac{1}{4})}{-\frac{1}{2}}{\div (1-\frac{1}{4})}
+	\eqn{a}{-\frac{2}{3}}
+\end{align*}
+Also konvergiert a nach $-\frac{2}{3}$
+\item $a_1\coloneqq 2, a_{n+1}\coloneqq \frac{1}{a_n}$ für $n\in\N$.\\
+Wenn man sich die Folgenglieder dieser Folge anschaut: $$\{2,\frac{1}{2},2,\frac{1}{2},\dots\}$$
+sieht man, dass diese Folge zwischen den Weten $2$ und $\frac{1}{2}$ osziliert.\\
+Damit is klar das sie divigent ist und die folgenden maximal Werte hat\\
+$$\max a = 2$$
+$$\min a = \frac{1}{2}$$\\
+
 \end{enumerate}
 \item[7.4] Die Folge $(a_n)$ sei rekursiv definiert durch
 $$a_1\coloneqq 1, a_{n+1}\coloneqq\sqrt{1+a_n}$$.\\
 Ist die Folge konvergent? Bestimme gegebenenfalls den Grenzwert $a$.\\
 \item[7.5] Bestimme jeweils die Folge der Partialsummen und den Grenzwert:
 \begin{enumerate}
-\item $\sum\limits_{k=2}^\infty\frac{1}{k^2-1}$;
-\item $\sum\limits_{k=1}^\infty\frac{(1+i)^k}{2^k}$.
+\item $\sum\limits_{k=2}^\infty\frac{1}{k^2-1}$;\\
+$$n=[2,\infty);(s_n)_n=\left(\sum_{k=2}^{n}\frac{1}{k^2-1}\right)_n$$
+\begin{align*}
+	\text{Partialbruchzerlegung}\\
+	\eqnf{\frac{1}{k^2-1}}{\frac{A}{k-1}+\frac{B}{k+1}}
+	\eqn{1}{A(k+1)+B(k-1)}\\
+	k\to1&\Rightarrow A=\frac{1}{2}\\
+	k\to-1&\Rightarrow B=-\frac{1}{2}\\
+	\Rightarrow \frac{1}{k^2-1}&=\frac{1}{2(k-1)}-\frac{1}{2(k+1)}\\\\	
+	\Rightarrow (s_n)_n&=\left(\sum_{k=2}^{n}\frac{1}{2(k-1)}-\frac{1}{2(k+1)}\right)_n\\
+	\lim_{n\to\infty}(s_n)_n&=\frac{1}{2}-\frac{1}{6}+\frac{1}{4}-\frac{1}{8}+\frac{1}{6}-\frac{1}{10}+\dots+\frac{1}{2(n+1)+2}\\
+	\text{Teleskopsumme}\\
+	\lim_{n\to\infty}\frac{1}{2(n+1)+2}&=0\\
+	\Rightarrow \lim_{n\to\infty}(s_n)_n&=\frac{1}{2}+\frac{1}{4} = \frac{3}{4}\\
+	\Rightarrow \sum\limits_{k=2}^\infty\frac{1}{k^2-1} = \frac{3}{4}
+\end{align*}
+\item $\sum\limits_{k=1}^\infty\frac{(1+i)^k}{2^k}$.\\
+$$n=[1,\infty);(s_n)_n=\left(\sum_{k=1}^{n}\frac{(1+i)^k}{2^k}\right)_n$$\\
+\begin{align*}
+	z&=\frac{1+i}{2}\\
+	|z|&=\sqrt{\frac{1}{4}-\frac{1}{4}}=0\\
+	\text{Geometrische Reihe}:\\
+	|z| < 1:\sum_{K=0}^{\infty}z^k&=\frac{1}{1-z}\\
+	\Rightarrow \lim_{n\to\infty}(s_n)_n &= \frac{1}{1-z} - s_0\\
+	\Rightarrow \lim_{n\to\infty}(s_n)_n &= \frac{2}{1-i}-1\\\\
+	\Rightarrow \sum\limits_{k=1}^\infty\frac{(1+i)^k}{2^k} &= \frac{2}{1-i}-1
+\end{align*}
 \end{enumerate}
 \item[7.6] Untersuche folgende Reihen auf Konvergenz oder Divergenz:
 \begin{enumerate}

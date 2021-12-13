@@ -42,16 +42,29 @@ Da alle Elemente der Folge positiv sind $(a_n>0)$ folgt, dass unter den gegebene
 Induktion [Monotones Wachstum]:\\
 IV: $a_{n+1}>a_n$\\
 IA $n=1$: \begin{align*}
-\geqnf{a_{n+1}}{>}{an}
-\geqn{\sqrt{1+a_n}}{>}{a_n}
+\geqnf{a_{1+1}}{>}{a_1}
+\geqn{\sqrt{1+a_1}}{>}{a_1}
 \geqn{\sqrt{2}}{>}{1}
 \end{align*}
 IS $n\to n+1$: \begin{align*}
 \geqnf{a_{n+1+1}}{>}{a_{n+1}}
 \geqn{\sqrt{1+a_{n+1}}}{>}{a_{n+1}}
-\geqni{\sqrt{1+\sqrt{1+a_{n}}}}{>}{\sqrt{1+a_{n}}}{^2}
-\geqni{1+\sqrt{1+a_{n}}}{>}{1+a_{n}}{-1}
-\geqn{\sqrt{1+a_n}}{>}{a_n}
+\geqni{\sqrt{1+a_{n+1}}}{>}{\sqrt{1+a_{n}}}{^2}
+\geqni{1+a_{n+1}}{>}{1+a_{n}}{-1}
+\geqn{a_{n+1}}{>}{a_n}
+\end{align*}\\
+Überprüfen des Grenzwerts als obere Grenze um die Annahme zu bestätigen:\\
+IV: $a_n<\frac{1+\sqrt{5}}{2}$\\
+IA $n=1$: $1<\frac{1+\sqrt{5}}{2}$\\
+IS $n\to n+1$: \begin{align*}
+\geqnf{a_{n+1}}{<}{\frac{1+\sqrt{5}}{2}}
+\geqni{\sqrt{1+a_n}}{<}{\frac{1+\sqrt{5}}{2}}{^2}
+\geqni{1+a_n}{<}{\frac{(1+\sqrt{5})^2}{4}}{-1}
+\geqn{a_n}{<}{\frac{(1+\sqrt{5})^2}{4}-1}
+\geqn{a_n}{<}{\frac{(1+\sqrt{5})^2-4}{4}}
+\geqn{a_n}{<}{\frac{1+2\sqrt{5}+5-4}{4}}
+\geqn{a_n}{<}{\frac{2+2\sqrt{5}}{4}}
+\geqn{a_n}{<}{\frac{1+\sqrt{5}}{2}}
 \end{align*}
 \item[7.5] Bestimme jeweils die Folge der Partialsummen und den Grenzwert:
 \begin{enumerate}

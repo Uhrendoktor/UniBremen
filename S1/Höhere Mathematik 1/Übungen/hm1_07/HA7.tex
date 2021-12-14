@@ -4,13 +4,13 @@
 \item[7.3] Untersuche  folgende rekursiv definierte Folgen auf Beschränktheit, Monotonie und Konvergenz. berechne gegebenenfalls den Grenzwert.
 \begin{enumerate}
 \item $a_1\coloneqq 1, a_{n+1}\coloneqq \frac{1}{4}a_n - \frac{1}{2}$ für $n\in\N$.\\
-Durch betrachtung der Folgenglieder:
+Durch Betrachtung der Folgenglieder:
 $$\{1,-0.25,-0.5625,-0.640625,\dots\}$$
 scheint es als würde diese Folge monoton fallen und bei $\frac{-2}{3}$ unten beschränkt sein.\\\\
-Durch betrachtung der Folgendefinition fällt auf das die Folge bei positiven und leicht negativen $a_n$ immer fällt aber bei größeren negativen $a_n$ steigt, der Wert bei dem sich das verhalten ändert ist ungefär $\frac{-2}{3}$.\\
+Durch Betrachtung der Folgendefinition fällt auf das die Folge bei positiven und leicht negativen $a_n$ immer fällt aber bei größeren negativen $a_n$ steigt, der Wert bei dem sich das verhalten ändert ist ungefähr $\frac{-2}{3}$.\\
 
-Damit ist die letze Möglichkeit für diese Folge zu divergieren wenn sie in eine stabile oszilation verfällt.\\
-Aber da $\frac{1}{4}a_{n+1}-\frac{1}{2}=a_n \lightning$\\
+Damit ist die letzte Möglichkeit für diese Folge zu divergieren wenn sie in eine stabile Oszillation verfällt.\\
+Aber da $\frac{1}{4}a_{n+1}-\frac{1}{2}=a_n$\\
 muss a konvergent sein.
 \begin{align*}
 	\Rightarrow a_n \to a, a_{n+1} \to a\\
@@ -21,15 +21,51 @@ muss a konvergent sein.
 Also konvergiert a nach $-\frac{2}{3}$
 \item $a_1\coloneqq 2, a_{n+1}\coloneqq \frac{1}{a_n}$ für $n\in\N$.\\
 Wenn man sich die Folgenglieder dieser Folge anschaut: $$\{2,\frac{1}{2},2,\frac{1}{2},\dots\}$$
-sieht man, dass diese Folge zwischen den Weten $2$ und $\frac{1}{2}$ osziliert.\\
-Damit is klar das sie divigent ist und die folgenden maximal Werte hat\\
+sieht man, dass diese Folge zwischen den Werten $2$ und $\frac{1}{2}$ oszilliert.\\
+Damit ist klar das sie divergent ist und die folgenden maximal Werte hat\\
 $$\max a = 2$$
 $$\min a = \frac{1}{2}$$\\
 
 \end{enumerate}
 \item[7.4] Die Folge $(a_n)$ sei rekursiv definiert durch
 $$a_1\coloneqq 1, a_{n+1}\coloneqq\sqrt{1+a_n}$$.\\
-Ist die Folge konvergent? Bestimme gegebenenfalls den Grenzwert $a$.\\
+Ist die Folge konvergent? Bestimme gegebenenfalls den Grenzwert $a$.\\\\
+Damit die Folge konvergent ist, muss sie sowohl monoton sein, als auch eine obere bzw. untere Grenze besitzen. Da alle Elemente in der Folge positiv sind, muss es sich - wenn vorhanden - um eine obere Grenze handeln.\\
+Angenommen die Folge erfüllt beide Kriterien:\\
+\begin{align*}
+	\eqnfi{a}{\sqrt{1+a}}{^2}
+	\eqni{a^2}{1+a}{-1-a}
+\end{align*}
+$$a_{1/2} = \frac{1}{2}\pm\sqrt{\frac{1}{4}+1}\\
+\Rightarrow a_1 = \frac{1+\sqrt{5}}{2} \lor a_2=\frac{1-\sqrt{5}}{2}$$\\
+Da alle Elemente der Folge positiv sind $(a_n>0)$ folgt, dass unter den gegebenen Bedingungen der Grenzwert $a=\frac{1+\sqrt{5}}{2}$ sein muss.\\
+Induktion [Monotones Wachstum]:\\
+IV: $a_{n+1}>a_n$\\
+IA $n=1$: \begin{align*}
+\geqnf{a_{1+1}}{>}{a_1}
+\geqn{\sqrt{1+a_1}}{>}{a_1}
+\geqn{\sqrt{2}}{>}{1}
+\end{align*}
+IS $n\to n+1$: \begin{align*}
+\geqnf{a_{n+1+1}}{>}{a_{n+1}}
+\geqn{\sqrt{1+a_{n+1}}}{>}{a_{n+1}}
+\geqni{\sqrt{1+a_{n+1}}}{>}{\sqrt{1+a_{n}}}{^2}
+\geqni{1+a_{n+1}}{>}{1+a_{n}}{-1}
+\geqn{a_{n+1}}{>}{a_n}
+\end{align*}\\
+Überprüfen des Grenzwerts als obere Grenze um die Annahme zu bestätigen:\\
+IV: $a_n<\frac{1+\sqrt{5}}{2}$\\
+IA $n=1$: $1<\frac{1+\sqrt{5}}{2}$\\
+IS $n\to n+1$: \begin{align*}
+\geqnf{a_{n+1}}{<}{\frac{1+\sqrt{5}}{2}}
+\geqni{\sqrt{1+a_n}}{<}{\frac{1+\sqrt{5}}{2}}{^2}
+\geqni{1+a_n}{<}{\frac{(1+\sqrt{5})^2}{4}}{-1}
+\geqn{a_n}{<}{\frac{(1+\sqrt{5})^2}{4}-1}
+\geqn{a_n}{<}{\frac{(1+\sqrt{5})^2-4}{4}}
+\geqn{a_n}{<}{\frac{1+2\sqrt{5}+5-4}{4}}
+\geqn{a_n}{<}{\frac{2+2\sqrt{5}}{4}}
+\geqn{a_n}{<}{\frac{1+\sqrt{5}}{2}}
+\end{align*}
 \item[7.5] Bestimme jeweils die Folge der Partialsummen und den Grenzwert:
 \begin{enumerate}
 \item $\sum\limits_{k=2}^\infty\frac{1}{k^2-1}$;\\

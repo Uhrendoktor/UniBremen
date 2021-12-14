@@ -51,24 +51,52 @@ $$n=[2,\infty);(s_n)_n=\left(\sum_{k=2}^{n}\frac{1}{k^2-1}\right)_n$$
 \item $\sum\limits_{k=1}^\infty\frac{(1+i)^k}{2^k}$.\\
 $$n=[1,\infty);(s_n)_n=\left(\sum_{k=1}^{n}\frac{(1+i)^k}{2^k}\right)_n$$\\
 \begin{align*}
+	(s_n)_n&=\left(\sum_{k=0}^{n}\frac{(1+i)^k}{2^k}\right)_n-s_0\\
 	z&=\frac{1+i}{2}\\
 	|z|&=\sqrt{\frac{1}{4}-\frac{1}{4}}=0\\
 	\text{Geometrische Reihe}:\\
-	|z| < 1:\sum_{K=0}^{\infty}z^k&=\frac{1}{1-z}\\
-	\Rightarrow \lim_{n\to\infty}(s_n)_n &= \frac{1}{1-z} - s_0\\
-	\Rightarrow \lim_{n\to\infty}(s_n)_n &= \frac{2}{1-i}-1\\\\
-	\Rightarrow \sum\limits_{k=1}^\infty\frac{(1+i)^k}{2^k} &= \frac{2}{1-i}-1
+	|z| < 1:\sum_{k=0}^{\infty}z^k&=\frac{1}{1-z}\\
+	\Rightarrow \lim_{n\to\infty}(s_n)_{n\ge0} &= \frac{2}{1-i}-1\\
+	\Leftrightarrow \lim_{n\to\infty}(s_n)_{n\ge0} &= \frac{2+2i}{(1-i)(1+i)}-1\\
+	\Leftrightarrow \lim_{n\to\infty}(s_n)_{n\ge0} &= i\\	
+	\\
+	\Rightarrow \sum\limits_{k=1}^\infty\frac{(1+i)^k}{2^k} &= i\\
 \end{align*}
 \end{enumerate}
 \item[7.6] Untersuche folgende Reihen auf Konvergenz oder Divergenz:
 \begin{enumerate}
-\item $\sum\limits_{n=1}^\infty\frac{n^2}{2^n}$;
-\item $\sum\limits_{n=1}^\infty(1+\frac{1}{n^2})^n$;
+\item $\sum\limits_{n=1}^\infty\frac{n^2}{2^n}$;\\
+Quotientenregel:
+\begin{align*}
+	&\left|\frac{(n+1)^2}{2^(n+1)}\frac{2^n}{n^2}\right|\\
+	\Leftrightarrow &\frac{(n+1)^2}{n^2\cdot 2}\\
+	\Leftrightarrow &\left(\frac{n+1}{\sqrt{2}n}\right)^2\\
+	\Leftrightarrow &\left(\frac{1}{\sqrt{2}}+\frac{1}{\sqrt{2}n}\right)^2\\
+	\Leftrightarrow &\frac{1}{2} + \frac{1}{2n^2} + \frac{1}{n}\\
+	\Rightarrow &\lim_{n\to\infty} = \frac{1}{2}\\
+\end{align*}
+$$\sum\limits_{n=1}^\infty\frac{n^2}{2^n} < \infty$$\\
+
+\item $\sum\limits_{n=1}^\infty(1+\frac{1}{n^2})^n$;\\
+
 \item $\sum\limits_{n=1}^\infty\frac{1}{7^n}\begin{pmatrix}
 3n\\
 n
-\end{pmatrix}$;
-\item $\sum\limits_{n=1}^\infty\frac{(-1)^n}{\sqrt{n}}$
+\end{pmatrix}$;\\
+\begin{align*}
+	\sum\limits_{n=1}^\infty\frac{1}{7^n}\begin{pmatrix}
+		3n\\
+		n
+	\end{pmatrix} = \sum\limits_{n=1}^\infty\frac{1}{7^n} \frac{(3n)!}{n!(2n)!}\\
+	\text{Quotientenregel:}\\
+	\frac{(3n+1)!}{7^{n+1}(n+1)!(2n+2)!}\frac{7^nn!(2n)!}{(3n)!}\\
+	\Leftrightarrow \frac{(3n+3)(3n+2)(3n+1)n!(2n)!(3n)!}{7(n+1)(2n+2)(2n+1)n!(2n)!(3n)!}\\
+	\frac{(3n+3)(3n+2)(3n+1)}{7(n+1)(2n+2)(2n+1)}\\
+	\end{align*}
+\item $\sum\limits_{n=1}^\infty\frac{(-1)^n}{\sqrt{n}}$\\
+Leipnitz-Kriterium für alternierende Reihen:\\
+da $\lim_{n\to\infty} \frac{1}{\sqrt{n}} = 0$ (momoton Fallend) ist $$\sum\limits_{n=1}^\infty\frac{(-1)^n}{\sqrt{n}}\text{ ist kovergent}$$ 
+
 \end{enumerate}
 
 \end{enumerate}

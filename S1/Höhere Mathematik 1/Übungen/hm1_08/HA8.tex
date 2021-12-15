@@ -6,28 +6,46 @@
 
 \item $a_n=\left(\frac{1+i}{2}\right)^n$;
 \begin{align*}
- &\sum\limits_{n=1}^\infty\left(\frac{1+i}{2}\right)^n\\
-=&\sum\limits_{n=0}^\infty\left(\frac{1+i}{2}\right)^n-1
+ 	&\sum\limits_{n=1}^\infty\left(\frac{1+i}{2}\right)^n\\
+	=&\sum\limits_{n=0}^\infty\left(\frac{1+i}{2}\right)^n-1
 \end{align*}
 Geometrische Reihe mit $|\frac{1+i}{2}| = \frac{|1+i|}{|2|} = \frac{\sqrt{2}}{2} < 1$:\\
-$\Rightarrow 
- \sum\limits_{n=0}^\infty\left(\frac{1+i}{2}\right)^n-1
-=\frac{1}{1-(\frac{1}{2}+\frac{i}{2})}-1
-=\frac{1}{\frac{1}{2}-\frac{i}{2}}-1
-=1-\frac{2}{i}
-=1+2i$\\
+$\Rightarrow$ konvergent.\\\\
+Überprüfen absoluter Konvergenz:\\
+\begin{align*}
+	&\sum\limits_{n=1}^\infty\left|\left(\frac{1+i}{2}\right)^n\right|\\
+	=&\sum\limits_{n=1}^\infty\left|\frac{1+i}{2}\right|^n\\
+	=&\sum\limits_{n=1}^\infty\left(\frac{\sqrt{2}}{2}\right)^n\\
+	=&\sum\limits_{n=0}^\infty\left(\frac{\sqrt{2}}{2}\right)^n-1\\
+\end{align*}
+Aus der geometrischen Reihe mit $|\frac{\sqrt{2}}{2}| < 1$ folgt $\sum\limits_{n=1}^\infty\left|\left(\frac{1+i}{2}\right)^n\right|$ konvergiert.\\
+$\Rightarrow$ absolut konvergent\\
 
 \item $a_n=\frac{(-1)^n}{\sqrt[3]{n}}$;\\
-Quotientenregel:
+Quotientenkriterium:
 \begin{align*}
 	&\left|\frac{(-1)^n\sqrt[3]{n+1}}{(-1)^n\sqrt[3]{n}}\right|\\
 	=&\left|\frac{-1\cdot\sqrt[3]{n+1}}{\sqrt[3]{n}}\right|\\
 	=&\left|\frac{\sqrt[3]{n+1}}{\sqrt[3]{n}}\right|\\
 \end{align*}
 Aus $\sqrt{a}>\sqrt{b}$ für $a>b$ folgt $\left|\frac{\sqrt[3]{n+1}}{\sqrt[3]{n}}\right|>1$.\\
-$\Rightarrow$ divergent $\Rightarrow$ nicht absolut konvergent.
+$\Rightarrow$ divergent $\Rightarrow$ nicht absolut konvergent.\\
 
-\item $a_n=(-1)^n\frac{n+2}{2n}$.
+\item $a_n=(-1)^n\frac{n+2}{2n}$.\\
+Quotientenkriterium:\\
+\begin{align*}
+	&\left|(-1)^{n+1}\frac{n+3}{2(n+1)}\frac{1}{(-1)^n}\frac{2n}{n+2}\right|\\
+	=&\left|(-1)\frac{(n+3)(2n)}{(2n+2)(n+2)}\right|\\
+	=&\left|\frac{2n^2+6n}{2n^2+6n+4}\right|<1
+\end{align*}
+$\Rightarrow$ konvergent.\\\\
+Überprüfen absoluter Konvergenz:\\
+\begin{align*}
+	&\left|\frac{\left|(-1)^{n+1}\frac{n+3}{2(n+1)}\right|}{\left|(-1)^n\frac{n+2}{2n}\right|}\right|\\
+	=&\left|\frac{(n+3)(2n)}{2(n+1)(n+2)}\right|\\
+	=&\left|\frac{2n^2+6n}{2n^2+6n+4}\right|<1
+\end{align*}
+$\Rightarrow$ absolut konvergent.
 \end{enumerate}
 \item[8.4] Sei $s_n\coloneqq \sum\limits_{k=0}^n\frac{1}{k!}$ und $e=\lim\limits_{n\to\infty}s_n$ die Euler'sche Zahl.
 \begin{enumerate}

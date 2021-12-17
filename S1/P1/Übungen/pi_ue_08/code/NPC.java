@@ -5,7 +5,6 @@
  */
 class NPC {
     private final GameObject avatar;
-    private boolean returning = false;
     private boolean horizontalMovement;
     
     private final int triggerDistance = 3;
@@ -16,19 +15,16 @@ class NPC {
     public NPC(GameObject avatar, boolean horizontalMovement){
         this.avatar = avatar;
         this.horizontalMovement = horizontalMovement;
-        
-        avatar.setRotation(horizontalMovement?0:3);
     }
     
     public void act(){
         if(triggered){
             Move(buffer.pop());
         }else{
-            int _direction = returning?(horizontalMovement?2:1):(horizontalMovement?0:3);
-            if(!RPGGame.getField().hasNeighbor(avatar.getX(), avatar.getY(), _direction)){
-                returning = !returning;
-                _direction=(_direction+2)%4;
+            if(!RPGGame.getField().hasNeighbor(avatar.getX(), avatar.getY(), avatar.getRotation())){
+                avatar.setRotation((avatar.getRotation()+2)%4);
             }
+            int _direction = avatar.getRotation();
             Move(_direction);
             
             int dx = RPGGame.getPlayer().getX()-avatar.getX(),

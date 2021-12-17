@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=NPC
-comment0.text=\n\ Diese\ Klasse\ definiert\ <Zusammenfassung\ erg\u00E4nzen>\n\n\ @author\ Moritz\ Salger\n
+comment0.text=\r\n\ Diese\ Klasse\ definiert\ <Zusammenfassung\ erg\u00E4nzen>\r\n\r\n\ @author\ Moritz\ Salger\r\n
 comment1.params=avatar\ horizontalMovement
 comment1.target=NPC(GameObject,\ boolean)
 comment2.params=

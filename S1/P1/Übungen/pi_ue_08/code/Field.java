@@ -37,7 +37,10 @@ class Field
     public final int SIZE_Y;
     
     public Field(String[] _map){
-        this.map=_map;
+        this.map=_map==null?new String[0]:_map;
+        for(int i = 0; i < this.map.length; i++){
+            if(this.map[i]==null) this.map[i]="";
+        }
         int sx = 0;
         for(int y = 0; y < this.map.length; y+=2){
             int length = this.map[y].length();
@@ -69,26 +72,13 @@ class Field
         return this.map[y].charAt(x);
     }
     
+    /**
+     * @param x x-coordinate of tile to check from.
+     * @param y y.coordinate of tile to check from.
+     * @param direction the direction from the tile to the neighboring one to check.
+     * @return if a tile has a neighboring and to itself connected pathway.   
+    */
     public boolean hasNeighbor(int x, int y, int direction){
         return ((getNeighborhood(x*2, y*2)>>direction)&1)==1;
-    }
-    
-    /** Ein Testfall, der alle Nachbarschaften enthält. */
-    static void test()
-    {
-        new GameObject.Canvas(5, 5, 96, 96);
-
-        // Einkommentieren, sobald Konstruktor vorhanden
-        new Field(new String[] {
-            "O-O-O-O  ",
-            "|   |    ",
-            "O O-O-O O",
-            "| | | | |",
-            "O-O-O-O-O",
-            "| | | | |",
-            "O O-O-O O",
-            "    |   |",
-            "O-O-O-O-O"
-        });
     }
 }

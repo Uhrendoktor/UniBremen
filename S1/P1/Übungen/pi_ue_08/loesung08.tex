@@ -1,0 +1,37 @@
+\documentclass{pi1}
+\usepackage{listings, amsmath}
+
+\begin{document}
+\maketitle{8}{Leander Staack}{Julius Walczynski [6113829]}
+\section{Nachbarschaften}
+\lstinputlisting[firstnumber=81, firstline=81, lastline=83]{code/Field.java}
+Die Methode \textit{hasNeighbor} bekommt drei Parameter übergeben:\\\\
+\makebox[2cm][l]{\textit{x}} Die X-Koordinate des Feldes von dem aus getestet werden soll.\\
+\makebox[2cm][l]{\textit{y}} Die Y-Koordinate des Feldes von dem aus getestet werden soll.\\
+\makebox[2cm][l]{\textit{direction}} Eine Richtung kodiert in 2Bits. Dargestellt durch die Nummern 0-3.\\\\
+Im die Spielfeld-Koordinaten zu den Koordinaten des zu Grunde liegenden String-Arrays \textit{map} umzurechnen, müssen diese zuerst mit 2 multipliziert werden.\\
+Mit Hilfe dieser Koordinaten, kann die Methode \textit{getNeighborhood} eine 4-Bit kodierte Nachbarschaftssignatur errechnen, wobei das n-te Bit jeweils die Existent eines validen Nachbarfeld in der jeweilig kodierten Richtung darstellt (0: wenn bei Nichtexistienz, 1: bei Existenz).\\\\
+Um die gewünschte Richtung/die Information des Bits für die entsprechende Richtung besser überprüfen zu können, wird es mit Hilfe des Bit-Shift Operators auf das niedrigste Bit gebracht. Da das gewünschte Bit an der Position der kodierten Richtung sitzt, kann es mit Hilfe von \textit{getNeighborhood(...)>>direction} an die erste Stelle geschoben werden.\\\\
+Um alle anderen Bits mit unnötigen Informationen loszuwerden, wird der \glqq Und\grqq -Operator auf das Ergebnis und eine Bitmaske von \textit{1=0b0001} angewendet. Das resultierende Ergebnis besteht nun nur noch aus einem einzigen informationstargenden Bit (dem ersten Bit).\\\\
+Sollte die Nachbarschaftssignatur für die gefragte Richtung wahr gewesen sein (ein Bit mit dem Wert 1 an der entsprechenden Stelle enthalten haben), ist das Ergebnis = 1; ansonsten = 0.\\\\
+Nun kann einfach durch \textit{==1} überprüft werden, ob ein entsprechender Nachbar existiert.\\
+Das logische Ergebnis wird danach als Rückgabewert zurück gegeben.\\\\
+
+\newpage
+\section{Nachbarschaftstest}
+Der Unit-Test für die \textit{Field}-Klasse besteht aus 4 Tests, die alle auf eine grundlegende Test-Methode (\textit{testField}) zurückgreifen.
+\lstinputlisting[firstnumber=76, firstline=76, lastline=86]{code/FieldTest.java}
+\textit{testField} loopt über jede mögliche Koordinate innerhalb der gegebenen \textit{map}, sowie jeweils über ein Feld außerhalb der \textit{map}, um zu überprüfen, ob \textit{OutOfBoundsExceptions} richtig gehandelt werden.
+Die realen Feld-Koordinaten werden in die Koordinaten der \textit{map} umgerechnet. Wenn \textit{hasNeighbor} für eine Richtung wahr ist, so muss in der \textit{map} in dieser Richtung eine Verbindung zu einer Nachbarzelle gegeben sein. Dies wird in 4 \textit{if-statements} für alle 4 möglichen Richtungen überprüft.\\
+
+Die 4 Testfälle \textit{testMap1, testMap2, testMap3, testMap4} benutzen die \textit{testField}-Methode um unterschiedliche Karten als Inputs zu testen. Dabei werden Edge-Cases wie \textit{map=null}, \textit{map} enthält Elemente die \textit{null} sind, \textit{map} enthält keine Elemente und normale Kartenlayouts getestet.
+
+\section{In geregelten Bahnen}
+Durch die \textit{hasNeighbor}-Methode, lässt sich die Bewegung des Spielers auf die Wege beschränken:
+\lstinputlisting[firstnumber=68, firstline=68, lastline=70]{code/RPGGame.java}
+Bevor der Spieler in dem Main-Gameloop nach dem drücken einer der Pfeiltasten in die zugehörige Richtung bewegt wird, wird gecheckt, ob in der gefragten Richtung, überhaupt ein angeschlossenes Weg-Feld existiert. Sollte dies nicht der Fall sein, wird der nachfolge Code durch \textit{continue} übersprungen und der nächste Durchgang der \textit{while}-Schleife direkt ausgeführt. Somit schreitet das Spiel erst voran, wenn der Spieler über einen validen Weg läuft.\\
+
+Auch Bewegung der \textit{NPC}s lässt sich durch \textit{hasNeighbor} vereinfachen:
+\lstinputlisting[firstnumber=24, firstline=24, lastline=28]{code/NPC.java}
+Der \textit{NPC} läuft solange in seine Anfangsrichtung, bis der Weg in diese Richtung endet (\textit{hasNeighbor} in die Laufrichtung \textit{false} zurückgibt). Wenn dies passiert, dreht sich der \textit{NPC} um 180° und läuft in die entgegengesetzte Richtung, bis er erneut auf das Ende des Weges trifft. Diese Schleife führt dazu, dass der \textit{NPC} auf einer gerade Strecken hin und her patrouilliert.
+\end{document}

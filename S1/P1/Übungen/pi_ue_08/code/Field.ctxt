@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Field
+comment0.text=\r\n\ Diese\ Klasse\ repr\u00E4sentiert\ ein\ Spielfeld.\ Ihr\ Konstruktor\ bekommt\ dieses\ als\r\n\ String-Array\ \u00FCbergeben.\r\n
+comment1.params=_map
+comment1.target=Field(java.lang.String[])
+comment2.params=x\ y
+comment2.target=int\ getNeighborhood(int,\ int)
+comment3.params=x\ y
+comment3.target=int\ isCellWhitespace(int,\ int)
+comment4.params=x\ y
+comment4.target=char\ getCell(int,\ int)
+comment5.params=x\ y\ direction
+comment5.target=boolean\ hasNeighbor(int,\ int,\ int)
+comment5.text=\r\n\ @param\ x\ x-coordinate\ of\ tile\ to\ check\ from.\r\n\ @param\ y\ y.coordinate\ of\ tile\ to\ check\ from.\r\n\ @param\ direction\ the\ direction\ from\ the\ tile\ to\ the\ neighboring\ one\ to\ check.\r\n\ @return\ if\ a\ tile\ has\ a\ neighboring\ and\ to\ itself\ connected\ pathway.\ \ \ \r\n
+numComments=6

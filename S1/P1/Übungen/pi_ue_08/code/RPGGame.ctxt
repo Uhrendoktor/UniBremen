@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=RPGGame
+comment0.text=\r\n\ Dies\ ist\ die\ Hauptklasse\ eines\ Spiels.\ Sie\ enth\u00E4lt\ die\ Hauptmethode,\ die\ zum\r\n\ Starten\ des\ Spiels\ aufgerufen\ werden\ muss.\r\n\r\n\ @author\ Moritz\ Salger\r\n
+comment1.params=
+comment1.target=void\ main()
+comment1.text=Das\ Spiel\ beginnt\ durch\ Aufruf\ dieser\ Methode.
+comment2.params=_min\ _max\ _value
+comment2.target=int\ MinMax(int,\ int,\ int)
+comment3.params=_x1\ _y1\ _x2\ _y2
+comment3.target=boolean\ checkCollision(int,\ int,\ int,\ int)
+comment4.params=
+comment4.target=int\ getFieldX()
+comment5.params=
+comment5.target=int\ getFieldY()
+comment6.params=
+comment6.target=Field\ getField()
+comment7.params=
+comment7.target=GameObject\ getPlayer()
+numComments=8

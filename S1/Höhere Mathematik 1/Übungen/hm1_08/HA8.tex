@@ -22,35 +22,70 @@ $\Rightarrow$ konvergent.\\\\
 Aus der geometrischen Reihe mit $|\frac{\sqrt{2}}{2}| < 1$ folgt $\sum\limits_{n=1}^\infty\left|\left(\frac{1+i}{2}\right)^n\right|$ konvergiert.\\
 $\Rightarrow$ absolut konvergent\\
 
-\item $a_n=\frac{(-1)^n}{\sqrt[3]{n}}$;\\
-Quotientenkriterium:
+\item $a_n=\frac{(-1)^n}{\sqrt[3]{n}}=(-1)^n\frac{1}{\sqrt[3]{n}}$;\\
+
+Nach dem Leipniz-Kriterium, konvergiert eine Reihe, wenn die Folge $(b_n)\coloneqq \frac{1}{\sqrt[3]{n}}$ eine monoton fallende Nullfolge ist.
+Es gilt: $a>b\Rightarrow\sqrt{a}>\sqrt{b}$.\\
+$\Rightarrow \sqrt[3]{n}\xrightarrow{n\to\infty}\infty\Rightarrow\frac{1}{\sqrt[3]{n}}\xrightarrow{n\to\infty}0$ (monoton fallend)\\
+$\Rightarrow$ konvergent.\\\\
+Absolute Konvergenz:\\
 \begin{align*}
-	&\left|\frac{(-1)^n\sqrt[3]{n+1}}{(-1)^n\sqrt[3]{n}}\right|\\
-	=&\left|\frac{-1\cdot\sqrt[3]{n+1}}{\sqrt[3]{n}}\right|\\
-	=&\left|\frac{\sqrt[3]{n+1}}{\sqrt[3]{n}}\right|\\
+	&\left|\frac{(-1)^n}{\sqrt[3]{n}}\right|\\
+	=&\frac{\left|(-1)^n\right|}{\left|\sqrt[3]{n}\right|}\\
+	=&\frac{1}{\sqrt[3]{n}}\\
+	=&\sqrt[n]{\frac{1}{\sqrt[3]{n}}}^n\\
+	=&\frac{1}{\sqrt[3n]{n}}^n
 \end{align*}
-Aus $\sqrt{a}>\sqrt{b}$ für $a>b$ folgt $\left|\frac{\sqrt[3]{n+1}}{\sqrt[3]{n}}\right|>1$.\\
+Geometrische Reihe mit $\frac{1}{\sqrt[3]{n}}<1$:\\
+\begin{align*}
+	&\frac{1}{1-\frac{1}{\sqrt[3n]{n}}}\\
+	=&\frac{1}{\frac{\sqrt[3n]{n}-1}{\sqrt[3n]{n}}}\\
+	=&\frac{\sqrt[3n]{n}}{\sqrt[3n]{n}-1}
+\end{align*}
+\begin{align*}
+	\sqrt[3n]{n}&\xrightarrow{n\to\infty}1\\
+	\Rightarrow\sqrt[3n]{n}-1&\xrightarrow{n\to\infty}0\\
+	\Rightarrow\frac{\sqrt[3n]{n}}{\sqrt[3n]{n}-1}&\xrightarrow{n\to\infty}\infty
+\end{align*}
 $\Rightarrow$ divergent $\Rightarrow$ nicht absolut konvergent.\\
+(Umrechnungen von $\sum\limits_{n=1}^\infty$ zu $\sum\limits_{n=0}^\infty$ mit $n+1$ wurden weggelassen, weil sie durch den allgemeineren Fall von $n$ gezeigt wurden).
 
 \item $a_n=(-1)^n\frac{n+2}{2n}$.\\
-Quotientenkriterium:\\
+
+Nach dem Leipniz-Kriterium, konvergiert eine Reihe, wenn die Folge $(b_n)\coloneqq \frac{n+2}{2n}$ für $n\geq 1$ eine monoton fallende Nullfolge ist.\\
 \begin{align*}
-	&\left|(-1)^{n+1}\frac{n+3}{2(n+1)}\frac{1}{(-1)^n}\frac{2n}{n+2}\right|\\
-	=&\left|(-1)\frac{(n+3)(2n)}{(2n+2)(n+2)}\right|\\
-	=&\left|\frac{2n^2+6n}{2n^2+6n+4}\right|<1
+	\geqnfi{\frac{n+2}{2n}}{>}{\frac{n+3}{2n+2}}{\cdot(2n+2)}
+	\geqn{\frac{(n+2)(2n+2)}{2n}}{>}{n+3}
+	\geqni{\frac{2n^2+6n+4}{2n}}{>}{n+3}{-(n+3)}
+	\geqn{\frac{2n^2+6n+4}{2n}-\frac{2n(n+3)}{2n}}{>}{0}
+	\geqn{\frac{2n^2+6n+4}{2n}-\frac{2n^2+6n}{2n}}{>}{0}
+	\geqni{\frac{4}{2n}=\frac{2}{n}}{>}{0}{\surd \text{ für alle } n\geq 1}
 \end{align*}
-$\Rightarrow$ konvergent.\\\\
-Überprüfen absoluter Konvergenz:\\
-\begin{align*}
-	&\left|\frac{\left|(-1)^{n+1}\frac{n+3}{2(n+1)}\right|}{\left|(-1)^n\frac{n+2}{2n}\right|}\right|\\
-	=&\left|\frac{(n+3)(2n)}{2(n+1)(n+2)}\right|\\
-	=&\left|\frac{2n^2+6n}{2n^2+6n+4}\right|<1
-\end{align*}
-$\Rightarrow$ absolut konvergent.
+Die Folge ist für alle Elemente, die in der Reihe vertreten sind ($n\geq 1$) monoton fallend.\\\\
+Grenzwert \textit{(siehe Umformung Ungleichung zu $\frac{2}{n}>0$)}:\\
+$$a_n=a_{n+1}\Leftrightarrow a=\frac{1}{2}$$
+\begin{tabular}{rl}
+	$\frac{1}{2}>0\Rightarrow$  &keine Nullfolge.\\
+	$\Rightarrow$ &nicht konvergent $\Rightarrow$ nicht absolut konvergent\\
+	$\Rightarrow$ &divergent.
+\end{tabular}
+
 \end{enumerate}
 \item[8.4] Sei $s_n\coloneqq \sum\limits_{k=0}^n\frac{1}{k!}$ und $e=\lim\limits_{n\to\infty}s_n$ die Euler'sche Zahl.
 \begin{enumerate}
-\item Zeige die Ungleichungen $0<e-s_n<\frac{1}{n*n!}$ für $n\in\N$, mit Hilfe einer geeigneten geometrischen Reihe.
+\item Zeige die Ungleichungen $0<e-s_n<\frac{1}{n*n!}$ für $n\in\N$, mit Hilfe einer geeigneten geometrischen Reihe.\\
+\begin{align*}
+	\geqnf{0}{<}{e-s_n}
+	\geqn{0}{<}{\sum\limits_{k=0}^\infty\frac{1}{k!}-\sum\limits_{k=0}^n\frac{1}{k!}}
+	\geqn{0}{<}{\sum\limits_{k=n+1}^\infty\frac{1}{k!}}
+\end{align*}
+Da alle Summanden $>0$, muss $e-s_n>0$ sein.\\
+$e-s_n$ wird größer, je kleinere Werte $s_n$ annimmt. Da es sich bei $s_n$ um eine Summe mit rein positiven Summanden handelt, ist $s_n$ am kleinsten, wenn es die wenigstens möglichen Summanden besitzt ($n=1$).\\
+$\Rightarrow \min s_n = \sum\limits_{k=0}^1\frac{1}{k!}=2$.
+\begin{align*}
+	\geqnf{e-s_n}{<}{\frac{1}{n\cdot n!}}
+	\geqn{e-2}{<}{1}
+\end{align*}
 \item Bestimme mit Hilfe von (a) eine Zahl $n\in\N$, für die $|e-s_N|\leq 0.5\cdot 10^{-4}$ gilt, und gib den Wert von $s_N$ an.
 \item Zeige, dass die Euler'sche Zahl $e$ irrational ist.
 \end{enumerate}

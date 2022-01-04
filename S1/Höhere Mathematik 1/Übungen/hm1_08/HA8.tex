@@ -21,6 +21,7 @@ $\Rightarrow$ konvergent.\\\\
 Aus der geometrischen Reihe mit $|\frac{\sqrt{2}}{2}| < 1$ folgt $\sum\limits_{n=1}^\infty\left|\left(\frac{1+i}{2}\right)^n\right|$ konvergiert.\\
 $\Rightarrow$ absolut konvergent\\
 
+\newpage
 \item $a_n=\frac{(-1)^n}{\sqrt[3]{n}}=(-1)^n\frac{1}{\sqrt[3]{n}}$;\\
 
 Nach dem Leipniz-Kriterium, konvergiert eine Reihe, wenn die Folge $(b_n)\coloneqq \frac{1}{\sqrt[3]{n}}$ eine monoton fallende Nullfolge ist.
@@ -29,17 +30,17 @@ $\Rightarrow \sqrt[3]{n}\xrightarrow{n\to\infty}\infty\Rightarrow\frac{1}{\sqrt[
 $\Rightarrow$ konvergent.\\\\
 Absolute Konvergenz:\\
 \begin{align*}
-	&\left|\frac{(-1)^n}{\sqrt[3]{n}}\right|\\
-	=&\frac{\left|(-1)^n\right|}{\left|\sqrt[3]{n}\right|}\\
-	=&\frac{1}{\sqrt[3]{n}}\\
-	=&\sqrt[n]{\frac{1}{\sqrt[3]{n}}}^n\\
-	=&\frac{1}{\sqrt[3n]{n}}^n
+	\left|\frac{(-1)^n}{\sqrt[3]{n}}\right|
+	=\frac{\left|(-1)^n\right|}{\left|\sqrt[3]{n}\right|}
+	=\frac{1}{\sqrt[3]{n}}
+	=\left(\sqrt[n]{\frac{1}{\sqrt[3]{n}}}\right)^n
+	=\left(\frac{1}{\sqrt[3n]{n}}\right)^n
 \end{align*}
 Geometrische Reihe mit $\frac{1}{\sqrt[3]{n}}<1$:\\
 \begin{align*}
-	&\frac{1}{1-\frac{1}{\sqrt[3n]{n}}}\\
-	=&\frac{1}{\frac{\sqrt[3n]{n}-1}{\sqrt[3n]{n}}}\\
-	=&\frac{\sqrt[3n]{n}}{\sqrt[3n]{n}-1}
+	\frac{1}{1-\frac{1}{\sqrt[3n]{n}}}
+	=\frac{1}{\frac{\sqrt[3n]{n}-1}{\sqrt[3n]{n}}}
+	=\frac{\sqrt[3n]{n}}{\sqrt[3n]{n}-1}
 \end{align*}
 \begin{align*}
 	\sqrt[3n]{n}&\xrightarrow{n\to\infty}1\\
@@ -49,6 +50,7 @@ Geometrische Reihe mit $\frac{1}{\sqrt[3]{n}}<1$:\\
 $\Rightarrow$ divergent $\Rightarrow$ nicht absolut konvergent.\\
 (Umrechnungen von $\sum\limits_{n=1}^\infty$ zu $\sum\limits_{n=0}^\infty$ mit $n+1$ wurden weggelassen, weil sie durch den allgemeineren Fall von $n$ gezeigt wurden).
 
+\newpage
 \item $a_n=(-1)^n\frac{n+2}{2n}$.\\
 
 Nach dem Leipniz-Kriterium, konvergiert eine Reihe, wenn die Folge $(b_n)\coloneqq \frac{n+2}{2n}$ für $n\geq 1$ eine monoton fallende Nullfolge ist.\\
@@ -62,30 +64,66 @@ Nach dem Leipniz-Kriterium, konvergiert eine Reihe, wenn die Folge $(b_n)\colone
 \end{align*}
 Die Folge ist für alle Elemente, die in der Reihe vertreten sind ($n\geq 1$) monoton fallend.\\\\
 Grenzwert \textit{(siehe Umformung Ungleichung zu $\frac{2}{n}>0$)}:\\
-$$a_n=a_{n+1}\Leftrightarrow a=\frac{1}{2}$$
+$$a_n=a_{n+1}\Rightarrow a=\frac{1}{2}$$
 \begin{tabular}{rl}
-	$\frac{1}{2}>0\Rightarrow$  &keine Nullfolge.\\
+	$\frac{1}{2}>0\Rightarrow$ &keine Nullfolge.\\
 	$\Rightarrow$ &nicht konvergent $\Rightarrow$ nicht absolut konvergent\\
 	$\Rightarrow$ &divergent.
 \end{tabular}
-
 \end{enumerate}
+
+\newpage
 \item[8.4] Sei $s_n\coloneqq \sum\limits_{k=0}^n\frac{1}{k!}$ und $e=\lim\limits_{n\to\infty}s_n$ die Euler'sche Zahl.
 \begin{enumerate}
 \item Zeige die Ungleichungen $0<e-s_n<\frac{1}{n*n!}$ für $n\in\N$, mit Hilfe einer geeigneten geometrischen Reihe.\\
 \begin{align*}
-	\geqnf{0}{<}{e-s_n}
-	\geqn{0}{<}{\sum\limits_{k=0}^\infty\frac{1}{k!}-\sum\limits_{k=0}^n\frac{1}{k!}}
+	e-s_n\\
+	=\sum\limits_{k=0}^\infty\frac{1}{k!}-\sum\limits_{k=0}^n\frac{1}{k!}
+	=\sum\limits_{k=n+1}^\infty\frac{1}{k!}
+\end{align*}
+\begin{align*}
 	\geqn{0}{<}{\sum\limits_{k=n+1}^\infty\frac{1}{k!}}
 \end{align*}
 Da alle Summanden $>0$, muss $e-s_n>0$ sein.\\
 $e-s_n$ wird größer, je kleinere Werte $s_n$ annimmt. Da es sich bei $s_n$ um eine Summe mit rein positiven Summanden handelt, ist $s_n$ am kleinsten, wenn es die wenigstens möglichen Summanden besitzt ($n=1$).\\
-$\Rightarrow \min s_n = \sum\limits_{k=0}^1\frac{1}{k!}=2$.
 \begin{align*}
-	\geqnf{e-s_n}{<}{\frac{1}{n\cdot n!}}
-	\geqn{e-2}{<}{1}
+	\geqn{\sum\limits_{k=n+1}^\infty\frac{1}{k!}}{<}{\frac{1}{n\cdot n!}}
+	\geqni{\frac{1}{(n+1)!}(1+\frac{1}{(n+2)}+\frac{1}{(n+2)(n+3)}+\cdots)}{<}{\frac{1}{n\cdot n!}}{\cdot n!}
+	\Leftrightarrow \frac{1}{(n+1)}(1+\frac{1}{n+2}+(1+\frac{1}{(n+3)}+\frac{1}{(n+3)(n+4)}+\cdots))&<\frac{1}{n}
 \end{align*}
+Durch geometrische Reihe\\
+$(1+\frac{1}{n+2}+\frac{1}{(n+2)(n+3)}+\cdots)<(1+\frac{1}{2}+\frac{1}{2^2}+\cdots)=2\\
+\Leftrightarrow (1+\frac{1}{n+3}+\frac{1}{(n+3)(n+4)}+\cdots)<(1+\frac{1}{2^2}+\frac{1}{2^3}\cdots)=2-\frac{1}{2}=\frac{3}{2}$\\
+abschätzen:\\
+\begin{align*}
+	\geqni{\frac{\frac{3}{2}}{(n+1)^2(n+2)}}{<}{\frac{1}{n}}{\cdot n}
+	\geqn{\frac{\frac{3}{2}n}{(n+1)^2(n+2)}}{<}{1}
+	\geqn{\frac{\frac{3}{2}n}{(n^2+2n+1)(n+2)}}{<}{1}
+	\geqn{\frac{\frac{3}{2}n}{n^3+4n^2+5n+2}}{<}{1}\\
+	\geqn{\frac{\frac{3}{2}}{n^2+4n+5+\frac{2}{n}}<\frac{\frac{3}{2}}{n^2+4n+5}}{<}{1}
+	\Rightarrow \geqnf{\frac{2}{3}(n^2+4n+5)}{>}{1}
+	\geqni{2n^2+8n+10>8n}{>}{3}{\text{für }n\geq 1>\frac{3}{8}}
+\end{align*}
+$\Rightarrow \sum\limits_{k=n+1}^\infty\frac{1}{k!}<\frac{1}{n\cdot n!}$ für $n\geq 1$
+
+\newpage
 \item Bestimme mit Hilfe von (a) eine Zahl $n\in\N$, für die $|e-s_N|\leq 0.5\cdot 10^{-4}$ gilt, und gib den Wert von $s_N$ an.
+\begin{align*}
+	\geqnf{\sum\limits_{k=n+1}^\infty\frac{1}{k!}-0.5\cdot 10^{-4}<\sum\limits_{k=n+1}^\infty\frac{1}{2^k}-0.5\cdot 10^{-4}}{\leq}{0}
+	\geqn{\sum\limits_{k=0}^\infty\frac{1}{2^k}-\sum\limits_{k=0}^n\frac{1}{2^k}-0.5\cdot 10^{-4}}{\leq}{0}
+	\geqn{2-0.5\cdot 10^{-4}-\sum\limits_{k=0}^n\frac{1}{2^k}}{\leq}{0}
+	\geqn{\sum\limits_{k=0}^n\frac{1}{2^k}}{\geq}{2-0.5\cdot 10^{-4}}
+\end{align*}
+$\sum\limits_{k=0}^n\frac{1}{2^k}=1+\frac{1}{2}+\frac{1}{4}+\cdots = 2 \Rightarrow$ an der k-ten Stelle fehlt der Reihe bis zum Grenzwert 2 noch $\frac{1}{2^k}$.
+\begin{align*}
+	\Rightarrow\geqnf{\frac{1}{2^k}}{\leq}{0.5\cdot 10^{-4}}
+	\geqni{\frac{1}{2^k}}{\geq}{\frac{1}{2\cdot 10^{4}}}{\log_2}
+	\geqn{k}{\geq}{\log_2(2\cdot 10^4)}
+	\geqn{k}{\gtrsim}{14.2877}
+\end{align*}
+$\Rightarrow n\geq 15$.\\
+$s_{15} = \sum\limits_{k=0}^{15}\frac{1}{k!} \approx 2.71828128$
+
 \item Zeige, dass die Euler'sche Zahl $e$ irrational ist.
 \end{enumerate}
 \item[8.5]

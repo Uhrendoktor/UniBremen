@@ -129,7 +129,14 @@ $s_{15} = \sum\limits_{k=0}^{15}\frac{1}{k!} \approx 2.71828128$
 \end{enumerate}
 \item[8.5]
 \begin{enumerate}
-\item Konvergiert die Reihe $\sum\limits_{n=2}^\infty\left(\frac{1}{\sqrt{n}-1}+\frac{1}{\sqrt{n}+1}\right)$? Majoranten
+\item Konvergiert die Reihe $\sum\limits_{n=2}^\infty\left(\frac{1}{\sqrt{n}-1}+\frac{1}{\sqrt{n}+1}\right)$?\\
+\begin{align*}
+	&\frac{1}{\sqrt{n}-1}+\frac{1}{\sqrt{n}+1}\\
+	\Leftrightarrow&\frac{2\sqrt{n}}{n-1}\\\\
+	\frac{2\sqrt{n}}{n-1} > &\frac{1}{n-1} > \frac{1}{n}\\
+	\sum\limits_{n=2}^\infty\frac{1}{n} = &\infty \\
+	\Rightarrow\sum\limits_{n=2}^\infty&\left(\frac{1}{\sqrt{n}-1}+\frac{1}{\sqrt{n}+1}\right)=\infty
+\end{align*}
 \item Berechne $\sum\limits_{n=1}^\infty\frac{n-1}{n!}$.\\
 \begin{align*}
 	\eqnf{A}{\sum_{n=1}^{\infty}\frac{n-1}{n!}}

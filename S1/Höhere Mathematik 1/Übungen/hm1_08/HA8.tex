@@ -102,10 +102,9 @@ $e-s_n$ wird größer, je kleinere Werte $s_n$ annimmt. Da es sich bei $s_n$ um 
 \begin{align*}
 	\geqnf{\frac{1}{(n+1)!}(1+\frac{1}{(n+2)}+\frac{1}{(n+2)(n+3)}+\cdots)}{<}{(1+\frac{1}{n+1}+\frac{1}{(n+1)^2}+\cdots)\frac{1}{(n+1)!}}
 	\geqn{1+\frac{1}{(n+2)}+\frac{1}{(n+2)(n+3)}+\cdots}{<}{1+\frac{1}{n+1}+\frac{1}{(n+1)^2}+\cdots}
-	\Rightarrow\sum\limits_{k=n+1}^\infty\frac{1}{k!}\frac{1}{n\cdot n!}
+	\Rightarrow\sum\limits_{k=n+1}^\infty\frac{1}{k!}<\frac{1}{n\cdot n!}
 \end{align*}
 
-\newpage
 \item Bestimme mit Hilfe von (a) eine Zahl $n\in\N$, für die $|e-s_N|\leq 0.5\cdot 10^{-4}$ gilt, und gib den Wert von $s_N$ an.
 \begin{align*}
 	\geqnf{\sum\limits_{k=n+1}^\infty\frac{1}{k!}-0.5\cdot 10^{-4}<\sum\limits_{k=n+1}^\infty\frac{1}{2^k}-0.5\cdot 10^{-4}}{\leq}{0}
@@ -137,7 +136,7 @@ Spaltet man die Reihe in 2 Teile $x$ und $y$ auf, wobei $x=\sum\limits_{k=0}^q\f
 Für $y$ gilt: $\sum\limits_{k=q+1}^\infty\frac{q!}{k!}<\sum\limits_{k=2}^\infty\frac{1}{k!}$
 \begin{align*}
 	&\sum\limits_{k=2}^\infty\frac{1}{k!}\\
-	=&\sum\limits_{k=0}^\infty\frac{1}{k!}-\frac{1}{0!}-\frac{1}{1!}
+	=&\sum\limits_{k=0}^\infty\frac{1}{k!}-\frac{1}{0!}-\frac{1}{1!}\\
 	=&e-2 < 1
 \end{align*}
 $\Rightarrow y\not\in\N \Rightarrow x+y\not\in\N$\\
@@ -146,6 +145,7 @@ $$(q-1)!\cdot p=\sum\limits_{k=0}^\infty\frac{q!}{k!}
 \Leftrightarrow (q-1)!\cdot p=x+y$$ mit $(q-1)!\cdot p\in\N$ und $x+y\not\in\N$ ergibt sich ein Widerspruch. $\Rightarrow e\not\in\Q$
 \end{enumerate}
 
+\newpage
 \item[8.5]
 \begin{enumerate}
 \item Konvergiert die Reihe $\sum\limits_{n=2}^\infty\left(\frac{1}{\sqrt{n}-1}+\frac{1}{\sqrt{n}+1}\right)$?\\
@@ -167,6 +167,8 @@ $$(q-1)!\cdot p=\sum\limits_{k=0}^\infty\frac{q!}{k!}
 	\lim_{n\to \infty}\frac{1}{n!} &= 0\\
 	\Rightarrow A &= 1\\
 \end{align*}
+
+\newpage
 \item Für welche $z\in\C\setminus\lbrace-1\rbrace$ konvergiert die Reihe $\sum\limits_{n=1}^\infty\frac{z^{n-1}}{(1+z)^n}?$\\
 Bestimme den Grenzwert, falls er existiert.\\\\
 Quotientenkriterium:
@@ -185,8 +187,9 @@ $\sum\limits_{n=1}^\infty\frac{z^{n-1}}{(1+z)^n}$ für all $z$ konvergiert\\
 	\eqn{\frac{1}{z}\sum\limits_{n=1}^\infty\left(\frac{z}{1+z}\right)^n }{\frac{1}{z}\left(\frac{1}{1-\frac{z}{1+z}}-1\right)}
 	\eqn{\sum\limits_{n=1}^\infty\frac{z^{n-1}}{(1+z)^n}}{1}
 \end{align*}
-
 \end{enumerate}
+
+\newpage
 \item[8.6] Ermittle (durch Probieren) das kleinste $n\in\N$, für dass $\sum\limits_{k=1}^n\frac{1}{k}>3$ ist. benutze einen Computer, um herauszufinden, wie groß man $n$ wählen muss, damit die Summe $>6$ bzw. $>9$ wird.\\
 \begin{minipage}{\textwidth /2}
 	\begin{scriptsize}

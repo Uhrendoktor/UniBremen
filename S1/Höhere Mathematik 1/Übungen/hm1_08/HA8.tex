@@ -123,8 +123,29 @@ $\sum\limits_{k=0}^n\frac{1}{2^k}=1+\frac{1}{2}+\frac{1}{4}+\cdots = 2 \Rightarr
 $\Rightarrow n\geq 15$.\\
 $s_{15} = \sum\limits_{k=0}^{15}\frac{1}{k!} \approx 2.71828128$
 
-\item Zeige, dass die Euler'sche Zahl $e$ irrational ist.
+\newpage
+\item Zeige, dass die Euler'sche Zahl $e$ irrational ist.\\
+$p,q\in\Z \Rightarrow \frac{p}{q}\in\Q$
+\begin{align*}
+	\eqnfi{\frac{p}{q}}{e}{\cdot q!}
+	\eqn{(q-1)!\cdot p}{e\cdot q!}
+	\eqn{(q-1)!\cdot p}{q!\sum\limits_{k=0}^\infty\frac{1}{k!}}
+	\eqn{(q-1)!\cdot p}{\sum\limits_{k=0}^\infty\frac{q!}{k!}}
+\end{align*}
+$\sum\limits_{k=0}^\infty\frac{q!}{k!} = \frac{q!}{0!}+\frac{q!}{1!}+\cdots+\frac{q!}{q!}+\cdots+\frac{q!}{k!}$\\
+Spaltet man die Reihe in 2 Teile $x$ und $y$ auf, wobei $x=\sum\limits_{k=0}^q\frac{q!}{k!}$ und $y=\sum\limits_{k=q+1}^\infty\frac{q!}{k!}$, fällt auf, weil $a,b\in\N, a\geq b\Rightarrow\frac{a!}{b!}\in\N$, dass jeder Summand $x_k$ in $x$ ein Element von $\N$ sein muss. Somit folgt: $x\in\N$.\\
+Für $y$ gilt: $\sum\limits_{k=q+1}^\infty\frac{q!}{k!}<\sum\limits_{k=2}^\infty\frac{1}{k!}$
+\begin{align*}
+	&\sum\limits_{k=2}^\infty\frac{1}{k!}\\
+	=&\sum\limits_{k=0}^\infty\frac{1}{k!}-\frac{1}{0!}-\frac{1}{1!}
+	=&e-2 < 1
+\end{align*}
+$\Rightarrow y\not\in\N \Rightarrow x+y\not\in\N$\\
+Aus 
+$$(q-1)!\cdot p=\sum\limits_{k=0}^\infty\frac{q!}{k!}
+\Leftrightarrow (q-1)!\cdot p=x+y$$ mit $(q-1)!\cdot p\in\N$ und $x+y\not\in\N$ ergibt sich ein Widerspruch. $\Rightarrow e\not\in\Q$
 \end{enumerate}
+
 \item[8.5]
 \begin{enumerate}
 \item Konvergiert die Reihe $\sum\limits_{n=2}^\infty\left(\frac{1}{\sqrt{n}-1}+\frac{1}{\sqrt{n}+1}\right)$?\\

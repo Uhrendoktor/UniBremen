@@ -91,18 +91,19 @@ $e-s_n$ wird größer, je kleinere Werte $s_n$ annimmt. Da es sich bei $s_n$ um 
 	\geqn{\sum\limits_{k=n+1}^\infty\frac{1}{k!}}{<}{\frac{1}{n\cdot n!}}
 	\geqn{\frac{1}{(n+1)!}(1+\frac{1}{(n+2)}+\frac{1}{(n+2)(n+3)}+\cdots)}{<}{\frac{1}{n\cdot n!}}
 \end{align*}
-Durch geometrische Reihe\\
-$(1+\frac{1}{n+2}+\frac{1}{(n+2)(n+3)}+\cdots)<(1+\frac{1}{n}+\frac{1}{n^2}+\cdots)=\frac{1}{1-\frac{1}{n}}=\frac{n}{n-1}$\\
-abschätzen:
 \begin{align*}
-	\geqnfi{\sum\limits_{k=n+1}^\infty\frac{1}{k!}}{<}{\frac{1}{(n+1)!}\sum\limits_{k=0}^\infty\frac{1}{n^k}<\frac{1}{n\cdot n!}}{\cdot n! \cdot n}
-	\geqn{\frac{n}{(n+1)}\sum\limits_{k=0}^\infty\frac{1}{n^k}}<{1}
-	\geqn{\frac{n}{n+1}\cdot\frac{n}{n-1}}{<}{1}
-	\geqni{\frac{n^2}{n^2-1}}{<}{1}{\cdot(n^2-1)}
-	\geqni{n^2}{>}{n^2-1}{-n^2}
-	\geqn{0}{>}{-1}
+	\eqnf{\frac{1}{n \cdot n!}}{\frac{n+1}{n}\frac{1}{(n+1)!}}
+	\eqn{\frac{1}{n \cdot n!}}{\frac{1}{\frac{n}{n+1}}\frac{1}{(n+1)!}}
+	\eqn{\frac{1}{n \cdot n!}}{\frac{1}{\frac{1+n}{1+n}-\frac{1}{n+1}}\frac{1}{(n+1)!}}
+	\eqn{\frac{1}{n \cdot n!}}{1-\frac{1}{n+1}\frac{1}{(n+1)!}}
+	\text{mit Geometrischer Reihe}\\
+	\eqn{\frac{1}{n \cdot n!}}{\sum_{k=0}^{\infty}\left(\frac{1}{n+1}\right)^k\frac{1}{(n+1)!}}
 \end{align*}
-$\Rightarrow \sum\limits_{k=n+1}^\infty\frac{1}{k!}<\frac{1}{n\cdot n!}$
+\begin{align*}
+	\geqnf{\frac{1}{(n+1)!}(1+\frac{1}{(n+2)}+\frac{1}{(n+2)(n+3)}+\cdots)}{<}{(1+\frac{1}{n+1}+\frac{1}{(n+1)^2}+\cdots)\frac{1}{(n+1)!}}
+	\geqn{1+\frac{1}{(n+2)}+\frac{1}{(n+2)(n+3)}+\cdots}{<}{1+\frac{1}{n+1}+\frac{1}{(n+1)^2}+\cdots}
+	\Rightarrow\sum\limits_{k=n+1}^\infty\frac{1}{k!}\frac{1}{n\cdot n!}
+\end{align*}
 
 \newpage
 \item Bestimme mit Hilfe von (a) eine Zahl $n\in\N$, für die $|e-s_N|\leq 0.5\cdot 10^{-4}$ gilt, und gib den Wert von $s_N$ an.
@@ -139,7 +140,7 @@ $s_{15} = \sum\limits_{k=0}^{15}\frac{1}{k!} \approx 2.71828128$
 	\eqnf{A}{\sum_{n=1}^{\infty}\frac{n-1}{n!}}
 	\eqn{A}{\sum_{n=1}^{\infty}\left(\frac{n}{n!}-\frac{1}{n!}\right)}
 	\frac{n}{n!}&=\frac{1}{(n-1)!}\\
-	\Rightarrow A&=\sum_{n=1}^{\infty}\left(\frac{1}{(n-1)!}-\frac{1}{!n}\right)\\
+	\Rightarrow A&=\sum_{n=1}^{\infty}\left(\frac{1}{(n-1)!}-\frac{1}{n!}\right)\\
 	\eqn{A}{1-1+1-\frac{1}{2!}+\frac{1}{2!}-\frac{1}{3!}+\frac{1}{3!}-\frac{1}{4!}+\dots-\frac{1}{n!}}
 	\eqn{A}{1-\frac{1}{n!}}
 	\lim_{n\to \infty}\frac{1}{n!} &= 0\\

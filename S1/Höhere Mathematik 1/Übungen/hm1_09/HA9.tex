@@ -60,10 +60,10 @@ $$abs(x)\coloneqq\begin{cases}
 x\geq0 &x\\
 x<0	&-x
 \end{cases}$$
-Da $f,g$ mit $f:\R\to\R,x\mapsto x$ als Identität von x und $g:\R\to\R,x\mapsto (-1)\cdot x$ als $g=(h\cdot f)$ mit der konstanten Funktion $h:\R\to\R,x\mapsto (-1)$ stetig sind, folgt aus der Folgestetigkeit, dass abs ebenfalls stetig ist.
+Da $f,g$ mit $f:\R\to\R,x\mapsto x$ als Identität von x und $g:\R\to\R,x\mapsto (-1)\cdot x$ als $g=(h\cdot f)$ mit der konstanten Funktion $h:\R\to\R,x\mapsto (-1)$ stetig sind folgt, dass abs ebenfalls stetig ist.
 
 \item Begründe, warum die Funktion $f: \R\to\R, f(x)\coloneqq |e^x-5x|+\frac{3x^2+|x|}{2+\sin(7x^3)}$ stetig ist.\\\\
-\textit{Satz 1}: Eine Funktion ist folgestetig, wenn alle Bestandteile nachgewiesen stetig sind und durch valide Methoden der Folgestetigkeit miteinander kombiniert werden (Verkettung, Addition, Multiplikation).
+\textit{Satz 1}: Eine Funktion ist stetig, wenn alle Bestandteile nachgewiesen stetig sind und durch valide Methoden miteinander kombiniert werden (Verkettung, Addition, Multiplikation).
 $$f=a+b$$
 \begin{center}
 	$a=\text{abs}(\text{exp}(x)-5\cdot x)$ stetig,\\
@@ -87,7 +87,7 @@ $\min q=2+\min sin=2-1=1\not = 0\\ \Rightarrow b=\frac{p}{q}$ stetig $\\\Rightar
 		\sin x - \sin y = 2\cos\frac{x+y}{2}\sin\frac{x-y}{2}\\
 		\cos x -\cos y = -2\sin\frac{x+y}{2}\sin\frac{x-y}{2}
 	\end{align*}
-	$\Rightarrow \cos x -\cos y +i\sin x - i\sin y= -2\sin\frac{x+y}{2}\sin\frac{x-y}{2} - i2\cos\frac{x+y}{2}\sin\frac{x-y}{2}\\
+	$\Rightarrow \cos x -\cos y +i\sin x - i\sin y= -2\sin\frac{x+y}{2}\sin\frac{x-y}{2} + i2\cos\frac{x+y}{2}\sin\frac{x-y}{2}\\
 	\Leftrightarrow \cos x +i\sin x -(\cos y + i\sin y)=2i\sin\frac{x-y}{2}(\cos\frac{x+y}{2}+i\sin\frac{x+y}{2})$
 	\begin{align*}
 		\eqn{e^{ix}-e^{iy}}{2i\sin\frac{x-y}{2}\cdot e^{i\frac{x+y}{2}}}
@@ -100,9 +100,9 @@ $\min q=2+\min sin=2-1=1\not = 0\\ \Rightarrow b=\frac{p}{q}$ stetig $\\\Rightar
 	\item Zeige: Für alle $z\in\C$ gilt $|e^z|=e^{\text{Re} z}$.
 	\begin{align*}
 		|e^z|
-		=&|e^{\text{Re} z +\text{Im} z}|\\
-		=&|e^{\text{Re} z}\cdot e^{\text{Im} z}|\\
-		=&e^{\text{Re} z}\cdot |e^{\text{Im} z}|\\
+		=&|e^{\text{Re} z +i\text{Im} z}|\\
+		=&|e^{\text{Re} z}\cdot e^{i\text{Im} z}|\\
+		=&e^{\text{Re} z}\cdot |e^{i\text{Im} z}|\\
 		=&e^{\text{Re} z}\cdot |1|\\
 		=&e^{\text{Re} z}
 	\end{align*}
@@ -115,10 +115,16 @@ $\min q=2+\min sin=2-1=1\not = 0\\ \Rightarrow b=\frac{p}{q}$ stetig $\\\Rightar
 	$\Rightarrow\text{maxN} = [98, 100]; \text{max} = 5.344124163786122e+41$
 	
 	\item Wie groß muss $N\in\N$ mindestens gewählt werden, damit die Partialsumme $S_N=\sum\limits_{n=0}^\infty\frac{(-100)^n}{n!}$ die Zahl $e^{-100}$ so gut approximiert, dass man wenigstens die führende Dezimalstelle $3$ aus $3.72\cdot 10^{-44}$ erkennt?\\
-$N>320$
+Für erste Dezimalstelle $3$ aus $3.72\cdot 10^{-44}$ erkennbar:
 \begin{align*}
-	S_{359}=,3.7004187966113475892874466892263135290177985066126781861020\cdots\times 10^{-44}\\
-	S_{360}=3.7255244479574392760110812435704418861423700639098639034847\cdots \times 10^{-44}
+	\times S_{356}=4.6279199714892511762704637741514440243594001536753235542318... \times 10^{-44}\\
+	\surd S_{357}=3.4663337034603887022762781045216607271882933063737185572255... \times 10^{-44}
+\end{align*}
+$\Rightarrow N\geq357$\\\\
+Für Dezimalstellen $3.72$ aus $3.72\cdot 10^{-44}$ erkennbar:
+\begin{align*}
+	\times S_{359}=3.7004187966113475892874466892263135290177985066126781861020\cdots\times 10^{-44}\\
+	\surd S_{360}=3.7255244479574392760110812435704418861423700639098639034847\cdots \times 10^{-44}
 \end{align*}
 $\Rightarrow N\geq360$;
 \end{enumerate}
@@ -129,10 +135,10 @@ $\Rightarrow N\geq360$;
 	$$\lim\limits_{x\to\infty} \frac{2x^3+3x^2}{7x^3-5x-1}=\lim\limits_{x\to\infty} \frac{2x^3}{7x^3}=\lim\limits_{x\to\infty} \frac{2}{7}=\frac{2}{7}$$
 	\item $\lim\limits_{x\to0-} x\sqrt{1+\frac{1}{x^2}}$
 	\begin{align*}
-		&\lim\limits_{x\to0-} -\sqrt{x^2}\sqrt{1+\frac{1}{x^2}}\\
-		=&\lim\limits_{x\to0-} x\sqrt{1+\frac{1}{x^2}}\\
+		&\lim\limits_{x\to0-} x\sqrt{1+\frac{1}{x^2}}\\
+		=&\lim\limits_{x\to0-} -\sqrt{x^2}\sqrt{1+\frac{1}{x^2}}\\
 		=&\lim\limits_{x\to0-} -\sqrt{x^2+\frac{x^2}{x^2}}\\
-		=&\lim\limits_{x\to0-} x\sqrt{x^2+1}\\
+		=&\lim\limits_{x\to0-} -\sqrt{x^2+1}\\
 		=& -\sqrt{1}\\
 		=& -1
 	\end{align*}

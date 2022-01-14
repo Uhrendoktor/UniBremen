@@ -1,0 +1,157 @@
+\documentclass{HM}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgray}{rgb}{.9,.9,.9}
+\definecolor{darkgray}{rgb}{.4,.4,.4}
+\definecolor{purple}{rgb}{0.65, 0.12, 0.82}
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstset{
+   language=JavaScript,
+   backgroundcolor=\color{lightgray},
+   extendedchars=true,
+   basicstyle=\footnotesize\ttfamily,
+   showstringspaces=false,
+   showspaces=false,
+   numbers=left,
+   numberstyle=\footnotesize,
+   numbersep=9pt,
+   tabsize=2,
+   breaklines=true,
+   showtabs=false,
+   captionpos=b
+}
+\begin{document}
+\begin{enumerate}
+\item [9.3]
+\begin{enumerate}
+\item Zeige die \textit{umgekehrte Dreiecksungleichung}:
+$$||x|-|y||\leq|x-y| (x,y\in\R)$$.
+\begin{align*}
+	\geqnfi{|x|-|y|}{\leq}{|x-y|}{x\to x+y}
+	\geqn{|x+y|-|y|}{\leq}{|x+y-y|}
+	\geqni{|x+y|-|y|}{\leq}{|x|}{+|y|}
+	\geqni{|x+y|}{\leq}{|x|+|y|}{\leftarrow Dreicksungleichung}
+\end{align*}
+\begin{align*}
+	\geqnfi{|y|-|x|}{\geq}{|x-y|}{y\to x+y}
+	\geqn{|x+y|-|x|}{\geq}{|x-(x+y)|}
+	\geqni{|x+y|-|x|}{\geq}{|y|}{+|x|}
+	\geqni{|x+y|}{\geq}{|x|+|y|}{\leftarrow Dreicksungleichung}
+\end{align*}
+Aus $|x|-|y|\leq|x-y|$ und $|y|-|x|\leq|x-y|$ folgt $||x|-|y||\leq|x-y|$.
+
+\item Zeige, dass die Funktion abs: $\R\to\R, x\mapsto|x|$ stetig ist.
+$$abs(x)\coloneqq\begin{cases}
+x\geq0 &x\\
+x<0	&-x
+\end{cases}$$
+Da $f,g$ mit $f:\R\to\R,x\mapsto x$ als Identität von x und $g:\R\to\R,x\mapsto (-1)\cdot x$ als $g=(h\cdot f)$ mit der konstanten Funktion $h:\R\to\R,x\mapsto (-1)$ stetig sind folgt, dass abs ebenfalls stetig ist.
+
+\item Begründe, warum die Funktion $f: \R\to\R, f(x)\coloneqq |e^x-5x|+\frac{3x^2+|x|}{2+\sin(7x^3)}$ stetig ist.\\\\
+\textit{Satz 1}: Eine Funktion ist stetig, wenn alle Bestandteile nachgewiesen stetig sind und durch valide Methoden miteinander kombiniert werden (Verkettung, Addition, Multiplikation).
+$$f=a+b$$
+\begin{center}
+	$a=\text{abs}(\text{exp}(x)-5\cdot x)$ stetig,\\
+\end{center}
+da alle Bestandteile (abs, exp, $x$, $-5$) auf \textit{Satz 1} zutreffen.\\\\
+$b=\frac{p}{q}$ stetig, wenn $p$ stetig und $q$ stetig und $q\not = 0$.\\
+\begin{center}
+	$p=3x^2+|x|=3x\cdot x + \text{abs}(x)$ stetig,
+\end{center}
+da alle Bestandteile ($3$, $x$, abs) auf \textit{Satz 1} zutreffen.\\
+\begin{center}
+	$q=2+\sin(7x^3)=2+\sin(7x\cdot x\cdot x)$ stetig, 
+\end{center}
+da alle Bestandteile ($2$, $7$, sin, $x$) auf \textit{Satz 1} zutreffen.\\\\
+$\min q=2+\min sin=2-1=1\not = 0\\ \Rightarrow b=\frac{p}{q}$ stetig $\\\Rightarrow f=a+b$ stetig.
+\end{enumerate}
+\item [9.4]
+\begin{enumerate}
+	\item Bestätige für $x,y\in\R$ die Formeln
+	\begin{align*}
+		\sin x - \sin y = 2\cos\frac{x+y}{2}\sin\frac{x-y}{2}\\
+		\cos x -\cos y = -2\sin\frac{x+y}{2}\sin\frac{x-y}{2}
+	\end{align*}
+	$\Rightarrow \cos x -\cos y +i\sin x - i\sin y= -2\sin\frac{x+y}{2}\sin\frac{x-y}{2} + i2\cos\frac{x+y}{2}\sin\frac{x-y}{2}\\
+	\Leftrightarrow \cos x +i\sin x -(\cos y + i\sin y)=2i\sin\frac{x-y}{2}(\cos\frac{x+y}{2}+i\sin\frac{x+y}{2})$
+	\begin{align*}
+		\eqn{e^{ix}-e^{iy}}{2i\sin\frac{x-y}{2}\cdot e^{i\frac{x+y}{2}}}
+		\eqn{e^{ix}-e^{iy}}{2i\frac{e^{i\frac{x-y}{2}}-e^{-i\frac{x-y}{2}}}{2i}\cdot e^{i\frac{x+y}{2}}}
+		\eqn{e^{ix}-e^{iy}}{(e^{i\frac{x-y}{2}}-e^{-i\frac{x-y}{2}})\cdot e^{i\frac{x+y}{2}}}
+		\eqn{e^{ix}-e^{iy}}{e^{ix}-e^{iy}}
+	\end{align*}
+	$\Rightarrow \sin x - \sin y = 2\cos\frac{x+y}{2}\sin\frac{x-y}{2}, \cos x -\cos y = -2\sin\frac{x+y}{2}\sin\frac{x-y}{2}$.
+	
+	\item Zeige: Für alle $z\in\C$ gilt $|e^z|=e^{\text{Re} z}$.
+	\begin{align*}
+		|e^z|
+		=&|e^{\text{Re} z +i\text{Im} z}|\\
+		=&|e^{\text{Re} z}\cdot e^{i\text{Im} z}|\\
+		=&e^{\text{Re} z}\cdot |e^{i\text{Im} z}|\\
+		=&e^{\text{Re} z}\cdot |1|\\
+		=&e^{\text{Re} z}
+	\end{align*}
+\end{enumerate}
+\item[9.5] Einerseits ist $e^{-100}\approx 3.72\cdot 10^{-44}$; andererseits gilt $e^{-100}=\sum\limits_{n=0}^\infty\frac{(-100)^n}{n!}$.
+\begin{enumerate}
+	\item Für welches $N\in\N$ ist die Partialsumme $S_N\coloneqq\sum\limits_{n=0}^\N\frac{(-100)^n}{n!}$ am größten? Wie groß ist $S_N$ für dieses $N$?\\\\
+	 $S_{98}=S_{100}=5.344124163786122\cdot 10^{41}$\\
+	\lstinputlisting[language=javascript,firstline=0, lastline=37]{9.5.js}
+	$\Rightarrow\text{maxN} = [98, 100]; \text{max} = 5.344124163786122e+41$
+	
+	\item Wie groß muss $N\in\N$ mindestens gewählt werden, damit die Partialsumme $S_N=\sum\limits_{n=0}^\infty\frac{(-100)^n}{n!}$ die Zahl $e^{-100}$ so gut approximiert, dass man wenigstens die führende Dezimalstelle $3$ aus $3.72\cdot 10^{-44}$ erkennt?\\
+Für erste Dezimalstelle $3$ aus $3.72\cdot 10^{-44}$ erkennbar:
+\begin{align*}
+	\times S_{356}=4.6279199714892511762704637741514440243594001536753235542318... \times 10^{-44}\\
+	\surd S_{357}=3.4663337034603887022762781045216607271882933063737185572255... \times 10^{-44}
+\end{align*}
+$\Rightarrow N\geq357$\\\\
+Für Dezimalstellen $3.72$ aus $3.72\cdot 10^{-44}$ erkennbar:
+\begin{align*}
+	\times S_{359}=3.7004187966113475892874466892263135290177985066126781861020\cdots\times 10^{-44}\\
+	\surd S_{360}=3.7255244479574392760110812435704418861423700639098639034847\cdots \times 10^{-44}
+\end{align*}
+$\Rightarrow N\geq360$;
+\end{enumerate}
+
+\item[9.6] Berechne die folgenden (eigentlichen oder uneigentlichen) Grenzwerte:
+\begin{enumerate}
+	\item $\lim\limits_{x\to\infty} \frac{2x^3+3x^2}{7x^3-5x-1}$
+	$$\lim\limits_{x\to\infty} \frac{2x^3+3x^2}{7x^3-5x-1}=\lim\limits_{x\to\infty} \frac{2x^3}{7x^3}=\lim\limits_{x\to\infty} \frac{2}{7}=\frac{2}{7}$$
+	\item $\lim\limits_{x\to0-} x\sqrt{1+\frac{1}{x^2}}$
+	\begin{align*}
+		&\lim\limits_{x\to0-} x\sqrt{1+\frac{1}{x^2}}\\
+		=&\lim\limits_{x\to0-} -\sqrt{x^2}\sqrt{1+\frac{1}{x^2}}\\
+		=&\lim\limits_{x\to0-} -\sqrt{x^2+\frac{x^2}{x^2}}\\
+		=&\lim\limits_{x\to0-} -\sqrt{x^2+1}\\
+		=& -\sqrt{1}\\
+		=& -1
+	\end{align*}
+	\item $\lim\limits_{x\to0+}\frac{x^2+1}{x}$
+	$$\lim\limits_{x\to0+}\frac{x^2+1}{x}
+	=\lim\limits_{x\to0+}x+\frac{1}{x}
+	=0+\lim\limits_{x\to0+}\frac{1}{x}
+	=\infty$$
+	
+	\item Begründe zusätzlich, warum in (b) und (c) der beidseitige Limes $\lim\limits_{x\to0}$ nicht existiert.
+	$$\lim\limits_{x\to0+}x\sqrt{1+\frac{1}{x^2}} = 1\not= -1 = \lim\limits_{x\to0-}x\sqrt{1+\frac{1}{x^2}}$$
+	$$\lim\limits_{x\to0+}\frac{x^2+1}{x} = \infty\not= -\infty = \lim\limits_{x\to0-}\frac{x^2+1}{x}$$
+	Durch die Annäherung an 0, aus dem negativen/positiven Bereich unterscheiden sich die Vorzeichen der Ergebnisse. Wenn der $\lim\limits_{x\to0}\cdots\not=0$ folgt daraus, dass $\lim\limits_{x\to0+}\cdots\not=\lim\limits_{x\to0-}\cdots$
+\end{enumerate}
+\end{enumerate}
+\end{document}

@@ -1,0 +1,85 @@
+\documentclass{HM}
+
+\begin{document}
+\begin{enumerate}
+\item [10.3] Ermittle sämtliche Zahlen $z \in \C$, die den folgenden Gleichungen genügen:\\
+\begin{enumerate}
+	\item $z^4 = -16$\\
+	\begin{align*}
+		|z^4| &= \sqrt{(-16)^2} = 16\\
+		\varphi &= \pi\\
+		z^4 &= 16 e^{i\pi}\\
+		z_k &= 2 e^{i(\frac{\pi + 2\pi k}{4})}\\\\
+		\Rightarrow
+		z_0 &= 2 e^{i(\frac{\pi}{4})}\\
+		z_1 &= 2 e^{i(\frac{3\pi}{4})}\\
+		z_2 &= 2 e^{i(\frac{5\pi}{4})}\\
+		z_3 &= 2 e^{i(\frac{8\pi}{4})}\\
+		\mathbb{L}&= \{2 e^{i(\frac{\pi}{4})},2 e^{i(\frac{3\pi}{4})},2 e^{-i(\frac{\pi}{4})},2 e^{-i(\frac{3\pi}{4})}\}
+	\end{align*}
+
+	\item $z^3 + 3iz^2 - 3z - 9i = 0$ (Hinweis: kubische Ergänzung)\\
+	\begin{align*}
+		\eqnf{z^3 + 3iz^2 - 3z - 9i}{0}
+		\eqn{(z+3i)(z^2-3)}{0}
+		\Rightarrow z=-3i,z^2 = 3\\
+		\mathbb{bb}=\{-3i,\sqrt{3},-\sqrt{3}\}
+	\end{align*}
+	\item 
+\end{enumerate}
+
+\item [10.4.] Sei $a > 0$, $ a \neq 1$. Berechne ohne Taschenrechner / Computer:\\
+
+\begin{align*}
+	\log_2 (0.125)\\
+	0.125=\frac{1}{8}=8^{-1}=(2^3)^{-1}=2^{-3}\\
+	\Rightarrow \log_2 (0.125) = -3
+\end{align*}\\
+\begin{align*}
+	\log_{a^2}(\sqrt{a})\\
+	\sqrt{a}=\sqrt{\sqrt{a^2}}=\sqrt[4]{a^2}=(a^2)^\frac{1}{4}\\
+	\Rightarrow \log_{a^2}(\sqrt{a}) = \frac{1}{4}
+\end{align*}\\
+\begin{align*}
+	\log_2\sqrt[3]{32}\\
+	\sqrt[3]{32}=\sqrt[3]{2^5}=(2^5)^\frac{1}{3}=2^\frac{5}{3}\\
+	\log_2(\sqrt[3]{32}) = \frac{5}{3}	
+\end{align*}\\
+\begin{align*}
+	3^{\log_9 (4)}\\
+	3^{\log_9 (4)} = \sqrt{(3^{\log_9 (4)})^2} = \sqrt{3^{2\log_9 (4)}} = \sqrt{9^{\log_9 (4)}} = \sqrt{4} = 2
+\end{align*}
+
+\item [10.5.]
+\item [10.6.] Die Hyperbelfunktionen oder hyperbolischen Funktionen Cosinus hyperbolicus und
+Sinus hyperbolicus sind definiert durch$$cosh(x):=\frac{1}{2}(e^x+e^{-x}) \text{ und } sinh(x):=\frac{1}{2}(e^x-e^{-x})(x\in\R)$$\\
+\begin{enumerate}
+	\item Bestätige die Formel $$cosh^2(x) - sinh^2(x) = 1\text{      } x\in\R$$\\
+	\begin{align*}
+		\eqnf{\frac{1}{4}(e^x+e^{-x})^2-\frac{1}{4}(e^x-e^{-x})^2}{1}
+		\eqn{e^{2x}+e^{-2x}+2-(e^{2x}+e^{-2x}-2)}{4}
+		\eqn{4}{4}
+	\end{align*}
+	\item Zeige, dass die Funktion $sinh: \R \to \R$ streng monoton wachsend und bijektiv ist, und
+	dass die Umkehrfunktion $arsinh: \R \to \R$ (Areafunktion: Area Sinus hyperbolicus) stetig
+	ist und durch
+	$arsinh(x) = \ln (x + \sqrt{x^2+1})$
+	gegeben ist.\\
+	
+	\begin{align*}
+		\sqrt{x^2+1} > x\\
+		\ln(x2) \text{ ist streng monoton}\\
+		\Rightarrow \ln(\sqrt{x^2+1})\text{ ist streng monoton}\\
+		%\ln(x)\text{ stetig }\sqrt{x}\text{ stetig }x^2\text{ stetig}\\
+		%\Rightarrow \ln(\sqrt{x^2+1})\text{ stetig und streng monoton}\\
+		arcsinh(x):[1,\infty)\\
+		\text{Dadurch ist laut Stetigkeit der Umkehrfunktion auch die Umkehrfunktion von arcshin(x) stetig und streng monoton}\\
+		sinh(x): [0,\infty]\\
+		\text{Hier ist wieder }
+	\end{align*}
+	
+\end{enumerate}
+
+
+\end{enumerate}
+\end{document}

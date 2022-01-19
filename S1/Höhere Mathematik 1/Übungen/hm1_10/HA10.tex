@@ -115,13 +115,15 @@
 
 \item [10.5.]
 \begin{enumerate}
-	\item Sei $f: [0,1] \to\R$ stetig, mit $f(0)=f(1)$. Dann gibt es ein $t\in[0,^\frac{1}{2}]$ mit $f(t)=f(t+\frac{1}{2})$.\\\\
-	Aus $f(0)=f(1)$ und $f(t)=f(t+\frac{1}{2})$ mit $t\in[0,^\frac{1}{2}]$ folgt $f(0) = f(\frac{1}{2}) = f(1)$. Wenn $f:[0,1]\to\R$ stetig ist, müssen auch $f_1:[0,\frac{1}{2}]\to\R$=$f_2:[\frac{1}{2},1]\to\R$ stetig sein.\\\\
-	Wenn $g(x)=f_1(2x):[0,1]\to\R$ stetig, mit $g(0)=g(1)\Leftrightarrow f(0)=f(\frac{1}{2})$, müsste es ein $t\in[0,\frac{1}{2}]$ mit $g(t)=g(t+\frac{1}{2})$ geben.\\\\
-	Selben Schritt erneut anwenden (Iteration):\\
-	$\Rightarrow f,f_1,g,\cdots$ konstant\\
-	$\Rightarrow f\not=[0,1]\to\R$. Nicht jede stetige Funktion mit $[0,1]\to\R$ ist konstant.
-	$\Rightarrow$ Widerspruch
+	\item Sei $f: [0,1] \to\R$ stetig, mit $f(0)=f(1)$. Dann gibt es ein $t\in[0,\frac{1}{2}]$ mit $f(t)=f(t+\frac{1}{2})$.\\\\
+	$g(t)=f(t)-f(t+\frac{1}{2})$, stetig.\\
+	
+	$g(0)=f(0)-f(\frac{1}{2})=f(1)-f(\frac{1}{2})$\\
+	$g(\frac{1}{2})=f(\frac{1}{2})-f(1)=f(\frac{1}{2})-f(0)$\\
+	$\Rightarrow g(0)=-g(\frac{1}{2})$ (Vorzeichenwechsel zwischen $g(0)$ und $g(\frac{1}{2})$)\\
+	
+	$\Rightarrow g(t)=0$ mit $t\in[0,\frac{1}{2}]$\\
+	$\Rightarrow$ Es muss ein $t\in[0,\frac{1}{2}]$ geben, für das gilt $f(t)=f(t+\frac{1}{2})$\\
 	
 	\item Die Gleichung $x^6-x^5+42x^3-5=0$ hat mindestens zwei reelle Lösungen.\\
 	\begin{lstlisting}

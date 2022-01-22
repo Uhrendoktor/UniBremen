@@ -68,7 +68,7 @@ $$\frac{d}{dx}|x|=\begin{cases}
 -1&x<0
 \end{cases}$$
 Produktregel:
-$$\frac{d}{dx}x\cdot|x|=|x|+x\cdot\frac{d}{dx}|x|$$\\\\
+$$\frac{d}{dx}x\cdot|x|=|x|+x\cdot\frac{d}{dx}|x|=|x|+|x|=2|x|$$\\\\
 $$f_4(x)=x^{x^x}$$
 Produktregel, Kettenregel:
 \begin{align*}
@@ -78,11 +78,11 @@ Produktregel, Kettenregel:
 	=&e^{x^x\cdot\ln(x)}\cdot\left(x^x\cdot\frac{1}{x}+\left(\frac{d}{dx}e^{x\ln(x)}\right)\cdot\ln(x)\right)\\
 	=&e^{x^x\cdot\ln(x)}\cdot\left(x^x\cdot\frac{1}{x}+e^{x\ln(x)}\cdot\left(\frac{d}{dx}x\ln(x)\right)\cdot\ln(x)\right)\\
 	=&e^{x^x\cdot\ln(x)}\cdot\left(x^x\cdot\frac{1}{x}+e^{x\ln(x)}\cdot\left(\ln(x)+x\cdot\frac{1}{x}\right)\cdot\ln(x)\right)\\
-	=&e^{x^x\cdot\ln(x)}\cdot\left(x^x\cdot\frac{1}{x}+e^{x\ln(x)}\cdot\ln(x)\cdot\ln(x)\right)\\
-	=&e^{x^x\cdot\ln(x)}\cdot\left(x^{x-1}+e^{x\ln(x)}\cdot\ln^2(x)\right)\\
-	=&e^{\ln(x)\cdot\left(x^x+x\right)}\cdot\ln^2(x)+e^{x^x\cdot\ln(x)}\cdot x^{x-1}\\
-	=&xe^{x^x+x}\cdot\ln^2(x)+xe^{x^x}\cdot x^{x-1}\\
-	=&xe^{x^x+x}\cdot\ln^2(x)+e^{x^x}\cdot x^x
+	=&e^{x^x\cdot\ln(x)}\cdot\left(x^x\cdot\frac{1}{x}+e^{x\ln(x)}\cdot(\ln(x)+1)\cdot\ln(x)\right)\\
+	=&x^{x^x}\cdot(x^{x-1}+ x^x\cdot(\ln^2(x)+\ln(x)))\\
+	=&x^{x^x}\cdot(x^{x-1}+ x^{x-1}x\cdot(\ln^2(x)+\ln(x)))\\
+	=&x^{x^x}\cdot x^{x-1}(1+x\cdot(\ln^2(x)+\ln(x)))\\
+	=&x^{x^x+x-1}(1+x\ln^2(x)+x\ln(x)))
 \end{align*}
 \newpage
 \item [11.5]
@@ -98,7 +98,23 @@ Produktregel, Kettenregel:
 		\eqni{\frac{\frac{d}{dh}f(a+h)-\frac{d}{dh}f(a-h)}{2h}}{\frac{f(a+h)-f(a-h)}{2h^2}}{\cdot 2h}
 		\eqn{\frac{d}{dh}f(a+h)-\frac{d}{dh}f(a-h)}{\frac{f(a+h)-f(a-h)}{2h}}
 	\end{align*}
-	$\Rightarrow \lim\limits_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}=\lim\limits_{h\to 0}\frac{d}{dh}f(a+h)-\frac{d}{dh}f(a-h)=f'(a)-f'(a)=0$
+	$\Rightarrow \lim\limits_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}=\lim\limits_{h\to 0}\frac{d}{dh}f(a+h)-\frac{d}{dh}f(a-h)=f'(a)-f'(a)=0$\\\\
+	\item Folgt aus der Existenz des Grenzwertes in (a) die Differenzierbarkeit von $f$ in $a$?\\\\
+	Nein. Die Existenz eines Grenzwertes lässt keinen Schluss über die Differenzierbarkeit in diesem Punkt zu. Beispiel:\\
+	$$\lim\limits_{x\to 0+}|x|=\lim\limits_{x\to 0-}|x|=0$$
+	aber $$\lim\limits_{x\to 0+}\frac{d}{dx}|x|=1\not=-1=\lim\limits_{x\to 0-}\frac{d}{dx}|x|$$
+\end{enumerate}
+\newpage
+\item [11.6] Sei $I\subseteq\R$ ein Intervall und $n\in\N$. Seien $g,h:I\to\R$ Funktionen, die $n$-mal differenzierbar in $x\in I$ sind. Dann kann man durch vollständige Induktion die \textit{Leibniz-Regel} zeigen.
+$$(g\cdot h)^{(n)}(x)=\sum\limits_{k=0}^n\begin{pmatrix}
+n\\k
+\end{pmatrix}g^{(k)}(x)\cdot h^{(n-k)}(x)$$
+\begin{enumerate}
+	\item Berechne $f^{(1000)}(x)$ für $f(x)=x^2\cdot e^x$\\
+	$$g(x)=x^2, h(x)=e^x, n=1000$$
+	$$\Rightarrow f^{(1000)}(x)=\sum\limits_{k=0}^1000\begin{pmatrix}
+1000\\k
+\end{pmatrix}(x^2)^{(k)}(x)\cdot (e^x)^{(1000-k)}(x)$$
 \end{enumerate}
 \end{enumerate}
 \end{document}

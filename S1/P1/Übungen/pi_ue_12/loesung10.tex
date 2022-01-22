@@ -1,0 +1,59 @@
+\documentclass{pi1}
+\usepackage{listings, amsmath, amsfonts}
+
+\begin{document}
+\maketitle{10}{Leander Staack}{Julius Walczynski [6113829]}
+\section{Lässig Level laden}
+\lstinputlisting[firstnumber=26, firstline=26, lastline=37]{code/Level.java}
+Die Feldbeschreibung wird nicht länger direkt hardcoded als \textit{String[ ]} übergeben, sondern in einer Datei gespeichert. Der Name dieser Datei wird als Parameter durch den Konstruktor der Level Klasse übergeben. Diese wird mit Hilfe eines \textit{FileReader}s und \textit{BufferedReader}s Zeile für Zeile ausgelesen und in einer \textit{List<String>}, der Variable \textit{map}, gespeichert.\\
+
+\lstinputlisting[firstnumber=64, firstline=64, lastline=68]{code/Level.java}
+Sollten Probleme beim lesen der Datei auftreten werden diese in zwei \textit{catch}-clauses aufgefangen und in verständliche Fehlernachrichten für den User konvertiert.\\
+
+\lstinputlisting[firstnumber=39, firstline=39, lastline=43]{code/Level.java}
+Die Elemente der map (\textit{List<String>}) werden in einen \textit{String[ ]} kopiert. Alle ASCII-chars zwischen 0x21 - 0x7e außer 0x2d ('-') und 0x7c ('|') werden in diesen \textit{String}s durch 'O' ersetzt. Der auf die \textit{Field}-Klasse angepasste \textit{String[ ]} wird benutzt um das richtige Layout als Field zu erstellen. Dieses wird intern im privaten Attribut \textit{field} gespeichert.
+
+\newpage
+\lstinputlisting[firstnumber=45, firstline=45, lastline=51]{code/Level.java}
+Es wird über jeden Knotenpunkt/char \textit{info} mit den Koordinaten $(2n_1, 2n_2); n_1,n_2\in\mathbb{N}$ in der map \textit{List<String>} (vorstellbar als \textit{char[ ][ ]}) geloopt.
+Sollte der entsprechende char \textit{info} kein normaler Knotenpunkt sein ('O', ' '), wird aus ihm die angegebene Rotation und actorID errechnet.
+Hierfür wird der \textit{char} als \textit{byte} (8-Bit) betrachtet und in 6-Bit + 2-Bit aufgebrochen. Die hinteren 2-Bits (least significant) repräsentieren hierbei die Rotation (0-3), welche vollständig in 2-Bit abgebildet werden kann.
+Die vorderen 6-Bit bleiben als \textit{actorID} übrig. Um die \textit{rotation}, also nur die hinteren 2-Bits betrachten zu können, werden die vorderen 6-Bits durch eine Bit-Maske (0b00000011 = 3) auf 0 gebracht $\Rightarrow$ \textit{rotation = info}\texttt{\&}\textit{3}.\\
+Um die vorderen 6-Bits als \textit{actorID} betrachten zu können, müssen diese um die 2-Bit \textit{rotation} nach rechts geschoben/geshiftet werden. Übrig bleibt eine valide \textit{actorID}. Da einfach zuschreibende/nutzbare ASCII-chars jedoch erst bei 0b00100001=0x21='!' starten, wir allerdings um alle möglichen Rotation abspeichern zu können die letzten 2-Bits auf jedenfall auch auf 00 setzen können müssen, beginnen wir mit dem nächst größeren char: 0b00100100=0x24='\$'.
+Um angenehmer mit der gewonnenen und geshifteten \textit{actorID} rechnen zu können, wird ihr Startpunkt auf 0 gesetzt: $\textit{actorID}_0$=0b00001001-0b00001001=0b00001001-9=0 $\Rightarrow$ 9 muss für einen Start bei $\textit{actorID}_0=0$ subtrahiert werden.\\
+
+\lstinputlisting[firstnumber=53, firstline=53, lastline=54]{code/Level.java}
+Sollte die so gewonnene \textit{actorID} weder auf den \textit{Player} noch auf einen einen der spezifizierten \textit{NPC}s verweisen, wird die \textit{actorID} als ungültig angenommen und das Programm durch eine \textit{IllegalArgumentException} beendet. Hierbei gilt:\\
+\begin{center}
+\begin{tabular}{|c|c|}
+\cline{0-1}actorID & actor\\\cline{0-1}
+0 & Player\\
+1 & NPC0\\
+2 & NPC1\\
+\vdots & \vdots\\\cline{0-1}
+\end{tabular}
+\end{center}
+
+\newpage
+\lstinputlisting[firstnumber=55, firstline=55, lastline=60]{code/Level.java}
+Sollte die \textit{actorID} mit der des \textit{Player}s übereinstimmen, wird dieser als erstes Element (index = 0) in die Liste \textit{actors} hinzugefügt. Sollte jedoch bereits ein Spieler kreiert worden sein, wird eine Fehlernachricht an den User gegeben und das Programm durch eine IllegalArgumentException frühzeitig beendet.\\
+Für alle anderen \textit{actorID}s wird ein entsprechender \textit{NPC} instantiiert und zu \textit{actors} hinzugefügt.\\
+
+\lstinputlisting[firstnumber=63, firstline=63, lastline=63]{code/Level.java}
+Sollte nach dem auslesen der Karte kein Spieler gefunden wurden sein, wird eine Fehlernachricht an den User gegeben und das Programm durch eine IllegalArgumentException beendet.\\
+
+\lstinputlisting[firstnumber=74, firstline=74, lastline=76]{code/Level.java}
+Die \textit{getActors}-Methode gibt das als privat abgespeicherte Attribut \textit{field} (Das Spielfeld des Levels, welches im Konstruktor erstellt wurde) zurück.\\
+
+\lstinputlisting[firstnumber=23, firstline=23, lastline=29]{code/RPGGame.java}
+Die Hauptspielklasse muss nun nur noch eine Referenz zu einem \textit{Level} beinhalten. Über die \textit{getActors}-Methode bleibt die Logik zum loopen über die \textit{Actor}s zum ausführen ihrer \textit{act}-Methode weitestgehend bestehen.
+
+\newpage
+\section{Bonusaufgabe: Ich bin dann mal weg}
+\lstinputlisting[firstnumber=90, firstline=90, lastline=95]{code/Level.java}
+Die \textit{hide}-Methode ruft die \textit{hide}-Methode des \textit{Field}s auf.
+Nach dem dieses alle Tiles des Spielfeldes unsichtbar gemacht hat, werden alle \textit{Actor}s in \textit{actors} in einer \textit{foreach}-Schleife mit Hilfe der \textit{setVisible}-Method der geerbten GameObject-Klasse unsichtbar gemacht.\\
+
+\lstinputlisting[firstnumber=93, firstline=93, lastline=97]{code/Field.java}
+Das selbe verhalten trifft auch auf die \textit{hide}-Methode der \textit{Field}-Klasse zu.
+\end{document}

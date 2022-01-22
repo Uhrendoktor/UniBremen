@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Player
+comment0.text=\n\ Player\ Klasse\ -\ Tastatur\ steuerbarer\ Spieler.\n\ \n\ @author\ Julius\ Walczynski\ \n\ \n
+comment1.params=x\ y\ rotation\ field
+comment1.target=Player(int,\ int,\ int,\ Field)
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\n\ waits\ for\ valid\ user\ input\ and\ moves\ the\ player\ object\ accordingly.\n\ If\ invalid\ input\ is\ entered\ it\ starts\ over\ again.\n
+comment3.params=direction
+comment3.target=boolean\ Move(int)
+comment4.params=_min\ _max\ _value
+comment4.target=int\ MinMax(int,\ int,\ int)
+numComments=5

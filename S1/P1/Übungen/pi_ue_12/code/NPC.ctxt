@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=NPC
+comment0.text=\n\ NPC-Klasse.\ Kann\ den\ Spieler\ verfolgen,\ L\u00E4uft\ hin\ und\ her,\ bla,\ bla...\n\n\ @author\ Julius\ Walczynski\n
+comment1.params=x\ y\ rotation\ fileName\ field
+comment1.target=NPC(int,\ int,\ int,\ java.lang.String,\ Field)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=direction
+comment3.target=void\ addPlayerStep(int)
+comment4.params=direction
+comment4.target=void\ Move(int)
+comment5.params=_x1\ _y1\ _x2\ _y2
+comment5.target=boolean\ checkCollision(int,\ int,\ int,\ int)
+numComments=6

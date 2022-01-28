@@ -40,6 +40,12 @@ public class Player extends Actor {
         }
     }
     
+    /**
+     * tries to move the player in the given direction and plays the step sound if successfull
+     * 
+     * @param direction direction to move in
+     * @return if the player object was moved
+     */
     public boolean Move(int direction){
         int x = super.getX()+(direction%2==0?-(direction-1):0);
         int y = super.getY()+(direction%2==1?-(direction-2):0);

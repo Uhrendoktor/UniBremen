@@ -1,13 +1,14 @@
 #BlueJ class context
 comment0.target=Player
-comment0.text=\n\ Player\ Klasse\ -\ Tastatur\ steuerbarer\ Spieler.\n\ \n\ @author\ Julius\ Walczynski\ \n\ \n
+comment0.text=\r\n\ Player\ Klasse\ -\ Tastatur\ steuerbarer\ Spieler.\r\n\ \r\n\ @author\ Julius\ Walczynski\ \r\n\ \r\n
 comment1.params=x\ y\ rotation\ field
 comment1.target=Player(int,\ int,\ int,\ Field)
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\n\ waits\ for\ valid\ user\ input\ and\ moves\ the\ player\ object\ accordingly.\n\ If\ invalid\ input\ is\ entered\ it\ starts\ over\ again.\n
+comment2.text=\r\n\ waits\ for\ valid\ user\ input\ and\ moves\ the\ player\ object\ accordingly.\r\n\ If\ invalid\ input\ is\ entered\ it\ starts\ over\ again.\r\n
 comment3.params=direction
 comment3.target=boolean\ Move(int)
+comment3.text=\r\n\ tries\ to\ move\ the\ player\ in\ the\ given\ direction\ and\ plays\ the\ step\ sound\ if\ successfull\r\n\ \r\n\ @param\ direction\ direction\ to\ move\ in\r\n\ @return\ if\ the\ player\ object\ was\ moved\r\n
 comment4.params=_min\ _max\ _value
 comment4.target=int\ MinMax(int,\ int,\ int)
 numComments=5

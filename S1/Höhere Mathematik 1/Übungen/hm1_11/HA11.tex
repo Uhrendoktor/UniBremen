@@ -58,17 +58,25 @@
 \item [11.4] Berechne die Ableitungen der folgenden Funktionen (auf dem jeweils sinnvollen Definitionsbereich):\\\\
 $$f_1(x)=\sin(\cos x)$$
 Produktregel:
-$$\frac{d}{dx}\sin(\cos x) = -\cos(\cos x)\cdot\sin x$$\\\\
+$$\frac{d}{dx}\sin(\cos x) = -\cos(\cos x)\cdot\sin x$$
+$$\Rightarrow\mathbb{D}=\R$$\\\\
+
+\newpage
 $$f_2(x)=\frac{1-\sin x}{2+\sin x}$$
 Quotientenregel:
-$$\frac{d}{dx}\frac{1-\sin x}{2+\sin x}=\frac{-\cos(x)\cdot(2+\sin(x))-\cos(x)\cdot(1-\sin(x))}{(2+\sin(x))^2}=\frac{-3\cos(x)}{(2+\sin(x))^2}$$\\\\
+$$\frac{d}{dx}\frac{1-\sin x}{2+\sin x}=\frac{-\cos(x)\cdot(2+\sin(x))-\cos(x)\cdot(1-\sin(x))}{(2+\sin(x))^2}=\frac{-3\cos(x)}{(2+\sin(x))^2}$$
+$$\Rightarrow\mathbb{D}=\R$$\\\\
+
 $$f_3(x)=x\cdot|x|$$
 $$\frac{d}{dx}|x|=\begin{cases}
 1&x\geq0\\
 -1&x<0
 \end{cases}$$
 Produktregel:
-$$\frac{d}{dx}x\cdot|x|=|x|+x\cdot\frac{d}{dx}|x|=|x|+|x|=2|x|$$\\\\
+$$\frac{d}{dx}x\cdot|x|=|x|+x\cdot\frac{d}{dx}|x|=|x|+|x|=2|x|$$
+$$\Rightarrow\mathbb{D}=\R$$\\\\
+
+\newpage
 $$f_4(x)=x^{x^x}$$
 Produktregel, Kettenregel:
 \begin{align*}
@@ -84,16 +92,29 @@ Produktregel, Kettenregel:
 	=&x^{x^x}\cdot x^{x-1}(1+x\cdot(\ln^2(x)+\ln(x)))\\
 	=&x^{x^x+x-1}(1+x\ln^2(x)+x\ln(x)))
 \end{align*}
+$$\Rightarrow\mathbb{D}=\R^{>0}$$
 \newpage
 \item [11.5]
 \begin{enumerate}
-	\item Die Funktion $f:\R\to\R$ sein in $a\in\R$ differenzierbar. Zeige, dass dann der Grenzwert $\lim\limits_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}$ existiert, und berechne ihn.\\\\
+	\item Die Funktion $f:\R\to\R$ sei in $a\in\R$ differenzierbar. Zeige, dass dann der Grenzwert $\lim\limits_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}$ existiert, und berechne ihn.\\\\
+	Aus $f:\R\to\R$ und $a\in\R$ differenzierbar, folgt $f$ stetig, da damit $a\in\R$ differenzierbar ist, es für jedes $a\in\R$ eine Folge geben muss, die sich $a$ annähert 
+	$\Rightarrow$ stetig, differenzierbar\\\\
+	Da $\lim\limits_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}$ nur aus nachgewiesen stetigen Funktionen besteht, muss sie ebenfalls stetig sein.\\
+	$\Rightarrow$ ein Grenzwert existiert.\\
 	\begin{align*}
-	&\lim\limits_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}\\
-	=&\lim\limits_{h\to 0}\frac{1}{2}\left(\frac{f(a+h)-f(a)}{h}+\frac{f(a)-f(a-h)}{h}\right)\\
-	=&\lim\limits_{h\to 0}\frac{1}{2}\left(\frac{d}{dx}f(a)+\frac{d}{dx}f(a)\right)\\
+	\Rightarrow&\lim\limits_{h\to 0+}\frac{f(a+h)-f(a-h)}{2h}\\
+	=&\lim\limits_{h\to 0+}\frac{1}{2}\left(\frac{f(a+h)-f(a)}{h}+\frac{f(a)-f(a-h)}{h}\right)\\
+	=&\lim\limits_{h\to 0+}\frac{1}{2}\left(\frac{d}{dx}f(a)+\frac{d}{dx}f(a)\right)\\
 	=&\frac{d}{dx}f(a)
 	\end{align*}
+	\begin{align*}
+	\Rightarrow&\lim\limits_{h\to 0-}\frac{f(a-h)-f(a+h)}{-2h}\\
+	=&\lim\limits_{h\to 0-}-\frac{1}{2}\left(\frac{f(a-h)-f(a)}{h}+\frac{f(a)-f(a+h)}{h}\right)\\
+	=&\lim\limits_{h\to 0-}-\frac{1}{2}\left(-\frac{f(a)-f(a-h)}{h}-\frac{f(a+h)-f(a)}{h}\right)\\
+	=&\lim\limits_{h\to 0-}-\frac{1}{2}\left(-\frac{d}{dx}f(a)-\frac{d}{dx}f(a)\right)\\
+	=&\frac{d}{dx}f(a)
+	\end{align*}
+	$\Rightarrow \lim\limits_{h\to 0}\frac{f(a+h)-f(a-h)}{2h}=\frac{d}{dx}f(a)$\\\\
 	\item Folgt aus der Existenz des Grenzwertes in (a) die Differenzierbarkeit von $f$ in $a$?\\\\
 	Nein. Die Existenz eines Grenzwertes lässt keinen Schluss über die Differenzierbarkeit in diesem Punkt zu. Beispiel:\\
 	$$\lim\limits_{x\to 0+}|x|=\lim\limits_{x\to 0-}|x|=0$$

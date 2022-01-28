@@ -14,6 +14,8 @@ import java.util.stream.*;
  */
 public class Level {
     
+    private boolean isRemote;
+    
     private Field field;
     public List<Actor> actors = new ArrayList<Actor>();
     
@@ -24,7 +26,8 @@ public class Level {
         "woman"
     };
     
-    public Level(String filename) {
+    public Level(String filename, boolean isRemote) {
+        this.isRemote = isRemote;
         try {
             FileReader fr = new FileReader(filename);
             BufferedReader br = new BufferedReader(fr);
@@ -49,7 +52,8 @@ public class Level {
                     
                     if(actorID == 0){
                         if(actors.size()>0 && (actors.get(0) instanceof Player)) throw new IllegalArgumentException("more than one symbolized player in map");
-                        actors.add(0, new Player(x/2, y/2, rotation, this.field));
+                        if(this.isRemote) actors.add(0, new RemotePlayer(x/2, y/2, rotation, this.field));
+                        else actors.add(0, new ControlledPlayer(x/2, y/2, rotation, this.field));
                     }else{
                         actors.add(new NPC(x/2, y/2, rotation, NPCNames[actorID-1], this.field));
                     }

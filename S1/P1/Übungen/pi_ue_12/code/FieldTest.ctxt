@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.target=FieldTest
-comment0.text=\n\ Die\ Test-Klasse\ FieldTest.\n\n\ @author\ \ (Ihr\ Name)\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
+comment0.text=\r\n\ Die\ Test-Klasse\ FieldTest.\r\n\r\n\ @author\ \ (Ihr\ Name)\r\n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\r\n
 comment1.params=
 comment1.target=FieldTest()
-comment1.text=\n\ Konstruktor\ fuer\ die\ Test-Klasse\ FieldTest\n
+comment1.text=\r\n\ Konstruktor\ fuer\ die\ Test-Klasse\ FieldTest\r\n
 comment2.params=
 comment2.target=void\ setUp()
-comment2.text=\n\ \ Setzt\ das\ Testger\u00FCst\ fuer\ den\ Test.\n\n\ Wird\ vor\ jeder\ Testfall-Methode\ aufgerufen.\n
+comment2.text=\r\n\ \ Setzt\ das\ Testger\u00FCst\ fuer\ den\ Test.\r\n\r\n\ Wird\ vor\ jeder\ Testfall-Methode\ aufgerufen.\r\n
 comment3.params=
 comment3.target=void\ tearDown()
-comment3.text=\n\ Gibt\ das\ Testger\u00FCst\ wieder\ frei.\n\n\ Wird\ nach\ jeder\ Testfall-Methode\ aufgerufen.\n
+comment3.text=\r\n\ Gibt\ das\ Testger\u00FCst\ wieder\ frei.\r\n\r\n\ Wird\ nach\ jeder\ Testfall-Methode\ aufgerufen.\r\n
 comment4.params=
 comment4.target=void\ testMap1()
 comment5.params=

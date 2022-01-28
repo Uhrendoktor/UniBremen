@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.target=RPGGame
-comment0.text=\n\ Dies\ ist\ die\ Hauptklasse\ eines\ Spiels.\ Sie\ enth\u00E4lt\ die\ Hauptmethode,\ die\ zum\n\ Starten\ des\ Spiels\ aufgerufen\ werden\ muss.\n\n\ @author\ Julius\ Walczynski\n
-comment1.params=
-comment1.target=void\ main()
+comment0.text=\r\n\ Dies\ ist\ die\ Hauptklasse\ eines\ Spiels.\ Sie\ enth\u00E4lt\ die\ Hauptmethode,\ die\ zum\r\n\ Starten\ des\ Spiels\ aufgerufen\ werden\ muss.\r\n\r\n\ @author\ Julius\ Walczynski\r\n
+comment1.params=isRemote
+comment1.target=void\ main(boolean)
 comment1.text=Das\ Spiel\ beginnt\ durch\ Aufruf\ dieser\ Methode.
 comment2.params=
 comment2.target=Level\ getLevel()
-comment2.text=\n\ @return\ the\ privatly\ stored\ Level\ object\n
+comment2.text=\r\n\ @return\ the\ privatly\ stored\ Level\ object\r\n
 numComments=3

@@ -18,9 +18,9 @@ abstract class RPGGame extends Game {
     
     private static Level level;
     /** Das Spiel beginnt durch Aufruf dieser Methode. */
-    static void main() {
+    public static void main(boolean isRemote) {
         
-        level = new Level("Map.txt");
+        level = new Level("Map.txt", isRemote);
         
         Player player = level.getPlayer();
         while(player.isVisible()) level.getActors().forEach(actor->actor.act());

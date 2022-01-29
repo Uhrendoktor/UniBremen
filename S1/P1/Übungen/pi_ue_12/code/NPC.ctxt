@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=NPC
-comment0.text=\r\n\ NPC-Klasse.\ Kann\ den\ Spieler\ verfolgen,\ L\u00E4uft\ hin\ und\ her,\ bla,\ bla...\r\n\r\n\ @author\ Julius\ Walczynski\r\n
+comment0.text=\n\ NPC-Klasse.\ Kann\ den\ Spieler\ verfolgen,\ L\u00E4uft\ hin\ und\ her,\ bla,\ bla...\n\n\ @author\ Julius\ Walczynski\n
 comment1.params=x\ y\ rotation\ fileName\ field
 comment1.target=NPC(int,\ int,\ int,\ java.lang.String,\ Field)
 comment2.params=

@@ -1,0 +1,63 @@
+\documentclass{pi1}
+\usepackage{listings, amsmath, amsfonts}
+
+\begin{document}
+\maketitle{12}{Leander Staack}{Julius Walczynski [6113829]}
+\section{Ferngesteuert}
+\lstinputlisting[firstnumber=9, firstline=9, lastline=28]{code/ControlledPlayer.java}
+Die Klasse \textit{ControlledPlayer} erbt von \textit{Player} und gibt in ihrem Konstruktor alle erforderlichen Parameter an die Player Klasse weiter.
+Ein neuer \textit{ServerSocket} wird auf einem spezifizierten Port (1234) geöffnet und es wird auf die Verbindung des ersten Clients/\textit{Socket}s gewartet. Da der \textit{ControlledPlayer} im Konstruktor der \textit{Level} Klasse instanziiert wird, wird das Spiel, auf Grund des blockierenden Verhaltens der \textit{ServerSocket::accept} Methode, erst nach einer erfolgreichen Verbindung vollständig gestartet. Sowohl der \textit{ServerSocket} (\textit{server}), als auch der erste \textit{Socket} (\textit{client}), der sich verbindet, werden als Attribute abgespeichert um im Folgenden weiter auf sie zugreifen zu können.
+
+Beim erstellen des \textit{ServerSocket}s - z.B. während versucht wird ihn an einen freien Port zu binden - können diverse Probleme/\textit{Exception}s auftreten. In diesem Fall insbesondere \textit{IOException, BindException, SecurityException}
+Sollten diese auftreten, werden sie abgefangen und entsprechende Fehlernachricht in die Konsole ausgegeben.
+
+\lstinputlisting[firstnumber=30, firstline=30, lastline=43]{code/ControlledPlayer.java}
+Die \textit{act} Methode (von \textit{Actor} bzw \textit{Player} vererbt) wird überschrieben. Dabei wird ihre Basis-Logik nicht ausgeführt; es wird also nicht auf Userinput gewartet.
+Stattdessen werden über den \textit{InputStream} des \textit{client}s die über das Netzwerk gesendeten Daten ausgelesen. Hierbei blockiert die \textit{InputStream::read} Methode solange, bis neue Daten vorliegen und schreibt diese in den als Parameter gegebenen \textit{byte[ ]}.
+
+Die Bewegung wird als Bewegungsrichtung (0-3) als einziges Byte übertragen.
+
+Sollte beim auslesen der Daten ein Problem/eine \textit{IOException} auftreten, wird diese abgefangen und eine entsprechende Fehlernachricht wird in die Konsole ausgegeben. 
+
+Sollte das erste \textit{Byte} erfolgreich ausgelesen worden sein, wird dieses benutzt, um den Spieler mit Hilfe der \textit{Player::Move} Methode zu bewegen.
+
+\lstinputlisting[firstnumber=45, firstline=45, lastline=56]{code/ControlledPlayer.java}
+Die von \textit{GameObject} geerbte Methode  \textit{setVisible} wird überschrieben. Ihre Basis-logik, wird mit Hilfe von \textit{super.setVisible} jedoch weiterhin ausgeführt. Sollte das \textit{GameObject} hierbei auf unsichtbar gesetzt werden (in unserem simplen Spiel tritt dies nur auf, falls das Spiel beendet wird/ der Spieler einen NPC berührt und stirbt), werden sowohl die Verbindung zum Client über den \textit{Socket} und anschließend der \textit{SocketServer} selbst geschlossen.
+
+Sollte beim Schließen ein problem/eine \textit{IOException} auftreten, wird diese abgefangen und als sinvolle Fehlermeldung in der Konsole ausgegeben.
+
+\newpage
+\section{Fernsteuernd}
+\lstinputlisting[firstnumber=9, firstline=9, lastline=24]{code/RemotePlayer.java}
+Ähnlich zu \textit{ControlledPlayer} erbt die Klasse \textit{RemotePlayer} von \textit{Player} und übergibt durch seinen eigenen Konstruktor alle essenziellen Parameter an die \textit{Player} Klasse.
+
+Um eine Verbindung zu einer Instanz des \textit{ControlledPlayer} herzustellen, wird ein neuer \textit{Socket} instanziiert und geöffnet. Um diesen mit dem Server zu verbinden, muss die \textit{Socket::connect} Methode aufgerufen werden. Diese benötigt die IP-Adresse und den Port des Servers. Demnach wird die selbe Portnummer, die zuvor im \textit{ControlledPlayer} festgelegt wurde übergeben: 1234.
+Da das Spiel zum Testen in mehreren Instanzen auf dem gleichen Gerät geöffnet wurde, wird "127.0.0.1" bzw. localhost als IP-Adresse verwendet.
+
+Sollten beim Verbindungsaufbau Probleme/eine \textit{IOException} oder \textit{ConnectException} auftreten, wird diese abgefangen und eine entsprechende Fehlernachricht in der Konsole ausgegeben.
+
+\lstinputlisting[firstnumber=26, firstline=26, lastline=37]{code/RemotePlayer.java}
+Ähnlich zu \textit{ControlledPlayer} wird die \textit{Player::act} Methode überschrieben. Hierbei wird die Basis-Logik jedoch weiterhin durch \textit{super.act()} aufgerufen uns ausgeführt. Da diese solange blockiert bis der User eine Bewegungstaste gedrückt/der \textit{Player} sich wirklich bewegt hat, wird der nachfolgende Code erst danach ausgeführt.
+
+Im folgenden wird eine die momentane Rotation des \textit{Player}s zu einem \textit{byte} konvertiert und in einem \textit{byte[ ]} in den \textit{OutputStream} des \textit{Socket}s geschrieben. \textit{OutputStream::flush} zwingt den \textit{OutputStream} die Daten unverzüglich über das Netzwerk zu senden.
+
+Anmerkung: Die Rotation des \textit{Player}s nach dem Ausführen von \textit{Player.act()}, muss zu diesem Zeitpunkt zwingend die vom User gewählte Richtung sein.
+
+Sollte beim senden der Daten ein Problem/eine \textit{IOException} auftreten, wird diese abgefangen und als sinnvolle Fehlernachricht in die Konsole ausgegeben.
+
+\lstinputlisting[firstnumber=39, firstline=39, lastline=47]{code/RemotePlayer.java}
+Genau wie in \textit{ControlledPlayer}, wird die \textit{GameObject::setVisible} Methode überschrieben, ihre Basis-Logik weiterhin ausgeführt und schließlich die Verbindung des \textit{Socket}s im Falle der Unsichtbarkeit des  \textit{Player}s geschlossen.
+
+Sollten hierbei Probleme/eine \textit{IOException} auftreten, wird diese abgefangen und als sinnvolle Fehlermeldung in die Konsole ausgegeben.\\\\
+
+\section{Spielend}
+\lstinputlisting[firstnumber=29, firstline=29, lastline=30]{code/Level.java}
+Um zu bestimmen, ob das \textit{Level} mit einem \textit{ControlledPlayer} oder einem \textit{RemotePlayer} geladen werden soll, wird der \textit{Level} Klasse im Konstruktor als Parameter die \textit{boolean isRemote} übergeben und als Attribut abgespeichert.
+
+\lstinputlisting[firstnumber=55, firstline=55, lastline=56]{code/Level.java}
+Sollte diese wahr sein, wird ein \textit{RemoteSpieler}, ansonsten ein\textit{ControlledPlayer} an der entsprechenden Stelle des \textit{Level}s erschaffen.
+
+\lstinputlisting[firstnumber=21, firstline=21, lastline=23]{code/RPGGame.java}
+Da jede Instanz von \textit{Level} nun zusätzliche eine \textit{boolean isRemote} als Parameter benötigt, muss diese in der Spielhauptklasse übergeben werden. Diese bezieht den Wert der Variable als Parameter der \textit{RPGGame::main} Methode. Der Benutzer muss \textit{isRemote} somit beim Starten des Programms als Argument mit angeben.
+
+\end{document}

@@ -18,7 +18,7 @@ public class Player extends Actor {
     public void act() {
         while(true){
             int key = Game.getNextKey();
-            int rotation = 0;
+            int rotation;
             switch(key){
                 case VK_RIGHT:
                     rotation = 0;

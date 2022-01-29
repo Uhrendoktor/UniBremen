@@ -32,9 +32,8 @@ public class ControlledPlayer extends Player {
         try{
             InputStream in = this.client.getInputStream();
             
-            int length;
             byte[] buffer = new byte[32];
-            if ((length = in.read(buffer)) > 0){
+            if (in.read(buffer) > 0){
               int rotation = (int) buffer[0];
               super.Move(rotation);
             }

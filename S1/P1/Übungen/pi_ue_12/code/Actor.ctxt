@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=Actor
-comment0.text=\r\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Actor.\r\n\ \r\n\ @author\ Julius\ Walczynski\r\n\ \r\n
+comment0.text=\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ Actor.\n\ \n\ @author\ Julius\ Walczynski\n\ \n
 comment1.params=x\ y\ rotation\ fileName\ field
 comment1.target=Actor(int,\ int,\ int,\ java.lang.String,\ Field)
 comment2.params=direction
 comment2.target=boolean\ canWalk(int)
-comment2.text=\r\n\ checks\ if\ the\ actor\ is\ able\ to\ walk\ and\ stay\ on\ a\ pathway\ if\ he\ goes\ in\ a\ given\ direction.\ \r\n
+comment2.text=\n\ checks\ if\ the\ actor\ is\ able\ to\ walk\ and\ stay\ on\ a\ pathway\ if\ he\ goes\ in\ a\ given\ direction.\ \n
 comment3.params=
 comment3.target=void\ act()
-comment3.text=\r\n\ abstract\ act\ void\ to\ be\ implemented\ in\ child\ classes\r\n
+comment3.text=\n\ abstract\ act\ void\ to\ be\ implemented\ in\ child\ classes\n
 numComments=4

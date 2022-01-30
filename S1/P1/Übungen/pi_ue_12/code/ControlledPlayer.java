@@ -1,10 +1,9 @@
 import java.net.*;
 import java.io.*;
 /**
- * Beschreiben Sie hier die Klasse ControlledPlayer2.
+ * Lässt sich von einem RemotePlayer steuern.
  * 
- * @author (Ihr Name) 
- * @version (eine Versionsnummer oder ein Datum)
+ * @Julius Walczynskis
  */
 public class ControlledPlayer extends Player {
     

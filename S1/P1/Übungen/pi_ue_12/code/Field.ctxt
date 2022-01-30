@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Field
-comment0.text=\r\n\ Diese\ Klasse\ repr\u00E4sentiert\ ein\ Spielfeld.\ Ihr\ Konstruktor\ bekommt\ dieses\ als\r\n\ String-Array\ \u00FCbergeben.\r\n
+comment0.text=\n\ Diese\ Klasse\ repr\u00E4sentiert\ ein\ Spielfeld.\ Ihr\ Konstruktor\ bekommt\ dieses\ als\n\ String-Array\ \u00FCbergeben.\n\ \n\ @Author\ Julius\ Walczynski\n
 comment1.params=_map
 comment1.target=Field(java.lang.String[])
 comment2.params=x\ y
@@ -13,8 +13,8 @@ comment5.params=x\ y
 comment5.target=char\ getCell(int,\ int)
 comment6.params=x\ y\ direction
 comment6.target=boolean\ hasNeighbor(int,\ int,\ int)
-comment6.text=\r\n\ @param\ x\ x-coordinate\ of\ tile\ to\ check\ from.\r\n\ @param\ y\ y.coordinate\ of\ tile\ to\ check\ from.\r\n\ @param\ direction\ the\ direction\ from\ the\ tile\ to\ the\ neighboring\ one\ to\ check.\r\n\ @return\ if\ a\ tile\ has\ a\ neighboring\ and\ to\ itself\ connected\ pathway.\ \ \ \r\n
+comment6.text=\n\ @param\ x\ x-coordinate\ of\ tile\ to\ check\ from.\n\ @param\ y\ y.coordinate\ of\ tile\ to\ check\ from.\n\ @param\ direction\ the\ direction\ from\ the\ tile\ to\ the\ neighboring\ one\ to\ check.\n\ @return\ if\ a\ tile\ has\ a\ neighboring\ and\ to\ itself\ connected\ pathway.\ \ \ \n
 comment7.params=
 comment7.target=void\ hide()
-comment7.text=\r\n\ hides\ all\ tile-gamobjects\ of\ the\ field,\ by\ making\ them\ invisble\r\n
+comment7.text=\n\ hides\ all\ tile-gamobjects\ of\ the\ field,\ by\ making\ them\ invisble\n
 numComments=8

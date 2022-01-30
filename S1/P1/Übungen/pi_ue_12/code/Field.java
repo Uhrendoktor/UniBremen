@@ -5,6 +5,8 @@ import java.util.stream.*;
 /**
  * Diese Klasse repräsentiert ein Spielfeld. Ihr Konstruktor bekommt dieses als
  * String-Array übergeben.
+ * 
+ * @Author Julius Walczynski
  */
 class Field
 {

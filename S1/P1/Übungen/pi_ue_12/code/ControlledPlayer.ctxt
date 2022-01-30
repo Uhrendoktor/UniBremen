@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=ControlledPlayer
-comment0.text=\n\ Beschreiben\ Sie\ hier\ die\ Klasse\ ControlledPlayer2.\n\ \n\ @author\ (Ihr\ Name)\ \n\ @version\ (eine\ Versionsnummer\ oder\ ein\ Datum)\n
+comment0.text=\n\ L\u00E4sst\ sich\ von\ einem\ RemotePlayer\ steuern.\n\ \n\ @Julius\ Walczynskis\n
 comment1.params=x\ y\ rotation\ field
 comment1.target=ControlledPlayer(int,\ int,\ int,\ Field)
 comment2.params=

@@ -6,15 +6,45 @@
 	\begin{enumerate}
 		\item[1.5] Sei $f:\R\to\R, f(x)\coloneqq\sin x$. Für $n\in\N$ bestimme das Taylor-Polynom von $f$ vom Grad $n$ um den Entwicklungspunkt $a=0$. Zeige, dass die Taylor-Reihe von $f$ auf ganz $\R$ gegen $f$ konvergiert, d.h. für jedes (feste) $x\in\R$ gilt $R_n(x)\to 0$. Benutze dazu die Formel für das Lagrange-Restglied $R_n$ aus HM1, Satz 21.1.
 		
-		\item[1.6] Zur Erinnerung: Für $x\in\R$ bezeichnet man mit $\floor{x}$ die eindeutig bestimmte ganze Zahl $m$ mit $m\leq x < m+1$. Sind die angegebenen Funktionen $\varphi_k:[0,2]\to\R(k=1,2,3,4)$ Treppenfunktionen? Wenn ja, ist ihr Integral zu ermitteln.
+		\item[1.6] Sind die angegebenen Funktionen $\varphi_k:[0,2]\to\R(k=1,2,3,4)$ Treppenfunktionen? Wenn ja, ist ihr Integral zu ermitteln.
 		\begin{enumerate}
-			\item $\varphi_1(x)=\floor{x}$;
-			\item $\varphi_2(x)=\floor{2x}$;
+			\item $\varphi_1(x)=\floor{x}$
+				$$\varphi_1(x)=\floor{x}=\begin{cases}
+					\vdots& \vdots\\
+					0&0\leq x < 1\\
+					1&1\leq x < 2\\
+					2&2\leq x < 3\\
+					\vdots& \vdots\\
+					n&n\leq x < n+1				
+				\end{cases}$$
+				$\Rightarrow \varphi_1\in T$ ($\varphi_1$ ist eine Treppenfunktion)\\
+				\begin{align*}
+					\Rightarrow &\int_a^b\varphi_1(x)dx = \int_0^b\varphi_1(x)dx-\int_0^a\varphi_1(x)dx\\
+					&\int_0^c\varphi_1(x)dx\\
+					=&\frac{c^2}{2}-\frac{\floor{c}}{2}-\frac{(c-\floor{c})^2}{2}\\
+					=&\frac{c^2-\floor{c}-(c-\floor{c}^2)}{2}\\
+					=&\frac{\floor{c}(2c-1)-\floor{c}^2}{2}\\
+					\Rightarrow &\int_a^b\varphi_1(x)dx\\
+					=&\frac{\floor{b}(2b-1)-\floor{b}^2-\floor{a}(2a-1)+\floor{a}^2}{2}
+				\end{align*}
+			\item $\varphi_2(x)=\floor{2x}$
+				$$\varphi_2(x)=\varphi_1(2x)$$
+				$\Rightarrow \varphi_2\in T$
+				$$\Rightarrow \int_a^b\varphi_2(x)dx=\int_a^b\varphi_1(2x)dx=\frac{\int_{2a}^{2b}\varphi_1(x)dx}{2}$$
 			\item $\varphi_3(x)=7\floor{x}-5\floor{2x}$
-			\item $\varphi_4{x}=\begin{cases}
+				$$\varphi_3(x)=7\varphi_1(x)-5\varphi_2(x)=7\varphi_1(x)-5\varphi_1(2x)$$
+				$\Rightarrow \varphi_3\in T$ da sie sie eine lineare Kombination aus den beiden Treppenfunktionen $\varphi_1$ und $\varphi_2$ ist. (Vektorraum)
+				$$\Rightarrow \int_a^b\varphi_3(x)dx=
+				7\int_a^b\varphi_1(x)dx+5\int_a^b\varphi_1(2x)dx=
+				7\int_a^b\varphi_1(x)dx+\frac{5}{2}\int_{2a}^{2b}\varphi_1(x)dx$$
+			\item $\varphi_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\
 				\floor{\frac{1}{x}}&\text{falls }x\neq 0.			
 			\end{cases}$
+			$$\forall x\in\R\setminus[-1,1]:\floor*{\frac{1}{x}}<1$$
+			$$\Rightarrow \int_a^b\varphi_4(x)dx = 0 \text{ für } x\in\R\setminus[-1,1]$$
+			Für $x\in[0,1]$ wird die Breite der Treppenstufen für $x\to 0$ zu $0$.\\
+			$\Rightarrow \varphi_4\not\in T$
 		\end{enumerate}
 		
 		\item[1.7] Die rationalen Zahlen im Intervall $[0,2)$ seien als Folge $(r_n)_{k\in\N}$ geschrieben. Entscheide, ob die angegebenen Funktionen $f_n:[0,2]\to\R(m=1,2,3,4)$ Riemann-integrierbar sind.

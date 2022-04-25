@@ -1,0 +1,31 @@
+\documentclass{HM}
+
+\begin{document}
+	\begin{enumerate}
+		\item[1.5] Sei $f:\R\to\R, f(x)\coloneqq\sin x$. Für $n\in\N$ bestimme das Taylor-Polynom von $f$ vom Grad $n$ um den Entwicklungspunkt $a=0$. Zeige, dass die Taylor-Reihe von $f$ auf ganz $\R$ gegen $f$ konvergiert, d.h. für jedes (feste) $x\in\R$ gilt $R_n(x)\to 0$. Benutze dazu die Formel für das Lagrange-Restglied $R_n$ aus HM1, Satz 21.1.
+		
+		\item[1.6] Zur Erinnerung: Für $x\in\R$ bezeichnet man mit $\floor{x}$ die eindeutig bestimmte ganze Zahl $m$ mit $m\leq x < m+1$. Sind die angegebenen Funktionen $\varphi_k:[0,2]\to\R(k=1,2,3,4)$ Treppenfunktionen? Wenn ja, ist ihr Integral zu ermitteln.
+		\begin{enumerate}
+			\item $\varphi_1(x)=\floor{x}$;
+			\item $\varphi_2(x)=\floor{2x}$;
+			\item $\varphi_3(x)=7\floor{x}-5\floor{2x}$
+			\item $\varphi_4{x}=\begin{cases}
+				0&\text{falls }x=0,\\
+				\floor{\frac{1}{x}}&\text{falls }x\neq 0.			
+			\end{cases}$
+		\end{enumerate}
+		
+		\item[1.7] Die rationalen Zahlen im Intervall $[0,2)$ seien als Folge $(r_n)_{k\in\N}$ geschrieben. Entscheide, ob die angegebenen Funktionen $f_n:[0,2]\to\R(m=1,2,3,4)$ Riemann-integrierbar sind.
+		\begin{enumerate}
+			\item $f_1(x)=\floor{2x}$;
+			\item $f_2(x)=e^{-x^{2}}$;
+			\item $f_3(x)=\sum\limits_{k:r_k<x}2^{-k}$;
+			\item $f_4(x)=\begin{cases}
+				0&\text{falls }x=0,\\
+				x^{-2}&\text{falls }x\neq 0.			
+			\end{cases}$
+		\end{enumerate}
+		
+		\item[1.8] Sei $a>1$. gehe ähnlich wie in Aufgabe 1.4 vor, um das Riemann-Integral $\int_1^a\frac{dx}{x}$ zu bestimmen.
+	\end{enumerate}
+\end{document}

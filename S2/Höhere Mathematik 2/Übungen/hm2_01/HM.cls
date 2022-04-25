@@ -7,9 +7,7 @@
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
-% Edit these as appropriate
-\newcommand\course{HM 1}
-\newcommand\hwnumber{11}                  % <-- homework number
+% Edit these as appropriate           
 \newcommand\NetIDa{6113829}           % <-- NetID of person #1
 \newcommand\NetIDb{6111554}           % <-- Matrikelnummer of person #2 (Comment this line out for problem sets)
 

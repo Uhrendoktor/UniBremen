@@ -21,8 +21,8 @@
 				\begin{align*}
 					\Rightarrow &\int_a^b\varphi_1(x)dx = \int_0^b\varphi_1(x)dx-\int_0^a\varphi_1(x)dx\\
 					\text{mit }&\int_0^c\varphi_1(x)dx
-					=\sum\limits_{k=1}^{\floor{c}}k-1 + (c-\floor{c})\floor{c}\\
-					=&\sum\limits_{k=0}^{\floor{c}}k - \floor{c} + (c-\floor{c})\floor{c}\\
+					=\left(\sum\limits_{k=1}^{\floor{c}}k-1\right) + (c-\floor{c})\floor{c}\\
+					=&\left(\sum\limits_{k=1}^{\floor{c}}k\right) - \floor{c} + (c-\floor{c})\floor{c}\\
 					=&\frac{\floor{c}(\floor{c}+1)}{2}+(c-\floor{c}-1)\floor{c}
 				\end{align*}
 				$$\int_0^2\varphi_1(x)dx=\frac{6}{2}-2-0=1$$\\
@@ -45,14 +45,14 @@
 			$$\int_0^2\varphi_4(x)dx=\int_0^1\varphi_4(x)dx+\int_1^2\varphi_4(x)dx$$\\
 			$\forall x>1:\frac{1}{x}<1\Rightarrow\forall x>1:\floor{\frac{1}{x}}=0$
 			$$\Rightarrow\int_1^2\varphi_4(x)dx=0\Rightarrow\int_0^2\varphi_4(x)dx=\int_0^1\varphi_4(x)dx$$\\
-			$$a_n\coloneqq(\frac{1}{1},\frac{1}{2},\frac{1}{3},\hdots,\frac{1}{n})$$
+			$$a_n\coloneqq\left(\frac{1}{1},\frac{1}{2},\frac{1}{3},\hdots,\frac{1}{n}\right)$$
 			berechnen der Treppenfunktion (Fläche unter den letzten n Stufen): $$\sum_{k=1}^n(a_k-a_{k+1})k=\sum_{k=1}^n(\frac{1}{k}-\frac{1}{k+1})k=\sum_{k=1}^n\frac{1}{k+1}$$
 			\begin{align*}
 				&\int_0^1\varphi_4(x)dx\\
 				=&\lim\limits_{n\to\infty}\sum_{k=1}^n\frac{1}{k+1}\\
 				=&\sum\limits_{k=1}^\infty\frac{1}{k+1}\\
-				=&\sum\limits_{k=0}^\infty\frac{1}{k+1}-1\\
-				=&\sum\limits_{k=1}^\infty\frac{1}{k}-1\\
+				=&\left(\sum\limits_{k=0}^\infty\frac{1}{k+1}\right)-1\\
+				=&\left(\sum\limits_{k=1}^\infty\frac{1}{k}\right)-1\\
 			\end{align*}
 			$\Rightarrow$ harmonische Reihe\\
 			$\Rightarrow$ divergiert\\
@@ -61,18 +61,13 @@
 		
 		\item[1.7] Die rationalen Zahlen im Intervall $[0,2)$ seien als Folge $(r_n)_{k\in\N}$ geschrieben. Entscheide, ob die angegebenen Funktionen $f_n:[0,2]\to\R(m=1,2,3,4)$ Riemann-integrierbar sind.
 		\begin{enumerate}
-			\item $f_1(x)=\floor{2x}$;\\
-			Laut 1.6 ist $\floor{2x}$ eine Treppenfunktion $=> \floor{2x}$ ist R-intbar\\
-			\item $f_2(x)=e^{-x^{2}}$;\\
-			$e^x$ ist stetig und $-x²$ ist stetig $=>e^{-x^2}$ stetig. Stetige Funktionen sind R-intbar also ist $f_2$ R-intbar. 
-			
+			\item $f_1(x)=\floor{2x}$;
+			\item $f_2(x)=e^{-x^{2}}$;
 			\item $f_3(x)=\sum\limits_{k:r_k<x}2^{-k}$;
-			
 			\item $f_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\
 				x^{-2}&\text{falls }x\neq 0.			
-			\end{cases}$\\
-			Wenn man den Punkt $x=0$ ignoriert, da einzelne Punkte für Integrale irrelevant sind, bleibt der $\frac{1}{x^2}$ Teil der monoton fallend ist $=>f_4$ R-intbar. 
+			\end{cases}$
 		\end{enumerate}
 		
 		\item[1.8] Sei $a>1$. gehe ähnlich wie in Aufgabe 1.4 vor, um das Riemann-Integral $\int_1^a\frac{dx}{x}$ zu bestimmen.

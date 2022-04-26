@@ -1,13 +1,13 @@
 \documentclass{HM}
 \newcommand\course{HM 2}
-\newcommand\hwnumber{1}   
+\newcommand\hwnumber{1}
 
 \newcommand{\temlim}{\lim\limits_{n\to\infty}}
 
 \begin{document}
 	\begin{enumerate}
 		\item[1.5] Sei $f:\R\to\R, f(x)\coloneqq\sin x$. Für $n\in\N$ bestimme das Taylor-Polynom von $f$ vom Grad $n$ um den Entwicklungspunkt $a=0$. Zeige, dass die Taylor-Reihe von $f$ auf ganz $\R$ gegen $f$ konvergiert, d.h. für jedes (feste) $x\in\R$ gilt $R_n(x)\to 0$. Benutze dazu die Formel für das Lagrange-Restglied $R_n$ aus HM1, Satz 21.1.
-		
+
 		\item[1.6] Sind die angegebenen Funktionen $\varphi_k:[0,2]\to\R(k=1,2,3,4)$ Treppenfunktionen? Wenn ja, ist ihr Integral zu ermitteln.
 		\begin{enumerate}
 			\item $\varphi_1(x)=\floor{x}$
@@ -17,7 +17,7 @@
 					1&1\leq x < 2\\
 					2&2\leq x < 3\\
 					\vdots& \vdots\\
-					n&n\leq x < n+1				
+					n&n\leq x < n+1
 				\end{cases}$$
 				$\Rightarrow \varphi_1\in T$ ($\varphi_1$ ist eine Treppenfunktion) mit Treppenpunkten $= \{\hdots,1,2,3,\hdots,n\}$\\
 				\begin{align*}
@@ -42,7 +42,7 @@
 				$$\Rightarrow 7\int_0^2\varphi_1(x)dx-5\int_0^2\varphi_2(x)dx=7-15=-8$$\\
 			\item $\varphi_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\
-				\floor{\frac{1}{x}}&\text{falls }x\neq 0.			
+				\floor{\frac{1}{x}}&\text{falls }x\neq 0.
 			\end{cases}$
 			$$\int_0^2\varphi_4(x)dx=\int_0^1\varphi_4(x)dx+\int_1^2\varphi_4(x)dx$$\\
 			$\forall x>1:\frac{1}{x}<1\Rightarrow\forall x>1:\floor{\frac{1}{x}}=0$
@@ -60,18 +60,27 @@
 			$\Rightarrow$ divergiert\\
 			$\Rightarrow$ nicht Riemann integrierbar.
 		\end{enumerate}
-		
+
 		\item[1.7] Die rationalen Zahlen im Intervall $[0,2)$ seien als Folge $(r_n)_{k\in\N}$ geschrieben. Entscheide, ob die angegebenen Funktionen $f_n:[0,2]\to\R(m=1,2,3,4)$ Riemann-integrierbar sind.
 		\begin{enumerate}
-			\item $f_1(x)=\floor{2x}$;
-			\item $f_2(x)=e^{-x^{2}}$;
+			\item $f_1(x)=\floor{2x}$;\\
+			Laut 1.6 ist $\floor{2x}$ eine Treppenfunktion $\Rightarrow \floor{2x}$ ist R-intbar\\
+
+			\item $f_2(x)=e^{-x^{2}}$;\\
+			$e^x$ ist stetig und $-x²$ ist stetig $\Rightarrow e^{-x^2}$ stetig. Stetige Funktionen sind R-intbar also ist $f_2$ R-intbar. \\
+
 			\item $f_3(x)=\sum\limits_{k:r_k<x}2^{-k}$;
+			Da zwischen 0 und x unendlich viele realle Zahlen liegen, gibt es unendlich viele k über die summiert wird. $$\Rightarrow\sum_{k=0}^{\infty}\frac{1}{2}^k$$
+			nach geometrischer Reihe:
+			$$\Rightarrow\sum_{k=0}^{\infty}\frac{1}{2}^k = \frac{1}{1+\frac{1}{2}}=2$$
+			Damit ist $f_3$ eine konstante funktion und damit R-intbar.\\
+
 			\item $f_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\
-				x^{-2}&\text{falls }x\neq 0.			
+				x^{-2}&\text{falls }x\neq 0.
 			\end{cases}$
 		\end{enumerate}
-		
+
 		\newpage
 		\item[1.8] Sei $a>1$. gehe ähnlich wie in Aufgabe 1.4 vor, um das Riemann-Integral $\int_1^a\frac{dx}{x}$ zu bestimmen.
 		$$\int_1^a\frac{dx}{x}=\int_1^a\frac{1}{x}dx=\int_1^af(x)dx$$

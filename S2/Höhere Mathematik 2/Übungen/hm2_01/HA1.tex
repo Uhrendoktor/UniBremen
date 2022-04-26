@@ -62,11 +62,16 @@
 		\item[1.7] Die rationalen Zahlen im Intervall $[0,2)$ seien als Folge $(r_n)_{k\in\N}$ geschrieben. Entscheide, ob die angegebenen Funktionen $f_n:[0,2]\to\R(m=1,2,3,4)$ Riemann-integrierbar sind.
 		\begin{enumerate}
 			\item $f_1(x)=\floor{2x}$;\\
-			Laut 1.6 ist $\floor{2x}$ eine Treppenfunktion $=> \floor{2x}$ ist R-intbar\\
+			Laut 1.6 ist $\floor{2x}$ eine Treppenfunktion $\Rightarrow \floor{2x}$ ist R-intbar\\
+			
 			\item $f_2(x)=e^{-x^{2}}$;\\
-			$e^x$ ist stetig und $-x²$ ist stetig $=>e^{-x^2}$ stetig. Stetige Funktionen sind R-intbar also ist $f_2$ R-intbar. 
+			$e^x$ ist stetig und $-x²$ ist stetig $\Rightarrow e^{-x^2}$ stetig. Stetige Funktionen sind R-intbar also ist $f_2$ R-intbar. \\
 			
 			\item $f_3(x)=\sum\limits_{k:r_k<x}2^{-k}$;
+			Da zwischen 0 und x unendlich viele realle Zahlen liegen, gibt es unendlich viele k über die summiert wird. $$\Rightarrow\sum_{k=0}^{\infty}\frac{1}{2}^k$$
+			nach geometrischer Reihe:
+			$$\Rightarrow\sum_{k=0}^{\infty}\frac{1}{2}^k = \frac{1}{1+\frac{1}{2}}=2$$
+			Damit ist $f_3$ eine konstante funktion und damit R-intbar.\\
 			
 			\item $f_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\

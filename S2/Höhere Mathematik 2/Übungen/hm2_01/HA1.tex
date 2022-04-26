@@ -17,34 +17,46 @@
 					\vdots& \vdots\\
 					n&n\leq x < n+1				
 				\end{cases}$$
-				$\Rightarrow \varphi_1\in T$ ($\varphi_1$ ist eine Treppenfunktion)\\
+				$\Rightarrow \varphi_1\in T$ ($\varphi_1$ ist eine Treppenfunktion) mit Treppenpunkten $= \{\hdots,1,2,3,\hdots,n\}$\\
 				\begin{align*}
 					\Rightarrow &\int_a^b\varphi_1(x)dx = \int_0^b\varphi_1(x)dx-\int_0^a\varphi_1(x)dx\\
-					&\int_0^c\varphi_1(x)dx\\
-					=&\frac{c^2}{2}-\frac{\floor{c}}{2}-\frac{(c-\floor{c})^2}{2}\\
-					=&\frac{c^2-\floor{c}-(c-\floor{c}^2)}{2}\\
-					=&\frac{\floor{c}(2c-1)-\floor{c}^2}{2}\\
-					\Rightarrow &\int_a^b\varphi_1(x)dx\\
-					=&\frac{\floor{b}(2b-1)-\floor{b}^2-\floor{a}(2a-1)+\floor{a}^2}{2}
+					\text{mit }&\int_0^c\varphi_1(x)dx
+					=\sum\limits_{k=1}^{\floor{c}}k-1 + (c-\floor{c})\floor{c}\\
+					=&\sum\limits_{k=0}^{\floor{c}}k - \floor{c} + (c-\floor{c})\floor{c}\\
+					=&\frac{\floor{c}(\floor{c}+1)}{2}+(c-\floor{c}-1)\floor{c}
 				\end{align*}
+				$$\int_0^2\varphi_1(x)dx=\frac{6}{2}-2-0=1$$\\
 			\item $\varphi_2(x)=\floor{2x}$
 				$$\varphi_2(x)=\varphi_1(2x)$$
-				$\Rightarrow \varphi_2\in T$
+				$\Rightarrow \varphi_2\in T$ da $\varphi_1\in T$
 				$$\Rightarrow \int_a^b\varphi_2(x)dx=\int_a^b\varphi_1(2x)dx=\frac{\int_{2a}^{2b}\varphi_1(x)dx}{2}$$
+				$$\Rightarrow\int_0^2\varphi_2(x)dx=\frac{\int_0^4\varphi_1(x)}dx{2}=\frac{\frac{20}{2}-4-0}{2}=3$$\\
 			\item $\varphi_3(x)=7\floor{x}-5\floor{2x}$
 				$$\varphi_3(x)=7\varphi_1(x)-5\varphi_2(x)=7\varphi_1(x)-5\varphi_1(2x)$$
 				$\Rightarrow \varphi_3\in T$ da sie sie eine lineare Kombination aus den beiden Treppenfunktionen $\varphi_1$ und $\varphi_2$ ist. (Vektorraum)
 				$$\Rightarrow \int_a^b\varphi_3(x)dx=
-				7\int_a^b\varphi_1(x)dx+5\int_a^b\varphi_1(2x)dx=
-				7\int_a^b\varphi_1(x)dx+\frac{5}{2}\int_{2a}^{2b}\varphi_1(x)dx$$
+				7\int_a^b\varphi_1(x)dx-5\int_a^b\varphi_1(2x)dx=
+				7\int_a^b\varphi_1(x)dx-\frac{5}{2}\int_{2a}^{2b}\varphi_1(x)dx$$
+				$$\Rightarrow 7\int_0^2\varphi_1(x)dx-5\int_0^2\varphi_2(x)dx=7-15=-8$$\\
 			\item $\varphi_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\
 				\floor{\frac{1}{x}}&\text{falls }x\neq 0.			
 			\end{cases}$
-			$$\forall x\in\R\setminus[-1,1]:\floor*{\frac{1}{x}}<1$$
-			$$\Rightarrow \int_a^b\varphi_4(x)dx = 0 \text{ für } x\in\R\setminus[-1,1]$$
-			Für $x\in[0,1]$ wird die Breite der Treppenstufen für $x\to 0$ zu $0$.\\
-			$\Rightarrow \varphi_4\not\in T$
+			$$\int_0^2\varphi_4(x)dx=\int_0^1\varphi_4(x)dx+\int_1^2\varphi_4(x)dx$$\\
+			$\forall x>1:\frac{1}{x}<1\Rightarrow\forall x>1:\floor{\frac{1}{x}}=0$
+			$$\Rightarrow\int_1^2\varphi_4(x)dx=0\Rightarrow\int_0^2\varphi_4(x)dx=\int_0^1\varphi_4(x)dx$$\\
+			$$a_n\coloneqq(\frac{1}{1},\frac{1}{2},\frac{1}{3},\hdots,\frac{1}{n})$$
+			berechnen der Treppenfunktion (Fläche unter den letzten n Stufen): $$\sum_{k=1}^n(a_k-a_{k+1})k=\sum_{k=1}^n(\frac{1}{k}-\frac{1}{k+1})k=\sum_{k=1}^n\frac{1}{k+1}$$
+			\begin{align*}
+				&\int_0^1\varphi_4(x)dx\\
+				=&\lim\limits_{n\to\infty}\sum_{k=1}^n\frac{1}{k+1}\\
+				=&\sum\limits_{k=1}^\infty\frac{1}{k+1}\\
+				=&\sum\limits_{k=0}^\infty\frac{1}{k+1}-1\\
+				=&\sum\limits_{k=1}^\infty\frac{1}{k}-1\\
+			\end{align*}
+			$\Rightarrow$ harmonische Reihe\\
+			$\Rightarrow$ divergiert\\
+			$\Rightarrow$ nicht Riemann integrierbar.
 		\end{enumerate}
 		
 		\item[1.7] Die rationalen Zahlen im Intervall $[0,2)$ seien als Folge $(r_n)_{k\in\N}$ geschrieben. Entscheide, ob die angegebenen Funktionen $f_n:[0,2]\to\R(m=1,2,3,4)$ Riemann-integrierbar sind.

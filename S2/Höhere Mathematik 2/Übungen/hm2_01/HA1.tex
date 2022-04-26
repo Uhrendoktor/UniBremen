@@ -2,6 +2,8 @@
 \newcommand\course{HM 2}
 \newcommand\hwnumber{1}   
 
+\newcommand{\temlim}{\lim\limits_{n\to\infty}}
+
 \begin{document}
 	\begin{enumerate}
 		\item[1.5] Sei $f:\R\to\R, f(x)\coloneqq\sin x$. Für $n\in\N$ bestimme das Taylor-Polynom von $f$ vom Grad $n$ um den Entwicklungspunkt $a=0$. Zeige, dass die Taylor-Reihe von $f$ auf ganz $\R$ gegen $f$ konvergiert, d.h. für jedes (feste) $x\in\R$ gilt $R_n(x)\to 0$. Benutze dazu die Formel für das Lagrange-Restglied $R_n$ aus HM1, Satz 21.1.
@@ -70,6 +72,36 @@
 			\end{cases}$
 		\end{enumerate}
 		
+		\newpage
 		\item[1.8] Sei $a>1$. gehe ähnlich wie in Aufgabe 1.4 vor, um das Riemann-Integral $\int_1^a\frac{dx}{x}$ zu bestimmen.
+		$$\int_1^a\frac{dx}{x}=\int_1^a\frac{1}{x}dx=\int_1^af(x)dx$$
+		$\Rightarrow f(x)=\frac{1}{x}$
+		$$1=x_0<x_1<x_2<\hdots<x_n=a \text{ mit } x_k\coloneqq a^{\frac{k}{n}} \text{ mit } x,k\in\N; k<x$$
+		$$\int_1^a\varphi(x)dx=\sum\limits_{k=0}^n(x_{k+1}-x_k)f(x_k)>\int_1^af(x)dx>\int_1^a\psi(x)dx=\sum\limits_{k=0}^n(x_{k+1}-x_k)f(x_{k+1})$$
+		\begin{align*}
+			\eqnf{\lim\limits_{n\to\infty}\int_1^a\varphi(x)dx}{\lim\limits_{n\to\infty}\int_1^a\psi(x)dx=\int_1^af(x)dx}
+			\eqn{\sum\limits_{k=0}^\infty(x_{k+1}-x_k)f(x_k)}{\sum\limits_{k=0}^\infty(x_{k+1}-x_k)f(x_{k+1})}
+			\eqn{\sum\limits_{k=0}^\infty(a^{\frac{k+1}{n}}-a^{\frac{k}{n}})\frac{1}{a^{\frac{k}{n}}}}{\sum\limits_{k=0}^\infty(a^{\frac{k+1}{n}}-a^{\frac{k}{n}})\frac{1}{a^{\frac{k+1}{n}}}}
+			\eqn{\sum\limits_{k=0}^\infty(a^{\frac{k}{n}}a^{\frac{1}{n}}-a^{\frac{k}{n}})\frac{1}{a^{\frac{k}{n}}}}{\sum\limits_{k=0}^\infty(a^{\frac{k}{n}}a^{\frac{1}{n}}-a^{\frac{k}{n}})\frac{1}{a^{\frac{k}{n}}}\frac{1}{a^{\frac{1}{n}}}}
+			\eqn{\sum\limits_{k=0}^\infty(a^{\frac{1}{n}}-1)}{\sum\limits_{k=0}^\infty(1-a^{-\frac{1}{n}})}
+			\eqn{\lim\limits_{n\to\infty}n(a^{\frac{1}{n}}-1)}{\lim\limits_{n\to\infty}n(1-a^{-\frac{1}{n}})}
+		\end{align*}
+		\begin{align*}
+		\Rightarrow &\temlim n(1-a^{-\frac{1}{n}})\\
+		=&\temlim n\left(\frac{a^{-\frac{1}{n}}}{a^{-\frac{1}{n}}}-a^{-\frac{1}{n}}\right)\\
+		=&\temlim a^{-\frac{1}{n}}n(a^{\frac{1}{n}}-1)\\
+		=&\frac{\temlim n(a^{\frac{1}{n}}-1)}{\temlim a^{\frac{1}{n}}}\\
+		\end{align*}
+		\begin{align*}
+		=&\frac{\temlim n(a^{\frac{1}{n}}-1)}{1}\\
+		=&\temlim n(a^{\frac{1}{n}}-1)\\
+		=&\temlim \frac{a^{\frac{1}{n}}-1}{\frac{1}{n}}\\
+		=&\temlim \frac{\frac{d}{dx}(e^{\ln(a)^{\frac{1}{n}}}-1)}{\frac{d}{dx}\frac{1}{n}}\\
+		=&\temlim \frac{\frac{d}{dx}\left(\frac{\ln(a)}{n}\right)e^{\ln(a)^{\frac{1}{n}}}}{-\frac{1}{n^2}}\\
+		=&\temlim \frac{\frac{\ln(a)}{n^2} a^{\frac{1}{n}}}{-\frac{1}{n^2}}\\
+		=&\temlim \ln(a)a^{\frac{1}{n}}\\
+		=&\ln(a)
+		\end{align*}
+		$\Rightarrow \int_1^a\frac{dx}{x}=\ln(a)$
 	\end{enumerate}
 \end{document}

@@ -49,13 +49,18 @@
 		
 		\item[1.7] Die rationalen Zahlen im Intervall $[0,2)$ seien als Folge $(r_n)_{k\in\N}$ geschrieben. Entscheide, ob die angegebenen Funktionen $f_n:[0,2]\to\R(m=1,2,3,4)$ Riemann-integrierbar sind.
 		\begin{enumerate}
-			\item $f_1(x)=\floor{2x}$;
-			\item $f_2(x)=e^{-x^{2}}$;
+			\item $f_1(x)=\floor{2x}$;\\
+			Laut 1.6 ist $\floor{2x}$ eine Treppenfunktion $=> \floor{2x}$ ist R-intbar\\
+			\item $f_2(x)=e^{-x^{2}}$;\\
+			$e^x$ ist stetig und $-x²$ ist stetig $=>e^{-x^2}$ stetig. Stetige Funktionen sind R-intbar also ist $f_2$ R-intbar. 
+			
 			\item $f_3(x)=\sum\limits_{k:r_k<x}2^{-k}$;
+			
 			\item $f_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\
 				x^{-2}&\text{falls }x\neq 0.			
-			\end{cases}$
+			\end{cases}$\\
+			Wenn man den Punkt $x=0$ ignoriert, da einzelne Punkte für Integrale irrelevant sind, bleibt der $\frac{1}{x^2}$ Teil der monoton fallend ist $=>f_4$ R-intbar. 
 		\end{enumerate}
 		
 		\item[1.8] Sei $a>1$. gehe ähnlich wie in Aufgabe 1.4 vor, um das Riemann-Integral $\int_1^a\frac{dx}{x}$ zu bestimmen.

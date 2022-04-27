@@ -1,0 +1,51 @@
+\documentclass{HM}
+\newcommand\course{HM 2}
+\newcommand\hwnumber{Präsenz 1}   
+
+\begin{document}
+	\begin{enumerate}
+		\item[1.1] Berechne das Taylor-Polynom von $f=\exp$ vom Grad 3 um den Entwicklungspunkt $a=2$
+		 $$\text{Taylor-Polynom: }\sum\limits_{n=0}^g\frac{f^{(n)}(a)}{n!}(x-a)^n$$
+		 \begin{align*}
+		 	\Rightarrow g=3, a=2: 
+		 	&\sum\limits_{n=0}^3\frac{e^{(n)}(2)}{n!}(x-2)^n\\
+		 	=&e^2\sum\limits_{n=0}^3\frac{(x-2)^n}{n!}\\
+		 	=&\frac{1}{6}e^2(x-2)^3+\frac{1}{2}e^2(x-2)^2+e^2(x-2)^1+e^2
+		 \end{align*}
+		 
+		 \item[1.2] Eine Rakete soll ins Weltall fliegen! Hat die Rakete eine Ruhemasse $m_0$ und Geschwindigkeit $v$, so ist ihre \textit{relativistische Energie} gegeben durch
+		 $$E_{rel}=\frac{m_0c^2}{\sqrt{1-(\frac{v}{c})^2}},$$
+		 wobei $c$ die Lichtgeschwindigkeit im Vakuum ist. Mit $f: (-\infty,1)\to\R, f(x)\coloneqq\frac{1}{\sqrt{1-x}}$ gilt $E_{rel}=m_0c^2f((\frac{v}{c})^2)$.
+		 \begin{enumerate}
+		 	\item Berechne das Taylor-Polynom von $f$ vom Grad 1 um den Entwicklungspunkt $a=0$. Welche Näherung für $E_{rel}$ erhält man daraus? Gib die physikalische Interpretation der auftretenden Terme an.
+		 	$$\text{Taylor-Polynom: }\sum\limits_{n=0}^g\frac{f^{(n)}(a)}{n!}(x-a)^n$$
+		 	\begin{align*}
+		 		\Rightarrow g=1, a=0:
+		 		&\sum\limits_{n=0}^1\frac{f^{(n)}(0)}{n!}x^n\\
+		 		=&\frac{1}{\sqrt{1-0}}+\frac{d}{da}\left(\frac{1}{\sqrt{1-a}}\right)x\\
+		 		=&1+\frac{-\frac{d}{da}\sqrt{1-a}}{1-0}x\\
+		 		=&1-\frac{1}{2}(1-0)^{-\frac{1}{2}}\frac{d}{da}(1-a)x\\
+		 		=&1+\frac{1}{2}x
+			\end{align*}
+			$\Rightarrow E_{rel}\approx m_0c^2(1+\frac{1}{2}(\frac{v}{c})^2) \Rightarrow E_{rel0}\xrightarrow{v\to c}\frac{3}{2}E_{rel0}$
+			$\Rightarrow$ Die maximale \textit{relativistische Energie} beträgt in dieser Näherung 150\% der Ruheenergie.
+		 	
+		 	\item Gib das Lagrange'sche Restglied $R_1(x)$ für den Entwicklungspunkt $a=0$ an. Wie gut ist die Näherung aus Teil (a) im Fall $m_0=15000kg$ und $v=11\frac{km}{s}$?
+		 	$$\text{Lagrange-Restglied: }R_g(x)=\frac{f^{(g+1)}(\xi)}{(g+1)!}(x-a)^{g+1}$$
+		 	\begin{align*}
+		 		\Rightarrow g=1, a=0:
+		 		&\frac{f^{(2)}(\xi)}{2!}x^2; \xi\in(-\infty,1]\\
+		 		=&\frac{\frac{d}{dx}\frac{-\frac{1}{2}(1-\xi)^{-\frac{1}{2}}}{1-\xi}}{2}x^2\\
+		 		=&\frac{\frac{d}{dx}-\frac{(1-\xi)^{-\frac{1}{2}}}{2(1-\xi)}}{2}x^2\\
+		 		=&\frac{\frac{d}{dx}-\frac{1}{2(1-\xi)^{\frac{3}{2}}}}{2}x^2\\
+		 		=&\frac{\frac{\frac{d}{dx}2(1-\xi)^{\frac{3}{2}}}{4(1-\xi)^{\frac{6}{2}}}}{2}x^2\\
+		 		=&\frac{\frac{3(1-\xi)^{\frac{1}{2}}}{4(1-\xi)^{\frac{6}{2}}}}{2}x^2\\
+		 		=&\frac{3}{8(1-\xi)^{\frac{5}{2}}}x^2\\
+		 		\Rightarrow R_1(x)=&\frac{1}{8}(1-\xi)^{-\frac{3}{2}}x^2
+		 	\end{align*}
+		 	$$\max \frac{1}{8}(1-\xi)^{-\frac{3}{2}}x^2
+		 	=\frac{1}{8}x^2\max\left(\frac{1}{\sqrt{1-\xi}}\right)^3
+		 	=\frac{1}{8}x^2\max\left(\frac{1}{\sqrt{1-\xi}}\right)$$
+		 \end{enumerate}
+	\end{enumerate}
+\end{document}

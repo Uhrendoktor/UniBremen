@@ -8,6 +8,15 @@
 	\begin{enumerate}
 		\item[1.5] Sei $f:\R\to\R, f(x)\coloneqq\sin x$. Für $n\in\N$ bestimme das Taylor-Polynom von $f$ vom Grad $n$ um den Entwicklungspunkt $a=0$. Zeige, dass die Taylor-Reihe von $f$ auf ganz $\R$ gegen $f$ konvergiert, d.h. für jedes (feste) $x\in\R$ gilt $R_n(x)\to 0$. Benutze dazu die Formel für das Lagrange-Restglied $R_n$ aus HM1, Satz 21.1.
 
+		\begin{align*}
+			\eqnf{T}{\sum_{k=0}^{n}\left(\frac{sin^{(k)}(0)}{k!}x^k\right)}
+			\eqn{T}{\sum_{k=0}^{\frac{n-1}{2}}\left(\frac{(-1)^k}{(1+2k)!}x^{1+2k}\right)}\\
+			R_n=\frac{sin^{(n+1)}(t)}{(n+1)!}x^{n+1}\\
+			R_n\text{ läuft für }n\to\infty\text{ gegen $0$, wenn}\\
+			\geqnf{(n+1)!}{>}{x^{n+1}}
+			\geqn{n n!}{>}{x^n x}
+		\end{align*}
+		Da $n$ größer als $x$ wird und $n!$ größer als $x^n$ ist, folgt das $R_n$ für n$\to \infty$ gegen $0$ läuft
 		\item[1.6] Sind die angegebenen Funktionen $\varphi_k:[0,2]\to\R(k=1,2,3,4)$ Treppenfunktionen? Wenn ja, ist ihr Integral zu ermitteln.
 		\begin{enumerate}
 			\item $\varphi_1(x)=\floor{x}$
@@ -69,16 +78,20 @@
 			\item $f_2(x)=e^{-x^{2}}$;\\
 			$e^x$ ist stetig und $-x²$ ist stetig $\Rightarrow e^{-x^2}$ stetig. Stetige Funktionen sind R-intbar also ist $f_2$ R-intbar. \\
 
-			\item $f_3(x)=\sum\limits_{k:r_k<x}2^{-k}$;
+			\item $f_3(x)=\sum\limits_{k:r_k<x}2^{-k}$;\\
+			
 			Da zwischen 0 und x unendlich viele realle Zahlen liegen, gibt es unendlich viele k über die summiert wird. $$\Rightarrow\sum_{k=0}^{\infty}\frac{1}{2}^k$$
 			nach geometrischer Reihe:
 			$$\Rightarrow\sum_{k=0}^{\infty}\frac{1}{2}^k = \frac{1}{1+\frac{1}{2}}=2$$
-			Damit ist $f_3$ eine konstante funktion und damit R-intbar.\\
+			Damit ist $f_3$ eine konstante funktion für alle Stellen außer 0 und damit R-intbar.\\
 
 			\item $f_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\
 				x^{-2}&\text{falls }x\neq 0.
-			\end{cases}$
+			\end{cases}$\\
+		
+			$f_4$ ist unbeschränkt und damit nicht R-intbar.\\
+			Es läuft für $x\to0$ nach $\infty$.
 		\end{enumerate}
 
 		\newpage

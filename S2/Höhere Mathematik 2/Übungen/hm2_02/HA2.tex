@@ -1,0 +1,42 @@
+\documentclass{HM}
+\newcommand\course{HM 2}
+\newcommand\hwnumber{2}
+
+\begin{document}
+	\begin{enumerate}
+		\item[2.4] Berechne die folgenden Integrale:
+		\begin{enumerate}
+			\item $\int\limits_{-1}^1(3x^3-2x^2+x-1)dx$
+			$$f(x)=3x^3-2x^2+x-1 \Rightarrow F(x)=\frac{3}{4}x^4-\frac{2}{3}x^3+\frac{1}{2}x^2-x+c$$
+			$$\Rightarrow\int\limits_{-1}^1(3x^3-2x^2+x-1)dx = F(x)\biggr|_{-1}^1 = F(1)-F(-1) = -\frac{10}{3}$$
+			\item $\int_{-1}^1\frac{1}{1+x^2}dx$
+			$$f(x)=\frac{1}{1+x^2} \Rightarrow F(x)=\arctan(x)$$
+			$$\Rightarrow\int_{-1}^1\frac{1}{1+x^2}dx=F(x)\biggr|_{-1}^1 = F(1)-F(-1)=\frac{\pi}{2}$$
+			\item $\int_{-1}^2\frac{e^x-1}{e^x+1}dx$
+			\begin{align*}
+				&\int_{-1}^2\frac{e^x-1}{e^x+1}dx\\
+				=&\int_{-1}^2\frac{e^x}{e^x+1}dx-\int_{-1}^2\frac{1}{e^x+1}dx\\
+			\end{align*}
+			Mit $g(x)=e^x+1\Rightarrow g'(x)=e^x$ folgt aus $\int_a^b\frac{g'(x)}{g(x)}dx = \ln(|g(x)|)\biggr|_a^b$:
+			\begin{align*}
+				=&\ln(e^x+1)\biggr|_{-1}^2-\int_{-1}^2\frac{1}{e^x+1}dx\\
+			\end{align*}
+			Mit $s\coloneqq e^x$ folgt aus der Substitutionsregel:
+			\begin{align*}
+				=&\ln(e^x+1)\biggr|_{-1}^2-\int_{e^{-1}}^{e^2}\frac{1}{s+1}\frac{ds}{s}\\
+				=&\ln(e^x+1)\biggr|_{-1}^2-\int_{e^{-1}}^{e^2}\frac{1}{s(s+1)}ds\\
+			\end{align*}
+			Aus der Partialbruchzerlegung von $\frac{1}{s(s+1)}$ zu $\frac{1}{2}-\frac{1}{s+1}$ folgt:
+			\begin{align*}
+				=&\ln(e^x+1)\biggr|_{-1}^2-\int_{e^{-1}}^{e^2}\frac{1}{s}ds+\int_{e^{-1}}^{e^2}\frac{1}{s+1}ds
+			\end{align*}
+			Mit $u\coloneqq s+1$ folgt aus der Substitutionsregel:
+			\begin{align*}
+				=&\ln(e^x+1)\biggr|_{-1}^2-\int_{e^{-1}}^{e^2}\frac{1}{s}ds+\int_{e^{-1}+1}^{e^2+1}\frac{1}{u}du\\
+				=&\ln(e^x+1)\biggr|_{-1}^2-\ln(s)\biggr|_{e^{-1}}^{e^2}+\ln(u)\biggr|_{e^{-1}+1}^{e^2+1}\\
+				=&-2\ln(e^2+1)+2\ln(e+1)-1
+			\end{align*}
+			$\Rightarrow \int_{-1}^2\frac{e^x-1}{e^x+1}dx=-2\ln(e^2+1)+2\ln(e+1)-1$
+		\end{enumerate}
+	\end{enumerate}
+\end{document}

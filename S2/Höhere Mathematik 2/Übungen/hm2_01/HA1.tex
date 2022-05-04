@@ -80,10 +80,11 @@
 
 			\item $f_3(x)=\sum\limits_{k:r_k<x}2^{-k}$;\\
 			
-			Da zwischen 0 und x unendlich viele realle Zahlen liegen, gibt es unendlich viele k über die summiert wird. $$\Rightarrow\sum_{k=0}^{\infty}\frac{1}{2}^k$$
-			nach geometrischer Reihe:
-			$$\Rightarrow\sum_{k=0}^{\infty}\frac{1}{2}^k = \frac{1}{1+\frac{1}{2}}=2$$
-			Damit ist $f_3$ eine konstante funktion für alle Stellen außer 0 und damit R-intbar.\\
+			$x_1,x_2\in\R; x_1<x_2 \Rightarrow \{r_
+			k; r_k<x_1\}<\{r_k;r_k<x_2\}$\\
+			$\Rightarrow \sum\limits_{k:r_k<x_1}2^{-k}<\sum\limits_{k:r_k<x_2}2^{-k}\Leftrightarrow f(x_1)<f(x_2)$\\
+			$\Rightarrow$ f ist monoton\\
+			$\Rightarrow$ f ist Riemann integrierbar
 
 			\item $f_4(x)=\begin{cases}
 				0&\text{falls }x=0,\\

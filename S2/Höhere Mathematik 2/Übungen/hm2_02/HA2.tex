@@ -47,7 +47,7 @@
 				=&\frac{2-\sqrt{3}}{2} \approx 0.133975
 			\end{align*}	
 		\end{enumerate}
-		\item Bestimme mittels geeigneter Integrationstechniken Stammfunktionen zu folgenden Funktionen:
+		\item[2.5] Bestimme mittels geeigneter Integrationstechniken Stammfunktionen zu folgenden Funktionen:
 		\begin{enumerate}
 			\item $f(x)=3e^x\sqrt{e^x+1}$
 			\begin{align*}
@@ -138,5 +138,20 @@
 			=&\frac{1}{\sqrt{\ln(r)}}(r^3-\frac{1}{2})
 			\end{align*}
 		\end{enumerate}
+		\item [2.8] Ermittle den Grenzwert
+		\begin{align*}
+		&\lim_{n\to\infty}n\cdot\left(\frac{1}{n^2}+\frac{1}{(n+1)^2}+\hdots+\frac{1}{(2n-1)^2}\right)\\
+		=&\lim_{n\to\infty}\frac{1}{n}\left(\frac{n^2}{n^2}+\frac{n^2}{(n+1)^2}+\hdots+\frac{n^2}{(2n-1)^2}\right)\\
+		=&\lim_{n\to\infty}\frac{1}{n}\left(\frac{1}{(1+\tfrac{0}{n})^2}+\frac{1}{(1+\tfrac{1}{n})^2}+\hdots+\frac{1}{(1+\tfrac{n-1}{n})^2}\right)\\
+		=&\lim_{n\to\infty}\frac{1}{n}\sum\limits_{k=0}^{n-1}\frac{1}{(1+\tfrac{k}{n})^2}\\
+		\intertext{$x=\frac{k}{n}; 0\leq x < 1$:}
+		=&\int_0^1\frac{1}{(1+x)^2}dx\\
+		\intertext{$a=x+1; 1\leq a<2$:}
+		=&\int_1^2\frac{1}{a^2}da\\
+		\intertext{$f(x)=\frac{1}{a^2}\Rightarrow F(x)=-\frac{1}{a}$:}
+		=&F(2)-F(1)\\
+		=&-\frac{1}{2}+1\\
+		=&\frac{1}{2}
+		\end{align*}
 	\end{enumerate}
 \end{document}

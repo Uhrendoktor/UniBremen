@@ -22,17 +22,28 @@
 				=&\frac{e^4}{4}-\frac{1}{4e^4}-\frac{2e^4}{16}-\frac{2}{16e^4}+\frac{2e^4}{64}-\frac{2}{64e^4}\\
 				=&\frac{16e^8-16-8e^8-8+2e^8-2}{64e^4}	\\
 				=&\frac{5e^4}{32}-\frac{13}{32e^4}\\
-				=&\approx 8.5235
+				\approx& 8.5235
 			\end{align*}
 			\item $\int_0^1\ln(x)dx$
 			\begin{align*}
 				\intertext{partielle Integration mit $f(x)=\ln(x), g(x)=1$:}
 				=&\ln(x)x\biggr|_0^1 - \int_0^1\frac{1}{x}xdx\\
-				=&\ln(x)x\biggr|_0^1 - \int_0^11dx
+				=&\ln(x)x\biggr|_0^1 - \int_0^11dx\\
 				=&0-0-1\\
 				=&-1
 			\end{align*}
 			\item $\int_0^\infty\frac{1}{4\sqrt{x}+\sqrt{x^3}}dx$
+			\begin{align*}
+				=&\int_0^\infty\frac{1}{(4+x)\sqrt{x}}dx\\
+				\intertext{Partialbruchzerlegung mit $A=\frac{1}{2i},B=\frac{1}{4}$}
+				=&\int_0^\infty\frac{1}{4\sqrt{x}}-i\frac{1}{8+2x}dx\\
+				=&\frac{1}{2}\sqrt{x}-\frac{i}{2}\frac{1}{8+2x}\biggr|_0^\infty\\
+				=&\lim_{x\to\infty}(\frac{1}{2}\sqrt{x}-\frac{i}{2}\frac{1}{8+2x})+\frac{i}{16}\\
+				=&\frac{i}{16}+\lim_{x\to\infty}\frac{1}{2}\sqrt{x}-\frac{i}{2}\frac{1}{8+2x}\\
+				=&\frac{i}{16}+\lim_{x\to\infty}\frac{4x^{\frac{3}{2}}+16x^{\frac{1}{2}}-2i}{32+8x}\\
+				\intertext{da $4x^{\frac{3}{2}}>8x$ für $x>x_1\in\R$:}
+				\Rightarrow&\infty
+			\end{align*}
 		\end{enumerate}
 		
 		\item[3.4] Nutze das Integralvergleichskriterium zur Entscheidung, ob die folgenden Reihen konvergieren:

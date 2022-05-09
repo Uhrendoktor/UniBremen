@@ -7,8 +7,31 @@
 		\item[3.3] Berechne die folgenden Integrale:
 		\begin{enumerate}
 			\item $\int_0^\pi\cos(x)\cdot e^{\sin(x)}dx$
+			\begin{align*}
+				\intertext{Die Kettenregel rückwärts angewandt ergibt:}
+				=&e^{\sin(x)}dx\biggr|_0^\pi\\
+				=&0-0\\
+				=&0
+			\end{align*}
 			\item $\int_{-1}^1x^2e^{4x}dx$
+			\begin{align*}
+				\intertext{dreifache partielle Integration mit $f(x)=x^2, g(x)=e^{4x}$}
+				=&x^2\frac{1}{4}e^{4x}\biggr|_{-1}^1 - \int_{-1}^12x\frac{1}{4}e^{4x}dx\\
+				=&x^2\frac{1}{4}e^{4x}\biggr|_{-1}^1 - 2x\frac{1}{16}e^{4x}\biggr|_{-1}^1 + \int_{-1}^12\frac{1}{16}e^{4x}dx\\
+				=&x^2\frac{1}{4}e^{4x}\biggr|_{-1}^1 - 2x\frac{1}{16}e^{4x}\biggr|_{-1}^1 + 2\frac{1}{64}e^{4x}\biggr|_{-1}^1-0\\
+				=&\frac{e^4}{4}-\frac{1}{4e^4}-\frac{2e^4}{16}-\frac{2}{16e^4}+\frac{2e^4}{64}-\frac{2}{64e^4}\\
+				=&\frac{16e^8-16-8e^8-8+2e^8-2}{64e^4}	\\
+				=&\frac{5e^4}{32}-\frac{13}{32e^4}\\
+				=&\approx 8.5235
+			\end{align*}
 			\item $\int_0^1\ln(x)dx$
+			\begin{align*}
+				\intertext{partielle Integration mit $f(x)=\ln(x), g(x)=1$:}
+				=&\ln(x)x\biggr|_0^1 - \int_0^1\frac{1}{x}xdx\\
+				=&\ln(x)x\biggr|_0^1 - \int_0^11dx
+				=&0-0-1\\
+				=&-1
+			\end{align*}
 			\item $\int_0^\infty\frac{1}{4\sqrt{x}+\sqrt{x^3}}dx$
 		\end{enumerate}
 		

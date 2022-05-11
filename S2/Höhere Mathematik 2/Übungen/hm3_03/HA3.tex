@@ -47,7 +47,7 @@
 		
 		\item[3.4] Nutze das Integralvergleichskriterium zur Entscheidung, ob die folgenden Reihen konvergieren:
 		\begin{enumerate}
-			\item $\sum\limits_{n=2}^\infty\frac{1}{n\ln(n)}$
+			\item $\sum\limits_{n=2}^\infty\frac{1}{n\ln(n)}$\\
 			Nach dem Integralvergleichskriterium konvergiert $\sum\limits_{n=2}^\infty\frac{1}{n\ln(n)}$, wenn $f(n)=\frac{1}{n\ln(n)}$ monoton fallend ist und $\int_2^\infty\frac{1}{n\ln(n)}dn$ konvergiert.
 			\begin{align*}
 				\intertext{Quotienten- und Produktregel:}
@@ -64,7 +64,7 @@
 			\end{align*}
 			$\Rightarrow$ divergiert.
 			
-			\item $\sum\limits_{n=2}^\infty\frac{1}{n(\ln(n))^2}$
+			\item $\sum\limits_{n=2}^\infty\frac{1}{n(\ln(n))^2}$\\
 			Nach dem Integralvergleichskriterium konvergiert $\sum\limits_{n=2}^\infty\frac{1}{n\ln(n)^2}$, wenn $g(n)=\frac{1}{n\ln(n)^2}$ monoton fallend ist und $\int_2^\infty\frac{1}{n\ln(n)^2}dn$ konvergiert.
 			\begin{align*}
 				\intertext{Quotienten- und Produktregel:}
@@ -136,9 +136,29 @@
 		
 		\item[3.6] Eine Matrix $A\in\R^{n\times n}$ heißt nilpotent, falls $A^k=0$ für ein $k\in\N$ ist, und idempotent, falls $A^2=A$ ist. Zeige:
 		\begin{enumerate}
-			\item $\det(A^k) = (\det A)^k$ für alle $k\in\N$.
-			\item $A$ nilpotent $\Rightarrow \det(A)=0$.
-			\item $A$ idempotent $\Rightarrow \det(A)\in\{0,1\} ; A$ idempotent und $\det(A)=1\Leftrightarrow A=E_n$.
+			\item $\det(A^k) = (\det A)^k$ für alle $k\in\N$.\\
+			Induktion:\\
+			\begin{tabular}{l l}
+				IV: &$\det(A^k)=det(A)^k$\\
+				IA ($k=1$): &$\det(A)=\det(A)$\\
+				IS ($k\to k+1$):
+			\end{tabular}
+			\begin{align*}
+				\eqnf{\det(A^{k+1})}{\det(A)^{k+1}}
+				\eqn{\det(A^k+A)}{\det(A)^k\cdot\det(A)}
+				\eqn{\det(A^k)\cdot\det(A)}{\det(A)^k\cdot\det(A)}
+				\eqn{\det(A^k)}{\det(A)^k}
+			\end{align*}
+			
+			\item $A$ nilpotent $\Rightarrow \det(A)=0$.\\
+			nilpotent: $A^k=0\Leftrightarrow \det(A^k)=0\Leftrightarrow \det(A)^k=0 \Rightarrow \det(A)=0$
+			
+			\item $A$ idempotent $\Rightarrow \det(A)\in\{0,1\} ; A$ idempotent und $\det(A)=1\Leftrightarrow A=E_n$.\\\\
+			$A^2=A\Rightarrow A^k=A\Leftrightarrow \det(A^k)=\det(A)\Leftrightarrow \det(A)^k=\det(A)$\\
+			Da $x^k=x$ nur für $x\in\{0,1\}$ gilt, folgt: $\det(A)\in\{0,1\}$.\\\\
+			$\det(E_n) = 1\cdot\det(E_{n-1}) = \hdots = 1^n\cdot\det(E_{n-n}) = 1$\\
+			$B\in\C^{n\times n}; B\cdot E_n = B \Rightarrow E_n^2 = E_n \Rightarrow E_n$ idempotent.\\
+			$\det(A) = 1 \Leftrightarrow \det(A^k) = 1$
 		\end{enumerate}
 	\end{enumerate}
 \end{document}

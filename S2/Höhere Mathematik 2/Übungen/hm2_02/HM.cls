@@ -8,8 +8,8 @@
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
 
 % Edit these as appropriate           
-\newcommand\NetIDa{6113829}           % <-- NetID of person #1
-\newcommand\NetIDb{6111554}           % <-- Matrikelnummer of person #2 (Comment this line out for problem sets)
+\newcommand\NetIDa{6113829 Sys.Eng.Bc}           % <-- NetID of person #1
+\newcommand\NetIDb{6111554 Sys.Eng.Bc}           % <-- Matrikelnummer of person #2 (Comment this line out for problem sets)
 
 %custom math commands
 \newcommand{\alignleft}[1]{\tag*{\llap{\makebox[\linewidth][l]{$#1$}}}}

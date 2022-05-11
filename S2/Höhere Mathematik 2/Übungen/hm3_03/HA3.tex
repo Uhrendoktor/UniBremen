@@ -34,22 +34,52 @@
 			\end{align*}
 			\item $\int_0^\infty\frac{1}{4\sqrt{x}+\sqrt{x^3}}dx$
 			\begin{align*}
-				=&\int_0^\infty\frac{1}{(4+x)\sqrt{x}}dx\\
-				\intertext{Partialbruchzerlegung mit $A=\frac{1}{2i},B=\frac{1}{4}$}
-				=&\int_0^\infty\frac{1}{4\sqrt{x}}-i\frac{1}{8+2x}dx\\
-				=&\frac{1}{2}\sqrt{x}-\frac{i}{2}\frac{1}{8+2x}\biggr|_0^\infty\\
-				=&\lim_{x\to\infty}(\frac{1}{2}\sqrt{x}-\frac{i}{2}\frac{1}{8+2x})+\frac{i}{16}\\
-				=&\frac{i}{16}+\lim_{x\to\infty}\frac{1}{2}\sqrt{x}-\frac{i}{2}\frac{1}{8+2x}\\
-				=&\frac{i}{16}+\lim_{x\to\infty}\frac{4x^{\frac{3}{2}}+16x^{\frac{1}{2}}-2i}{32+8x}\\
-				\intertext{da $4x^{\frac{3}{2}}>8x$ für $x>x_1\in\R$:}
-				\Rightarrow&\infty
+				=&\int_0^\infty\frac{1}{4\sqrt{x}+\sqrt{x}^3}dx\\
+				\intertext{Substitution mit $\sqrt{x}=a\Rightarrow dx=2a$:}
+				=&\int_0^\infty\frac{2a}{4a+a^3}da\\
+				=&\int_0^\infty\frac{2}{4+a^2}da\\
+				\intertext{Substitution mit $a^2=4s^2\Rightarrow da=2$}
+				=&\int_0^\infty\frac{1}{1+s^2}ds\\
+				=&\arctan(s)\biggr|_0^\infty\\
+				=&\frac{\pi}{2}
 			\end{align*}
 		\end{enumerate}
 		
 		\item[3.4] Nutze das Integralvergleichskriterium zur Entscheidung, ob die folgenden Reihen konvergieren:
 		\begin{enumerate}
 			\item $\sum\limits_{n=2}^\infty\frac{1}{n\ln(n)}$
+			Nach dem Integralvergleichskriterium konvergiert $\sum\limits_{n=2}^\infty\frac{1}{n\ln(n)}$, wenn $f(n)=\frac{1}{n\ln(n)}$ monoton fallend ist und $\int_2^\infty\frac{1}{n\ln(n)}dn$ konvergiert.
+			\begin{align*}
+				\intertext{Quotienten- und Produktregel:}
+				\Rightarrow f'(n)=-\frac{\ln(n)+1}{n^2\ln(n)^2}
+			\end{align*}
+			$\Rightarrow f(n)$ ist monoton fallend, da $f'(n)<0$ für $n\in\N$.
+			\begin{align*}
+				&\int_2^\infty\frac{1}{n\ln(n)}dn\\
+				\intertext{Substitution mit $a=\ln(n)\Rightarrow dn=e^a$}
+				=&\int_{\ln(2)}^\infty\frac{e^a}{e^aa}da\\
+				=&\int_{\ln(2)}^\infty\frac{1}{a}da\\
+				=&\ln(a)\biggr|_{\ln(2)}^\infty\\
+				=&(\lim_{a\to\infty}a)-\ln(\ln(2))
+			\end{align*}
+			$\Rightarrow$ divergiert.
+			
 			\item $\sum\limits_{n=2}^\infty\frac{1}{n(\ln(n))^2}$
+			Nach dem Integralvergleichskriterium konvergiert $\sum\limits_{n=2}^\infty\frac{1}{n\ln(n)^2}$, wenn $g(n)=\frac{1}{n\ln(n)^2}$ monoton fallend ist und $\int_2^\infty\frac{1}{n\ln(n)^2}dn$ konvergiert.
+			\begin{align*}
+				\intertext{Quotienten- und Produktregel:}
+				\Rightarrow g'(n)=-\frac{\ln(n)+2}{n^2\ln(n)^3}
+			\end{align*}
+			$\Rightarrow g(n)$ ist monoton fallend, da $g'(n)<0$ für $n\in\N$.
+			\begin{align*}
+				&\int_2^\infty\frac{1}{n\ln(n)^2}dn\\
+				\intertext{Substitution mit $a=\ln(n)\Rightarrow dn=e^a$}
+				=&\int_{\ln(2)}^\infty\frac{e^a}{e^aa^2}da\\
+				=&\int_{\ln(2)}^\infty\frac{1}{a^2}da\\
+				=&-a^{-1}\biggr|_{\ln(2)}^\infty\\
+				=&\frac{1}{\ln(2)}
+			\end{align*}
+			$\Rightarrow$ konvergiert.
 		\end{enumerate}
 		
 		\item[3.5] Berechne die folgenden Determinanten:

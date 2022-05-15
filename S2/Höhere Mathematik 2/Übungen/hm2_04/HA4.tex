@@ -1,0 +1,72 @@
+\documentclass{HM}
+\newcommand\course{HM 2}
+\newcommand\hwnumber{4}
+
+\begin{document}
+	\begin{enumerate}
+	\item[4.2] Sei $n\in\N$ ungerade und $A\in\R^{n\times n}$ eine \textit{schiefsymmetrische} Matrix, d.h. $A^T=-A$. Zeige, dass $A$ nicht invertierbar ist. Gilt dies auch für gerade $n$? Gib einen Beweis oder ein Gegenbeispiel an.
+		\begin{align*}
+				\eqnf{A^T}{-A}
+				\eqn{\begin{pmatrix}
+					a_{11}&a_{21}&\hdots&a_{n1}\\
+					a_{12}&a_{22}&\hdots&a_{n2}\\
+					\vdots&\vdots&\ddots&\vdots\\
+					a_{1n}&a_{2n}&\hdots&a_{nn}
+				\end{pmatrix}}{\begin{pmatrix}
+					-a_{11}&-a_{12}&\hdots&-a_{1n}\\
+					-a_{21}&-a_{22}&\hdots&-a_{2n}\\
+					\vdots&\vdots&\ddots&\vdots\\
+					-a_{n1}&-a_{n2}&\hdots&-a_{nn}
+				\end{pmatrix}}
+			\end{align*}
+			$\Rightarrow a_{jk}=-a_{kj}$\\
+			$\Rightarrow (m\in\N; m\leq n): a_{mm}=-a_{mm}\Rightarrow a_{mm}=0$
+			$$\Rightarrow A=\begin{pmatrix}
+				0&a_{12}&\hdots&a_{n1}\\
+				-a_{12}&0&\hdots&a_{n2}\\
+				\vdots&\vdots&\ddots&\vdots\\
+				-a_{n1}&-a_{n2}&\hdots&0
+			\end{pmatrix}$$
+			Für $n$ ungerade:\\
+			
+			Für $n$ gerade (Gegenbeispiel):
+			$$\begin{vmatrix}
+				0&1\\
+				-1&0	
+			\end{vmatrix} = 1 \not=0$$
+	
+	\item[4.3]
+		\begin{enumerate}
+			\item Berechne\\
+			$$\begin{vmatrix}
+				1&0&\hdots&0&1\\
+				0&2&\ddots&\vdots&2\\
+				\vdots&\ddots&\ddots&0&\vdots\\
+				0&\hdots&0&n-1&n-1\\
+				1&2&\hdots&n-1&n
+			\end{vmatrix}$$
+			
+			\item Finde Matrizen $A,B,$ so dass $\det(A+B)\not=\det(A)+\det(B)$
+		\end{enumerate}
+		
+	\item[4.4] Berechne die \textit{Vandermonde-Determinante}\\
+		$$\begin{vmatrix}
+			1&x_1&x_1^2&\hdots&x_1^{n-1}\\
+			1&x_2&x_2^2&\hdots&x_2^{n-1}\\
+			\vdots&\vdots&\vdots&&\vdots\\
+			1&x_n&x_n^2&\vdots&x_n^{n-1}
+		\end{vmatrix}$$
+		für $n\in\N$ und $x_1,\hdots,x_n\in\C$.
+		
+	\item[4.5] Berechne das charakteristische Polynom, die Eigenwerte und Eigenvektoren von
+	$$A=\begin{pmatrix*}[r]
+		2&2&3\\
+		1&2&1\\
+		2&-2&1
+	\end{pmatrix*} \text{ und } B=\begin{pmatrix*}[r]
+		-5&0&7\\
+		6&2&-6\\
+		-4&0&6
+	\end{pmatrix*}$$
+	\end{enumerate}
+\end{document}

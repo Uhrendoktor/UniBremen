@@ -10,7 +10,7 @@
 			\begin{align*}
 				\intertext{Die Kettenregel rückwärts angewandt ergibt:}
 				=&e^{\sin(x)}dx\biggr|_0^\pi\\
-				=&0-0\\
+				=&1-1\\
 				=&0
 			\end{align*}
 			\item $\int_{-1}^1x^2e^{4x}dx$
@@ -35,10 +35,10 @@
 			\item $\int_0^\infty\frac{1}{4\sqrt{x}+\sqrt{x^3}}dx$
 			\begin{align*}
 				=&\int_0^\infty\frac{1}{4\sqrt{x}+\sqrt{x}^3}dx\\
-				\intertext{Substitution mit $\sqrt{x}=a\Rightarrow dx=2a$:}
+				\intertext{Substitution mit $\sqrt{x}=a\Rightarrow dx=2ada$:}
 				=&\int_0^\infty\frac{2a}{4a+a^3}da\\
 				=&\int_0^\infty\frac{2}{4+a^2}da\\
-				\intertext{Substitution mit $a^2=4s^2\Rightarrow da=2$}
+				\intertext{Substitution mit $a^2=4s^2\Rightarrow da=2ds$}
 				=&\int_0^\infty\frac{1}{1+s^2}ds\\
 				=&\arctan(s)\biggr|_0^\infty\\
 				=&\frac{\pi}{2}
@@ -56,7 +56,7 @@
 			$\Rightarrow f(n)$ ist monoton fallend, da $f'(n)<0$ für $n\in\N$.
 			\begin{align*}
 				&\int_2^\infty\frac{1}{n\ln(n)}dn\\
-				\intertext{Substitution mit $a=\ln(n)\Rightarrow dn=e^a$}
+				\intertext{Substitution mit $a=\ln(n)\Rightarrow dn=e^ada$}
 				=&\int_{\ln(2)}^\infty\frac{e^a}{e^aa}da\\
 				=&\int_{\ln(2)}^\infty\frac{1}{a}da\\
 				=&\ln(a)\biggr|_{\ln(2)}^\infty\\
@@ -73,7 +73,7 @@
 			$\Rightarrow g(n)$ ist monoton fallend, da $g'(n)<0$ für $n\in\N$.
 			\begin{align*}
 				&\int_2^\infty\frac{1}{n\ln(n)^2}dn\\
-				\intertext{Substitution mit $a=\ln(n)\Rightarrow dn=e^a$}
+				\intertext{Substitution mit $a=\ln(n)\Rightarrow dn=e^ada$}
 				=&\int_{\ln(2)}^\infty\frac{e^a}{e^aa^2}da\\
 				=&\int_{\ln(2)}^\infty\frac{1}{a^2}da\\
 				=&-a^{-1}\biggr|_{\ln(2)}^\infty\\
@@ -156,9 +156,13 @@
 			\item $A$ idempotent $\Rightarrow \det(A)\in\{0,1\} ; A$ idempotent und $\det(A)=1\Leftrightarrow A=E_n$.\\\\
 			$A^2=A\Rightarrow A^k=A\Leftrightarrow \det(A^k)=\det(A)\Leftrightarrow \det(A)^k=\det(A)$\\
 			Da $x^k=x$ nur für $x\in\{0,1\}$ gilt, folgt: $\det(A)\in\{0,1\}$.\\\\
+			$A=E_n\Rightarrow A$ idempotent und $\det(a)=1$:\\			
 			$\det(E_n) = 1\cdot\det(E_{n-1}) = \hdots = 1^n\cdot\det(E_{n-n}) = 1$\\
-			$B\in\C^{n\times n}; B\cdot E_n = B \Rightarrow E_n^2 = E_n \Rightarrow E_n$ idempotent.\\
-			$\det(A) = 1 \Leftrightarrow \det(A^k) = 1$
+			$B\in\C^{n\times n}; B\cdot E_n = B \Rightarrow E_n^2 = E_n \Rightarrow E_n$ idempotent.\\\\
+			$A$ idempotent und $\det(A)=1\Rightarrow A=E_n$:\\
+			$\det(A)\not=0\Rightarrow A$ invertierbar\\
+			$A$ idempotent mit: $AA^{-1}=E_n\Rightarrow \det(A)=1$\\
+			$A^{-1}A=E_n\Rightarrow A^{-1}A^2=E_nA=E_n\Rightarrow A=E_n$
 		\end{enumerate}
 	\end{enumerate}
 \end{document}

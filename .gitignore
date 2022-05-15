@@ -2,9 +2,9 @@
 *.log
 *.synctex.gz
 *.bak
-**/.log
-**/.bak
-**/.aux
-**/.synctex.gz
-**/.DS_Store
+**/*.log
+**/*.bak
+**/*.aux
+**/*.synctex.gz
+**/*.DS_Store
 */Datenbanken

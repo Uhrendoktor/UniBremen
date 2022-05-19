@@ -45,13 +45,49 @@
 	\item[4.3]
 		\begin{enumerate}
 			\item Berechne\\
-			$$\begin{vmatrix}
+			$$A\coloneqq\begin{vmatrix}
 				1&0&\hdots&0&1\\
 				0&2&\ddots&\vdots&2\\
 				\vdots&\ddots&\ddots&0&\vdots\\
 				0&\hdots&0&n-1&n-1\\
 				1&2&\hdots&n-1&n
 			\end{vmatrix}$$
+			
+			\begin{align*}
+				A&=\begin{vmatrix}
+					1&0&\hdots&0\\
+					0&2&\hdots&0\\
+					\vdots&\vdots&\ddots&\vdots\\
+					0&0&\hdots&n\\
+				\end{vmatrix}\cdot \det(C^{(1,n)})\\
+				&=n!\cdot \det(C^{(1,n)})
+			\end{align*}	
+			$$C^{(m,n)}\coloneqq\begin{pmatrix}
+				1&0&\hdots&1\\
+				0&1&\hdots&1\\
+				\vdots&\vdots&\ddots&\vdots\\
+				\tfrac{m}{n}&\tfrac{m+1}{n}&\hdots&\tfrac{n}{n}
+			\end{pmatrix}, a\coloneqq n-m+1; a\in\N\setminus\{1\}; C^{(m,n)}\in \C^{(a)\times(a)}$$
+			\begin{align*}
+				\intertext{Entwickeln der $1.$ Spalte von $C$ ergibt:}
+				\det(C^{(m,n)})&=(-1)^{n+1}\frac{m}{n}\cdot\begin{vmatrix}
+					0&0&\hdots&0&1\\
+					1&0&\hdots&0&1\\
+					\vdots&\ddots&\ddots&\vdots&\vdots\\
+					0&\hdots&1&0&1\\
+					0&\hdots&0&1&1
+				\end{vmatrix}+1\cdot \det(C^{(m+1,n)})\\
+				\intertext{Entwickeln der $1.$ Zeile ergibt:}
+				&=(-1)^{a+1}\frac{m}{n}(-1)^{a}\det(E_{a-2})+C^{(m+1,n)}\\
+				&=-\frac{m}{n}+\det(C^{(m+1,n)})\\
+				&=-\frac{m}{n}-\frac{m+1}{n}-\hdots-\frac{n-1}{n}+\begin{vmatrix}
+					\tfrac{n}{n}
+				\end{vmatrix}\\
+				&=-\frac{\sum\limits_{k=m}^{n-1}k}{n}+1\\
+				&=-\frac{n(n-1)-m(m-1)}{n}+1\\
+				\Rightarrow \det(C^{(1,n)}) &= \frac{3-n}{2}
+			\end{align*}
+			$\Rightarrow \det(A)=n!\frac{3-n}{2}$
 			
 			\item Finde Matrizen $A,B,$ so dass $\det(A+B)\not=\det(A)+\det(B)$\\
 			\begin{align*}

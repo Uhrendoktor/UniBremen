@@ -9,38 +9,21 @@
 	\begin{enumerate}
 	\item[4.2] Sei $n\in\N$ ungerade und $A\in\R^{n\times n}$ eine \textit{schiefsymmetrische} Matrix, d.h. $A^T=-A$. Zeige, dass $A$ nicht invertierbar ist. Gilt dies auch für gerade $n$? Gib einen Beweis oder ein Gegenbeispiel an.\\\\
 		$A$ invertierbar $\Leftrightarrow \det(A)\not=0$
+		Für $n$ ungerade:\\
 		\begin{align*}
-				\eqnf{A^T}{-A}
-				\eqn{\begin{pmatrix}
-					a_{11}&a_{21}&\hdots&a_{n1}\\
-					a_{12}&a_{22}&\hdots&a_{n2}\\
-					\vdots&\vdots&\ddots&\vdots\\
-					a_{1n}&a_{2n}&\hdots&a_{nn}
-				\end{pmatrix}}{\begin{pmatrix}
-					-a_{11}&-a_{12}&\hdots&-a_{1n}\\
-					-a_{21}&-a_{22}&\hdots&-a_{2n}\\
-					\vdots&\vdots&\ddots&\vdots\\
-					-a_{n1}&-a_{n2}&\hdots&-a_{nn}
-				\end{pmatrix}}
-			\end{align*}
-			$\Rightarrow a_{jk}=-a_{kj}$\\
-			$\Rightarrow (m\in\N; m\leq n): a_{mm}=-a_{mm}\Rightarrow a_{mm}=0$
-			$$\Rightarrow A=\begin{pmatrix}
-				0&a_{12}&\hdots&a_{n1}\\
-				-a_{12}&0&\hdots&a_{n2}\\
-				\vdots&\vdots&\ddots&\vdots\\
-				-a_{n1}&-a_{n2}&\hdots&0
-			\end{pmatrix}$$
-			Für $n$ ungerade:\\
-			
-			Für $n$ gerade (Gegenbeispiel - siehe Abgabe 3.5):
-			$$\begin{vmatrix}
-			0&1&2&3\\
-			-1&0&1&2\\
-			-2&-1&0&1\\
-			-3&-2&-1&0
-		\end{vmatrix} = 0$$
-		$\Rightarrow$ nicht invertierbar.
+			\det(A)&=\det(A^T)=\det(-A)\\
+			\intertext{Aus jeder Zeile von $-A$ wird der Faktor $-1$ gezogen:}
+			\det(A)&=(-1)^n\det(A)
+		\end{align*}
+		Für ungerade $n$ folgt: $\det(A)=-\det(A)$.\\
+		$\Rightarrow \det(A)=0$\\
+		$\Rightarrow A$ nicht invertierbar für ungerade $n$\\\\
+		Für $n$ gerade (Gegenbeispiel):
+		$$\begin{vmatrix}
+			0&1\\
+			1&0
+		\end{vmatrix} = -1$$
+		$\Rightarrow$ invertierbar.
 	
 	\item[4.3]
 		\begin{enumerate}
@@ -53,6 +36,12 @@
 				1&2&\hdots&n-1&n
 			\end{vmatrix}$$
 			
+			$$C^{(m,n)}\coloneqq\begin{pmatrix}
+				1&0&\hdots&1\\
+				0&1&\hdots&1\\
+				\vdots&\vdots&\ddots&\vdots\\
+				\tfrac{m}{n}&\tfrac{m+1}{n}&\hdots&\tfrac{n}{n}
+			\end{pmatrix}, a\coloneqq n-m+1; a\in\N\setminus\{1\}; C^{(m,n)}\in \C^{a\times a}$$
 			\begin{align*}
 				A&=\begin{vmatrix}
 					1&0&\hdots&0\\
@@ -62,12 +51,7 @@
 				\end{vmatrix}\cdot \det(C^{(1,n)})\\
 				&=n!\cdot \det(C^{(1,n)})
 			\end{align*}	
-			$$C^{(m,n)}\coloneqq\begin{pmatrix}
-				1&0&\hdots&1\\
-				0&1&\hdots&1\\
-				\vdots&\vdots&\ddots&\vdots\\
-				\tfrac{m}{n}&\tfrac{m+1}{n}&\hdots&\tfrac{n}{n}
-			\end{pmatrix}, a\coloneqq n-m+1; a\in\N\setminus\{1\}; C^{(m,n)}\in \C^{(a)\times(a)}$$
+			Determinante von $C$ berechnen:
 			\begin{align*}
 				\intertext{Entwickeln der $1.$ Spalte von $C$ ergibt:}
 				\det(C^{(m,n)})&=(-1)^{n+1}\frac{m}{n}\cdot\begin{vmatrix}
@@ -78,7 +62,7 @@
 					0&\hdots&0&1&1
 				\end{vmatrix}+1\cdot \det(C^{(m+1,n)})\\
 				\intertext{Entwickeln der $1.$ Zeile ergibt:}
-				&=(-1)^{a+1}\frac{m}{n}(-1)^{a}\det(E_{a-2})+C^{(m+1,n)}\\
+				&=(-1)^{a+1}\frac{m}{n}(-1)^{a}\det(E_{a-2})+\det(C^{(m+1,n)})\\
 				&=-\frac{m}{n}+\det(C^{(m+1,n)})\\
 				&=-\frac{m}{n}-\frac{m+1}{n}-\hdots-\frac{n-1}{n}+\begin{vmatrix}
 					\tfrac{n}{n}

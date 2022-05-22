@@ -93,7 +93,7 @@
 		\end{enumerate}
 		
 	\item[4.4] Berechne die \textit{Vandermonde-Determinante}\\
-		$$\begin{vmatrix}
+		$$det(V^{(n,n)})=\begin{vmatrix}
 			1&x_1&x_1^2&\hdots&x_1^{n-1}\\
 			1&x_2&x_2^2&\hdots&x_2^{n-1}\\
 			\vdots&\vdots&\vdots&&\vdots\\
@@ -101,6 +101,30 @@
 		\end{vmatrix}$$
 		für $n\in\N$ und $x_1,\hdots,x_n\in\C$.
 		
+		Substration von jeder Spalte ab der zweiten mit der vorherigen multipliziert mit $x_n$:
+		\begin{align*}
+			\eqnf{\det(V^{(n,n)})}{\begin{vmatrix}
+			1&x_1-x_n&x_1^2-x_1x_n&\hdots&x_1^{n-1}-x_1^{n-2}x_n\\
+			1&x_2-x_n&x_2^2-x_2x_n&\hdots&x_2^{n-1}-x_2^{n-2}x_n\\
+			\vdots&\vdots&\vdots&\vdots&\vdots\\
+			1&x_n-x_n&x_n^2-x_nx_n&\hdots&x_n^{n-1}-x_n^{n-2}x_n
+			\end{vmatrix}}
+		\text{Entwickeln nach n-ten Zeile:}\\
+		\eqn{\det(V^{(n,n)})}{(-1)^{n+1}\begin{vmatrix}
+				x_1-x_n&(x_1-x_n)x_1&\hdots&(x_1-x_n)x_1^{n-2}\\
+				x_2-x_n&(x_2-x_n)x_2&\hdots&(x_2-x_n)x_2^{n-2}\\
+				\vdots&\vdots&\vdots&\vdots\\
+				x_{n-1}-x_n&(x_{n-1}-x_n)x_{n-1}&\hdots&(x_{n-1}-x_n)x_{n-1}^{n-2}\\
+		\end{vmatrix}}
+		\eqn{\det(V^{(n,n)})}{(-1)^{n+1}\prod_{i=1}^{n-1}(x_i-x_n)\begin{vmatrix}
+				1&x_1&\hdots&x_1^{n-2}\\
+				1&x_2&\hdots&x_2^{n-2}\\
+				\vdots&\vdots&\vdots&\vdots\\
+				1&x_{n-1}&\hdots&x_{n-1}^{n-2}
+		\end{vmatrix}}
+		\eqn{\det(V^{(n,n)})}{(-1)^{n+1}\prod_{i=1}^{n-1}(x_i-x_n)\det(V^{(n-1,n-1)})}
+		\end{align*}
+	mit $\det(V^{(1,1)})=1$
 	\item[4.5] Berechne das charakteristische Polynom, die Eigenwerte und Eigenvektoren von
 	$$A=\begin{pmatrix*}[r]
 		2&2&3\\

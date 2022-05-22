@@ -25,6 +25,7 @@
 		\end{vmatrix} = -1$$
 		$\Rightarrow$ invertierbar.
 	
+	\newpage
 	\item[4.3]
 		\begin{enumerate}
 			\item Berechne\\
@@ -51,7 +52,6 @@
 				\end{vmatrix}\cdot \det(C^{(1,n)})\\
 				&=n!\cdot \det(C^{(1,n)})
 			\end{align*}	
-			Determinante von $C$ berechnen:
 			\begin{align*}
 				\intertext{Entwickeln der $1.$ Spalte von $C$ ergibt:}
 				\det(C^{(m,n)})&=(-1)^{n+1}\frac{m}{n}\cdot\begin{vmatrix}
@@ -78,7 +78,7 @@
 				A=\begin{vmatrix}
 					1&0\\
 					0&2\\
-				\end{vmatrix}
+				\end{vmatrix},
 				B=\begin{vmatrix}
 					3&0\\
 					0&4\\
@@ -99,7 +99,38 @@
 			\vdots&\vdots&\vdots&&\vdots\\
 			1&x_n&x_n^2&\hdots&x_n^{n-1}
 		\end{vmatrix}$$
-		für $n\in\N$ und $x_1,\hdots,x_n\in\C$.
+		für $n\in\N$ und $x_1,\hdots,x_n\in\C$.\\
+		$V^{(m,n)}\coloneqq\begin{vmatrix}
+			1&x_m&x_m^2&\hdots&x_m^{n-m}\\
+			1&x_{m+1}&x_{m+1}^2&\hdots&x_{m+1}^{n-m}\\
+			\vdots&\vdots&\vdots&&\vdots\\
+			1&x_n&x_n^2&\hdots&x_n^{n-m}
+		\end{vmatrix}$ mit $m<n; m\in\N$
+		\begin{align*}
+			&=\det\begin{pmatrix}1&v_1&v_2&\hdots&v_{n-1})\end{pmatrix}\\
+			\intertext{beginnend bei $v_{n-1}$ wird $v_a-x_mv_{a-1}$ subtrahiert:}
+			&=\det\begin{pmatrix}1&v_1-x_m\cdot 1&v_2-x_m\cdot v_1&\hdots&v_{n-m}-x_m\cdot v_{n-(m+1)}\end{pmatrix}\\
+			\intertext{$x_a^{n-b}-x_m\cdot x_a^{n-b-1} = x_a^{n-b-1}(x_a-x_m)$}
+			&=\begin{vmatrix}
+				1&0&0&\hdots&0\\
+				1&x_{m+1}-x_m&x_{m+1}(x_{m+1}-x_m)&\hdots&x_{m+1}^{n-(m+1)}(x_{m+1}-x_m)\\
+				\vdots&\vdots&\vdots&&\vdots\\
+				1&x_n-x_m&x_n(x_n-x_m)&\hdots&x_n^{n-(m+1)}(x_n-x_m)
+			\end{vmatrix}\\
+			\intertext{Entwickeln der ersten Zeile:}
+			&=\begin{vmatrix}
+				x_{m+1}-x_m&x_{m+1}(x_{m+2}-x_m)&\hdots&x_{m+1}^{n-(m+1)}(x_{m+1}-x_m)\\
+				\vdots&\vdots&&\vdots\\
+				x_n-x_m&x_n(x_n-x_m)&\hdots&x_n^{n-(m+1)}(x_n-x_m)
+			\end{vmatrix}\\
+			&=\prod\limits_{k=m+1}^n(x_k-x_m)\begin{vmatrix}
+				1&x_{m+1}&\hdots&x_{m+1}^{n-(m+1)}\\
+				\vdots&\vdots&&\vdots\\
+				1&x_n&\hdots&x_n^{n-(m+1)}
+			\end{vmatrix}\\
+			&=\prod\limits_{k=m+1}^n(x_k-x_m)V^{(m+1, n)}\\
+			&=\prod\limits_{k_1=m+1}^n\left(\prod\limits_{k_2=k_1}^n(x_k-x_m)\right)
+		\end{align*}
 		
 	\item[4.5] Berechne das charakteristische Polynom, die Eigenwerte und Eigenvektoren von
 	$$A=\begin{pmatrix*}[r]
@@ -111,7 +142,6 @@
 		6&2&-6\\
 		-4&0&6
 	\end{pmatrix*}$$
-	
 	\begin{align*}
 		\intertext{A:}
 		p_A(\lambda)=&\det(A -\lambda E)\\
@@ -218,6 +248,7 @@
 			8\\5\\2
 		\end{pmatrix}\right\rbrace$
 		
+		\newpage
 		\begin{align*}
 			\intertext{B:}
 			p_B(\lambda)&=\det(B-\lambda E)\\

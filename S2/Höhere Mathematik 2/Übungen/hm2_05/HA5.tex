@@ -1,6 +1,7 @@
 \documentclass{HM}
 \newcommand\course{HM 2}
 \newcommand\hwnumber{5}
+\usepackage{gauss}
 
 \newcommand{\Eig}{\text{Eig}}
 \newcommand{\Span}{\text{Span}}
@@ -16,14 +17,158 @@
 
 Bestimme die Eigenwerte von $A$ samt ihrer algebraischen und geometrischen Vielfachheiten,
 sowie die zugehörigen Eigenräume.\\
+
+\begin{align*}
+	\eqnf{p_A(\lambda)}{
+	\begin{vmatrix}
+		-1-3i-\lambda&2+i&-1-2i\\
+		0&2-\lambda&0\\
+		2+4i&-2-i&2+3i-\lambda\\
+	\end{vmatrix}}
+	\text{Entwickeln nach 2. Zeile:}\\
+	\eqn{p_A(\lambda)}{(2-\lambda)\begin{gmatrix}[v]
+			-1-3i-\lambda&-1-2i\\
+			2+4i&2+3i-\lambda
+		\rowops
+		\add{1}{0}
+	\end{gmatrix}}
+	\eqn{p_A(\lambda)}{(2-\lambda)\begin{gmatrix}[v]
+		1+i-\lambda&1+i-\lambda\\
+		2+4i&2+3i-\lambda
+		\rowops
+		\add[-2]{0}{1}
+	\end{gmatrix}}
+	\eqn{p_A(\lambda)}{(2-\lambda)\begin{gmatrix}[v]
+		1+i-\lambda&1+i-\lambda\\
+		2i+2\lambda&i+\lambda
+	\end{gmatrix}}
+	\eqn{p_A(\lambda)}{(2-\lambda)(1+i-\lambda)\begin{vmatrix}
+			1&1\\
+			2i+2\lambda&i+\lambda\\
+	\end{vmatrix}}
+	\eqn{p_A(\lambda)}{(2-\lambda)(1+i-\lambda)(-i-\lambda)}\\
+	&\Rightarrow \lambda_1=2, \lambda_2=i+1,\lambda_3=-i\\
+	\alpha_\lambda&=1\\
+\end{align*}
+\begin{align*}
+		\text{Berechnung der Eigenvektoren: }
+	\lambda_1:\\
+	&\begin{gmatrix}[p]
+		-3-3i&2+i&-1-2i\\
+		2+4i&-2-i&3i
+		\rowops
+		\add{0}{1}
+	\end{gmatrix}\\
+	&\begin{gmatrix}[p]
+		-3-3i&2+i&-1-2i\\
+		-1+i&0&-1+i
+		\rowops
+		\add[2]{1}{0}
+		\mult{1}{\frac{1}{-1+i}}
+	\end{gmatrix}\\
+	&\begin{gmatrix}[p]
+		-5-i&2+i&-3\\
+		1&0&1
+		\rowops
+		\add[3]{1}{0}
+		\mult{0}{\frac{1}{2+i}}
+	\end{gmatrix}\\
+	&\begin{gmatrix}[p]
+	-1&1&0\\
+	1&0&1
+\end{gmatrix}\\
+&\Rightarrow \Eig(A,\lambda_1)=\Span\left\{\begin{pmatrix}
+	1\\1\\-1
+\end{pmatrix}\right\}\\
+&\gamma_{1}=1\\\\
+\lambda_2:\\
+&\begin{gmatrix}[p]
+	-2-4i&2+i&-1-2i\\
+	0&1-i&0\\
+	2+4i&-2-i&1+2i
+	\rowops
+	\add{1}{0}
+	\add[-1]{1}{2}
+	\mult{1}{\frac{1}{1-i}}
+	\add[-3]{1}{0}
+	\add[3]{1}{2}
+\end{gmatrix}\\
+&\begin{gmatrix}[p]
+	-2-4i&0&-1-2i\\
+	0&1&0\\
+	2+4i&0&1+2i
+	\rowops
+	\mult{2}{\frac{1}{1+2i}}
+\end{gmatrix}\\
+&\begin{gmatrix}[p]
+	0&1&0\\
+	2&0&1
+\end{gmatrix}\\
+&\Rightarrow \Eig(A,\lambda_2)=\Span\left\{\begin{pmatrix}
+	-1\\0\\2
+\end{pmatrix}\right\}\\
+&\gamma_{2}=1\\\\
+\lambda_3:\\
+&\begin{gmatrix}[p]
+	-1-2i&2+i&-1-2i\\
+	0&2+i&0\\
+	2+4i&-2-i&2+4i
+	\rowops
+	\add[-1]{1}{0}
+	\add{1}{2}
+	\mult{1}{\frac{1}{2+i}}
+	\mult{0}{\frac{1}{-1-2i}}
+	\mult{2}{\frac{1}{2+4i}}
+\end{gmatrix}\\
+&\begin{gmatrix}[p]
+	1&0&1\\
+	0&1&0
+\end{gmatrix}\\
+&\Rightarrow \Eig(A,\lambda_3)=\Span\left\{\begin{pmatrix}
+	1\\0\\-1
+\end{pmatrix}\right\}\\
+&\gamma_{3}=1
+\end{align*}
 	
 	\item[5.3] Sei $A \in \C^{n\times n}$ und $v \in \C^n$ ein Eigenvektor von $A$ zum Eigenwert $\lambda$.
 	\begin{enumerate}
 		\item[a)] Zeige, dass $v$ auch Eigenvektor von $A^2$ ist. Zu welchem Eigenwert?\\
+		\begin{align*}
+			\eqnfi{Av}{v\lambda}{\cdot \text{A von links}}
+			\eqn{A^2v}{Av\lambda}
+			\eqn{A^2v}{v\lambda^2}
+		\end{align*}
+		$\Rightarrow v$ ist Eingenvektor von A zu $\lambda^2$\\
+		
 		\item[b)] Zeige, dass $v$ Eigenvektor von $A^{-1}$ ist, wenn $A$ invertierbar ist. Zu welchem Eigenwert?\\
+		
+		\begin{align*}
+			\eqnfi{Av}{v\lambda}{\cdot A^{-1} \text{von links}}
+			\eqn{v}{A^{-1}v\lambda}
+			\eqn{\frac{1}{\lambda}v}{A^{-1}v}
+		\end{align*}
+		v ist Eigenvektor von $A^{-1}$ zum Eigenwert $\frac{1}{\lambda}$
+		
 		\item[c)] Wenn $A^2 = E_n$ ist, wieso ist dann mindestens eine der Zahlen ±1 Eigenwert von $A$?
 		Wieso gibt es keine anderen Eigenwerte?\\
+		
+		\begin{align}
+			A&=A^{-1}\\
+			&\Rightarrow Av=v\lambda, A^{-1}v=v\lambda\\
+			\eqnfi{A^{-1}v}{v\lambda}{\cdot A \text{ von links}}
+			\eqni{v}{Av\lambda}{mit (2)}
+			\eqn{v}{v\lambda^2}
+			\eqn{1}{\lambda^2}
+		\end{align}
+	$\Rightarrow$ die einzigen möglichen Eigenwerte sind $\pm1$
 		\item[d)] Haben $A$ und $A^T$ dieselben Eigenwerte?\\
+		\begin{align*}
+			\det(A)=\det(A^T)\\
+			\det(A^T-\lambda E_n)=\det(A-\lambda E_n)^T\\
+			\text{da die veränderung der Diagonalen nicht die transponierbarkeit beeinflusst}\\
+			\Rightarrow \det(A-\lambda E_n)=\det(A-\lambda E_n)^T\\
+		\end{align*}
+	Da das charakteristische Polynom gleich ist, sind auch die Eigenwerte gleich.
 		
 	\end{enumerate}
 
@@ -36,7 +181,132 @@ sowie die zugehörigen Eigenräume.\\
 	\end{pmatrix}$$
 Berechne die Eigenwerte von $A$ samt ihrer algebraischen und geometrischen Vielfachheiten.
 Ist die Matrix $A$ diagonalisierbar?\\
-	
+
+\begin{align*}
+	\eqnf{p_A(\lambda)}{\begin{gmatrix}[v]
+		-\lambda&-3&0&0\\
+		-1&2-\lambda&-1&0\\
+		-1&3&-1-\lambda&0\\
+		-1&3&-1&-\lambda
+	\end{gmatrix}}
+\text{Entwickeln nach der 4-ten Spalte}\\
+\eqn{p_A(\lambda)}{-\lambda\begin{gmatrix}[v]
+	-\lambda&-3&0\\
+	-1&2-\lambda&-1\\
+	-1&3&-1-\lambda
+	\rowops
+	\add{0}{2}
+\end{gmatrix}}
+\eqn{p_A(\lambda)}{-\lambda(-1-\lambda)\begin{gmatrix}[v]
+	-\lambda&-3&0\\
+	-1&2-\lambda&-1\\
+	1&0&1
+	\rowops
+	\add{2}{1}
+\end{gmatrix}}
+\eqn{p_A(\lambda)}{-\lambda(-1-\lambda)\begin{gmatrix}[v]
+	-\lambda&-3&0\\
+	0&2-\lambda&0\\
+	1&0&1
+\end{gmatrix}}
+\text{Entwickeln nach der 3-ten Zeile}\\
+\eqn{p_A(\lambda)}{-\lambda(-1-\lambda)\begin{gmatrix}[v]
+	-\lambda&-3\\
+	0&2-\lambda
+\end{gmatrix}}
+\eqn{p_A(\lambda)}{-\lambda(-1-\lambda)(-2\lambda+\lambda^2)}
+\end{align*}
+\begin{align*}
+	&\lambda^2(1+\lambda)(-2+\lambda)=0\\
+	\Rightarrow &\lambda_1=0, &\alpha_1=2\\
+	&\lambda_2=-1, &\alpha_1=1\\
+	&\lambda_3=2, &\alpha_1=1\\
+\end{align*}
+\begin{align*}
+	\text{Eigenvektoren ausrechnen: }\lambda_1:\\
+	&\begin{pmatrix}
+		0&-3&0&0\\
+		-1&2&-1&0\\
+		-1&3&-1&0\\
+		-1&3&-1&0
+	\end{pmatrix}\\
+&\begin{gmatrix}[p]
+	0&-3&0\\
+	-1&2&-1\\
+	-1&3&-1
+	\rowops
+	\mult{0}{\frac{1}{-3}}
+	\add[-2]{0}{1}
+	\add[-3]{0}{2}
+	\mult{1}{-1}
+	\mult{2}{-1}
+\end{gmatrix}\\
+&\begin{gmatrix}[p]
+	0&1&0\\
+	1&0&1\\
+	1&0&1
+\end{gmatrix}\\
+\Rightarrow \Eig(A,\lambda_1)=&\Span\left\{
+\begin{pmatrix}1\\0\\-1\\0\end{pmatrix},
+\begin{pmatrix}0\\0\\0\\1\end{pmatrix}
+\right\}\\
+\gamma_1=2
+\end{align*}
+\begin{align*}
+	\lambda_2:\\
+	&\begin{gmatrix}[p]
+		1&-3&0&0\\
+		-1&3&-1&0\\
+		-1&3&0&0\\
+		-1&3&-1&1
+		\rowops
+		\add[-1]{1}{3}
+		\add{0}{1}
+		\mult{1}{-1}
+	\end{gmatrix}\\
+	&\begin{gmatrix}[p]
+		1&-3&0&0\\
+		0&0&1&0\\
+		0&0&0&1
+	\end{gmatrix}\\
+	\Rightarrow \Eig(A,\lambda_2)=&\Span\left\{
+	\begin{pmatrix}3\\1\\0\\0\end{pmatrix}
+	\right\}\\
+	\gamma_2=1
+\end{align*}
+\begin{align*}
+	\lambda_3:\\
+	&\begin{gmatrix}[p]
+		-2&-3&0&0\\
+		-1&0&-1&0\\
+		-1&3&-3&0\\
+		-1&3&-1&-2
+		\rowops
+		\add{0}{2}
+		\add{0}{3}
+		\mult{1}{-1}
+		\mult{0}{-1}
+		\mult{3}{-1}
+	\end{gmatrix}\\
+	&\begin{gmatrix}[p]
+		2&3&0&0\\
+		1&0&1&0\\
+		3&0&1&2
+		\rowops
+		\add[-1]{1}{2}
+		\mult{2}{\frac{1}{2}}
+	\end{gmatrix}\\
+	&\begin{gmatrix}[p]
+	2&3&0&0\\
+	1&0&1&0\\
+	1&0&0&1
+\end{gmatrix}\\
+	\Rightarrow \Eig(A,\lambda_3)=&\Span\left\{
+	\begin{pmatrix}-3\\2\\3\\3\end{pmatrix}
+	\right\}\\
+	\gamma_3=1
+\end{align*}
+Da $\alpha_\lambda = \gamma_\lambda$ ist A diagonalbar
 	\item[5.5]
 	\end{enumerate}
 \end{document}

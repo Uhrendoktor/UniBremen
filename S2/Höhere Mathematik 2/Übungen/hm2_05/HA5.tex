@@ -350,7 +350,29 @@ Folge:\\
 		\item Zeige, dass $A$ diagonalisierbar ist und bestimme eine invertierbare Matrix $T$ mit $T^{-1}AT=D$, wobei $D$ eine Diagonalmatrix ist.\\
 		\item Finde eine explizite (d.h. nicht rekursive) Formel für das Folgenglied $x_n$, für beliebiges $n\in\N$.
 		\begin{align*}
-			
+			\eqnf{A\begin{pmatrix}
+				x_{n-1}\\
+				x_n
+			\end{pmatrix}}{\begin{pmatrix}
+				x_n\\
+				x_{n+1}
+			\end{pmatrix}}
+			\eqn{A^n\begin{pmatrix}
+				x_0\\
+				x_1
+			\end{pmatrix}}{\begin{pmatrix}
+				x_n\\
+				x_{n+1}
+			\end{pmatrix}}\\
+			\eqn{\begin{pmatrix}
+				0&1\\
+				1&1
+			\end{pmatrix}^n\begin{pmatrix}
+				1\\1
+			\end{pmatrix}}{\begin{pmatrix}
+				x_n\\
+				x_{n+1}
+			\end{pmatrix}}
 		\end{align*}
 	\end{enumerate}
 	\end{enumerate}

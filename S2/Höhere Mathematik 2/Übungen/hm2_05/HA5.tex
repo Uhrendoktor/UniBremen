@@ -163,10 +163,10 @@ sowie die zugehörigen Eigenräume.\\
 	$\Rightarrow$ die einzigen möglichen Eigenwerte sind $\pm1$
 		\item[d)] Haben $A$ und $A^T$ dieselben Eigenwerte?\\
 		\begin{align*}
-			\det(A)=\det(A^T)\\
-			\det(A^T-\lambda E_n)=\det(A-\lambda E_n)^T\\
-			\text{da die veränderung der Diagonalen nicht die transponierbarkeit beeinflusst}\\
-			\Rightarrow \det(A-\lambda E_n)=\det(A-\lambda E_n)^T\\
+			\det(A)&=\det(A^T)\\
+			\det(A^T-\lambda E_n)&=\det(A-\lambda E_n)^T\\
+			\intertext{da die veränderung der Diagonalen nicht die transponierbarkeit beeinflusst}\\
+			\Rightarrow \det(A-\lambda E_n)&=\det(A-\lambda E_n)^T\\
 		\end{align*}
 	Da das charakteristische Polynom gleich ist, sind auch die Eigenwerte gleich.
 		
@@ -308,5 +308,50 @@ Ist die Matrix $A$ diagonalisierbar?\\
 \end{align*}
 Da $\alpha_\lambda = \gamma_\lambda$ ist A diagonalbar
 	\item[5.5]
+	Die \textit{Fibonacci-Folge}:\\
+	Jemand brachte ein Kaninchenpaar in einen gewissen, allseits von Wänden umgebenen
+Ort, um herauszufinden, wieviel [Paare] aus diesem Paar in einem neuen Jahr entstehen
+würden. Es sei die Natur der Kaninchen, pro Monat ein neues Paar hervorzubringen und im
+zweiten Monat nach der Geburt [erstmals] zu gebären. [Todesfälle mögen nicht eintreten.]
+Die Anzahl der Kaninchenpaare im $n$-ten Monat ist somit durch die rekursiv definierte
+Folge:\\
+	$$x_{n+1}=x_n+x_{n-1}$$
+	mit den Startwerten $x_0=1$ und $x_1=1$, gegeben. Diese Folge wird \textit{Fibonacci-Folge} genannt.\\
+	\begin{enumerate}
+		\item Gib eine Matrix $A\in\R^{2\times 2}$ an, so dass\\\
+		$$A\begin{pmatrix}
+			x_{n-1}\\
+			x_n
+		\end{pmatrix}=\begin{pmatrix}
+			x_n\\
+			x_{n+1}
+		\end{pmatrix}$$ für alle $n\in\N$ ist.\\
+		\begin{align*}
+			\begin{pmatrix}
+				0&1\\
+				1&1\\		
+			\end{pmatrix}						
+			\begin{pmatrix}
+				x_{n-1}\\
+				x_n
+			\end{pmatrix}=\begin{pmatrix}
+				x_n\\
+				x_n+x_{n-1}
+			\end{pmatrix}=\begin{pmatrix}
+				x_n\\
+				x_{n+1}
+			\end{pmatrix}
+		\end{align*}	
+		$\Rightarrow A=\begin{pmatrix}
+				0&1\\
+				1&1\\		
+			\end{pmatrix}$
+			
+		\item Zeige, dass $A$ diagonalisierbar ist und bestimme eine invertierbare Matrix $T$ mit $T^{-1}AT=D$, wobei $D$ eine Diagonalmatrix ist.\\
+		\item Finde eine explizite (d.h. nicht rekursive) Formel für das Folgenglied $x_n$, für beliebiges $n\in\N$.
+		\begin{align*}
+			
+		\end{align*}
+	\end{enumerate}
 	\end{enumerate}
 \end{document}

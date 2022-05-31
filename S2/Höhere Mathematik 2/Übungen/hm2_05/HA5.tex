@@ -348,6 +348,80 @@ Folge:\\
 			\end{pmatrix}$
 			
 		\item Zeige, dass $A$ diagonalisierbar ist und bestimme eine invertierbare Matrix $T$ mit $T^{-1}AT=D$, wobei $D$ eine Diagonalmatrix ist.\\
+		\begin{align*}
+			p_A(\lambda)&=\begin{vmatrix}
+				-\lambda&1\\
+				1&1-\lambda
+			\end{vmatrix}\\
+			&=-\lambda(1-\lambda)-1\\
+			&=\lambda^2-\lambda-1\\
+			\Rightarrow &\lambda_1 = \frac{1+\sqrt{5}}{2}\\
+			&\lambda_2 = \frac{1-\sqrt{5}}{2}
+		\end{align*}
+		\begin{minipage}{.5\textwidth}
+			\begin{align*}
+			\intertext{$\Eig(A, \lambda_1)$:}
+			\begin{pmatrix}
+				-\frac{1+\sqrt{5}}{2}&1\\
+				1&\frac{1-\sqrt{5}}{2}
+			\end{pmatrix}x=\begin{pmatrix}
+				0\\0
+			\end{pmatrix}\\
+			\intertext{Gauß-Algorithmus:}
+			\Rightarrow\begin{pmatrix}
+				\frac{1+\sqrt{5}}{2}&1\\
+				0&0
+			\end{pmatrix}\\
+			\Rightarrow\Span\left\lbrace\begin{pmatrix}
+				-1-\sqrt{5}\\
+				2
+			\end{pmatrix}\right\rbrace
+			\end{align*}
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\begin{align*}
+			\intertext{$\Eig(A, \lambda_2)$:}
+			\begin{pmatrix}
+				-\frac{1-\sqrt{5}}{2}&1\\
+				1&\frac{1+\sqrt{5}}{2}
+			\end{pmatrix}x=\begin{pmatrix}
+				0\\0
+			\end{pmatrix}\\
+			\intertext{Gauß-Algorithmus:}
+			\Rightarrow\begin{pmatrix}
+				\frac{1-\sqrt{5}}{2}&1\\
+				0&0
+			\end{pmatrix}\\
+			\Rightarrow\Span\left\lbrace\begin{pmatrix}
+				-1+\sqrt{5}\\
+				2
+			\end{pmatrix}\right\rbrace
+			\end{align*}
+		\end{minipage}\\\\
+		Aus $\gamma_{\lambda_1}(A)=\alpha_{\lambda_1}(A)=1$ und $\gamma_{\lambda_2}(A)=\alpha_{\lambda_2}(A)=1 \Rightarrow A$ diagonalisierbar.\\
+		$$\Rightarrow T=\begin{pmatrix}
+			-1-\sqrt{5}& -1+\sqrt{5}\\
+			2&2
+		\end{pmatrix}$$
+		\begin{align*}
+			T^{-1}&\Leftarrow \begin{pmatrix}
+				-1-\sqrt{5}& -1+\sqrt{5}&1&0\\
+				2&2&0&1
+			\end{pmatrix}\\
+			&\Leftrightarrow\begin{pmatrix}
+				2&\sqrt{5}-3&1&0\\
+				2&2&0&1
+			\end{pmatrix}\\
+			&\Leftrightarrow\begin{pmatrix}
+				2&\sqrt{5}-3&-\frac{2}{1+\sqrt{5}}&0\\
+				0&5-\sqrt{5}&0&1
+			\end{pmatrix}\\
+			&\Leftrightarrow\begin{pmatrix}
+				1&\frac{\sqrt{5}-3}{2}&-\frac{1}{1+\sqrt{5}}&0\\
+				0&1&0&\frac{1}{5-\sqrt{5}}
+			\end{pmatrix}\\
+		\end{align*}
+		
 		\item Finde eine explizite (d.h. nicht rekursive) Formel für das Folgenglied $x_n$, für beliebiges $n\in\N$.
 		\begin{align*}
 			\eqnf{A\begin{pmatrix}

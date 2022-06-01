@@ -1,0 +1,64 @@
+\documentclass{HM}
+\newcommand\course{HM 2}
+\newcommand\hwnumber{6}
+
+\begin{document}
+	\begin{enumerate}
+		\item [6.3] Das Newton’sche Gesetz der Abkühlung sagt aus, dass die zeitliche Rate der Temperaturänderung eines Körpers proportional zur Temperaturdifferenz zwischen Körper und Umgebung ist. Eine Flasche Bier von sommerlicher Raumtemperatur (23°C) wird im Kühlschrank (Innentemperatur 6°C) gelagert. Nach 45 Minuten ist sie auf 14°C abgekühlt. Wie lange dauert es, eine Flasche Bier von Zimmertemperatur auf 9°C zu bringen?
+		
+		Temperatur [°C] zum Zeitpunkt $t$ [min]: $T(t)$.\\
+		$$T'(t)=a(T_1-T_2)=mbe^{tb}$$
+		$$T(t)=me^{tb}+c$$
+		Bedingungen:\\
+		$T(0)=23 \Rightarrow m+c=23\Leftrightarrow m=23-c$\\
+		$T(45)=14$\\
+		$T'(0)=a(23-6) \Rightarrow mb=17a\Leftrightarrow m=\frac{17a}{b}$\\
+		$T'(45)=a(14-6)$\\
+		
+		$T(45)=me^{45b}+c=14\Leftrightarrow m=\frac{14-c}{e^{45b}}$\\
+		$T'(45)=mbe^{45b}=8a\Leftrightarrow m=\frac{8a}{be^{45b}}$
+		
+		\begin{align*}
+			\intertext{$b$ finden:}
+			\eqnf{17\frac{a}{b}}{8\frac{a}{b}\frac{1}{e^{45b}}}
+			\eqn{b}{\frac{\ln(\frac{8}{17})}{45}}
+			\intertext{$b$ einsetzen und $c$ finden:}
+			\eqnf{23-c}{\frac{14-c}{e^{45b}}}
+			\eqn{23-c}{\frac{17}{8}(14-c)}
+			\eqn{c}{6}
+			\intertext{$c$ einsetzen und m finden}
+			\eqnf{m}{17}
+			\intertext{$m$ und $b$ einsetzen und $a$ finden:}
+			\eqnf{a}{b=\frac{\ln(\frac{8}{17})}{45}}
+		\end{align*}
+		
+		$$\Rightarrow T(t)=17\left(\frac{8}{17}^{\frac{t}{45}}\right)+6$$
+		
+		\begin{align*}
+			\eqnf{T(t)}{9}
+			\eqn{17\left(\frac{8}{17}^{\frac{t}{45}}\right)+6}{9}
+			\eqn{t}{\log_{\frac{8}{17}}\left(\frac{3}{17}\right)45}
+			\geqn{t}{\approx}{103.5553}
+		\end{align*}
+		
+		$\Rightarrow$ Es dauert ca. 1Stunde 43Minuten und 33Sekunden um ein Bier durch den Kühlschrank auf 9°C zu kühlen.		
+
+		\item [6.4] Finde die allgemeinen Lösungen der Differentialgleichungen
+		\begin{enumerate}
+			\item $y' - 2y =x^2e^{2x}$
+			\item $xy' + 2y = \sin(x)$ auf $(0,\infty)$.
+		\end{enumerate}
+		
+		\item [6.5] Löse die Anfangswertprobleme
+		\begin{enumerate}
+			\item $x^2y'+2xy = \cos(x), y(\pi)=0;$
+			\item $y' - 2y = e^{2x}, y(0)=2;$
+		\end{enumerate}
+		
+		\item [6.6]  Ein Pferd läuft in $x$-Richtung bei $x=l>0$ mit konstanter Geschwindigkeit $v_P$ los. Ein beliebig dehnbares homogenes Band ist mit dem einen Ende im Nullpunkt befestigt, mit dem anderen Ende am Pferd. Eine Schnecke beginnt gleichzeitig mit dem Pferd im Nullpunkt mit konstanter (Relativ-)Geschwindigkeit $v_S$ auf dem Band zu laufen. Der Abstand der Schnecke vom Nullpunkt zur Zeit $t$ sei $x(t)$.
+		\begin{enumerate}
+			\item Formuliere das Anfangswertproblem zur Bestimmung von $x(t)$ und löse es.
+			\item Erreicht die Schnecke das Pferd? Wenn ja, nach welcher Zeit? Hängt es von den Geschwindigkeiten $v_P, v_S$ ab, ob die Schnecke das Pferd erreicht?
+		\end{enumerate}
+	\end{enumerate}
+\end{document}

@@ -399,6 +399,10 @@ Folge:\\
 			\end{align*}
 		\end{minipage}\\\\
 		Aus $\gamma_{\lambda_1}(A)=\alpha_{\lambda_1}(A)=1$ und $\gamma_{\lambda_2}(A)=\alpha_{\lambda_2}(A)=1 \Rightarrow A$ diagonalisierbar.\\
+		$$\Rightarrow D=\begin{pmatrix}
+			\frac{1+\sqrt{5}}{2}&0\\
+			0&\frac{1-\sqrt{5}}{2}
+		\end{pmatrix}$$
 		$$\Rightarrow T=\begin{pmatrix}
 			-1-\sqrt{5}& -1+\sqrt{5}\\
 			2&2
@@ -408,17 +412,17 @@ Folge:\\
 				-1-\sqrt{5}& -1+\sqrt{5}&1&0\\
 				2&2&0&1
 			\end{pmatrix}\\
-			&\Leftrightarrow\begin{pmatrix}
-				2&\sqrt{5}-3&1&0\\
-				2&2&0&1
+			&\Leftrightarrow\frac{1}{-2(1+\sqrt{5})-2(-1+\sqrt{5})}\begin{pmatrix}
+				2&1-\sqrt{5}\\
+				-2&-1-\sqrt{5}
+			\end{pmatrix}\\
+			&\Leftrightarrow-\frac{\sqrt{5}}{20}\begin{pmatrix}
+				2&1-\sqrt{5}\\
+				-2&-1-\sqrt{5}
 			\end{pmatrix}\\
 			&\Leftrightarrow\begin{pmatrix}
-				2&\sqrt{5}-3&-\frac{2}{1+\sqrt{5}}&0\\
-				0&5-\sqrt{5}&0&1
-			\end{pmatrix}\\
-			&\Leftrightarrow\begin{pmatrix}
-				1&\frac{\sqrt{5}-3}{2}&-\frac{1}{1+\sqrt{5}}&0\\
-				0&1&0&\frac{1}{5-\sqrt{5}}
+				-\frac{\sqrt{5}}{10}&\frac{5-\sqrt{5}}{20}\\
+				\frac{\sqrt{5}}{10}&\frac{5+\sqrt{5}}{20}
 			\end{pmatrix}\\
 		\end{align*}
 		
@@ -438,10 +442,22 @@ Folge:\\
 				x_n\\
 				x_{n+1}
 			\end{pmatrix}}\\
+			\eqn{TD^nT^{-1}\begin{pmatrix}
+				1\\1
+			\end{pmatrix}}{\begin{pmatrix}
+				x_n\\
+				x_{n+1}
+			\end{pmatrix}}
 			\eqn{\begin{pmatrix}
-				0&1\\
-				1&1
-			\end{pmatrix}^n\begin{pmatrix}
+				-1-\sqrt{5}& -1+\sqrt{5}\\
+				2&2
+			\end{pmatrix}\begin{pmatrix}
+				(\frac{1+\sqrt{5}}{2})^n&0\\
+				0&(\frac{1-\sqrt{5}}{2})^n
+			\end{pmatrix}\begin{pmatrix}
+				-\frac{\sqrt{5}}{10}&\frac{5-\sqrt{5}}{20}\\
+				\frac{\sqrt{5}}{10}&\frac{5+\sqrt{5}}{20}
+			\end{pmatrix}\begin{pmatrix}
 				1\\1
 			\end{pmatrix}}{\begin{pmatrix}
 				x_n\\

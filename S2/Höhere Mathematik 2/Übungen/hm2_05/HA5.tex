@@ -147,7 +147,7 @@ sowie die zugehörigen Eigenräume.\\
 			\eqn{v}{A^{-1}v\lambda}
 			\eqn{\frac{1}{\lambda}v}{A^{-1}v}
 		\end{align*}
-		v ist Eigenvektor von $A^{-1}$ zum Eigenwert $\frac{1}{\lambda}$
+		v ist ein Eigenvektor von $A^{-1}$ zum Eigenwert $\frac{1}{\lambda}$
 		
 		\item[c)] Wenn $A^2 = E_n$ ist, wieso ist dann mindestens eine der Zahlen ±1 Eigenwert von $A$?
 		Wieso gibt es keine anderen Eigenwerte?\\
@@ -160,12 +160,12 @@ sowie die zugehörigen Eigenräume.\\
 			\eqn{v}{v\lambda^2}
 			\eqn{1}{\lambda^2}
 		\end{align}
-	$\Rightarrow$ die einzigen möglichen Eigenwerte sind $\pm1$
+	$\Rightarrow$ die einzig möglichen Eigenwerte sind $\pm1$
 		\item[d)] Haben $A$ und $A^T$ dieselben Eigenwerte?\\
 		\begin{align*}
 			\det(A)&=\det(A^T)\\
 			\det(A^T-\lambda E_n)&=\det(A-\lambda E_n)^T\\
-			\intertext{da die veränderung der Diagonalen nicht die transponierbarkeit beeinflusst}\\
+			\intertext{da die Veränderung der Diagonalen nicht die Transponierbarkeit beeinflusst}\\
 			\Rightarrow \det(A-\lambda E_n)&=\det(A-\lambda E_n)^T\\
 		\end{align*}
 	Da das charakteristische Polynom gleich ist, sind auch die Eigenwerte gleich.
@@ -209,7 +209,7 @@ Ist die Matrix $A$ diagonalisierbar?\\
 	0&2-\lambda&0\\
 	1&0&1
 \end{gmatrix}}
-\text{Entwickeln nach der 3-ten Zeile}\\
+\text{Entwickeln nach der 3-ten Spalte}\\
 \eqn{p_A(\lambda)}{-\lambda(-1-\lambda)\begin{gmatrix}[v]
 	-\lambda&-3\\
 	0&2-\lambda
@@ -369,12 +369,12 @@ Folge:\\
 			\end{pmatrix}\\
 			\intertext{Gauß-Algorithmus:}
 			\Rightarrow\begin{pmatrix}
-				\frac{1+\sqrt{5}}{2}&1\\
+				-\frac{1+\sqrt{5}}{2}&1\\
 				0&0
 			\end{pmatrix}\\
 			\Rightarrow\Span\left\lbrace\begin{pmatrix}
-				-1-\sqrt{5}\\
-				2
+				2\\
+				1+\sqrt{5}
 			\end{pmatrix}\right\rbrace
 			\end{align*}
 		\end{minipage}
@@ -389,12 +389,12 @@ Folge:\\
 			\end{pmatrix}\\
 			\intertext{Gauß-Algorithmus:}
 			\Rightarrow\begin{pmatrix}
-				\frac{1-\sqrt{5}}{2}&1\\
+				-\frac{1-\sqrt{5}}{2}&1\\
 				0&0
 			\end{pmatrix}\\
 			\Rightarrow\Span\left\lbrace\begin{pmatrix}
-				-1+\sqrt{5}\\
-				2
+				2\\
+				1-\sqrt{5}
 			\end{pmatrix}\right\rbrace
 			\end{align*}
 		\end{minipage}\\\\
@@ -404,25 +404,25 @@ Folge:\\
 			0&\frac{1-\sqrt{5}}{2}
 		\end{pmatrix}$$
 		$$\Rightarrow T=\begin{pmatrix}
-			-1-\sqrt{5}& -1+\sqrt{5}\\
-			2&2
+			2&2\\
+			1+\sqrt{5}&1-\sqrt{5}
 		\end{pmatrix}$$
 		\begin{align*}
 			T^{-1}&\Leftarrow \begin{pmatrix}
-				-1-\sqrt{5}& -1+\sqrt{5}&1&0\\
-				2&2&0&1
+				2&2&1&0\\
+				1+\sqrt{5}&1-\sqrt{5}&0&1
 			\end{pmatrix}\\
-			&\Leftrightarrow\frac{1}{-2(1+\sqrt{5})-2(-1+\sqrt{5})}\begin{pmatrix}
-				2&1-\sqrt{5}\\
-				-2&-1-\sqrt{5}
+			&\Leftrightarrow\frac{1}{2(1-\sqrt{5})-2(1+\sqrt{5})}\begin{pmatrix}
+				1-\sqrt{5}&-2\\
+				-1-\sqrt{5}&2
 			\end{pmatrix}\\
 			&\Leftrightarrow-\frac{\sqrt{5}}{20}\begin{pmatrix}
-				2&1-\sqrt{5}\\
-				-2&-1-\sqrt{5}
+				1-\sqrt{5}&-2\\
+				-1-\sqrt{5}&2
 			\end{pmatrix}\\
 			&\Leftrightarrow\begin{pmatrix}
-				-\frac{\sqrt{5}}{10}&\frac{5-\sqrt{5}}{20}\\
-				\frac{\sqrt{5}}{10}&\frac{5+\sqrt{5}}{20}
+				\frac{5-\sqrt{5}}{20}&\frac{\sqrt{5}}{10}\\
+				\frac{5+\sqrt{5}}{20}&-\frac{\sqrt{5}}{10}
 			\end{pmatrix}\\
 		\end{align*}
 		
@@ -449,20 +449,23 @@ Folge:\\
 				x_{n+1}
 			\end{pmatrix}}
 			\eqn{\begin{pmatrix}
-				-1-\sqrt{5}& -1+\sqrt{5}\\
-				2&2
+				2&2\\
+				1+\sqrt{5}&1-\sqrt{5}
 			\end{pmatrix}\begin{pmatrix}
 				(\frac{1+\sqrt{5}}{2})^n&0\\
 				0&(\frac{1-\sqrt{5}}{2})^n
 			\end{pmatrix}\begin{pmatrix}
-				-\frac{\sqrt{5}}{10}&\frac{5-\sqrt{5}}{20}\\
-				\frac{\sqrt{5}}{10}&\frac{5+\sqrt{5}}{20}
+				\frac{5-\sqrt{5}}{20}&\frac{\sqrt{5}}{10}\\
+				\frac{5+\sqrt{5}}{20}&-\frac{\sqrt{5}}{10}
 			\end{pmatrix}\begin{pmatrix}
 				1\\1
 			\end{pmatrix}}{\begin{pmatrix}
 				x_n\\
 				x_{n+1}
 			\end{pmatrix}}
+		\end{align*}
+		\begin{align*}\Rightarrow x_n&=2(\frac{1+\sqrt{5}}{2})^n(\frac{5-\sqrt{5}}{20}+\frac{\sqrt{5}}{10})+2(\frac{1-\sqrt{5}}{2})^n(\frac{5+\sqrt{5}}{20}-\frac{\sqrt{5}}{10})\\
+		&=2((\frac{1+\sqrt{5}}{2})^n\frac{5+\sqrt{5}}{20}+(\frac{1-\sqrt{5}}{2})^n\frac{5-\sqrt{5}}{20})\\
 		\end{align*}
 	\end{enumerate}
 	\end{enumerate}

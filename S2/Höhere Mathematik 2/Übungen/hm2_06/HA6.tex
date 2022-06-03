@@ -18,35 +18,65 @@
 		$T(45)=me^{45b}+c=14\Leftrightarrow m=\frac{14-c}{e^{45b}}$\\
 		$T'(45)=mbe^{45b}=8a\Leftrightarrow m=\frac{8a}{be^{45b}}$
 		
-		\begin{align*}
-			\intertext{$b$ finden:}
+		\begin{eqnn}
+			\eqntext{$b$ finden:}
 			\eqnf{17\frac{a}{b}}{8\frac{a}{b}\frac{1}{e^{45b}}}
-			\eqn{b}{\frac{\ln(\frac{8}{17})}{45}}
-			\intertext{$b$ einsetzen und $c$ finden:}
+			\eqn{b}{\frac{\ln(\frac{8}{17})}{45}}[test]
+			\eqntext{$b$ einsetzen und $c$ finden:}
 			\eqnf{23-c}{\frac{14-c}{e^{45b}}}
 			\eqn{23-c}{\frac{17}{8}(14-c)}
 			\eqn{c}{6}
-			\intertext{$c$ einsetzen und m finden}
+			\eqntext{$c$ einsetzen und m finden}
 			\eqnf{m}{17}
-			\intertext{$m$ und $b$ einsetzen und $a$ finden:}
+			\eqntext{$m$ und $b$ einsetzen und $a$ finden:}
 			\eqnf{a}{b=\frac{\ln(\frac{8}{17})}{45}}
-		\end{align*}
+		\end{eqnn}
 		
 		$$\Rightarrow T(t)=17\left(\frac{8}{17}^{\frac{t}{45}}\right)+6$$
 		
-		\begin{align*}
+		\begin{eqnn}
 			\eqnf{T(t)}{9}
 			\eqn{17\left(\frac{8}{17}^{\frac{t}{45}}\right)+6}{9}
 			\eqn{t}{\log_{\frac{8}{17}}\left(\frac{3}{17}\right)45}
 			\geqn{t}{\approx}{103.5553}
-		\end{align*}
+		\end{eqnn}
 		
 		$\Rightarrow$ Es dauert ca. 1Stunde 43Minuten und 33Sekunden um ein Bier durch den Kühlschrank auf 9°C zu kühlen.		
 
 		\item [6.4] Finde die allgemeinen Lösungen der Differentialgleichungen
 		\begin{enumerate}
-			\item $y' - 2y =x^2e^{2x}$
+			\item $y' - 2y =x^2e^{2x}$\\
+			\begin{eqnn}
+				\eqnf[(H)]{y' - 2y}{0}
+				\eqn[][\Rightarrow]{y_{(H)}(x)}{e^{2x}}
+				\eqnspace
+				\eqnf{y}{c\cdot y_{(H)}}
+				\eqn[(I)][\Rightarrow]{y(x)}{c(x)e^{2x}}[ableiten]
+				\eqn[(II)][\Rightarrow]{y'(x)}{c'(x)e^{2x}+c(x)2e^{2x}}
+				\eqntext{I und II in Ausgangsgleichung einsetzen:}
+				\eqn{c'(x)e^{2x}+c(x)2e^{2x}-2c(x)e^{2x}}{x^2e^{2x}}
+				\eqnf{c'(x)}{x^2}
+				\eqn[][\Rightarrow]{c(x)}{\frac{1}{3}x^3+c}
+				\eqntext{einsetzen in I:}
+				\eqn[][\Rightarrow]{y(x)}{(\frac{1}{3}x^3+c)e^{2x}}
+			\end{eqnn}	
+			
 			\item $xy' + 2y = \sin(x)$ auf $(0,\infty)$.
+			\begin{eqnn}
+				\eqnf[(H)]{xy'+2y}{0}
+				\eqn{y'}{-\frac{2}{x}y}
+				\eqn[][\Rightarrow]{y_{(H)}}{e^{\int -\frac{1}{2}x dx}=e^{-2\ln(x)}=\frac{1}{x^2}}
+				\eqnspace
+				\eqnf{y}{c\cdot y_{(H)}}
+				\eqn[(I)][\Rightarrow]{y(x)}{c(x)\frac{1}{x^2}}[ableiten]
+				\eqn[(II)][\Rightarrow]{y'(x)}{c'(x)\frac{1}{x^2}-2c(x)\frac{1}{x^3}}
+				\eqntext{I und II in Ausgangsgleichung einsetzen:}
+				\eqnf{c'(x)\frac{1}{x}-2c(x)\frac{1}{x^2}+2c(x)\frac{1}{x^2}}{\sin(x)}
+				\eqn{c'(x)}{\sin(x)x}
+				\eqn[][\Rightarrow]{c(x)}{-x\cos(x)+\sin(x)+c}
+				\eqntext{einsetzen in I:}
+				\eqn[][\Rightarrow]{y(x)}{\frac{-x\cos(x)+\sin(x)+c}{x^2}}
+			\end{eqnn}
 		\end{enumerate}
 		
 		\item [6.5] Löse die Anfangswertprobleme

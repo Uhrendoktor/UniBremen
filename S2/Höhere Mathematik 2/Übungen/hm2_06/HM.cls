@@ -2,7 +2,7 @@
 \ProvidesClass{HM}[2021/10/01 HM1 class]
 
 \LoadClass[12pt,letterpaper]{article}
-\RequirePackage{fullpage, fancyhdr, amsfonts, amsmath, amssymb, mathtools, polynom, gauss}
+\RequirePackage{fullpage, fancyhdr, amsfonts, amsmath, amssymb, mathtools, polynom, gauss, xparse}
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -15,20 +15,20 @@
 \newcommand{\Eig}{\text{Eig}}
 \newcommand{\Span}{\text{Span}}
 %custom math commands
-\newcommand{\alignleft}[1]{\tag*{\llap{\makebox[\linewidth][l]{$#1$}}}}
-\newcommand{\eqinfo}[1]{&\makebox[2cm][l]{$\vert #1$}}
-\newcommand{\LLeftrightarrow}{ \alignleft{\Leftrightarrow}}
 
-\newcommand{\Eqn}[3]{#1 &#2 #3}
-\newcommand{\eqnf}[2]{\Eqn{#1}{=}{#2}\\}
-\newcommand{\eqn}[2]{\LLeftrightarrow\Eqn{#1}{=}{#2}\\}
-\newcommand{\eqni}[3]{\LLeftrightarrow\Eqn{#1}{=}{#2}\eqinfo{#3}\\}
-\newcommand{\eqnfi}[3]{\Eqn{#1}{=}{#2}\eqinfo{#3}\\}
-\newcommand{\geqnf}[3]{\Eqn{#1}{#2}{#3}\\}
-\newcommand{\geqn}[3]{\LLeftrightarrow\Eqn{#1}{#2}{#3}\\}
-\newcommand{\geqni}[4]{\LLeftrightarrow\Eqn{#1}{#2}{#3}\eqinfo{#4}\\}
-\newcommand{\geqnfi}[4]{\Eqn{#1}{#2}{#3}\eqinfo{#4}\\}
-
+\newenvironment{eqnn}{
+	\NewDocumentCommand{\eqn}{O{} O{\Leftrightarrow} m m O{}}{\geqn[##1][##2]{##3}{=}{##4}[##5]}
+	\NewDocumentCommand{\eqnf}{O{} m m O{}}{\eqn[##1][]{##2}{##3}[##4]}
+	\NewDocumentCommand{\geqn}{O{} O{\Leftrightarrow} m m m O{}}{##1&$##2$&$##3$&$##4$&$##5$&\def\temp{##6}\ifx\temp\empty$ $\else$\vert$ ##6\fi\\}
+	\NewDocumentCommand{\geqnf}{O{} m m m O{}}{\geqn[##1][]{##2}{##3}{##4}[##5]}
+	\newcommand{\eqntext}[1]{\multicolumn{6}{l}{\rule{0pt}{17.5pt}##1}\\[5pt]}
+	\newcommand{\eqnspace}{\\[0pt]}
+	$ $\\
+	\eqnspace
+	\begin{tabular}{c c r c l r}
+}{
+	\end{tabular}
+}
 %custom MATH Symbols
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}

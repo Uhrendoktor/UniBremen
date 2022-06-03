@@ -21,7 +21,7 @@
 		\begin{eqnn}
 			\eqntext{$b$ finden:}
 			\eqnf{17\frac{a}{b}}{8\frac{a}{b}\frac{1}{e^{45b}}}
-			\eqn{b}{\frac{\ln(\frac{8}{17})}{45}}[test]
+			\eqn{b}{\frac{\ln(\frac{8}{17})}{45}}
 			\eqntext{$b$ einsetzen und $c$ finden:}
 			\eqnf{23-c}{\frac{14-c}{e^{45b}}}
 			\eqn{23-c}{\frac{17}{8}(14-c)}
@@ -57,7 +57,7 @@
 				\eqn{c'(x)e^{2x}+c(x)2e^{2x}-2c(x)e^{2x}}{x^2e^{2x}}
 				\eqnf{c'(x)}{x^2}
 				\eqn[][\Rightarrow]{c(x)}{\frac{1}{3}x^3+c}
-				\eqntext{einsetzen in I:}
+				\eqntext{Einsetzen in I:}
 				\eqn[][\Rightarrow]{y(x)}{(\frac{1}{3}x^3+c)e^{2x}}
 			\end{eqnn}	
 			
@@ -74,7 +74,7 @@
 				\eqnf{c'(x)\frac{1}{x}-2c(x)\frac{1}{x^2}+2c(x)\frac{1}{x^2}}{\sin(x)}
 				\eqn{c'(x)}{\sin(x)x}
 				\eqn[][\Rightarrow]{c(x)}{-x\cos(x)+\sin(x)+c}
-				\eqntext{einsetzen in I:}
+				\eqntext{Einsetzen in I:}
 				\eqn[][\Rightarrow]{y(x)}{\frac{-x\cos(x)+\sin(x)+c}{x^2}}
 			\end{eqnn}
 		\end{enumerate}
@@ -82,7 +82,33 @@
 		\item [6.5] Löse die Anfangswertprobleme
 		\begin{enumerate}
 			\item $x^2y'+2xy = \cos(x), y(\pi)=0;$
+			\begin{eqnn}
+				\eqn{xy'+2y}{\frac{\cos(x)}{x}}
+				\eqntext{Siehe Aufgabe (6.4b):}
+				\eqn[][\Rightarrow]{c'(x)}{\cos(x)}
+				\eqn[][\Rightarrow]{c(x)}{\sin(x)+c}
+				\eqntext{Einsetzen in I:}
+				\eqn[][\Rightarrow]{y(x)}{\frac{\sin(x)+c}{x^2}}
+				\eqntext{Bedingung $y(\pi)=0:$}
+				\eqn[][\Rightarrow]{\frac{\sin(\pi)+c}{\pi^2}}{0}
+				\eqn{c}{0}
+				\eqnspace
+				\eqn[][\Rightarrow]{y(x)}{\frac{\sin(x)}{x^2}}
+			\end{eqnn}
+			
 			\item $y' - 2y = e^{2x}, y(0)=2;$
+			\begin{eqnn}
+				\eqntext{Siehe Aufgabe (6.4a):}
+				\eqn[][\Rightarrow]{c'(x)}{1}
+				\eqn[][\Rightarrow]{c(x)}{x+c}
+				\eqntext{Einsetzen in I:}
+				\eqn[][\Rightarrow]{y(x)}{(x+c)e^{2x}}
+				\eqntext{Bedingung $y(0)=2:$}
+				\eqn[][\Rightarrow]{(0+c)e^{0}}{0}
+				\eqn{c}{2}
+				\eqnspace
+				\eqn[][\Rightarrow]{y(x)}{(x+2)e^{2x}}
+			\end{eqnn}
 		\end{enumerate}
 		
 		\item [6.6]  Ein Pferd läuft in $x$-Richtung bei $x=l>0$ mit konstanter Geschwindigkeit $v_P$ los. Ein beliebig dehnbares homogenes Band ist mit dem einen Ende im Nullpunkt befestigt, mit dem anderen Ende am Pferd. Eine Schnecke beginnt gleichzeitig mit dem Pferd im Nullpunkt mit konstanter (Relativ-)Geschwindigkeit $v_S$ auf dem Band zu laufen. Der Abstand der Schnecke vom Nullpunkt zur Zeit $t$ sei $x(t)$.

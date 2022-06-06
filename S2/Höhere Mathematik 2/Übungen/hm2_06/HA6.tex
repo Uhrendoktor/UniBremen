@@ -114,7 +114,43 @@
 		\item [6.6]  Ein Pferd läuft in $x$-Richtung bei $x=l>0$ mit konstanter Geschwindigkeit $v_P$ los. Ein beliebig dehnbares homogenes Band ist mit dem einen Ende im Nullpunkt befestigt, mit dem anderen Ende am Pferd. Eine Schnecke beginnt gleichzeitig mit dem Pferd im Nullpunkt mit konstanter (Relativ-)Geschwindigkeit $v_S$ auf dem Band zu laufen. Der Abstand der Schnecke vom Nullpunkt zur Zeit $t$ sei $x(t)$.
 		\begin{enumerate}
 			\item Formuliere das Anfangswertproblem zur Bestimmung von $x(t)$ und löse es.
+			\begin{eqnn}
+				\eqnf[(Pferd)]{p'(t)}{v_P}
+				\eqn[][\Rightarrow]{p(t)}{v_P\cdot t + c}[da $p(0)=0$]
+				\eqn[][\Rightarrow]{p(t)}{v_P\cdot t}
+				\eqntext{Ein Stelle $x, 0\leq x\leq l=p(t)$ auf dem vom Pferd aufgespannten Band besitzt}\\[-25pt]
+				\eqntext{die Geschwindigkeit $v_x(t) = \frac{x}{l}v_P = \frac{x}{v_P\cdot t}t = \frac{x}{t},$ für $t\in\R\setminus\{0\}$ mit $v(0)=0$.}
+				\eqn[(Schnecke)][\Rightarrow]{x'(t)}{v_S+v_{x(t)}(t)}
+				\eqn{x'(t)}{\frac{1}{t}x(t)+v_S}
+				\eqnspace
+				\eqn[(H)][\Rightarrow]{x'(t)-\frac{1}{t}x(t)}{0}
+				\eqn{x'(t)}{\frac{1}{t}x(t)}
+				\eqn[][\Rightarrow]{x_{(H)}(t)}{e^{\int t^{-1} dt} = e^{\ln(t)} = t}
+				\eqnspace
+				\eqnf{x}{c\cdot x_{(H)}}
+				\eqn[(I)][\Rightarrow]{x(t)}{c(t)t}
+				\eqn[(II)][\Rightarrow]{x'(t)}{c'(t)t+c(t)}
+				\eqntext{I und II in Ausgangsgleichung einsetzen:}
+				\eqn{c'(t)t+c(t)-\frac{t}{t}c(t)}{v_S}
+				\eqn{c'(t)}{\frac{v_S}{t}}
+				\eqntext{partielle Integration mit $f(t)=v_S, g(t)=\frac{1}{t}$:}
+				\eqn[][\Rightarrow]{c(t)}{v_S\ln(t)t+c}
+				\eqntext{Einsetzen in I:}
+				\eqn{x(t)}{v_S\ln(t)t+ct}
+				\eqn{x'(t)}{v_S+v_S\ln(t)t+ct}
+				\eqntext{Bedingung $x'(0)=v_S$:}
+				\eqn[][\Rightarrow]{c}{0}
+				\eqn[][\Rightarrow]{x(t)}{v_S\ln(t)t; \text{ mit } 0\leq x(t) \leq p(t)}
+			\end{eqnn}		
+			
 			\item Erreicht die Schnecke das Pferd? Wenn ja, nach welcher Zeit? Hängt es von den Geschwindigkeiten $v_P, v_S$ ab, ob die Schnecke das Pferd erreicht?
+			\begin{eqnn}
+				\eqnf{x(t)}{p(t)}
+				\eqn{v_S\ln(t)t}{v_P\cdot t}[$ 0\leq v_S\ln(t)t \leq v_P\cdot t$]
+				\eqn{v_S\ln(t)}{v_P}[$ 0\leq v_S\ln(t) \leq v_P$]
+				\eqn{t}{e^{\frac{v_P}{v_S}}}[$ 1\leq t \leq e^{\frac{v_P}{v_S}}$]
+			\end{eqnn}\\
+			$\Rightarrow$ Die Schnecke erreicht das Pferd zum Zeitpunkt $t$ unabhängig von den Geschwindigkeiten $v_S, v_P$, solange $v_S, v_P$ das gleiche Vorzeichen besitzen.
 		\end{enumerate}
 	\end{enumerate}
 \end{document}

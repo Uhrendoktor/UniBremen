@@ -116,41 +116,42 @@
 			\item Formuliere das Anfangswertproblem zur Bestimmung von $x(t)$ und löse es.
 			\begin{eqnn}
 				\eqnf[(Pferd)]{p'(t)}{v_P}
-				\eqn[][\Rightarrow]{p(t)}{v_P\cdot t + c}[da $p(0)=0$]
-				\eqn[][\Rightarrow]{p(t)}{v_P\cdot t}
-				\eqntext{Ein Stelle $x, 0\leq x\leq l=p(t)$ auf dem vom Pferd aufgespannten Band besitzt}\\[-25pt]
-				\eqntext{die Geschwindigkeit $v_x(t) = \frac{x}{l}v_P = \frac{x}{v_P\cdot t}t = \frac{x}{t},$ für $t\in\R\setminus\{0\}$ mit $v(0)=0$.}
+				\eqn[][\Rightarrow]{p(t)}{v_P\cdot t + c}[da $p(0)=l$]
+				\eqn[][\Rightarrow]{p(t)}{v_P\cdot t+l}
+				\eqntext{Ein Stelle $x, 0\leq x\leq d=p(t)$ auf dem vom Pferd aufgespannten Band besitzt}\\[-25pt]
+				\eqntext{die Geschwindigkeit $v_x(t) = \frac{x}{d}v_P = \frac{x}{v_P\cdot t+l}v_P$.}
 				\eqn[(Schnecke)][\Rightarrow]{x'(t)}{v_S+v_{x(t)}(t)}
-				\eqn{x'(t)}{\frac{1}{t}x(t)+v_S}
+				\eqn{x'(t)}{\frac{v_P}{v_Pt+l}x(t)+v_S}
 				\eqnspace
-				\eqn[(H)][\Rightarrow]{x'(t)-\frac{1}{t}x(t)}{0}
-				\eqn{x'(t)}{\frac{1}{t}x(t)}
-				\eqn[][\Rightarrow]{x_{(H)}(t)}{e^{\int t^{-1} dt} = e^{\ln(t)} = t}
+				\eqn[(H)][\Rightarrow]{x'(t)-\frac{v_P}{v_Pt+l}x(t)}{0}
+				\eqn{x'(t)}{\frac{v_P}{v_Pt+l}x(t)}
+				\eqn[][\Rightarrow]{x_{(H)}(t)}{e^{\int \frac{v_P}{v_Pt+l} dt} = e^{\ln(v_Pt+l)} = v_Pt+l}
 				\eqnspace
 				\eqnf{x}{c\cdot x_{(H)}}
-				\eqn[(I)][\Rightarrow]{x(t)}{c(t)t}
-				\eqn[(II)][\Rightarrow]{x'(t)}{c'(t)t+c(t)}
+				\eqn[(I)][\Rightarrow]{x(t)}{c(t)(v_Pt+l)}
+				\eqn[(II)][\Rightarrow]{x'(t)}{c'(t)(v_Pt+l)+c(t)v_P}
 				\eqntext{I und II in Ausgangsgleichung einsetzen:}
-				\eqn{c'(t)t+c(t)-\frac{t}{t}c(t)}{v_S}
-				\eqn{c'(t)}{\frac{v_S}{t}}
-				\eqntext{partielle Integration mit $f(t)=v_S, g(t)=\frac{1}{t}$:}
-				\eqn[][\Rightarrow]{c(t)}{v_S\ln(t)t+c}
+				\eqn{c'(t)}{\frac{v_S}{v_Pt+l}}
+				\eqntext{Substitution mit $u=v_Pt+l \Rightarrow dt=\frac{1}{v_P}du$:}
+				\eqn[][\Rightarrow]{c(t)}{\frac{v_S}{v_P}\ln(v_Pt+l)+c}
 				\eqntext{Einsetzen in I:}
-				\eqn{x(t)}{v_S\ln(t)t+ct}
-				\eqn{x'(t)}{v_S+v_S\ln(t)t+ct}
+				\eqn{x(t)}{\frac{v_S}{v_P}\ln(v_Pt+l)(v_Pt+l)+c(v_Pt+l)}
+				\eqn{x(t)}{v_S\ln(v_Pt+l)(t+\frac{l}{v_P})+c(v_Pt+l)}
+				\eqn{x'(t)}{v_S+v_S\ln(v_Pt+l)+cv_P}
 				\eqntext{Bedingung $x'(0)=v_S$:}
 				\eqn[][\Rightarrow]{c}{0}
-				\eqn[][\Rightarrow]{x(t)}{v_S\ln(t)t; \text{ mit } 0\leq x(t) \leq p(t)}
+				\eqn[][\Rightarrow]{x(t)}{v_S\ln(v_Pt+l)(t+\frac{l}{v_P})}
 			\end{eqnn}		
 			
 			\item Erreicht die Schnecke das Pferd? Wenn ja, nach welcher Zeit? Hängt es von den Geschwindigkeiten $v_P, v_S$ ab, ob die Schnecke das Pferd erreicht?
 			\begin{eqnn}
 				\eqnf{x(t)}{p(t)}
-				\eqn{v_S\ln(t)t}{v_P\cdot t}[$ 0\leq v_S\ln(t)t \leq v_P\cdot t$]
-				\eqn{v_S\ln(t)}{v_P}[$ 0\leq v_S\ln(t) \leq v_P$]
-				\eqn{t}{e^{\frac{v_P}{v_S}}}[$ 1\leq t \leq e^{\frac{v_P}{v_S}}$]
+				\eqn{v_S\ln(v_Pt+l)(t+\frac{l}{v_P})}{v_Pt+l}
+				\eqn{v_S\ln(v_Pt+l)(t+\frac{l}{v_P})}{v_P(t+\frac{l}{v_P})}
+				\eqn{v_S\ln(v_Pt+l)}{v_P}
+				\eqn{t}{\frac{e^{\frac{v_P}{v_S}}-l}{v_P}}
 			\end{eqnn}\\
-			$\Rightarrow$ Die Schnecke erreicht das Pferd zum Zeitpunkt $t$ unabhängig von den Geschwindigkeiten $v_S, v_P$, solange $v_S, v_P$ das gleiche Vorzeichen besitzen.
+			$\Rightarrow$ Die Schnecke erreicht das Pferd zum Zeitpunkt $t$ unabhängig von den Geschwindigkeiten $v_S, v_P$, solange $v_S, v_P$ das gleiche Vorzeichen besitzen und $v_S, v_P \not= 0$.
 		\end{enumerate}
 	\end{enumerate}
 \end{document}

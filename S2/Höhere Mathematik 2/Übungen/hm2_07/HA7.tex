@@ -7,7 +7,41 @@
 		\item[7.2] Löse die Anfangswertprobleme
 		\begin{enumerate}
 			\item $y'+y\sin(x)=4x^3e^{\cos(x)}, y(\frac{\pi}{2})=2;$
+			\begin{eqnn}
+				\eqnf[(H)]{y'+y\sin(x)}{0}
+				\eqn[][\Rightarrow]{y_{(H)}(x)}{e^{\cos(x)}}
+				\eqnspace
+				\eqnf{y}{c\cdot y_{(H)}}
+				\eqn[(I)][\Rightarrow]{y(x)}{c(x)e^{\cos(x)}}[ableiten]
+				\eqn[(II)][\Rightarrow]{y'(x)}{c'(x)e^{\cos(x)}-c(x)e^{\cos(x)}\sin(x)}
+				\eqntext{I und II in Ausgangsgleichung einsetzen:}
+				\eqnf{c'(x)}{4x^3}
+				\eqn[][\Rightarrow]{c(x)}{x^4+c}
+				\eqntext{Einsetzen in I:}
+				\eqn[][\Rightarrow]{y(x)}{(x^4+c)e^{\cos(x)}}
+				\eqntext{Bedingung $y(\frac{\pi}{2})=2:$}
+				\eqn{c}{2-(\frac{\pi}{2})^4}
+				\eqn[][\Rightarrow]{y(x)}{(x^4+2-(\frac{\pi}{2})^4)e^{\cos(x)}}
+			\end{eqnn}\\			
+			
 			\item $xy'+y+xe^x=0, y(1)=0.$
+			\begin{eqnn}
+				\eqnf[(H)]{xy'+y}{0}
+				\eqn[][\Rightarrow]{y_{(H)}(x)}{e^{-\ln(x)}=\frac{1}{x}}
+				\eqnspace
+				\eqnf{y}{c\cdot y_{(H)}}
+				\eqn[(I)][\Rightarrow]{y(x)}{c(x)\frac{1}{x}}[ableiten]
+				\eqn[(II)][\Rightarrow]{y'(x)}{c'(x)\frac{1}{x}-c(x)\frac{1}{x^2}}
+				\eqntext{I und II in Ausgangsgleichung einsetzen:}
+				\eqnf{c'(x)}{-xe^x}
+				\eqntext{partielle Integration mit $f(x)=x, g(x)=e^x$}
+				\eqn[][\Rightarrow]{c(x)}{(1-x)e^x+x}
+				\eqntext{Einsetzen in I:}
+				\eqn[][\Rightarrow]{y(x)}{\frac{1-x}{x}e^x+\frac{c}{x}}
+				\eqntext{Bedingung $y(1)=0:$}
+				\eqn{c}{0}
+				\eqn[][\Rightarrow]{y(x)}{\frac{1-x}{x}e^x}
+			\end{eqnn}\\
 		\end{enumerate}
 		
 		\item[7.3] Bestimme diejenigen Lösungen der Differentialgleichung

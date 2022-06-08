@@ -139,17 +139,19 @@
 				\eqn{x(t)}{v_S\ln(v_Pt+l)(t+\frac{l}{v_P})+c(v_Pt+l)}
 				\eqn{x'(t)}{v_S+v_S\ln(v_Pt+l)+cv_P}
 				\eqntext{Bedingung $x'(0)=v_S$:}
-				\eqn[][\Rightarrow]{c}{0}
-				\eqn[][\Rightarrow]{x(t)}{v_S\ln(v_Pt+l)(t+\frac{l}{v_P})}
+				\eqn{v_S+v_S\ln(l)+cv_P}{v_S}
+				\eqn[][\Rightarrow]{c}{-\frac{v_S}{v_P}\ln(l)}
+				\eqn[][\Rightarrow]{x(t)}{v_S(t+\frac{l}{v_P})(\ln(v_pt+l)-\ln(l))}
 			\end{eqnn}		
 			
 			\item Erreicht die Schnecke das Pferd? Wenn ja, nach welcher Zeit? Hängt es von den Geschwindigkeiten $v_P, v_S$ ab, ob die Schnecke das Pferd erreicht?
 			\begin{eqnn}
 				\eqnf{x(t)}{p(t)}
-				\eqn{v_S\ln(v_Pt+l)(t+\frac{l}{v_P})}{v_Pt+l}
-				\eqn{v_S\ln(v_Pt+l)(t+\frac{l}{v_P})}{v_P(t+\frac{l}{v_P})}
-				\eqn{v_S\ln(v_Pt+l)}{v_P}
-				\eqn{t}{\frac{e^{\frac{v_P}{v_S}}-l}{v_P}}
+				\eqn{v_S(t+\frac{l}{v_P})(\ln(v_pt+l)-\ln(l))}{v_Pt+l}
+				\eqn{v_S(t+\frac{l}{v_P})(\ln(v_pt+l)-\ln(l))}{v_P(t+\frac{l}{v_P})}
+				\eqn{v_S(\ln(v_pt+l)-\ln(l))}{v_P}
+				\eqn{\frac{v_Pt+l}{l}}{e^{\frac{v_P}{v_S}}}
+				\eqn{t}{\frac{l}{v_P}(e^{\frac{v_P}{v_S}}-1)}
 			\end{eqnn}\\
 			$\Rightarrow$ Die Schnecke erreicht das Pferd zum Zeitpunkt $t$ unabhängig von den Geschwindigkeiten $v_S, v_P$, solange $v_S, v_P$ das gleiche Vorzeichen besitzen und $v_S, v_P \not= 0$.
 		\end{enumerate}

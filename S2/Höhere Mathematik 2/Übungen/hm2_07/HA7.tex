@@ -47,12 +47,74 @@
 		\item[7.3] Bestimme diejenigen Lösungen der Differentialgleichung
 		$$\dot{x}\cdot\sin(2t)=2x+2\cos(t),$$\\
 		die für $t\to\frac{\pi}{2}$ beschränkt ist.
+		\begin{eqnn}
+				\eqnf[(H)]{\dot{x}\sin(2t)-2x}{0}
+				\eqn[][\Rightarrow]{x_{(H)}(t)}{e^{\int\frac{2}{\sin(2t)}dt}=\tan(t)}
+				\eqntext{Nachweis über Ableitung (Quotientenregel):}
+				\eqnf{\frac{d}{dt}\tan(t)}{\frac{\cos^2(t)+\sin^2(t)}{\cos^2(t)} = 1+\tan^2(t)}
+				\eqnspace
+				\eqnf{x}{c\cdot x_{(H)}}
+				\eqn[(I)][\Rightarrow]{x(t)}{c(t)\tan(t)}[ableiten]
+				\eqn[(II)][\Rightarrow]{\dot{x}(t)}{c'(t)\tan(t)+c(t)(1+\tan^2(t))}
+				\eqntext{I und II in Ausgangsgleichung einsetzen:}
+				\eqnf{c'(t)}{\frac{\cos(t)}{\sin^2(t)}}
+				\eqn[][\Rightarrow]{c(t)}{-\frac{1}{\sin^2(t)}+c}
+				\eqntext{Nachweis über Ableitung (Quotientenregel):}
+				\eqnf{\frac{d}{dx}\frac{-1}{\sin(x)}+c}{\frac{\cos(x)}{\sin^2(x)}}
+				\eqntext{Einsetzen in I:}
+				\eqn[][\Rightarrow]{x(t)}{(-\frac{1}{\sin(t)}+c)\tan(t)}
+			\end{eqnn}\\
+			Da $\lim_{t\to\frac{\pi}{2}}x(t)=(-1+c)\lim_{t\to\frac{\pi}{2}}\tan(t)$ und $\tan(t)\xrightarrow{t\to\frac{\pi}{2}}\infty$, ist $x$ nur dann für $t\to\frac{\pi}{2}$ beschränkt, wenn $-1+c=0\Leftrightarrow c=1$.\\
+			$\Rightarrow$ Menge aller Lösungen der Differentialgleichung für $t\to\frac{\pi}{2}$ beschränkt\\ $= \{(-\frac{1}{\sin(t)}+1)\tan(t)\}$
 		
 		\item[7.4] Bestimme die Lösungen der Differentialgleichungen
 		$$y'=\frac{x+y}{x} \quad\text{und}\quad y'=2\frac{y}{x}$$\\
 		\begin{enumerate}
-			\item durch Betrachten als lineare Differentialgleichung 1. Ordnung.
-			\item durch Substitution $z=\frac{y}{x}$
+			\item durch Betrachten als lineare Differentialgleichung 1. Ordnung.\\
+			$y'=\frac{x+y}{x}:$
+			\begin{eqnn}
+				\eqnf[(H)]{y'-\frac{1}{x}y}{0}
+				\eqn[][\Rightarrow]{y_{(H)}(x)}{e^{\int\frac{1}{x}dx}=x}
+				\eqnspace
+				\eqnf{y}{c\cdot y_{(H)}}
+				\eqn[(I)][\Rightarrow]{y(x)}{c(x)x}[ableiten]
+				\eqn[(II)][\Rightarrow]{y(x)}{c'(x)x+c(x)}
+				\eqntext{I und II in Ausgangsgleichung einsetzen:}
+				\eqnf{c'(x)}{\frac{1}{x}}
+				\eqn[][\Rightarrow]{c(x)}{\ln(x)+c}
+				\eqntext{Einsetzen in I:}
+				\eqn[][\Rightarrow]{y(x)}{\ln(x)x+cx}
+			\end{eqnn}\\	\\
+			
+			$y'=2\frac{y}{x}:$
+			\begin{eqnn}
+				\eqn{y'}{\frac{2}{x}y}
+				\eqn[][\Rightarrow]{y(x)}{e^{\int\frac{2}{x}dx}=e^{2(\ln(x)+c)}=e^{\ln(x)^2}=x^2\cdot c_2}
+			\end{eqnn}\\	
+			
+			\item durch Substitution $z=\frac{y}{x}$\\
+			$y'=\frac{x+y}{x}:$
+			\begin{eqnn}
+				\eqn{y'}{1+\frac{y}{x}}
+				\eqn{y'}{1+z}
+				\eqntext{$z=\frac{y}{x}\Rightarrow y=zx \Rightarrow y'=z'x+z$:}
+				\eqn{z'x+z}{1+z}
+				\eqn{z'}{\frac{1}{x}}
+				\eqn[][\Rightarrow]{z}{\ln(x)+c}
+				\eqntext{Rücksubstitution mit $z=\frac{y}{x}$}
+				\eqn{y}{\ln(x)x+cx}
+			\end{eqnn}\\\\
+			
+			$y'=2\frac{y}{x}:$
+			\begin{eqnn}
+				\eqn{y'}{2z}
+				\eqntext{$z=\frac{y}{x}\Rightarrow y=zx \Rightarrow y'=z'x+z$:}
+				\eqn{z'x+z}{2z}
+				\eqn{z'x-z}{0}
+				\eqn[][\Rightarrow]{z}{x\cdot c}
+				\eqntext{Rücksubstitution mit $z=\frac{y}{x}$}
+				\eqn{y}{x^2\cdot c}
+			\end{eqnn}\\
 		\end{enumerate}
 		
 		\item[7.5] Bestimme die allgemeine Lösung der folgenden Bernoulli'schen Differentialgleichungen:

@@ -1,0 +1,43 @@
+\documentclass{HM}
+\newcommand\course{HM 2}
+\newcommand\hwnumber{8}
+
+\begin{document}
+	\begin{enumerate}
+		\item[8.2] \textit{Energiemethode} zur Lösung der Differentialgleichung $y''=f(y):$ Man multipliziert die Gleichung mit $2y'$ und benutzt $(y'^2)=2y'y''$.\\
+		Behandle das Anfangswertproblem $y''=2e^y, y(0)=0, y'(0)=-2$ auf diese Weise.
+		
+		\item[8.3] Auf Grund des Gravitationsgesetzes beschreibt das Anfangswertproblem\\
+		$$m\ddot{r}=-\gamma\frac{Mm}{r^2},\quad r(0)=R, \quad \dot{r}(0)=v_0$$\\
+		Die Flugbahn eines Körpers der Masse $m$ zur Erde hin bzw. von der Erde weg. Dabei ist $r(t)$ der Abstand des Körpers vom Erdmittelpunkt zur Zeit $t, M$ die Erdmasse, und die Gravitationskonstante ist mit $\gamma$ bezeichnet.
+		\begin{enumerate}
+			\item Forme geeignet um, und führe die Differentialgleichung in eine Differentialgleichung erster Ordnung über (vgl. Aufgabe 8.2); die entstehende Gleichung muss nicht gelöst werden. Berücksichtige die Anfangsbedingungen.
+			
+			\item Es soll die kleinste Geschwindigkeit $v_0$ (Fluchtgeschwindigkeit von der Erde, zweite kosmische Geschwindigkeit) ermittelt werden, für die die Bewegung bis ins Unendliche reicht, also nicht umkehrt. Dem entsprechen die beiden Forderungen $r(t)\to\infty$ und $\dot{r}(t)\to 0$ für $t\to\infty$.\\
+			$(M=5.97\cdot 10^{24}kg, \gamma=6.673\cdot 10^{-11}m^3kg^{-1}s^{-2}, R=6.370\cdot 10^6m)$
+			
+			\item Löse das Anfangswertproblem, falls $v_0$ die zweite kosmische Geschwindigkeit ist.
+		\end{enumerate}
+		
+		\item[8.4] gegeben sei die Differentialgleichung\\
+		$$(*)\quad y'=\sqrt{y}$$\\
+		\begin{enumerate}
+			\item Bestimme eine Lösung von (*) zum Anfangswert $y(2)=1.$ Ist diese eindeutig?
+			
+			\item Finde mindestens drei Lösungen von (*) zum Anfangswert $y(0)=0$.
+			
+			\item Skizziere das durch die Differentialgleichung gegebene Richtungsfeld und trage die gefundenen Lösungen ein.
+			
+			\item Erfüllt die rechte Seite von (*) eine Lipschitz-Bedingung?
+		\end{enumerate}
+		
+		\item[8.5] Bestimme die allgemeine Lösung des Differentialgleichungssystems $y'=\begin{pmatrix}
+			1&2\\
+			3&2
+		\end{pmatrix}y.$\\
+		Berechne die Lösung zum Anfangswert $y(0)=\begin{pmatrix}
+			1\\
+			0
+		\end{pmatrix}$
+	\end{enumerate}
+\end{document}

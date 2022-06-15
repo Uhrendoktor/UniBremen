@@ -4,8 +4,37 @@
 
 \begin{document}
 	\begin{enumerate}
-		\item[8.2] \textit{Energiemethode} zur Lösung der Differentialgleichung $y''=f(y):$ Man multipliziert die Gleichung mit $2y'$ und benutzt $(y'^2)=2y'y''$.\\
+		\item[8.2] \textit{Energiemethode} zur Lösung der Differentialgleichung $y''=f(y):$ Man multipliziert die Gleichung mit $2y'$ und benutzt $(y'^2)'=2y'y''$.\\
 		Behandle das Anfangswertproblem $y''=2e^y, y(0)=0, y'(0)=-2$ auf diese Weise.
+		\begin{eqnn}
+			\eqnf{(y'^2)'}{2y'y''}
+			\eqn{(y'^2)'}{2y'2e^y}[integrieren]
+			\eqn{y'^2}{4\int y'e^ydx}
+			\eqn{y'^2}{4e^y}
+			\eqn{y'}{2e^{\frac{1}{2}y}}
+			\eqntext{Substitution mit $z=y'^{-1}$:}
+			\eqn[][\Rightarrow]{z'}{-y'^{-2}y''}
+			\eqn{z'}{-2e^{-y}2e^y}
+			\eqn{z'}{-4}
+			\eqn{z}{-(4x+c)}
+			\eqntext{Rücksubstitution von $z=y'^{-1}$:}
+			\eqn{y'}{-\frac{1}{4x+c}}
+			\eqntext{Bedingung $y'(0)=-2$ einsetzen:}
+			\eqn{-\frac{1}{0+c}}{-2}
+			\eqn{c}{\frac{1}{2}}
+			\eqn[][\Rightarrow]{y'(x)}{-\frac{1}{4x+\frac{1}{2}}}[integrieren]
+			\eqn{y(x)}{-\int\frac{1}{4x+\frac{1}{2}}dx}
+			\eqntext{Substitution mit $u=4x+\frac{1}{2} \Rightarrow dx = \frac{1}{4}u du$:}
+			\eqn{y(x)}{-\frac{1}{4}\int\frac{1}{u}du}
+			\eqn{y(x)}{-\frac{1}{4}(\ln(u)+c)}
+			\eqntext{Rücksubstitution von $u=4x+\frac{1}{2}$ und $-\frac{1}{4}c\to c$:}
+			\eqn{y(x)}{-\frac{1}{4}\ln(4x+\frac{1}{2})+c}
+			\eqntext{Bedingung $y(0)=0$ einsetzen:}
+			\eqn{-\frac{1}{4}\ln(\frac{1}{2})+c}{0}
+			\eqn{c}{-\frac{1}{4}\ln(2)}
+			\eqn[][\Rightarrow]{y(x)}{-\frac{1}{4}(\ln(4x+\frac{1}{2})+\ln(2))}
+			\eqn{y(x)}{-\frac{1}{4}\ln(8x+1)}
+		\end{eqnn}
 		
 		\item[8.3] Auf Grund des Gravitationsgesetzes beschreibt das Anfangswertproblem\\
 		$$m\ddot{r}=-\gamma\frac{Mm}{r^2},\quad r(0)=R, \quad \dot{r}(0)=v_0$$\\

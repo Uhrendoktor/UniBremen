@@ -34,8 +34,8 @@
 				\eqn[(II)][\Rightarrow]{y'(x)}{c'(x)\frac{1}{x}-c(x)\frac{1}{x^2}}
 				\eqntext{I und II in Ausgangsgleichung einsetzen:}
 				\eqnf{c'(x)}{-xe^x}
-				\eqntext{partielle Integration mit $f(x)=x, g(x)=e^x$}
-				\eqn[][\Rightarrow]{c(x)}{(1-x)e^x+x}
+				\eqntext{partielle Integration mit $f(x)=-x, g(x)=e^x$}
+				\eqn[][\Rightarrow]{c(x)}{(1-x)e^x+c}
 				\eqntext{Einsetzen in I:}
 				\eqn[][\Rightarrow]{y(x)}{\frac{1-x}{x}e^x+\frac{c}{x}}
 				\eqntext{Bedingung $y(1)=0:$}
@@ -78,7 +78,7 @@
 				\eqnspace
 				\eqnf{y}{c\cdot y_{(H)}}
 				\eqn[(I)][\Rightarrow]{y(x)}{c(x)x}[ableiten]
-				\eqn[(II)][\Rightarrow]{y(x)}{c'(x)x+c(x)}
+				\eqn[(II)][\Rightarrow]{y'(x)}{c'(x)x+c(x)}
 				\eqntext{I und II in Ausgangsgleichung einsetzen:}
 				\eqnf{c'(x)}{\frac{1}{x}}
 				\eqn[][\Rightarrow]{c(x)}{\ln(x)+c}
@@ -125,7 +125,7 @@
 				\eqnspace
 				\eqntext{Substitution mit $z=y^{-1}-1$:}
 				\eqn[][\Rightarrow]{z'}{-y^{-2}y'}
-				\eqn{z'}{-y^{-2}(\frac{x}{1+x^2}-\frac{x}{^+x^2}y)}
+				\eqn{z'}{-y^{-2}(\frac{x}{1+x^2}y^2-\frac{x}{^+x^2}y)}
 				\eqn{z'}{\frac{x}{1+x^2}(y^{-1}-1)}
 				\eqntext{$z$ einsetzen:}
 				\eqn{z'}{\frac{x}{1+x^2}z}

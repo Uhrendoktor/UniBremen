@@ -10,30 +10,32 @@
 			\eqnf{(y'^2)'}{2y'y''}
 			\eqn{(y'^2)'}{2y'2e^y}[integrieren]
 			\eqn{y'^2}{4\int y'e^ydx}
-			\eqn{y'^2}{4e^y}
-			\eqn{y'}{2e^{\frac{1}{2}y}}
+			\eqn{y'^2}{4e^y+c}
+			\eqn{y'}{\pm 2(e^{y}+c)^{\frac{1}{2}}}
+			\eqntext{Bedingung $y'(0)=-2, y(0)=0$ einsetzen:}
+			\eqn{c}{1-e^0=0}
+			\eqn[][\Rightarrow]{y'}{-2e^{\frac{1}{2}y}}
 			\eqntext{Substitution mit $z=y'^{-1}$:}
 			\eqn[][\Rightarrow]{z'}{-y'^{-2}y''}
-			\eqn{z'}{-2e^{-y}2e^y}
-			\eqn{z'}{-4}
-			\eqn{z}{-(4x+c)}
+			\eqn{z'}{-\frac{1}{4}e^{-y}2e^y}
+			\eqn{z'}{-\frac{1}{2}}
+			\eqn{z}{-(\frac{1}{2}x+c)}
 			\eqntext{Rücksubstitution von $z=y'^{-1}$:}
-			\eqn{y'}{-\frac{1}{4x+c}}
+			\eqn{y'}{-\frac{1}{\frac{1}{2}x+c}}
 			\eqntext{Bedingung $y'(0)=-2$ einsetzen:}
 			\eqn{-\frac{1}{0+c}}{-2}
 			\eqn{c}{\frac{1}{2}}
-			\eqn[][\Rightarrow]{y'(x)}{-\frac{1}{4x+\frac{1}{2}}}[integrieren]
-			\eqn{y(x)}{-\int\frac{1}{4x+\frac{1}{2}}dx}
-			\eqntext{Substitution mit $u=4x+\frac{1}{2} \Rightarrow dx = \frac{1}{4}u du$:}
-			\eqn{y(x)}{-\frac{1}{4}\int\frac{1}{u}du}
-			\eqn{y(x)}{-\frac{1}{4}(\ln(u)+c)}
-			\eqntext{Rücksubstitution von $u=4x+\frac{1}{2}$ und $-\frac{1}{4}c\to c$:}
-			\eqn{y(x)}{-\frac{1}{4}\ln(4x+\frac{1}{2})+c}
+			\eqn[][\Rightarrow]{y'(x)}{-\frac{2}{(x+1)}}[integrieren]
+			\eqn{y(x)}{-2\int\frac{1}{(x+1)}dx}
+			\eqntext{Substitution mit $u=x+1 \Rightarrow dx = 1 du$:}
+			\eqn{y(x)}{-2\int\frac{1}{u}du}
+			\eqn{y(x)}{-2(\ln(u)+c)}
+			\eqntext{Rücksubstitution von $u=x+1$:}
+			\eqn{y(x)}{-2\ln(x+1)+c}
 			\eqntext{Bedingung $y(0)=0$ einsetzen:}
-			\eqn{-\frac{1}{4}\ln(\frac{1}{2})+c}{0}
-			\eqn{c}{-\frac{1}{4}\ln(2)}
-			\eqn[][\Rightarrow]{y(x)}{-\frac{1}{4}(\ln(4x+\frac{1}{2})+\ln(2))}
-			\eqn{y(x)}{-\frac{1}{4}\ln(8x+1)}
+			\eqn{-2\ln(x+1)+c}{0}
+			\eqn{c}{0}
+			\eqn[][\Rightarrow]{y(x)}{-2\ln(x+1)}
 		\end{eqnn}
 		
 		\item[8.3] Auf Grund des Gravitationsgesetzes beschreibt das Anfangswertproblem\\
@@ -41,9 +43,30 @@
 		Die Flugbahn eines Körpers der Masse $m$ zur Erde hin bzw. von der Erde weg. Dabei ist $r(t)$ der Abstand des Körpers vom Erdmittelpunkt zur Zeit $t, M$ die Erdmasse, und die Gravitationskonstante ist mit $\gamma$ bezeichnet.
 		\begin{enumerate}
 			\item Forme geeignet um, und führe die Differentialgleichung in eine Differentialgleichung erster Ordnung über (vgl. Aufgabe 8.2); die entstehende Gleichung muss nicht gelöst werden. Berücksichtige die Anfangsbedingungen.
+			\begin{eqnn}
+				\eqn{\ddot{r}}{-\gamma Mr^{-2}}
+				\eqntext{Energiemethode anwenden:}
+				\eqn{2\ddot{r}\dot{r}}{\dot{\dot{r}^2}}
+				\eqn{-2\gamma Mr^{-2}\dot{r}}{\dot{\dot{r}^2}}[integrieren]
+				\eqn{2\gamma M\int -r^{-2}\dot{r} dt}{\dot{r}^2}
+				\eqn{2\gamma M (r^{-1}+c)}{\dot{r}^2}
+				\eqntext{Bedingungen $r(0)=R, \dot{r}=v_0$ einsetzen:}
+				\eqn{2\gamma M (R^{-1}+c)}{v_{0}^2}
+				\eqn{c}{\frac{v_{0}^2}{2\gamma M}-\frac{1}{R}}
+				\eqntext{$c$ einsetzen:}
+				\eqn{2\gamma M (r^{-1}+\frac{v_{0}^2}{2\gamma M}-\frac{1}{R})}{\dot{r}^2}
+				\eqn{v_{0}^2-\frac{2\gamma M}{R}}{\dot{r}^2-\frac{2\gamma M}{r}}
+			\end{eqnn}
 			
 			\item Es soll die kleinste Geschwindigkeit $v_0$ (Fluchtgeschwindigkeit von der Erde, zweite kosmische Geschwindigkeit) ermittelt werden, für die die Bewegung bis ins Unendliche reicht, also nicht umkehrt. Dem entsprechen die beiden Forderungen $r(t)\to\infty$ und $\dot{r}(t)\to 0$ für $t\to\infty$.\\
 			$(M=5.97\cdot 10^{24}kg, \gamma=6.673\cdot 10^{-11}m^3kg^{-1}s^{-2}, R=6.370\cdot 10^6m)$
+			\begin{eqnn}
+				\eqn{v_{0}^2-\frac{2\gamma M}{R}}{\lim_{t\to\infty}\dot{r}^2-\frac{2\gamma M}{r}}
+				\eqn{v_{0}^2-\frac{2\gamma M}{R}}{0-0}
+				\eqn{v_0}{\sqrt{\frac{2\gamma M}{R}}}
+				\eqntext{Werte einsetzen:}
+				\geqn[][\Rightarrow]{v_0}{\approx}{11183.8932\frac{m}{s}= 1.1183\cdot 10^{4}\frac{m}{s}}
+			\end{eqnn}
 			
 			\item Löse das Anfangswertproblem, falls $v_0$ die zweite kosmische Geschwindigkeit ist.
 		\end{enumerate}

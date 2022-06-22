@@ -96,7 +96,7 @@
 		\end{enumerate}
 		
 		\item[8.4] gegeben sei die Differentialgleichung\\
-		$$(*)\quad y'=\sqrt{y}$$\\
+		$$(*)\quad y'=\sqrt{y}$$
 		\begin{enumerate}
 			\item Bestimme eine Lösung von (*) zum Anfangswert $y(2)=1.$ Ist diese eindeutig?
 			\begin{eqnn}
@@ -108,12 +108,12 @@
 				\eqn[][\Rightarrow]{4}{(2+c)^2}
 				\eqn{\sqrt{4}-2}{c}
 				\eqntext{$y_1=0$, $y_2=-4$}
-				\eqn{y_1}{\frac{x^2}{4}}
-				\eqn{y_2}{(\frac{x}{2}-2)^2}
+				\eqn[][\Rightarrow]{y_1}{\frac{x^2}{4}}
+				\eqn[][\Rightarrow]{y_2}{(\frac{x}{2}-2)^2}
+				\eqntext{Die Lösung ist nicht eindeutig da es mehrere gibt}		
 			\end{eqnn}
-			
+						
 			\item Finde mindestens drei Lösungen von (*) zum Anfangswert $y(0)=0$.
-			
 			\begin{eqnn}
 				\eqntext{Triviale Lösung:}
 				\eqn[][]{y_1}{0}
@@ -151,7 +151,7 @@
 			                }]{f(\x,\z)};
 			        \addplot[ultra thick, red]{f(x,0)};
 			        \addplot[ultra thick, blue]{f(0,0)};
-				\end{axis}
+-				\end{axis}
 			\end{tikzpicture}
 			\begin{tikzpicture}[
 	    			declare function={f(\x,\z) = (\x+\z)^2/4;}
@@ -239,7 +239,7 @@
 		\eqntext{Lösungsansatz $y=e^{t\lambda}v$:}
 		\eqn[][\Rightarrow]{y}{c_1e^{4t}\begin{gmatrix}[p]2\\3\end{gmatrix}+c_2e^{-t}\begin{gmatrix}[p]1\\-1\end{gmatrix}}
 		\eqntext{Bedingung $y(0)=\begin{gmatrix}[p]1\\0\end{gmatrix}$ einsetzen:}
-		\eqn[][]{\begin{gmatrix}[p]0\\1\end{gmatrix}}{\begin{gmatrix}[p]2&1\\3&-1\end{gmatrix}\begin{gmatrix}[p]c_1\\c_2\end{gmatrix}}
+		\eqn[][]{\begin{gmatrix}[p]1\\0\end{gmatrix}}{\begin{gmatrix}[p]2&1\\3&-1\end{gmatrix}\begin{gmatrix}[p]c_1\\c_2\end{gmatrix}}
 		\eqn{\frac{1}{5}\begin{gmatrix}[p]1\\3\end{gmatrix}}{\begin{gmatrix}[p]0&1\\1&0\end{gmatrix}\begin{gmatrix}[p]c_1\\c_2\end{gmatrix}}
 		\eqntext{$\Rightarrow$ $c_1=\frac{1}{5}$ $c_2=\frac{3}{5}$}
 		\eqn[][\Rightarrow]{y}{\frac{1}{5}\begin{gmatrix}[p]2&3\\3&-3\end{gmatrix}\begin{gmatrix}[p]e^{4t}\\e^{-t}\end{gmatrix}}

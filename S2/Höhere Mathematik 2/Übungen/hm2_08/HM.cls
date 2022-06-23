@@ -15,6 +15,9 @@
 \newcommand{\Eig}{\text{Eig}}
 \newcommand{\Span}{\text{Span}}
 %custom math commands
+\NewDocumentCommand{\test}{ m }{#1}
+\NewDocumentCommand{\m}{ m o }{\begin{gmatrix}[p]#1 \IfValueT{#2}{\rowops#2}\end{gmatrix}}
+\NewDocumentCommand{\md}{ m o }{\begin{gmatrix}[v]#1 \IfValueT{#2}{\rowops#2}\end{gmatrix}}
 
 \newenvironment{eqnn}{
 	\NewDocumentCommand{\eqn}{O{} O{\Leftrightarrow} m m O{}}{\geqn[##1][##2]{##3}{=}{##4}[##5]}

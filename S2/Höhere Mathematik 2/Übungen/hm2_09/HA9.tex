@@ -1,0 +1,38 @@
+\documentclass{HM}
+\newcommand\course{HM 2}
+\newcommand\hwnumber{9}
+\usepackage{gauss}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\begin{document}
+	\begin{enumerate}
+		\item [9.2] In den vier Ecken einer quadratischen Schachtel der Seitenlänge 2 sitzen vier Ameisen, von denen jede in die jeweils im Gegen-Uhrzeigersinn nächste verliebt ist, und daher zu ihr gelangen möchte. Die Ameisen laufen gleichzeitig mit konstanter Geschwindigkeit los, und zwar jeweils auf die von ihr Geliebte zu.
+		\begin{enumerate}
+			\item Stelle ein lineares System von Differentialgleichungen für die Bahn der Ameisen auf.
+			
+			\item Bestimme die Bahnkurve der bei $(1,1)$ startenden Ameise.
+		\end{enumerate}
+		
+		\item [9.3] Löse das Anfangswertproblem
+		$$\begin{cases}
+			\dot{y_1}=3y_1+8y_2,&y_1(0)=6,\\
+			\dot{y_2}=y_1+y_2+4e^t,&y_2(0)=2.
+		\end{cases}$$
+		
+		\item [9.4] Bestimme eine Lösungsbasis der \textit{Bessel'schen Differentialgleichung der Ordnung} $p=\frac{1}{2}$,
+		$$y''+\frac{1}{x}y'+(1-\frac{1}{4x^2})y=0$$,\\
+		durch die Substitution $z=y\cdot\sqrt{x}$.
+		
+		\item [9.5] Betrachtet wird die Differentialgleichung
+		$$y'''-3y'+2y=9e^x$$.\\
+		\begin{enumerate}
+			\item Bestimme eine Lösungsbasis für die zugehörige homogene Differentialgleichung.
+			
+			\item Finde eine spezielle Lösung durch den Ansatz $y(x)=cx^2e^x$.
+			
+			\item Löse das Anfangswertproblem zum Anfangswert
+			$$y(0)=-1,\quad y'(0)=-8,\quad y''(0)=6$$.
+		\end{enumerate}
+	\end{enumerate}
+\end{document}

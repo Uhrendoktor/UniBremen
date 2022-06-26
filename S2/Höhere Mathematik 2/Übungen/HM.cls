@@ -14,6 +14,7 @@
 
 \newcommand{\Eig}{\text{Eig}}
 \newcommand{\Span}{\text{Span}}
+\newcommand{\feq}{\overset{!}{=}}
 %custom math commands
 \NewDocumentCommand{\m}{ m o }{\begin{gmatrix}[p]#1 \IfValueT{#2}{\rowops#2}\end{gmatrix}}
 \NewDocumentCommand{\md}{ m o }{\begin{gmatrix}[v]#1 \IfValueT{#2}{\rowops#2}\end{gmatrix}}

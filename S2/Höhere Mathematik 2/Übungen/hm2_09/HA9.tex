@@ -64,6 +64,49 @@
 			\dot{y_1}=3y_1+8y_2,&y_1(0)=6,\\
 			\dot{y_2}=y_1+y_2+4e^t,&y_2(0)=2.
 		\end{cases}$$
+		\begin{eqnn}
+			\eqn[][\Rightarrow]{y'}{\m{3&8\\1&1}y+e^t\m{0\\4}}
+			\eqntext{Das homogene System lösen:}
+			\eqnf{y'}{\m{3&8\\1&1}y}
+			\eqntext{Eigenwerte und Eigenvektoren von $A$ berechnen:}
+			\eqnf{P_\lambda(A)}{\md{3-\lambda &8\\1&1-\lambda}}
+			\eqn{}{(3-\lambda)(1-\lambda)-8}
+			\eqn{0}{\lambda^2-4\lambda+5}
+			\eqnspace
+			\eqn{\lambda}{2\pm 3}
+			\eqn[][\Rightarrow]{\lambda_1}{-1,}
+			\eqnf{\lambda_2}{5}
+			\eqnspace
+			\eqn[$v_1$][\Leftarrow]{0}{\m{4&8\\1&2}[\add[\cdot(-\tfrac{1}{2})][+]{0}{1}]}
+			\eqn{0}{\m{4&8\\0&0}}
+			\eqn[][\Rightarrow]{v_1}{\m{-2\\1}}
+			\eqnspace
+			\eqn[$v_2$][\Leftarrow]{0}{\m{-2&8\\1&-4}[\add[\cdot\tfrac{1}{2}][+]{0}{1}]}
+			\eqn{0}{\m{-2&8\\0&0}}
+			\eqn[][\Rightarrow]{v_2}{\m{4\\1}}
+			\eqnspace
+			\eqntext{Lösungsbasis der homogenen Differentialgleichung:}
+			\eqn[][\Rightarrow]{y^1(t)}{e^{-t}\m{-2\\1},}
+			\eqn{y^2(t)}{e^{5t}\m{4\\1}}
+			\eqnspace
+			\eqntext{Eine spezielle Lösung finden:}
+			\eqnf[(I)]{y(t)}{e^tw}[ableiten]
+			\eqn[][\Rightarrow]{y'(t)}{e^tw}
+			\geqn[][\Rightarrow]{e^tw}{\feq}{\m{3&8\\1&1}y+e^t\m{0\\4}}
+			\eqntext{I einsetzen und kürzen:}
+			\eqn{w}{\m{3&8\\1&1}w+\m{0\\4}}[$-\m{3&8\\1&1}w$]
+			\eqn{\m{-2&-8\\-1&0}w}{\m{0\\4}}
+			\eqn[][\Rightarrow]{w}{\m{-4\\1}}
+			\eqn[][\Rightarrow]{y^3}{e^t\m{-4\\1}}
+			\eqnspace
+			\eqn[][\Rightarrow]{y}{y^1c_1+y^2c_2+y^3}
+			\eqntext{Bedingung $y(0)=\m{6\\2}$ einsetzen:}
+			\eqnf{\m{-2&4\\1&1}c}{\m{10\\1}}
+			\eqn{\m{-2&4\\0&3}c}{\m{10\\6}}
+			\eqn[][\Rightarrow]{c}{\m{-1\\2}}
+			\eqnspace
+			\eqn[][\Rightarrow]{y(t)}{-e^{-t}\m{-2\\1}+2e^{5t}\m{4\\1}+e^t\m{-4\\1}}
+		\end{eqnn}		
 		
 		\item [9.4] Bestimme eine Lösungsbasis der \textit{Bessel'schen Differentialgleichung der Ordnung} $p=\frac{1}{2}$,
 		$$y''+\frac{1}{x}y'+(1-\frac{1}{4x^2})y=0$$,\\

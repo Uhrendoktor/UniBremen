@@ -18,6 +18,25 @@ datay = np.array([value.item(1) for value in data])
 print(datax, datay)
 
 plt.plot([-1,1,1,-1,-1],[-1,-1,1,1,-1])
-
 plt.plot(datax, datay)
+
+
+speed = 0.001
+pos = np.array([[1],[1]])
+sim = list()
+sim.append(pos)
+def rot(vec):
+    return np.array([[-vec.item(1)],[vec.item(0)]])
+
+for i in np.arange(0, 3000):
+    v = (rot(pos)-pos)
+    vm = np.sqrt(v.item(0)**2+v.item(1)**2)
+    vn = v/vm
+    pos= pos+ vn*speed
+    sim.append(pos)
+
+simx = np.array([value.item(0) for value in sim])
+simy = np.array([value.item(1) for value in sim])
+plt.plot(simx, simy)
+
 plt.show()

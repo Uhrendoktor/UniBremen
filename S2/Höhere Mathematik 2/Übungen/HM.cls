@@ -2,7 +2,7 @@
 \ProvidesClass{HM}[2021/10/01 HM1 class]
 
 \LoadClass[12pt,letterpaper]{article}
-\RequirePackage{fullpage, fancyhdr, amsfonts, amsmath, amssymb, mathtools, polynom, gauss, xparse}
+\RequirePackage{fullpage, fancyhdr, amsfonts, amsmath, amssymb, mathtools, polynom, gauss, xparse, longtable, graphicx, tikz}
 
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
@@ -25,11 +25,12 @@
 	\NewDocumentCommand{\geqnf}{O{} m m m O{}}{\geqn[##1][]{##2}{##3}{##4}[##5]}
 	\newcommand{\eqntext}[1]{\multicolumn{6}{l}{\rule{0pt}{17.5pt}##1}\\[5pt]}
 	\newcommand{\eqnspace}{\\[0pt]}
-	$ $\\
-	\eqnspace
-	\begin{tabular}{c c r c l l}
+
+	\setlength\LTleft{\leftmargin + 1cm}
+\setlength\LTright{\fill}
+	\begin{longtable}{c c r c l l}
 }{
-	\end{tabular}
+	\end{longtable}
 }
 %custom MATH Symbols
 \newcommand{\R}{\mathbb{R}}

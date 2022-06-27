@@ -113,7 +113,23 @@
 		durch die Substitution $z=y\cdot\sqrt{x}$.
 		
 		\item [9.5] Betrachtet wird die Differentialgleichung
-		$$y'''-3y'+2y=9e^x$$.\\
+		$$\text{(1): }y'''-3y'+2y=9e^x$$.\\
+		
+		\begin{eqnn}
+			\eqn[][]{y}{zx^-\frac{1}{2}}
+			\eqn{y'}{z'x^{-\frac{1}{2}}-\frac{z}{2}x^{-\frac{3}{2
+			}}}
+			\eqn{y''}{z''x^{-\frac{1}{2}}-z'x^{-\frac{3}{2}}+\frac{3}{4}zx^{-\frac{5}{2}}}
+			\eqntext{Einsetzen in (1)}
+		\end{eqnn}
+		\begin{align*}
+			&z''x^{-\frac{1}{2}}-z'x^{-\frac{3}{2}}+z'x^{-\frac{3}{2}}+\frac{3}{4}zx^{-\frac{5}{2}}-\frac{1}{2}zx^{-\frac{5}{2}}-\frac{1}{4}zx^{-\frac{5}{2}}+zx^{-\frac{1}{2}}\\
+			\Leftrightarrow &z''+ z = 0\\
+			&p(\lambda)=\lambda^2+1=0\\
+			&\Rightarrow\lambda=\pm i\\
+			&\Rightarrow z=c_1\cos+c_2\sin\\
+			&\Rightarrow y=\frac{c_1\cos+c_2\sin}{\sqrt{x}}\\
+		\end{align*}
 		\begin{enumerate}
 			\item Bestimme eine Lösungsbasis für die zugehörige homogene Differentialgleichung.
 			

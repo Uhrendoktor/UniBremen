@@ -1,0 +1,46 @@
+\documentclass{../HM}
+\newcommand\course{HM 2}
+\newcommand\hwnumber{10}
+\usepackage{gauss}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\begin{document}
+	\begin{enumerate}
+		\item[10.2] Eine (idealisiert homogene) Kette der Länge $l$ liegt auf einem horizontalen, reibungsfreien Tisch, wobei ein Stück Kette der Länge $a$ über den Rand hängt. Wie lange dauert es, bis die kette vom Tisch geglitten ist?\\\\
+		Hinweis: Bezeichne die Gesamtmasse der Kette mit $m$ und die Länge des überhängenden Stücks zur Zeit $t$ mit $y(t)$. Berechne die Masse $m_{\textit{ü}}(t)$ des überhängenden Stücks zur Zeit $t$. Die Gravitationskraft $m_{\textit{ü}}(t)g$ muss dann gleich $F=m\ddot{y}(t)$ sein.
+		
+		\item[10.3] Löse die folgenden Anfangswertaufgaben:
+		\begin{enumerate}
+			\item $\ddot{y}+2\dot{y}-3y=e^{2t}, y(0)=0, \dot{y}(0)=1$.
+			
+			\item $\ddot{y}+y=t+2\cos(t), y(\pi)=2\pi, \dot{y}(\pi)=\pi$.
+		\end{enumerate}
+		
+		\item[10.4]
+		\begin{enumerate}
+			\item Stelle eine homogene lineare Differentialgleichung 3.Ordnung auf, so dass eine Lösungsbasis gegeben ist durch $y_1(t)=1, y_2(t)=t, y_3(t)=e^t$.
+			
+			\item Finde eine homogene lineare Differentialgleichung, so dass $y_1:\R\to\R, y_1(t)=t$ und $y_2:\R\to\R, y_2(t)=\sin(t)$ Lösungen sind.
+			
+			\item Warum ist es in (b) unmöglich, eine homogene lineare Differentialgleichung 2.Ordnung aufzustellen, selbst wenn man zeitabhängige Koeffizienten zulässt, d.h. wenn man eine Differentialgleichung der Form
+			$$\ddot{y}+a_1(t)\dot{y}+a_0(t)y=0$$\\
+			sucht, mit $a_0,1_1:\R\to\R$?
+			
+			\item Warum ist es in (b) auch nicht möglich, eine homogene lineare Differentialgleichung 3.Ordnung aufzustellen, selbst wenn man zeitabhängige Koeffizienten zulässt?
+			
+			\item[] Hinweis zu (c) und (d): Wronski-Determinante, Satz 10.1, $n$ Lösungen $y_1,\hdots,y_n$ einer homogenen linearen Differentialgleichung $n$.Ordnung sind genau dann linear unabhängig, wenn
+			$$\md{
+				y_1(t)&y_2(t)&\hdots&y_n(t)\\
+				\dot{y}_1(t)&\dot{y}_2(t)&\hdots&\dot{y}_n(t)\\
+				\vdots&\vdots&\ddots&\vdots\\
+				y^{(n-1)}_1(t)&y^{(n-1)}_2(t)&\hdots&y^{(n-1)}_n(t)
+			}\neq 0$$\\
+			für alle $t$. Was passiert hier für $t=0$?
+		\end{enumerate}
+		
+		\item[10.5] Eine gedämpfte Schwingung ohne Anregung sei modelliert durch
+		$$\ddots{y}+a\dot{y}+4y=0, \quad y(0)=5,\quad \dot{y}(0)=-1$$\\
+		Bestimme den Parameter $a>0$ so, dass gerade der aperiodische Grenzfall eintritt, und berechne die Lösung für diesen Fall. Stelle den zeitlichen Verlauf der Schwingungen graphisch dar.
+	\end{enumerate}
+\end{document}

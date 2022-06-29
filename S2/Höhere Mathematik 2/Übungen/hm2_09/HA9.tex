@@ -66,9 +66,9 @@
 			\dot{y_2}=y_1+y_2+4e^t,&y_2(0)=2.
 		\end{cases}$$
 		\begin{eqnn}
-			\eqn[][\Rightarrow]{y'}{\m{3&8\\1&1}y+e^t\m{0\\4}}
+			\eqn[][\Rightarrow]{\dot{y}}{\m{3&8\\1&1}y+e^t\m{0\\4}}
 			\eqntext{Das homogene System lösen:}
-			\eqnf{y'}{\m{3&8\\1&1}y}
+			\eqnf{\dot{y}}{\m{3&8\\1&1}y}
 			\eqntext{Eigenwerte und Eigenvektoren von $A$ berechnen:}
 			\eqnf{P_\lambda(A)}{\md{3-\lambda &8\\1&1-\lambda}}
 			\eqn{}{(3-\lambda)(1-\lambda)-8}
@@ -92,7 +92,7 @@
 			\eqnspace
 			\eqntext{Eine spezielle Lösung finden:}
 			\eqnf[(I)]{y(t)}{e^tw}[ableiten]
-			\eqn[][\Rightarrow]{y'(t)}{e^tw}
+			\eqn[][\Rightarrow]{\dot{y}(t)}{e^tw}
 			\geqn[][\Rightarrow]{e^tw}{\feq}{\m{3&8\\1&1}y+e^t\m{0\\4}}
 			\eqntext{I einsetzen und kürzen:}
 			\eqn{w}{\m{3&8\\1&1}w+\m{0\\4}}[$-\m{3&8\\1&1}w$]
@@ -134,10 +134,42 @@
 		\begin{enumerate}
 			\item Bestimme eine Lösungsbasis für die zugehörige homogene Differentialgleichung.
 			
+			\begin{eqnn}
+				\eqn[][]{p(\lambda)}{\lambda^3-3\lambda+2}
+				\eqn[][\Rightarrow]{0}{(\lambda-1)^2(\lambda+2)}
+				\eqntext{Lösung raten mit hilfe vom Satz über rationale Nullstellen}
+				\eqn[][\Rightarrow]{\lambda_1}{1}
+				\eqn{0}{\lambda^3-3\lambda+2}[($\lambda-1$)]
+				\eqn{0}{\lambda^2+\lambda-2}
+				\eqn{0}{(\lambda-1)(\lambda+2)}
+				\eqnspace
+				\eqntext{$\Rightarrow$ $\lambda_1=1$, $\lambda_2=1$, $\lambda_3=-2$}
+				\eqn[][\Rightarrow]{y_H}{c_1e^t+c_2te^t+c_3e^{-2}}
+			\end{eqnn}
 			\item Finde eine spezielle Lösung durch den Ansatz $y(x)=cx^2e^x$.
-			
+				\begin{eqnn}
+					\eqn[][\Rightarrow]{y_p}{cx^2e^x}
+					\eqn[][\Rightarrow]{y_p'}{ce^x(2x+x^2)}
+					\eqn[][\Rightarrow]{y_p''}{ce^x(x^2+4x+2)}
+					\eqn[][\Rightarrow]{y_p'''}{ce^x(x^2+6x+6)}
+					\eqn[][\Rightarrow]{y_p}{ce^x(x^2+6x+6-6x-3x^2+2x^2)}
+					\eqnspace
+					\eqn{y_p}{6ce^x \feq 9e^x}
+					\eqn[][\Rightarrow]{c}{\frac{3}{2}}
+					\eqn[][\Rightarrow]{y_p}{\frac{3}{2}x^2e^x}
+					\eqnspace
+					\eqn[][\Rightarrow]{y}{c_1e^t+c_2te^t+c_3e^{-2}+\frac{3}{2}x^2e^x}
+				\end{eqnn}
 			\item Löse das Anfangswertproblem zum Anfangswert
 			$$y(0)=-1,\quad y'(0)=-8,\quad y''(0)=6$$.
+			\begin{eqnn}
+				\eqn[][\Rightarrow]{y(o)}{c_1+c_3=-1}
+				\eqn[][\Rightarrow]{y'(o)}{c_1+c_2-2c_3=-8}
+				\eqn[][\Rightarrow]{y''(o)}{c_1+2c_2+4c_3=3}
+				\eqn[][\Rightarrow]{\m{1&0&1\\1&1&-2\\1&2&4}c}{\m{-1\\-8\\3}}
+				\eqn{\m{1&0&0\\0&1&0\\0&0&1}c}{\m{-3\\-1\\2}}
+				\eqn[][\Rightarrow]{y}{e^x(-3-x+\frac{3}{2}x^2)+2e^{-2x}}
+			\end{eqnn}		
 		\end{enumerate}
 	\end{enumerate}
 \end{document}

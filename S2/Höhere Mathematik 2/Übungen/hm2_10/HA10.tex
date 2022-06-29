@@ -5,10 +5,41 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 
+\newcommand{\mue}{m_{\textit{ü}}}
 \begin{document}
 	\begin{enumerate}
 		\item[10.2] Eine (idealisiert homogene) Kette der Länge $l$ liegt auf einem horizontalen, reibungsfreien Tisch, wobei ein Stück Kette der Länge $a$ über den Rand hängt. Wie lange dauert es, bis die kette vom Tisch geglitten ist?\\\\
-		Hinweis: Bezeichne die Gesamtmasse der Kette mit $m$ und die Länge des überhängenden Stücks zur Zeit $t$ mit $y(t)$. Berechne die Masse $m_{\textit{ü}}(t)$ des überhängenden Stücks zur Zeit $t$. Die Gravitationskraft $m_{\textit{ü}}(t)g$ muss dann gleich $F=m\ddot{y}(t)$ sein.
+		Hinweis: Bezeichne die Gesamtmasse der Kette mit $m$ und die Länge des überhängenden Stücks zur Zeit $t$ mit $y(t)$. Berechne die Masse $\mue(t)$ des überhängenden Stücks zur Zeit $t$. Die Gravitationskraft $\mue(t)g$ muss dann gleich $F=m\ddot{y}(t)$ sein.
+		
+		\begin{eqnn}
+			\eqnf{\mue(t)}{y(t)\frac{m}{l}}
+			\eqnf{F}{m\ddot{y}(t)}
+			\eqn{F}{\mue(t)g}
+			\geqn[][\Rightarrow]{m\ddot{y}(t)}{\feq}{\mue(t)g}
+			\eqn{\ddot{y}(t)-y(t)\frac{g}{l}}{0}
+			\eqntext{Homogene Differentialgleichung lösen:}
+			\eqn[][\Rightarrow]{p(\lambda)}{\lambda^2-\frac{g}{l}=0}
+			\eqn[][\Rightarrow]{\lambda}{\pm\sqrt{\frac{g}{l}}}
+			\eqn[][\Rightarrow]{y(t)}{c_1e^{t}\sqrt{\frac{g}{l}}+c_2e^{-t\sqrt{\frac{g}{l}}}}
+			\eqntext{Bedingung $y(0)=a$ einsetzen, da die Länge des überhängenden Stücks der Kette zum Zeitpunkt $t=0\to a$ ist:}
+			\eqn[][\Rightarrow]{c_1+c_2}{a}
+			\eqn{c_1}{a-c_2}
+			\eqn[][\Rightarrow]{y(t)}{(a-c_2)e^{t}\sqrt{\frac{g}{l}}+c_2e^{-t\sqrt{\frac{g}{l}}}}
+			\eqnspace
+			\eqntext{Da die Kette eine idealisiert homogene Verteilung ihres Gewichts aufweist,\\ folgt $\ddot{\mue}(t)\feq 0$:}
+			\eqnf{\mue(t)}{y(t)\frac{m}{l}}
+			\eqn[][\Rightarrow]{\dot{\mue}(t)}{\sqrt{\frac{g}{l}}\frac{(a-c_2)m}{l}e^{t\sqrt{\frac{g}{l}}}-\sqrt{\frac{g}{l}}\frac{c_2m}{l}e^{-t\sqrt{\frac{g}{l}}}}
+			\eqn[][\Rightarrow]{\ddot{\mue}(t)}{\frac{mg}{l^2}\left((a-c_2)e^{t\sqrt{\frac{g}{l}}}+c_2e^{-t\sqrt{\frac{g}{l}}}\right)\feq 0}
+			\eqn{0}{ae^{t\sqrt{\frac{g}{l}}}-c_2e^{t\sqrt{\frac{g}{l}}}+c_2e^{-t\sqrt{\frac{g}{l}}}}
+			\eqn{0}{c_2(e^{-t\sqrt{\frac{g}{l}}}-e^{t\sqrt{\frac{g}{l}}})}
+			\eqn{c_2}{0}
+			\eqntext{$c_2$ in $y$ einsetzen:}
+			\eqn[][\Rightarrow]{y(t)}{ae^{t\sqrt{\frac{g}{l}}}}
+			\eqntext{Zum Zeitpunkt des Abrutschen, muss $y(t)=l$ betragen (Die gesamte Kette ist vom Tisch gerutscht):}
+			\geqnf{ae^{t\sqrt{\frac{g}{l}}}}{\feq}{l}
+			\eqn{t\sqrt{\frac{g}{l}}}{\ln(\frac{l}{a})}
+			\eqn{t}{\frac{\ln(\frac{l}{a})}{\sqrt{\frac{g}{l}}}}
+		\end{eqnn}
 		
 		\item[10.3] Löse die folgenden Anfangswertaufgaben:
 		\begin{enumerate}

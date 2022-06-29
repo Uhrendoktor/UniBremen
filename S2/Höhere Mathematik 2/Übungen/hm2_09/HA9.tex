@@ -13,15 +13,16 @@
 			\begin{eqnn}
 				\eqntext{Position der Ameise 1:}
 				\eqnf{A_1}{\m{x_{11}, x_{12}}}
-				\eqntext{Geschwindigkeit der Ameise 1:}
-				\eqnf{v_1}{A_2-A_1}
-				\eqn{v_1}{\m{x_{21}\\x_{22}}-\m{x_{11}\\x{12}}}
+				\eqntext{Konstante Geschwindigkeit der Ameise 1:}
+				\eqnf{v_1}{\frac{A_2-A_1}{|A_2-A_1|}v}
+				\eqn{v_1}{\frac{\m{x_{21}\\x_{22}}-\m{x_{11}\\x{12}}}{\left|\m{x_{21}\\x_{22}}-\m{x_{11}\\x{12}}\right|}v}
 				\eqntext{$A_2 = A_1$ um 90° rotiert $\Rightarrow \m{x_{21}\\x_{22}}=\m{-x_{12}\\x_{11}}$:}
-				\eqn[][\Rightarrow]{v_1}{\m{-x_{11}-x_{12}\\x{11}-x_{12}}}
-				\eqn[][\Rightarrow]{y}{\m{-1&-1\\1&-1}y}
+				\eqn[][\Rightarrow]{v_1}{\frac{\m{-x_{11}-x_{12}\\x_{11}-x_{12}}}{\left|\m{-x_{11}-x_{12}\\x_{11}-x_{12}}\right|}v}
+				\eqn[][\Rightarrow]{y}{\m{-1&-1\\1&-1}y\frac{v}{\sqrt{2(x_{11}^2+x_{12}^2)}}}
 			\end{eqnn}
 			
-			\item Bestimme die Bahnkurve der bei $(1,1)$ startenden Ameise.
+			\item Bestimme die Bahnkurve der bei $(1,1)$ startenden Ameise.\\\\
+			Da sich die Bahnkurve der Ameise durch ihre Geschwindigkeit zum Zeitpunkt $t$ nicht verändert, die Länge des Geschwindigkeitsvektors keinen Einfluss auf die Bahnkurve besitzt, kann der Faktor der Geschwindigkeitsbegrenzung $\frac{v}{\sqrt{2(x_{11}^2+x_{12}^2)}}\to 1$ geändert werden. 
 			\begin{eqnn}
 				\eqntext{Eigenwerte und Eigenvektoren bestimmen:}
 				\eqn{P_\lambda(A)}{\md{-1-\lambda&-1\\-1&1-\lambda}}

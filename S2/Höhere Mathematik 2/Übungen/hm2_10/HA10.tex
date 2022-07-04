@@ -25,21 +25,26 @@
 			\eqn[][\Rightarrow]{c_1+c_2}{a}
 			\eqn{c_1}{a-c_2}
 			\eqn[][\Rightarrow]{y(t)}{(a-c_2)e^{t\sqrt{\frac{g}{l}}}+c_2e^{-t\sqrt{\frac{g}{l}}}}
+			\eqn[][\Rightarrow]{\dot{y}(t)}{\sqrt{\frac{g}{l}}((a-c_2)e^{t\sqrt{\frac{g}{l}}}-c_2e^{-t\sqrt{\frac{g}{l}}})}
 			\eqnspace
-			\eqntext{Da die Kette eine idealisiert homogene Verteilung ihres Gewichts aufweist, folgt $\dddot{\mue}(t)\feq 0$:}
-			\eqnf{\mue(t)}{y(t)\frac{m}{l}}
-			\eqn[][\Rightarrow]{\dot{\mue}(t)}{\sqrt{\frac{g}{l}}\frac{(a-c_2)m}{l}e^{t\sqrt{\frac{g}{l}}}-\sqrt{\frac{g}{l}}\frac{c_2m}{l}e^{-t\sqrt{\frac{g}{l}}}}
-			\eqn[][\Rightarrow]{\ddot{\mue}(t)}{\frac{mg}{l^2}\left((a-c_2)e^{t\sqrt{\frac{g}{l}}}+c_2e^{-t\sqrt{\frac{g}{l}}}\right)}
-			\eqn[][\Rightarrow]{\dddot{\mue}(t)}{\frac{mg}{l^2}\sqrt{\frac{g}{l}}\left((a-c_2)e^{t\sqrt{\frac{g}{l}}}-c_2e^{-t\sqrt{\frac{g}{l}}}\right)\feq 0}
-			\eqn{0}{ae^{t\sqrt{\frac{g}{l}}}-c_2e^{t\sqrt{\frac{g}{l}}}-c_2e^{-t\sqrt{\frac{g}{l}}}}
-			\eqn{0}{-c_2(e^{-t\sqrt{\frac{g}{l}}}-e^{t\sqrt{\frac{g}{l}}})}
-			\eqn{c_2}{0}
+			\eqntext{Da die Kette am Anfang liegt, die Geschwindigkeit $\dot{y}$ zum Zeitpunkt $t$ demnach $0$ ist ($\dot{y}(0)=0$) folgt:}
+			\eqnf{0}{\sqrt{\frac{g}{l}}(a-2c_2)}
+			\eqn{c_2}{\frac{a}{2}}
+			
+			%\eqntext{Da die Kette eine idealisiert homogene Verteilung ihres Gewichts aufweist, folgt $\dddot{\mue}(t)\feq 0$:}
+			%\eqnf{\mue(t)}{y(t)\frac{m}{l}}
+			%\eqn[][\Rightarrow]{\dot{\mue}(t)}{\sqrt{\frac{g}{l}}\frac{(a-c_2)m}{l}e^{t\sqrt{\frac{g}{l}}}-\sqrt{\frac{g}{l}}\frac{c_2m}{l}e^{-t\sqrt{\frac{g}{l}}}}
+			%\eqn[][\Rightarrow]{\ddot{\mue}(t)}{\frac{mg}{l^2}\left((a-c_2)e^{t\sqrt{\frac{g}{l}}}+c_2e^{-t\sqrt{\frac{g}{l}}}\right)}
+			%\eqn[][\Rightarrow]{\dddot{\mue}(t)}{\frac{mg}{l^2}\sqrt{\frac{g}{l}}\left((a-c_2)e^{t\sqrt{\frac{g}{l}}}-c_2e^{-t\sqrt{\frac{g}{l}}}\right)\feq 0}
+			%\eqn{0}{ae^{t\sqrt{\frac{g}{l}}}-c_2e^{t\sqrt{\frac{g}{l}}}-c_2e^{-t\sqrt{\frac{g}{l}}}}
+			%\eqn{0}{-c_2(e^{-t\sqrt{\frac{g}{l}}}-e^{t\sqrt{\frac{g}{l}}})}
+			%\eqn{c_2}{0}
 			\eqntext{$c_2$ in $y$ einsetzen:}
-			\eqn[][\Rightarrow]{y(t)}{ae^{t\sqrt{\frac{g}{l}}}}
+			\eqn[][\Rightarrow]{y(t)}{\frac{a}{2}\left(e^{t\sqrt{\frac{g}{l}}}+e^{-t\sqrt{\frac{g}{l}}}\right)}
 			\eqntext{Zum Zeitpunkt des Abrutschen, muss $y(t)=l$ betragen (Die gesamte Kette ist vom Tisch gerutscht):}
-			\geqnf{ae^{t\sqrt{\frac{g}{l}}}}{\feq}{l}
-			\eqn{t\sqrt{\frac{g}{l}}}{\ln(\frac{l}{a})}
-			\eqn{t}{\frac{\ln(\frac{l}{a})}{\sqrt{\frac{g}{l}}}}
+			\geqnf{l}{\feq}{\frac{a}{2}\left(e^{t\sqrt{\frac{g}{l}}}+e^{-t\sqrt{\frac{g}{l}}}\right)}
+			\eqn{l}{a\cosh(\sqrt{\frac{g}{l}}t)}
+			\eqn{t}{\arccosh(\frac{l}{a})\sqrt{\frac{l}{g}}}
 		\end{eqnn}
 		
 		\item[10.3] Löse die folgenden Anfangswertaufgaben:

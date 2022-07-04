@@ -24,7 +24,7 @@
 	\NewDocumentCommand{\eqnf}{O{} m m O{}}{\eqn[##1][]{##2}{##3}[##4]}
 	\NewDocumentCommand{\geqn}{O{} O{\Leftrightarrow} m m m O{}}{##1&$##2$&$##3$&$##4$&$##5$&\def\temp{##6}\ifx\temp\empty$ $\else$\vert$ ##6\fi\\}
 	\NewDocumentCommand{\geqnf}{O{} m m m O{}}{\geqn[##1][]{##2}{##3}{##4}[##5]}
-	\newcommand{\eqntext}[1]{\multicolumn{6}{l}{\rule{0pt}{17.5pt}##1}\\[5pt]}
+	\newcommand{\eqntext}[1]{\multicolumn{6}{l}{\rule{0pt}{17.5pt}\parbox{\textwidth-\leftmargin-1cm}{##1}}\\[5pt]}
 	\newcommand{\eqnspace}{\\[0pt]}
 
 	\setlength\LTleft{\leftmargin + 1cm}

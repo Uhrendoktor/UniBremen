@@ -87,7 +87,8 @@
 				\eqnspace
 				\eqntext{eine homogene Lösungsbasis finden:}
 				\eqnf{y_H(t)}{c_1e^{it}+c_2e^{-it}}
-				\eqn{y_H(t)}{c_1\cos(t)+c_2\cos(-t)}
+				%\eqn{y_H(t)}{c_1\sin(t)+c_2\sin(-t)}
+				%\eqn{y_H(t)}{c_1\cos(t)+c_2\cos(-t)}
 				\eqnspace
 				\eqntext{spezielle Lösungsbasen finden:}
 				\eqn[y_{s1}][\Leftarrow]{\ddot{y}+y}{t}
@@ -114,12 +115,19 @@
 				\eqn{y_{s2}}{\Re{\widetilde{y}_{s2}}}
 				\eqn{y_{s2}}{t\sin(t)}
 				\eqntext{Da $y=y_H+y_s$:}
-				\eqn[][\Rightarrow]{y(t)}{c_1\cos(t)+c_2\cos(-t)+t+t\sin(t)}
-				\eqn{\dot{y}(t)}{-c_1\sin(t)+c_2\sin(-t)+1+\sin(t)+t\cos(t)}
+				\eqn[][\Rightarrow]{y(t)}{c_1e^{it}+c_2e^{-it}+t+t\sin(t)}
+				\eqn{\dot{y}(t)}{c_1ie^{it}-c_2e^{-it}+1+\sin(t)+t\cos(t)}
 				\eqntext{Anfangswertbedingungen einsetzen:}
-				\eqn[y(\pi)=2\pi][]{-c_1-c_2+\pi}{2\pi}
-				\eqn{c_1+c_2}{-\pi}
-				\eqn[\dot{y}(\pi)=\pi][]{-1-\pi}{\pi}
+				\eqn[y(\pi)=2\pi][]{-ic_1-c_2+\pi}{2\pi}
+				\eqn{ic_1+c_2}{-\pi}
+				\eqn[\dot{y}(\pi)=\pi][]{-ic_1+c_2+1-\pi}{\pi}
+				\eqn{-ic_1+c_2}{2\pi-1}
+				\eqn[][\Rightarrow]{\m{-i&-1\\-i&1}[\add[\cdot(-1)][+]{0}{1}]c}{\m{-\pi\\2\pi-1}}
+				\eqn{\m{-i&-1\\0&2}}{\m{-pi\\3\pi-1}}
+				\eqn[][\Rightarrow]{c_2}{\frac{1}{2}(\pi-1),}
+				\eqnf{c_1}{\frac{i}{2}(-\pi-1)}
+				\eqntext{$c_1,c_2$ in $y$ einsetzen:}
+				\eqn{y(t)}{\frac{1}{2}(-i(\pi+1)e^{it}+(\pi-1)e^{-it})+t(\in(t)+1)}
 			\end{eqnn}
 		\end{enumerate}
 		

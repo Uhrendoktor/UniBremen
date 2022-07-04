@@ -53,13 +53,36 @@
 		\begin{enumerate}
 			\item Stelle eine homogene lineare Differentialgleichung 3.Ordnung auf, so dass eine Lösungsbasis gegeben ist durch $y_1(t)=1, y_2(t)=t, y_3(t)=e^t$.
 			
+			\begin{eqnn}
+				\eqntext{$\lambda_1=1$, $\lambda_2=0$ doppelte Nullstelle}
+				\eqn[][\Rightarrow]{p(\lambda)}{(\lambda-1)\lambda^2}
+				\eqn[][\Rightarrow]{y'''-y''}{0}
+			\end{eqnn}
+			
 			\item Finde eine homogene lineare Differentialgleichung, so dass $y_1:\R\to\R, y_1(t)=t$ und $y_2:\R\to\R, y_2(t)=\sin(t)$ Lösungen sind.
+			
+			
+			\begin{eqnn}
+				\eqntext{$\lambda_1=t$, $\lambda_2=\sin(t)=\Im(e^{it})$}
+				\eqn[][\Rightarrow]{p(\lambda)}{\lambda^2(\lambda^2+1)}
+				\eqn[][\Rightarrow]{y''''+y''}{0}
+			\end{eqnn}
 			
 			\item Warum ist es in (b) unmöglich, eine homogene lineare Differentialgleichung 2.Ordnung aufzustellen, selbst wenn man zeitabhängige Koeffizienten zulässt, d.h. wenn man eine Differentialgleichung der Form
 			$$\ddot{y}+a_1(t)\dot{y}+a_0(t)y=0$$\\
-			sucht, mit $a_0,1_1:\R\to\R$?
+			sucht, mit $a_0,a_1:\R\to\R$?\\
+			
+			$$\md{t&\sin(t)\\1&\cos(t))}= t\cos(t)-\sin(t)$$
+			
+			Im Fall $t=0$ ist die Wronski-Determinante gleich 0\\
+			Daraus folgt, dass die gegebenen Lösungen nicht linear unabhängig sind. Und da eine lineare Differentialgleichung 2. Ordnung dieser Art, zwei linear unabhänige Lösungen hat wissen wir, dass es keine lineare Differentialgleichung 2. Ordnung mit den gegebenen Lösungen gibt.
 			
 			\item Warum ist es in (b) auch nicht möglich, eine homogene lineare Differentialgleichung 3.Ordnung aufzustellen, selbst wenn man zeitabhängige Koeffizienten zulässt?
+			
+			
+			$$\md{t&\sin(t)&a\\1&\cos(t)&b\\0&-\sin(t)&c}=t\cos(t)c-\sin(t)a+\sin(b)t-c\sin(t)$$
+			Im Fall $t=0$ ist die Wronski-Determinante gleich 0\\
+			Wie in (d) folgt hieraus, dass es keine lineare Differentialgleichung 3.Ordnung mit den gegebenen Lösungen gibt.\\
 			
 			\item[] Hinweis zu (c) und (d): Wronski-Determinante, Satz 10.1, $n$ Lösungen $y_1,\hdots,y_n$ einer homogenen linearen Differentialgleichung $n$.Ordnung sind genau dann linear unabhängig, wenn
 			$$\md{

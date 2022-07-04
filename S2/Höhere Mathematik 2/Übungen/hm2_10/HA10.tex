@@ -82,7 +82,7 @@
 			
 			\item $\ddot{y}+y=t+2\cos(t), y(\pi)=2\pi, \dot{y}(\pi)=\pi$.
 			\begin{eqnn}
-				\eqnf{P(\lambda})}{\lambda^2+1=0}
+				\eqnf{P(\lambda)}{\lambda^2+1=0}
 				\eqn{\lambda}{\pm i}
 				\eqnspace
 				\eqntext{eine homogene Lösungsbasis finden:}
@@ -91,7 +91,7 @@
 				%\eqn{y_H(t)}{c_1\cos(t)+c_2\cos(-t)}
 				\eqnspace
 				\eqntext{spezielle Lösungsbasen finden:}
-				\eqn[y_{s1}][\Leftarrow]{\ddot{y}+y}{t}
+				\eqn[$y_{s1}$][\Leftarrow]{\ddot{y}+y}{t}
 				\eqntext{da $\lambda=0\neq\lambda_1,\lambda_2$ liegt kein Resonanzfall vor:}
 				\eqn[][\Rightarrow]{y_{s1}}{c_3+c_4t}
 				\eqn{\dot{y}_{s1}}{c_4}
@@ -103,7 +103,7 @@
 				\eqntext{$c_3,c_4$ in $y_{s1}$ einsetzen:}
 				\eqn[][\Rightarrow]{y_{s1}}{t}
 				\eqnspace
-				\eqn[y_{s2}][\Leftrightarrow]{\ddot{y}+y}{2\cos(t)=\Re(2e^{it})}
+				\eqn[$y_{s2}$][\Leftrightarrow]{\ddot{y}+y}{2\cos(t)=\Re(2e^{it})}
 				\eqntext{durch $\lambda=i=\lambda_1$ liegt ein Resonanzfall einer einfachen Nullstelle vor. Dadurch muss ein Vorfaktor $t$ hinzugefügt werden:}
 				\eqn[][\Rightarrow]{\widetilde{y}_{s2}(t)}{cte^{it}}
 				\eqn{\widetilde{\dot{y}}_{s2}(t)}{ce^{it}(ti+1)}
@@ -118,9 +118,9 @@
 				\eqn[][\Rightarrow]{y(t)}{c_1e^{it}+c_2e^{-it}+t+t\sin(t)}
 				\eqn{\dot{y}(t)}{c_1ie^{it}-c_2e^{-it}+1+\sin(t)+t\cos(t)}
 				\eqntext{Anfangswertbedingungen einsetzen:}
-				\eqn[y(\pi)=2\pi][]{-ic_1-c_2+\pi}{2\pi}
+				\eqn[$y(\pi)=2\pi$][]{-ic_1-c_2+\pi}{2\pi}
 				\eqn{ic_1+c_2}{-\pi}
-				\eqn[\dot{y}(\pi)=\pi][]{-ic_1+c_2+1-\pi}{\pi}
+				\eqn[$\dot{y}(\pi)=\pi$][]{-ic_1+c_2+1-\pi}{\pi}
 				\eqn{-ic_1+c_2}{2\pi-1}
 				\eqn[][\Rightarrow]{\m{-i&-1\\-i&1}[\add[\cdot(-1)][+]{0}{1}]c}{\m{-\pi\\2\pi-1}}
 				\eqn{\m{-i&-1\\0&2}}{\m{-pi\\3\pi-1}}
@@ -179,5 +179,26 @@
 		\item[10.5] Eine gedämpfte Schwingung ohne Anregung sei modelliert durch
 		$$\ddot{y}+a\dot{y}+4y=0, \quad y(0)=5,\quad \dot{y}(0)=-1$$\\
 		Bestimme den Parameter $a>0$ so, dass gerade der aperiodische Grenzfall eintritt, und berechne die Lösung für diesen Fall. Stelle den zeitlichen Verlauf der Schwingungen graphisch dar.
+		\begin{eqnn}
+			\eqntext{Aus dem Ansatz für Kritisch gedämpfte Fälle:}
+			\eqn[][\Rightarrow]{\ddot{y}+2p\dot{y}+\omega^2y}{\ddot{y}+a\dot{y}+4y}
+			\eqn[][\Rightarrow]{a}{2p}
+			\eqn[][\Rightarrow]{\omega}{2}
+			\eqn[][\Rightarrow]{y}{c_1e^{-2t}+c_2te^{-2t}}
+			\eqntext{Anfangswerte einsetzen:}
+			\eqn[][\Rightarrow]{c_1}{5}
+			\eqn[][\Rightarrow]{-1}{-2c_1+c_2}
+			\eqn{c_2}{9}
+			\eqn[][\Rightarrow]{y}{e^{-2t}(t+9t)}
+		\end{eqnn}
+		\begin{tikzpicture}
+			\begin{axis}[
+				grid = both,
+				width = \textwidth,
+				height = 0.5\textwidth
+				]
+				\addplot[domain = -1:2.5,blue,thick] {exp(-2*x)*(5+9*x)};
+			\end{axis}
+		\end{tikzpicture}
 	\end{enumerate}
 \end{document}

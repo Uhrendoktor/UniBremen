@@ -1,0 +1,29 @@
+\documentclass{../HM}
+\newcommand\course{HM 2}
+\newcommand\hwnumber{11}
+\usepackage{gauss}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\newcommand{\mue}{m_{\textit{ü}}}
+\begin{document}
+	\begin{enumerate}
+		\item[11.3] a
+		\item[11.4] Sei $c>0$, und $f,g: \R \to \R$ seien zweimal stetig differenzierbar. Zeige: Die Funktion $u: \R^2 \to \R$, $u(t,x)\coloneqq f(x+ct)+g(x-ct)$ ist eine Lösung der \textit{Wellengleichung}
+		$$\frac{\partial^2}{\partial t^2}u(t,x)=c^2\cdot \frac{\partial^2}{\partial x^2}u(t,x)$$
+		\item[11.5] Bestimme Lage und Art der lokalen Extrema folgender Funktionen:
+		\begin{enumerate}
+			\item $f:\R^2 \to \R, f(x,y)\coloneq xy^2-4xy+x^2$
+			\item $g:(0,\pi)\times(0,\pi)\to \R, g(x,y) \coloneq \sin(x) + \sin(y) + \sin(x+y)$
+		\end{enumerate}
+		\item[11.6]
+		\begin{enumerate}
+			\item Berechne die Jacobi-Matrix der Abbildungen (Polar- bzw. Kugelkoordinaten)
+			\begin{enumerate}
+				\item $F:\R^2 \to \R^2,F(r,\varphi)\coloneq(r \cos(\varphi), r\sin(\varphi))^T$
+				\item $G: \R^3 \to \R^3, G(r, \theta, \varphi)\coloneq(r \cos(\theta) \cos(\varphi), r\cos(\theta)\sin(\varphi),r\sin(\theta))^T$
+			\end{enumerate}
+		\end{enumerate}
+
+	\end{enumerate}
+\end{document}

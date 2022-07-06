@@ -8,21 +8,29 @@
 \newcommand{\mue}{m_{\textit{ü}}}
 \begin{document}
 	\begin{enumerate}
-		\item[11.3] a
-		\item[11.4] Sei $c>0$, und $f,g: \R \to \R$ seien zweimal stetig differenzierbar. Zeige: Die Funktion $u: \R^2 \to \R$, $u(t,x)\coloneqq f(x+ct)+g(x-ct)$ ist eine Lösung der \textit{Wellengleichung}
+		\item[11.3] 
+		\begin{enumerate}
+			\item Sei $D \coloneqq \{(x,y,z)\in \R^3;x\neq 0\}$. Bestimme den Gradienten $\varDelta f$ der Function $f: D \to \R, f(x,y,z) \coloneqq y\sin(xz^2)+\frac{x \cos(y)}{y}$.
+			\item Entscheide, ob es partiell differenzierbare Funktionen auf $R^2$ bzw. $R^3$ gibt mit
+			$$\varDelta f(x,y)=\m{x+y\\-x+y}\text{ bzw. }\varDelta(x,y,z)=\m{yz\\xz\\xy}$$
+			Bestimme gegebenenfalls ein solches $f$.
+		\end{enumerate}
+		\item[11.4] Sei $c>0$, und $f,g: \R \to \R$ seien zweimal stetig differenzierba. Zeige: Die Funktion $u: \R^2 \to \R$, $u(t,x)\coloneqq f(x+ct)+g(x-ct)$ ist eine Lösung der \textit{Wellengleichung}
 		$$\frac{\partial^2}{\partial t^2}u(t,x)=c^2\cdot \frac{\partial^2}{\partial x^2}u(t,x)$$
 		\item[11.5] Bestimme Lage und Art der lokalen Extrema folgender Funktionen:
 		\begin{enumerate}
-			\item $f:\R^2 \to \R, f(x,y)\coloneq xy^2-4xy+x^2$
-			\item $g:(0,\pi)\times(0,\pi)\to \R, g(x,y) \coloneq \sin(x) + \sin(y) + \sin(x+y)$
+			\item $f:\R^2 \to \R, f(x,y)\coloneqq xy^2-4xy+x^2$
+			\item $g:(0,\pi)\times(0,\pi)\to \R, g(x,y) \coloneqq \sin(x) + \sin(y) + \sin(x+y)$
 		\end{enumerate}
 		\item[11.6]
 		\begin{enumerate}
 			\item Berechne die Jacobi-Matrix der Abbildungen (Polar- bzw. Kugelkoordinaten)
 			\begin{enumerate}
-				\item $F:\R^2 \to \R^2,F(r,\varphi)\coloneq(r \cos(\varphi), r\sin(\varphi))^T$
-				\item $G: \R^3 \to \R^3, G(r, \theta, \varphi)\coloneq(r \cos(\theta) \cos(\varphi), r\cos(\theta)\sin(\varphi),r\sin(\theta))^T$
+				\item $F:\R^2 \to \R^2,F(r,\varphi)\coloneqq(r \cos(\varphi), r\sin(\varphi))^T$
+				\item $G: \R^3 \to \R^3, G(r, \theta, \varphi)\coloneqq(r \cos(\theta) \cos(\varphi), r\cos(\theta)\sin(\varphi),r\sin(\theta))^T$\\
+				Gib die partiellen Ableitungen von $F_2$ und $G_3$ an, wobei $F = (F_1 , F_2 )^T$ und $G = (G_1 , G_2 , G_3 )^T$.
 			\end{enumerate}
+		\item Bestimme, in welchen Punkten die Jacobi-Matrizen aus (a) invertierbar sind.
 		\end{enumerate}
 
 	\end{enumerate}

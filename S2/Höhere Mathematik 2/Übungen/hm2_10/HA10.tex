@@ -162,10 +162,27 @@
 			$$\ddot{y}+a_1(t)\dot{y}+a_0(t)y=0$$\\
 			sucht, mit $a_0,a_1:\R\to\R$?\\
 			
+			%\begin{eqnn}
+				%\eqntext{Da $y_1(t)=\sin(t)$ und $y_2(t)=t$ als Lösungsbasis von $y$ folgt:}
+				%\eqnf{y}{\sin(t)+t}
+				%\eqn[][\Rightarrow]{\dot{y}}{\cos(t)+1}
+				%\eqn[][\Rightarrow]{\ddot{y}}{-\sin(t)}
+				%\eqntext{In Ausgangsgleichung einsetzen:}
+				%\eqn[][\Rightarrow]{0}{-\sin(t)+a_1(t)(\cos(t)+1)+a_0(t)(\sin(t)+t)}
+				%\eqn{0}{\sin(t)(a_0(t)-1)+\cos(t)a_1(t)+a_1(t)+a_0(t)}
+				%\eqnspace
+				%\eqntext{$f(t,a_0,a_1)$ wir konstruiert als Funktion mit $a_0, a_1$ als Konstanten, welche jeden möglichen Wert, den $a_0(t), a_1(t)$ annehmen könnten (inkl. der Zeitabhängigen Werte) annehmen. Sollte die Ausgangsgleichung erfüllt sein, müsste sich eine Gerade der t-abhängigen Lösungen der Ausgangsgleichung auf der $a_0,a_1$ Ebene bilden. Die einzige Triviallösung $a_1=0, a_0=\frac{\ddot{y}}{y}$ wir hierbei ausgeschlossen, da $y\in\R$ uns somit $a_0$ bei den Nullstellen von von $y$ undefiniert wäre, $a_0,a_1$ jedoch $\R\to\R$ erfüllen müssen.}
+				%\eqnf{f(t,a_0,a_1)}{\sin(t)(a_0-1)+\cos(t)a_1+a_1+a_0\feq 0}
+				%\eqnspace
+				%\eqntext{Die einzig mögliche Lösung für $f=0$, liegt bei $t=a_1=a_0=0$ und ist abhängig von $t$ (ein einzelner Punkt). Somit kann die allgemeine Ausgangsgleichung unabhängig von $a_0(t),a_1(t)$ für die Lösungsbasis $y_1(t)=\sin(t), y_2(t)=t$ nicht erfüllt werden.}
+			%\end{eqnn}
+			%$\Rightarrow$ Es ist unmöglich mit der Lösungsbasis aus eine homogene lineare Differentialgleichung 2.Ordnung aufzustellen, selbst wenn man zeitabhängige Koeffizienten zulässt.			
+			
 			$$\md{t&\sin(t)\\1&\cos(t))}= t\cos(t)-\sin(t)$$
 			
-			Im Fall $t=0$ ist die Wronski-Determinante gleich 0\\
-			Daraus folgt, dass die gegebenen Lösungen nicht linear unabhängig sind. Und da eine lineare Differentialgleichung 2. Ordnung dieser Art, zwei linear unabhänige Lösungen hat wissen wir, dass es keine lineare Differentialgleichung 2. Ordnung mit den gegebenen Lösungen gibt.
+			Im Fall $t=0$ ist die Wronski-Determinante gleich 0 und trifft somit keine Aussage über lineare Abhängigkeit. Für jeden anderen Wert von t ist sie $\neq 0$ und die Lösungsbasis somit linear unabhängig.\\
+			Da für $t=0$ für die beiden Lösungen $y_1=y_2$ gilt, sind diese in diesem Punkt linear Abhängig. Somit lässt sich keine komplett linear unabhängige Lösungsbasis von der Lösungsbasis aus (b) für eine lineare Differentialgleichung 2.Ordnung aufspanne.
+			%Daraus folgt, dass die gegebenen Lösungen nicht linear unabhängig sind. Und da eine lineare Differentialgleichung 2. Ordnung dieser Art, zwei linear unabhänige Lösungen hat wissen wir, dass es keine lineare Differentialgleichung 2. Ordnung mit den gegebenen Lösungen gibt.
 			
 			\item Warum ist es in (b) auch nicht möglich, eine homogene lineare Differentialgleichung 3.Ordnung aufzustellen, selbst wenn man zeitabhängige Koeffizienten zulässt?
 			

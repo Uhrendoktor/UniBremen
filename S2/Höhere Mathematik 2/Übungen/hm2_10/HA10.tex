@@ -49,7 +49,7 @@
 		
 		\item[10.3] Löse die folgenden Anfangswertaufgaben:
 		\begin{enumerate}
-			\item $\ddot{y}+2\dot{y}-3y=e^{2t}, y(0)=0, \dot{y}(0)=1$.
+			\item $\ddot{y}+2\dot{y}-3y=4e^{2t}, y(0)=0, \dot{y}(0)=1$.
 			\begin{eqnn}
 							\eqnf{P(\lambda)}{\lambda^2+2\lambda-3=0}
 				\eqn{\lambda}{-1\pm2}
@@ -61,28 +61,28 @@
 				\eqnf{\ddot{y}+2\dot{y}-3y}{0}
 				\eqnspace
 				\eqntext{eine spezielle Lösungsbasis finden:}
-				\eqntext{da $b(t)=2^{2t}$ mit $\lambda=2\neq\lambda_1,\lambda_2$ liegt kein Resonanzfall vor:}
-				\eqn{y_s(t)}{c_3e^{2t}}
-				\eqn{\dot{y}_s(t)}{2c_3e^{2t}}
-				\eqn{\ddot{y}_s(t)}{4c_3e^{2t}}
+				\eqntext{da $b(t)=4e^{2t}$ mit $\lambda=2\neq\lambda_1,\lambda_2$ liegt kein Resonanzfall vor:}
+				\eqn{y_s(t)}{4c_3e^{2t}}
+				\eqn{\dot{y}_s(t)}{8c_3e^{2t}}
+				\eqn{\ddot{y}_s(t)}{16c_3e^{2t}}
 				\eqntext{in Ausgangsgleichung einsetzen:}
-				\eqn[][\Rightarrow]{5c_3e^{2t}}{e^{2t}}
+				\eqn[][\Rightarrow]{20c_3e^{2t}}{4e^{2t}}
 				\eqn{c_3}{\frac{1}{5}}
 				\eqntext{$c_3$ in $y_s$ einsetzen:}
-				\eqn[][\Rightarrow]{y_s(t)}{\frac{1}{5}e^{2t}}
-				\eqn[][\Rightarrow]{y(t)}{c_1e^t+c_2e^{-3t}+\frac{1}{5}e^{2t}}
-				\eqn{\dot{y}(t)}{c_1e^t-3c_2e^{-3t}+\frac{2}{5}e^{2t}}
+				\eqn[][\Rightarrow]{y_s(t)}{\frac{4}{5}e^{2t}}
+				\eqn[][\Rightarrow]{y(t)}{c_1e^t+c_2e^{-3t}+\frac{4}{5}e^{2t}}
+				\eqn{\dot{y}(t)}{c_1e^t-3c_2e^{-3t}+\frac{8}{5}e^{2t}}
 			\end{eqnn}
 			\begin{eqnn}
 				\eqntext{Anfangswertbedingungen einsetzen:}
-				\eqn[$y(0)=0$][]{c_1+c_2}{\frac{1}{5}}
-				\eqn[$\dot{y}(0)=1$][]{c_1-3c_2}{\frac{3}{5}}
-				\eqn[][\Rightarrow]{\m{1&1\\1&-3}[\add[\cdot(-1)][+]{0}{1}]c}{\m{-\frac{1}{5}\\\frac{3}{5}}}
-				\eqn{\m{1&1\\0&-4}c}{\m{-\frac{1}{5}\\\frac{4}{5}}}
-				\eqn[][\Rightarrow]{c_2}{-\frac{1}{5}}
-				\eqn[][\Rightarrow]{c_1}{0}
+				\eqn[$y(0)=0$][]{c_1+c_2}{-\frac{4}{5}}
+				\eqn[$\dot{y}(0)=1$][]{c_1-3c_2}{-\frac{3}{5}}
+				\eqn[][\Rightarrow]{\m{1&1\\1&-3}[\add[\cdot(-1)][+]{0}{1}]c}{\m{-\frac{4}{5}\\-\frac{3}{5}}}
+				\eqn{\m{1&1\\0&-4}c}{\m{-\frac{4}{5}\\\frac{1}{5}}}
+				\eqn[][\Rightarrow]{c_2}{-\frac{1}{20}}
+				\eqn[][\Rightarrow]{c_1}{-\frac{3}{4}}
 				\eqntext{$c_1,c_2$ in $y$ einsetzen:}
-				\eqn[][\Rightarrow]{y(t)}{\frac{1}{5}\left(e^{3t}-e^{-3t}\right)}
+				\eqn[][\Rightarrow]{y(t)}{-\frac{3}{4}e^t-\frac{1}{20}e^{-3t}+\frac{4}{5}e^{2t}}
 			\end{eqnn}
 			
 			\item $\ddot{y}+y=t+2\cos(t), y(\pi)=2\pi, \dot{y}(\pi)=\pi$.

@@ -10,10 +10,20 @@
 	\begin{enumerate}
 		\item[11.3] 
 		\begin{enumerate}
-			\item Sei $D \coloneqq \{(x,y,z)\in \R^3;x\neq 0\}$. Bestimme den Gradienten $\varDelta f$ der Function $f: D \to \R, f(x,y,z) \coloneqq y\sin(xz^2)+\frac{x \cos(y)}{y}$.
+			\item Sei $D \coloneqq \{(x,y,z)\in \R^3;x\neq 0\}$. Bestimme den Gradienten $\varDelta f$ der Function $f: D \to \R, f(x,y,z) \coloneqq y\sin(xz^2)+\frac{x \cos(y)}{y}$.\\
+			$$\varDelta f = \m{
+				y\cos(xz^2)z^2+\frac{\cos(y)}{y}\\
+				\sin(xz^2)-x(\frac{\sin(y)}{y}+\frac{\cos(y)}{y^2})\\
+				y\cos(2xz)
+			}$$
 			\item Entscheide, ob es partiell differenzierbare Funktionen auf $R^2$ bzw. $R^3$ gibt mit
-			$$\varDelta f(x,y)=\m{x+y\\-x+y}\text{ bzw. }\varDelta(x,y,z)=\m{yz\\xz\\xy}$$
-			Bestimme gegebenenfalls ein solches $f$.
+			$$\varDelta f(x,y)=\m{x+y\\-x+y}\text{ bzw. }\varDelta f(x,y,z)=\m{yz\\xz\\xy}$$
+			Bestimme gegebenenfalls ein solches $f$.\\
+			$$\m{\frac{x^2}{2}+yx\\
+			-xy+\frac{y^2}{2}},\\
+			f=\m{xyz\\xyz\\xyz}$$
+			Für $f$ im $R^2$ gibt es verschiedene Stamfunktionen die notwendig wären für die gegebenen Zeilen von $\varDelta f$. Für $f$ im $R^3$ gibt es eine Stamfunktion für die $\varDelta f$ den gegebenen Vektor animmt.
+			
 		\end{enumerate}
 		\item[11.4] Sei $c>0$, und $f,g: \R \to \R$ seien zweimal stetig differenzierba. Zeige: Die Funktion $u: \R^2 \to \R$, $u(t,x)\coloneqq f(x+ct)+g(x-ct)$ ist eine Lösung der \textit{Wellengleichung}
 		$$\frac{\partial^2}{\partial t^2}u(t,x)=c^2\cdot \frac{\partial^2}{\partial x^2}u(t,x)$$

@@ -8,9 +8,9 @@
 \newcommand{\mue}{m_{\textit{ü}}}
 \begin{document}
 	\begin{enumerate}
-		\item[11.3] 
+		\item[11.3]
 		\begin{enumerate}
-			\item Sei $D \coloneqq \{(x,y,z)\in \R^3;x\neq 0\}$. Bestimme den Gradienten $\varDelta f$ der Function $f: D \to \R, f(x,y,z) \coloneqq y\sin(xz^2)+\frac{x \cos(y)}{y}$.\\
+			\item Sei $D \coloneqq \{(x,y,z)\in \R^3;x\neq 0\}$. Bestimme den Gradienten $\varDelta f$ der Funktion $f: D \to \R, f(x,y,z) \coloneqq y\sin(xz^2)+\frac{x \cos(y)}{y}$.\\
 			$$\varDelta f = \m{
 				y\cos(xz^2)z^2+\frac{\cos(y)}{y}\\
 				\sin(xz^2)-x(\frac{\sin(y)}{y}+\frac{\cos(y)}{y^2})\\
@@ -19,18 +19,80 @@
 			\item Entscheide, ob es partiell differenzierbare Funktionen auf $R^2$ bzw. $R^3$ gibt mit
 			$$\varDelta f(x,y)=\m{x+y\\-x+y}\text{ bzw. }\varDelta f(x,y,z)=\m{yz\\xz\\xy}$$
 			Bestimme gegebenenfalls ein solches $f$.\\
-			$$\m{\frac{x^2}{2}+yx\\
-			-xy+\frac{y^2}{2}},\\
-			f=\m{xyz\\xyz\\xyz}$$
-			Für $f$ im $R^2$ gibt es verschiedene Stamfunktionen die notwendig wären für die gegebenen Zeilen von $\varDelta f$. Für $f$ im $R^3$ gibt es eine Stamfunktion für die $\varDelta f$ den gegebenen Vektor animmt.
-			
+			\begin{eqnn}
+				\eqnf{\varDelta f(x,y)}{\m{x+y\\-x+y}}
+				\eqnr{f(x,y)}{\int x+y dx}
+				\eqn{f(x,y)}{\int -x+y dy}
+				\eqnr{\int x+y dx}{\int -x+y dy}
+				\eqn{\frac{x^2}{2}+yx}{\frac{y^2}{2}-yx}
+			\end{eqnn}
+			$\Rightarrow$ Es existiert keine partiell differenzierbare Funktion $f\in\R^2$\\ mit $\varDelta f(x,y)=\m{x+y\\-x+y}.$\\\\
+
+			\begin{eqnn}
+				\eqnf{\varDelta f(x,y,z)}{\m{yz\\xz\\xy}}
+				\eqnr{f(x,y,z)}{\int yz dx}
+				\eqnf{}{\int xz dy}
+				\eqnf{}{\int xy dz}
+				\eqnr{f(x,y,z)}{xyz}
+			\end{eqnn}
+
 		\end{enumerate}
-		\item[11.4] Sei $c>0$, und $f,g: \R \to \R$ seien zweimal stetig differenzierba. Zeige: Die Funktion $u: \R^2 \to \R$, $u(t,x)\coloneqq f(x+ct)+g(x-ct)$ ist eine Lösung der \textit{Wellengleichung}
+		\item[11.4] Sei $c>0$, und $f,g: \R \to \R$ seien zweimal stetig differenzierbar. Zeige: Die Funktion $u: \R^2 \to \R$, $u(t,x)\coloneqq f(x+ct)+g(x-ct)$ ist eine Lösung der \textit{Wellengleichung}
 		$$\frac{\partial^2}{\partial t^2}u(t,x)=c^2\cdot \frac{\partial^2}{\partial x^2}u(t,x)$$
+		\begin{eqnn}
+			\eqnf{\frac{\partial}{\partial t}u(t,x)}{c(f'(x+ct)-g'(x-ct))}
+			\eqnr{\frac{\partial^2}{\partial t^2}u(t,x)}{c^2(f''(x+ct)+g''(x-ct))}
+			\eqnspace
+			\eqnf{\frac{\partial}{\partial x}u(t,x)}{f'(x+ct)+g'(x-ct)}
+			\eqnr{\frac{\partial^2}{\partial x^2}u(t,x)}{f''(x+ct)+g''(x-ct)}
+			\eqnspace
+			\eqnr{\frac{\partial^2}{\partial t^2}u(t,x)}{c^2 \frac{\partial^2}{\partial x^2}u(t,x)}
+		\end{eqnn}
 		\item[11.5] Bestimme Lage und Art der lokalen Extrema folgender Funktionen:
 		\begin{enumerate}
 			\item $f:\R^2 \to \R, f(x,y)\coloneqq xy^2-4xy+x^2$
+			\begin{eqnn}
+				\eqnr{\varDelta f(x,y)}{\m{y^2-4y+2x\\2xy-4x}}
+				\eqnr{\Hess f(x,y)}{\m{2&2y-4\\2y-4&2x}}
+				\eqnspace
+				\eqntext{Nullstellen finden:}
+				\geqnf{\varDelta f(x,y)}{\feq}{0}
+				\geqn{\m{y^2-4y+2x\\2xy-4x}}{\feq}{\m{0\\0}}
+				\eqnspace
+				\eqnf{y^2-4y+2x}{0}
+				\eqnr[(I)]{x}{\frac{4y-y^2}{2}}
+				\eqnspace
+				\eqnf{2xy-4x}{0}
+				\eqnr[(II)]{x}{0}
+				\eqnspace
+				\eqntext{I in die 2.Gleichung einsetzen:}
+				\eqnf{2y+4y-y^2-8y+2y^2}{0}
+				\eqn{y^2-2y}{0}
+				\eqnr{y_1}{0,}
+				\eqnf{y_2}{2}
+				\eqnspace
+				\eqntext{II in die 1.Gleichung einsetzen:}
+				\eqnf{y^2-4y}{0}
+				\eqnr{y_3}{y_1=0,}
+				\eqnf{y_4}{4}
+				\eqnspace
+				\eqntext{$y_1=y_3, y_2, y_4$ in $\varDelta f(x,y)\feq 0$ einsetzen und nach $x$ lösen:}
+			\end{eqnn}
+			$\Rightarrow \L=\{(0,0),(2,2),(0,4)\}$.\\\\
+			Alle Nullstellen in $\Hess f(x,y)$ einsetzen um die Art des Extremums zu bestimmen.
+			\begin{eqnn}
+				\eqnf{\Hess f(0,0)}{\m{2&-4\\-4&0}}
+				\eqntext{negative Determinante $\Rightarrow$ indefinit $\Rightarrow$ Sattelpunkt.}
+				\eqnspace
+				\eqnf{\Hess f(2,2)}{\m{2&0\\0&4}}
+				\eqntext{positive Determinante mit $a_{11}>0$ $\Rightarrow$ definit $\Rightarrow$ Tiefpunkt.}
+				\eqnspace
+				\eqnf{\Hess f(0,4)}{\m{2&4\\4&0}}
+				\eqntext{negative Determinante $\Rightarrow$ indefinit $\Rightarrow$ Sattelpunkt.}
+			\end{eqnn}
+
 			\item $g:(0,\pi)\times(0,\pi)\to \R, g(x,y) \coloneqq \sin(x) + \sin(y) + \sin(x+y)$
+			
 		\end{enumerate}
 		\item[11.6]
 		\begin{enumerate}

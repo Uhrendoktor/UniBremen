@@ -90,11 +90,37 @@
 		\begin{enumerate}
 			\item Berechne die Jacobi-Matrix der Abbildungen (Polar- bzw. Kugelkoordinaten)
 			\begin{enumerate}
-				\item $F:\R^2 \to \R^2,F(r,\varphi)\coloneqq(r \cos(\varphi), r\sin(\varphi))^T$
+				\item $F:\R^2 \to \R^2,F(r,\varphi)\coloneqq(r \cos(\varphi), r\sin(\varphi))^T$\\
+				$$J_f(r,\varphi)\m{\cos(\varphi)&-r\sin(\varphi)\\
+				\sin(\varphi)&r\cos(\varphi)}$$
+				$$\nabla F_2=\m{r\sin(\varphi)\\r\cos(\varphi)}$$\\
+				
 				\item $G: \R^3 \to \R^3, G(r, \theta, \varphi)\coloneqq(r \cos(\theta) \cos(\varphi), r\cos(\theta)\sin(\varphi),r\sin(\theta))^T$\\
 				Gib die partiellen Ableitungen von $F_2$ und $G_3$ an, wobei $F = (F_1 , F_2 )^T$ und $G = (G_1 , G_2 , G_3 )^T$.
+				
+				$$J_G(r,\varphi, \theta)=\m{\cos(\theta)\cos(\varphi)&-r\sin(\theta)\cos(\varphi)&-r\cos(\theta)\sin(\varphi)\\
+				\cos(\theta)\sin(\varphi)&-r\sin(\theta)\sin(\varphi)& r\cos(\theta)\cos(\varphi)\\
+				\sin(\theta)&r\cos(\theta)&0}$$
+			$$\nabla G_3=\m{\sin(\theta)\\r\cos(\theta)\\0}$$
 			\end{enumerate}
 		\item Bestimme, in welchen Punkten die Jacobi-Matrizen aus (a) invertierbar sind.
+		
+		\begin{eqnn}
+			\eqn[][]{\md{\cos(\varphi)&-r\sin(\varphi)\\
+					\sin(\varphi)&r\cos(\varphi)}}{r(\cos(\varphi)^2+\sin(\varphi))}
+			\eqntext{$\Rightarrow$ die Determinante ist 0 bei $r=0$, daraus Folgt das $J_f$ invertierbar ist für alle $r\neq0$}
+		\end{eqnn}
+	\begin{eqnn}
+		\geqn[][]{d}{\coloneqq}{|\text{Hess }f|}
+		\eqn[][]{d}{\md{\cos(\theta)\cos(\varphi)&-r\sin(\theta)\cos(\varphi)&-r\cos(\theta)\sin(\varphi)\\
+				\cos(\theta)\sin(\varphi)&-r\sin(\theta)\sin(\varphi)& r\cos(\theta)\cos(\varphi)\\
+				\sin(\theta)&r\cos(\theta)&0}}
+			\eqn{d}{\sin(\theta)(-r^2\sin(\theta)\cos(\theta)\cos(\varphi)^2-r^2\sin(\theta)\cos(\theta)\sin(\varphi)^2)-r\cos(\theta)(r\cos(\theta)^2\cos(\varphi)^2)+r\cos(\theta)^2\sin(\theta)^2}
+			\eqn{d}{-r^2\sin(\theta)^2\cos(\theta)(\cos(\varphi)^2+\sin(\varphi)^2)-r^2\cos(\theta)^2\cos(\theta)(\cos(\varphi)^2+\sin(\varphi)^2)}
+			\eqn{d}{r^2\cos(\theta)(-\sin(\theta)^2(\cos(\varphi)^2+\sin(\varphi)^2)-\cos(\theta)^2(\cos(\varphi)^2+\sin(\varphi)^2))}
+			\eqn{d}{-r^2\cos(\theta)}
+			\eqntext{$\Rightarrow$ $J_G$ ist invertierbar für $r\neq0$ und $\theta \neq \frac{(1+2n)\pi}{2}$}
+	\end{eqnn}
 		\end{enumerate}
 
 	\end{enumerate}

@@ -14,6 +14,7 @@
 \newcommand{\arccosh}{\text{arccosh}}
 \newcommand{\Eig}{\text{Eig}}
 \newcommand{\Span}{\text{Span}}
+\newcommand{\Hess}{\text{Hess}}
 \newcommand{\feq}{\overset{!}{=}}
 %custom math commands
 \NewDocumentCommand{\m}{ m o }{\begin{gmatrix}[p]#1 \IfValueT{#2}{\rowops#2}\end{gmatrix}}
@@ -21,6 +22,7 @@
 
 \newenvironment{eqnn}{
 	\NewDocumentCommand{\eqn}{O{} O{\Leftrightarrow} m m O{}}{\geqn[##1][##2]{##3}{=}{##4}[##5]}
+	\NewDocumentCommand{\eqnr}{O{} m m O{}}{\eqn[##1][\Rightarrow]{##2}{##3}[##4]}
 	\NewDocumentCommand{\eqnf}{O{} m m O{}}{\eqn[##1][]{##2}{##3}[##4]}
 	\NewDocumentCommand{\geqn}{O{} O{\Leftrightarrow} m m m O{}}{##1&$##2$&$##3$&$##4$&$##5$&\def\temp{##6}\ifx\temp\empty$ $\else$\vert$ ##6\fi\\}
 	\NewDocumentCommand{\geqnf}{O{} m m m O{}}{\geqn[##1][]{##2}{##3}{##4}[##5]}

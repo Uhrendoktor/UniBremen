@@ -25,12 +25,53 @@
 			Für $f$ im $R^2$ gibt es verschiedene Stamfunktionen die notwendig wären für die gegebenen Zeilen von $\varDelta f$. Für $f$ im $R^3$ gibt es eine Stamfunktion für die $\varDelta f$ den gegebenen Vektor animmt.
 			
 		\end{enumerate}
-		\item[11.4] Sei $c>0$, und $f,g: \R \to \R$ seien zweimal stetig differenzierba. Zeige: Die Funktion $u: \R^2 \to \R$, $u(t,x)\coloneqq f(x+ct)+g(x-ct)$ ist eine Lösung der \textit{Wellengleichung}
+		\item[11.4] Sei $c>0$, und $f,g: \R \to \R$ seien zweimal stetig differenzierbar. Zeige: Die Funktion $u: \R^2 \to \R$, $u(t,x)\coloneqq f(x+ct)+g(x-ct)$ ist eine Lösung der \textit{Wellengleichung}
 		$$\frac{\partial^2}{\partial t^2}u(t,x)=c^2\cdot \frac{\partial^2}{\partial x^2}u(t,x)$$
+		
+		\begin{eqnn}
+			\eqn[][]{\frac{\partial^2}{\partial t^2}u}{\frac{\partial^2}{\partial t^2}f(x+ct)c^2+\frac{\partial^2}{\partial t^2}g(x-ct)c^2}
+			
+			\eqn[][]{c^2\cdot \frac{\partial^2}{\partial x^2}u1}{\frac{\partial^2}{\partial x^2}f(x+ct)+\frac{\partial^2}{\partial x^2}g(x-ct)}
+		\end{eqnn}
 		\item[11.5] Bestimme Lage und Art der lokalen Extrema folgender Funktionen:
 		\begin{enumerate}
-			\item $f:\R^2 \to \R, f(x,y)\coloneqq xy^2-4xy+x^2$
+			\item $f:\R^2 \to \R, f(x,y)\coloneqq xy^2-4xy+x^4$
+			
+			\begin{eqnn}
+				\eqntext{Kandidaten finden:}
+				\eqn[][]{\nabla f}{\m{y^2+4x+4x^3\\2xy-4x}}
+				\eqn[][\Rightarrow]{0}{2xy-4x}
+				\eqn{y}{2}
+				\eqn[][]{0}{y^2-4x+4x^3}
+				\eqntext{$y=2$ Einsetzen:}
+				\eqn[][\Rightarrow]{x}{1}
+				\eqn[][]{\text{Hess }f}{\m{2&2y-4\\2y-4&2x}}
+				\eqntext{Kandidat Einsetzen:}
+				\eqn[][\Rightarrow]{\md{2&0\\0&2}}{4}
+				\eqntext{Hess f ist positiv definit da $|$Hess $f|> 0$ ist und Hess $f_{11} > 0$,
+				daraus folgt das der Kandidat $\m{1\\2}$ein striktes lokales Minimum ist.}
+			\end{eqnn}
 			\item $g:(0,\pi)\times(0,\pi)\to \R, g(x,y) \coloneqq \sin(x) + \sin(y) + \sin(x+y)$
+			\begin{eqnn}
+				\eqntext{Kandidaten finden:}
+				\eqn[][]{\nabla g}{\m{\cos(x)+\cos(x+y)\\ \cos(y)+\cos(x+y)}}
+				\eqn[(I)][\Rightarrow]{\cos(x)}{-\cos(x+y)}
+				\eqn[][\Rightarrow]{\cos(y)}{-\cos(x+y)}
+				\eqn[][\Rightarrow]{x}{y}
+				\eqntext{In (I) Einsetzen:}
+				\eqn[][\Rightarrow]{\cos(x)}{-\cos(2x)}
+				\eqn{\cos(x)}{-1(\cos(x)^2-\sin(x)^2)}[$+\cos(x)^2$]
+				\eqn{\cos(x)+2\cos(x)^2}{1}[$\div 2 +\frac{1}{16}$]
+				\eqn{\frac{1}{16}+\frac{\cos(x)}{2}+\cos(x)^2}{\frac{9}{16}}
+				\eqn{(\frac{1}{4}+\cos(x))^2}{\frac{9}{16}}
+				\eqn[][\Rightarrow]{x}{\frac{\pi}{3}}
+				\eqnspace
+				\eqn[][]{\text{Hess }f}{\m{-\sin(x)-\sin{2x}&-\sin(2x)\\-\sin(2x)&-\sin(x)-\sin(x+y)}}
+				\eqn{\sin(x)^2}{\md{-\sin(x)&0\\0&-\sin(x)}}
+				\eqntext{Kandidat Einsetzen:}
+				\geqn[][\Rightarrow]{\sin(\frac{\pi}{3})}{>}{0}
+				\eqntext{$\Rightarrow$ Hess $f$ ist negativ definit, daraus folgt das der Kandidat $\m{\frac{\pi}{3}}$ ein strikes lokales Maximum ist.}
+			\end{eqnn}
 		\end{enumerate}
 		\item[11.6]
 		\begin{enumerate}

@@ -41,9 +41,22 @@
 		$$\frac{\partial^2}{\partial t^2}u(t,x)=c^2\cdot \frac{\partial^2}{\partial x^2}u(t,x)$$
 		
 		\begin{eqnn}
-			\eqn[][]{\frac{\partial^2}{\partial t^2}u}{\frac{\partial^2}{\partial t^2}f(x+ct)c^2+\frac{\partial^2}{\partial t^2}g(x-ct)c^2}
+			\eqn[][]{\frac{\partial^2}{\partial t^2}u}{\frac{\partial^2}{\partial t^2}(f(x+ct))+\frac{\partial^2}{\partial t^2}(g(x-ct))}
 			
-			\eqn[][]{c^2\cdot \frac{\partial^2}{\partial x^2}u1}{\frac{\partial^2}{\partial x^2}f(x+ct)+\frac{\partial^2}{\partial x^2}g(x-ct)}
+			\eqn[][]{\frac{\partial^2}{\partial t^2}u}{c(\frac{\partial}{\partial t}(f'(x+ct))+\frac{\partial}{\partial t}(g'(x-ct)))}
+			
+			\eqn[(I)][]{\frac{\partial^2}{\partial t^2}u}{c^2(f''(x+ct)+g''(x-ct))}
+			\eqnspace
+			
+			
+			\eqn[][]{\frac{\partial^2}{\partial x^2}u}{\frac{\partial^2}{\partial x^2}(f(x+ct))+\frac{\partial^2}{\partial x^2}(g(x-ct))}
+			
+			\eqn[][]{\frac{\partial^2}{\partial x^2}u}{\frac{\partial}{\partial x}(f'(x+ct))+\frac{\partial}{\partial x}(g'(x-ct))}
+			
+			\eqn[][]{\frac{\partial^2}{\partial x^2}u}{f''(x+ct)+g''(x-ct)}
+			
+			\eqntext{In (I) Einsetzen:}
+			\eqn[][\Rightarrow]{\frac{\partial^2}{\partial t^2}u}{c^2 \cdot \frac{\partial^2}{\partial x^2}u}
 		\end{eqnn}
 		\item[11.5] Bestimme Lage und Art der lokalen Extrema folgender Funktionen:
 		\begin{enumerate}
@@ -110,17 +123,19 @@
 					\sin(\varphi)&r\cos(\varphi)}}{r(\cos(\varphi)^2+\sin(\varphi))}
 			\eqntext{$\Rightarrow$ die Determinante ist 0 bei $r=0$, daraus Folgt das $J_f$ invertierbar ist für alle $r\neq0$}
 		\end{eqnn}
-	\begin{eqnn}
-		\geqn[][]{d}{\coloneqq}{|\text{Hess }f|}
-		\eqn[][]{d}{\md{\cos(\theta)\cos(\varphi)&-r\sin(\theta)\cos(\varphi)&-r\cos(\theta)\sin(\varphi)\\
-				\cos(\theta)\sin(\varphi)&-r\sin(\theta)\sin(\varphi)& r\cos(\theta)\cos(\varphi)\\
-				\sin(\theta)&r\cos(\theta)&0}}
-			\eqn{d}{\sin(\theta)(-r^2\sin(\theta)\cos(\theta)\cos(\varphi)^2-r^2\sin(\theta)\cos(\theta)\sin(\varphi)^2)-r\cos(\theta)(r\cos(\theta)^2\cos(\varphi)^2)+r\cos(\theta)^2\sin(\theta)^2}
+		
+		\begin{eqnn}
+			\geqn[][]{d}{\coloneqq}{|\text{Hess }f|}
+			\eqn[][]{d}{\md{\cos(\theta)\cos(\varphi)&-r\sin(\theta)\cos(\varphi)&-r\cos(\theta)\sin(\varphi)\\
+					\cos(\theta)\sin(\varphi)&-r\sin(\theta)\sin(\varphi)& r\cos(\theta)\cos(\varphi)\\
+					\sin(\theta)&r\cos(\theta)&0}}
+			\eqn{d}{\sin(\theta)(-r^2\sin(\theta)\cos(\theta)\cos(\varphi)^2-r^2\sin(\theta)\cos(\theta)\sin(\varphi)^2)}
+			\eqntext{$-r\cos(\theta)(r\cos(\theta)^2\cos(\varphi)^2)+r\cos(\theta)^2\sin(\theta)^2$}
 			\eqn{d}{-r^2\sin(\theta)^2\cos(\theta)(\cos(\varphi)^2+\sin(\varphi)^2)-r^2\cos(\theta)^2\cos(\theta)(\cos(\varphi)^2+\sin(\varphi)^2)}
 			\eqn{d}{r^2\cos(\theta)(-\sin(\theta)^2(\cos(\varphi)^2+\sin(\varphi)^2)-\cos(\theta)^2(\cos(\varphi)^2+\sin(\varphi)^2))}
 			\eqn{d}{-r^2\cos(\theta)}
 			\eqntext{$\Rightarrow$ $J_G$ ist invertierbar für $r\neq0$ und $\theta \neq \frac{(1+2n)\pi}{2}$}
-	\end{eqnn}
+		\end{eqnn}
 		\end{enumerate}
 
 	\end{enumerate}

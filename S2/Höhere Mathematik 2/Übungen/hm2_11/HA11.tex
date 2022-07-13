@@ -64,17 +64,36 @@
 			
 			\begin{eqnn}
 				\eqntext{Kandidaten finden:}
-				\eqn[][]{\nabla f}{\m{y^2+4x+4x^3\\2xy-4x}}
+				\eqn[][]{\nabla f}{\m{y^2+4y+4x^3\\2xy-4x}}
 				\eqn[][\Rightarrow]{0}{2xy-4x}
-				\eqn{y}{2}
-				\eqn[][]{0}{y^2-4x+4x^3}
-				\eqntext{$y=2$ Einsetzen:}
-				\eqn[][\Rightarrow]{x}{1}
-				\eqn[][]{\text{Hess }f}{\m{2&2y-4\\2y-4&2x}}
-				\eqntext{Kandidat Einsetzen:}
-				\eqn[][\Rightarrow]{\md{2&0\\0&2}}{4}
-				\eqntext{Hess f ist positiv definit da $|$Hess $f|> 0$ ist und Hess $f_{11} > 0$,
-				daraus folgt das der Kandidat $\m{1\\2}$ein striktes lokales Minimum ist.}
+				\eqn{0}{x(2y-4)}
+				\eqn[][\Rightarrow]{y_1}{2}
+				\eqn[][\Rightarrow]{x_2}{0}
+				\eqnspace
+				\eqn[][]{0}{y^2-4y+4x^3}
+				\eqntext{$y_1=2$ Einsetzen:}
+				\eqn[][\Rightarrow]{4}{4x^3}
+				\eqn[][\Rightarrow]{x_1}{1}
+				\eqntext{$x_2=0$ Einsetzen:}
+				\eqn[][\Rightarrow]{0}{y^2-4y}
+				\eqn{0}{y(y-4)}
+				\eqn[][\Rightarrow]{y_2}{0}
+				\eqn[][\Rightarrow]{y_3}{4}
+				\eqnspace
+				
+				\eqn[][]{\text{Hess }f}{\m{12x^2&2y-4\\2y-4&2x}}
+				\eqntext{Kandidat $\m{0\\0}$Einsetzen:}
+				\eqn[][\Rightarrow]{\md{0&-4\\-4&0}}{-16}
+				\eqntext{$\Rightarrow$ indefinite Hesse matrix, also ist $\m{0\\0}$ ein Sattelpunkt.}
+				
+				\eqntext{Kandidat $\m{0\\4}$Einsetzen:}
+				\eqn[][\Rightarrow]{\md{0&4\\4&0}}{-16}
+				\eqntext{$\Rightarrow$ indefinite Hesse matrix, also ist $\m{0\\4}$ ein Sattelpunkt.}
+				
+				
+				\eqntext{Kandidat $\m{1\\2}$Einsetzen:}
+				\eqn[][\Rightarrow]{\md{12&0\\0&2}}{24}
+				\eqntext{$\Rightarrow$ positiv definite Hesse matrix, also ist $\m{0\\0}$ lokales striktes Minimum.}
 			\end{eqnn}
 			\item $g:(0,\pi)\times(0,\pi)\to \R, g(x,y) \coloneqq \sin(x) + \sin(y) + \sin(x+y)$
 			\begin{eqnn}
@@ -120,7 +139,7 @@
 		
 		\begin{eqnn}
 			\eqn[][]{\md{\cos(\varphi)&-r\sin(\varphi)\\
-					\sin(\varphi)&r\cos(\varphi)}}{r(\cos(\varphi)^2+\sin(\varphi))}
+					\sin(\varphi)&r\cos(\varphi)}}{r(\cos(\varphi)^2+\sin(\varphi)^2)=r}
 			\eqntext{$\Rightarrow$ die Determinante ist 0 bei $r=0$, daraus Folgt das $J_f$ invertierbar ist für alle $r\neq0$}
 		\end{eqnn}
 		
@@ -134,7 +153,7 @@
 			\eqn{d}{-r^2\sin(\theta)^2\cos(\theta)(\cos(\varphi)^2+\sin(\varphi)^2)-r^2\cos(\theta)^2\cos(\theta)(\cos(\varphi)^2+\sin(\varphi)^2)}
 			\eqn{d}{r^2\cos(\theta)(-\sin(\theta)^2(\cos(\varphi)^2+\sin(\varphi)^2)-\cos(\theta)^2(\cos(\varphi)^2+\sin(\varphi)^2))}
 			\eqn{d}{-r^2\cos(\theta)}
-			\eqntext{$\Rightarrow$ $J_G$ ist invertierbar für $r\neq0$ und $\theta \neq \frac{(1+2n)\pi}{2}$}
+			\eqntext{$\Rightarrow$ $J_G$ ist invertierbar für $r\neq0$ und $\theta \neq \frac{(1+2n)\pi}{2}n\in \N$}
 		\end{eqnn}
 		\end{enumerate}
 
